@@ -1,5 +1,5 @@
 import math
-import numpy
+import numpy as np
 import simpy
 import random
 
@@ -9,76 +9,34 @@ N_TRUCKS = 2
 
 
 # Create init distance matrix
-def create_distance_matrix(pattern_size, min, max, symmetrical=True):
-	"""
-	"""
+def create_random_distance_matrix(num_locations, min, max, symmetrical=True):
+	""""""
+	num_distances = num_locations*(num_locations - 1)//2
+	distance_matrix = np.zeros((num_locations, num_locations), dtype=int)
 
 	if symmetrical:
-		pattern = []	
-		for i in range(pattern_size):
-			pattern.append(random.randint(min, max))	
-		#print(pattern)
-   		# to get the side length, solve for n where len(pattern) = n*(n + 1)/2 (triangular number formula)
-		side_length = (int(math.sqrt(1 + 8 * len(pattern))) - 1) // 2 + 1
-		assert (side_length * (side_length - 1)) // 2 == len(pattern), "Pattern length must be a triangular number."	
-   		# create the grid
-		grid = [[0] * side_length for i in range(side_length)]	
-   		# fill in the grid
-		position = 0
-		for i in range(0, side_length - 1):
-			for j in range(0, side_length - 1 - i):
-				element = pattern[position]; position += 1
-				grid[i][i + j + 1] = element # fill in the upper triangle
-				grid[i + j + 1][i] = element # fill in the lower triangle	
-		return grid
+		distance_array = np.random.randint(min, max, size=(num_distances))
+   		# create the distance matrix
+		distance_matrix[np.triu_indices(num_locations, k=1)] = distance_array
+		distance_matrix += distance_matrix.T
 
 	if not symmetrical:
-		pattern = []	
-		for i in range(pattern_size):
-			pattern.append(random.randint(min, max))	
-   		# to get the side length, solve for n where len(pattern) = n*(n + 1)/2 (triangular number formula)
-		side_length = (int(math.sqrt(1 + 8 * len(pattern))) - 1) // 2 + 1
-		assert (side_length * (side_length - 1)) // 2 == len(pattern), "Pattern length must be a triangular number."	
-   		# create the grid
-		grid = [[0] * side_length for i in range(side_length)]	
-   		# fill in the grid
-		position = 0
-		for i in range(0, side_length - 1):
-			for j in range(0, side_length - 1 - i):
-				element = pattern[position]; position += 1
-				grid[i][i + j + 1] = element # fill in the upper triangle
-				grid[i + j + 1][i] = element + 5 # fill in the lower triangle	# Add assymetry later
-		return grid
+		distance_matrix[np.triu_indices(num_locations, k=1)] = np.random.randint(min, max, size=(num_distances))
+		distance_matrix[np.tril_indices(num_locations, k=-1)] = np.random.randint(min, max, size=(num_distances))
+
+	return distance_matrix
 
 
-def create_route(distance_matrix):
-	route = list(range(len(distance_matrix)))
-	route = random.sample(route[1:], len(route)-1)
-	new_route = [0]
-	new_route.extend(route)
+class WastePickupSite(simpy.Container):
+	""""""
 
-	return new_route
+	index = None
 
-
-def create_sites(route, min, max):
-	sites = {}
-	for site in route:
-		sites[f'{site}'] = random.randint(min, max)
-
-	return sites
-
-
-def waste_sites(env, sites):
-	"""
-	"""
-	containers = {}
-	for i in sites.keys():
-		containers[i] = simpy.Container(env, capacity=10)
-		containers[i].put(sites[i])
-		print(f"On waste site #{i} there are currently {sites[i]} tonns at {env.now}")
-
-	return containers
-
+	def __init__(self, env, index, capacity, initial_load):
+		self.index = index
+		simpy.Container.__init__(env, capacity=capacity)
+		self.put(initial_load)
+		print(f"On waste site #{index} there are currently {initial_load} tons at {env.now}")
 
 def pick_up_load(env, name, load, site, gray_sites, distance_matrix):
 	""""""
@@ -129,71 +87,71 @@ def gray_truck_route(env, name, route, gray_sites, distance_matrix):
 		if gray_sites[str(site)].level != 0:
 			yield env.process(pick_up_load(env, name, load, site, gray_sites, distance_matrix))
 
+class DayShiftSimulationModel:	
+    '''
+	Simulation of a day shift
+    '''
 
-def gray_shift(env, distance_matrix, route, truck):
-	"""
-	"""
-	
+	num_vehicles = None
+	vehicle_capacity = None
 
-	
-	
-	sites = create_sites(route, 9, 10)
-	
-	
-	
+	distance_matrix = None
 
+	num_waste_pickup_sites = None	
+	waste_pickup_site_capacities = None
 
-	gray_sites = waste_sites(env, sites)
+	waste_pickup_duration = None
+	waste_drop_off_duration = None
 
-	
-	route_shift = env.process(gray_truck_route(env, truck, route, gray_sites, distance_matrix))
+	depot_location_index = 0
+	sink_location_index = 1
+	first_waste_pickup_site_location_index = 2
 
-	yield env.timeout(0)
+	def plan_vehicle_route():
+		full_route = np.array([self.depot_location_index]).append(self.first_waste_pickup_site_location_index + np.random.permutation(self.num_waste_pickup_sites)).append(self.sink_location_index)
+		return full_route[:3]
 
+	def gray_shift(env, route, vehicle_index):
+		"""
+		"""
 
-def day_shift():
+		gray_sites = waste_sites(env, sites)
 
+		route_shift = env.process(gray_truck_route(env, vehicle_index, route, gray_sites))
 
+		yield env.timeout(0)
 
-	env = simpy.Environment()
+	def __init__(**sim_config):
+		self.num_vehicles = sim_config["num_vehicles"]
+		self.vehicle_capacity = sim_config["vehicle_capacity"]
+		self.distance_matrix = create_random_distance_matrix(num_locations=1+sim_config["num_waste_pickup_sites"]+1,
+			min=sim_config["distance_matrix"][1], max=sim_config["distance_matrix"][2])
+		self.something = 123		
 
-	distance_matrix = create_distance_matrix(48, 5, 25, symmetrical=True)
-	print()
-	for i in distance_matrix:
-		print(i)
-	print()
-	print()
-	route = create_route(distance_matrix)
-	print(len(route[1:]))
+	def run():
+		env = simpy.Environment()
 
-	chunk_size = len(route[1:]) // N_TRUCKS
-	
-	if N_TRUCKS > 1:
-		if len(route[1:]) % 2 == 0:
-			ordered_routes =[route[1:][i:i + chunk_size] for i in range(0, len(route[1:]), chunk_size)]	
-	
-		elif len(route[1:]) % 2 == 1: 
-			ordered_routes =[route[1:][i:i + chunk_size] for i in range(0, len(route[1:]), chunk_size)]
-			list1 = ordered_routes[-2]
-			list2 = ordered_routes[-1]
-			list1.extend(list2)
-			ordered_routes[-2] = list1
-			ordered_routes = ordered_routes[:-1]
+		for i in range(self.num_waste_pickup_sites):
+			WastePickupSite(self, env, index, capacity, initial_load)
 
-		print(route)
-		print(ordered_routes)
+		for i in range(self.num_vehicles):
+			route = self.plan_vehicle_route()
+			shift = env.process(gray_shift(env, self.distance_matrix, route, i))
 
-	else:
-		ordered_routes = [route[1:]]
-		print(route)
-		print(ordered_routes)
+		env.run()
 
+sim_config = {
+	'num_vehicles': 2,
+	'vehicle_capacity': [6, 6], #Unit is metric tonnes
 
-	for i, route in enumerate(ordered_routes):
-		
+	'num_waste_pickup_sites': 5,
+	'waste_pickup_site_capacity': [5, 5, 5, 5, 5], # Unit is metric tonnes
 
-		shift = env.process(gray_shift(env, distance_matrix, route, i))
+	'distance_matrix': ['random', 5, 25], # Unit is minutes
 
-	env.run()
+	'waste_pickup_duration': None,
+	'waste_drop_off_duration': None,	
+}
 
-day_shift()
+simulation = DayShiftSimulationModel(**sim_config)
+simulation.run()
