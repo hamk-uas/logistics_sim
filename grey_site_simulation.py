@@ -151,8 +151,10 @@ def gray_shift(env, distance_matrix, route, truck):
 	yield env.timeout(0)
 
 
-def day_shift():
-
+def day_shift(a, b, c):
+	print(a)
+	print(b)
+	print(c)
 
 
 	env = simpy.Environment()
@@ -196,4 +198,6 @@ def day_shift():
 
 	env.run()
 
-day_shift()
+config_dict = {"c":5, "a":1, "b":2}
+day_shift(**config_dict)
+
