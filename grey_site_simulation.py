@@ -38,30 +38,57 @@ class WastePickupSite(simpy.Container):
 		self.put(initial_load)
 		print(f"On waste site #{index} there are currently {initial_load} tons at {env.now}")
 
-def pick_up_load(env, name, load, site, gray_sites, distance_matrix):
-	""""""
+
+class OperatingVehicle(simpy.Container):
+
+	index = None
+
+	#Add function for a schedulded break quickly later
+	def lunch_break():
+		return
+
+	def approximate_next_task():
+		return
+
+	def end_shift():
+		return
+
+	def statistics():
+		# driving time
+		# other qworking time
+		return
+
+	def __init__(self, env, index, load_capacity):
+		self.env = env
+		self.index = index
+		simpy.Container.__init__(env, capacity=load_capacity)
+		print(f"Truck {self.index} is available for a shift")
+
+
+	def pick_up_load( name, load, site, gray_sites, distance_matrix):
+		""""""
+		
+		yield env.timeout(distance_matrix[0][site]) # Drive time here
+		print(f"Truck {name} arrives to {site} at {self.env.now}")
+		yield env.timeout(5) # Picking up time
+		available_space = TRUCK_CAPACITY - load['current_load']
+		if gray_sites[str(site)].level >= available_space:
+			to_pick_up = available_space
+		else:
+			to_pick_up = gray_sites[str(site)].level
 	
-	yield env.timeout(distance_matrix[0][site]) # Drive time here
-	print(f"Truck {name} arrives to {site} at {env.now}")
-	yield env.timeout(5) # Picking up time
-	available_space = TRUCK_CAPACITY - load['current_load']
-	if gray_sites[str(site)].level >= available_space:
-		to_pick_up = available_space
-	else:
-		to_pick_up = gray_sites[str(site)].level
-
-
-	yield gray_sites[str(site)].get(to_pick_up)
-
-	print(f"Truck {name} picks up {to_pick_up} tonns on {site} at {env.now}")
-	print(f"{gray_sites[str(site)].level} tonns left on gray site {site}")
-
-	load['current_load'] += to_pick_up
-	print(f"Truck {name} now has {load['current_load']} tonns at {env.now}")
-	if load['current_load'] == TRUCK_CAPACITY:
-			print(f"Truck {name} enroute to DEPOT at {env.now}")
-			yield env.process(drop_load(env, name, load, site, distance_matrix))
-
+	
+		yield gray_sites[str(site)].get(to_pick_up)
+	
+		print(f"Truck {name} picks up {to_pick_up} tonns on {site} at {env.now}")
+		print(f"{gray_sites[str(site)].level} tonns left on gray site {site}")
+	
+		load['current_load'] += to_pick_up
+		print(f"Truck {name} now has {load['current_load']} tonns at {env.now}")
+		if load['current_load'] == TRUCK_CAPACITY:
+				print(f"Truck {name} enroute to DEPOT at {env.now}")
+				yield env.process(drop_load(env, name, load, site, distance_matrix))
+	
 	
 
 def drop_load(env, name, load, site, distance_matrix):
@@ -88,9 +115,9 @@ def gray_truck_route(env, name, route, gray_sites, distance_matrix):
 			yield env.process(pick_up_load(env, name, load, site, gray_sites, distance_matrix))
 
 class DayShiftSimulationModel:	
-    '''
+	'''
 	Simulation of a day shift
-    '''
+	'''
 
 	num_vehicles = None
 	vehicle_capacity = None
@@ -103,13 +130,15 @@ class DayShiftSimulationModel:
 	waste_pickup_duration = None
 	waste_drop_off_duration = None
 
-	depot_location_index = 0
-	sink_location_index = 1
-	first_waste_pickup_site_location_index = 2
+	depot_location_index = None
+	sink_location_index = None
+	first_waste_pickup_site_location_index = None
 
 	def plan_vehicle_route():
 		full_route = np.array([self.depot_location_index]).append(self.first_waste_pickup_site_location_index + np.random.permutation(self.num_waste_pickup_sites)).append(self.sink_location_index)
 		return full_route[:3]
+
+
 
 	def gray_shift(env, route, vehicle_index):
 		"""
@@ -131,8 +160,10 @@ class DayShiftSimulationModel:
 	def run():
 		env = simpy.Environment()
 
+		waste_sites = []
+
 		for i in range(self.num_waste_pickup_sites):
-			WastePickupSite(self, env, index, capacity, initial_load)
+			waste_sites.append(WastePickupSite(self, env, index, capacity, initial_load))
 
 		for i in range(self.num_vehicles):
 			route = self.plan_vehicle_route()
