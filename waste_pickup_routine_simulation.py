@@ -3,21 +3,13 @@ import simpy
 import random
 import numpy as np
 
-
-
-
 vehicles_config = {
-	'vehicle_load_capacity' : 18, # Tonnes
+	'load_capacity' : 18, # Tonnes
 	#### Add all service level agreement related config here later
-	'vehicle_max_runtime' : 540, # Minutes 
-	'vehicle_break_time' : 45, # Minutes # Break Happens after 1/2 of drivetime 
-	'lunch_breakes_allowed' : 1,
-	 #TODO!!!!!!!!!!
-	 #'vehicle_daily_rest' : 660 # Minutes
-	 #'vehicle_weekly_limit' : 3360 # Minutes #Remove larter
-	 # Two week working limit?
-	 'grey_site_worktime' : 15 # Minutes
-
+	'max_shift_duration' : 540, # Minutes 
+	'break_duration' : 45, # Minutes # Break Happens after 1/2 of drivetime 
+	'allow_break' : 1,
+	'grey_site_pickup_duration' : 15 # Minutes
 }
 
 city_config = {
@@ -30,7 +22,7 @@ city_config = {
 	'grey_site_initial_load_range' : [0, 0.95], # %
 	'grey_site_requested_range' : [0, 7], # days old
 
-	'num_grey_vehicles' : 3, # N
+	'num_grey_vehicles' : 1, # N
 
 	'num_blue_pickup_sites' : 0, # N
 	'vehicles_config' : vehicles_config
@@ -44,7 +36,18 @@ sim_config = {
 	# 'grey_site_requested_range' : [0, 7], also optimizing # later
 }
 
+def time_to_string(minutes):
+	hours = math.floor(minutes/60)
+	minutes -= hours*60
+	days = math.floor(hours/24)
+	hours -= days*24
+	return f"{str(days):>3}d {str(hours).zfill(2)}:{str(minutes).zfill(2)}"
 
+def tons_to_string(tons):
+	return f"{tons:.3f} tons"
+
+def log(env, message):
+	print(f"{time_to_string(env.now)} - {message}")
 
 class GreyPickUpSite(simpy.Container):
 	"""
@@ -58,12 +61,16 @@ class GreyPickUpSite(simpy.Container):
 		self.index = index
 		self.request = request # Alarm trigerred days ago
 		self.put(initial_load)
-		print(f"On waste site #{index} there are initially {self.level} tons at {env.now}")
-
-		#
+		log(env, f"On waste site #{index} there are initially {tons_to_string(self.level)}")
 		self.daily_growth_rate = float(np.random.normal((14 + 21) / 2, 1, 1) / capacity) # Normal dist of 2 to 3 weeks to be full. Fix for more configurable later
+		self.env = env
+		self.action = env.process(self.run())
 
-
+	def run(self):		
+		while True:
+			yield self.env.timeout(24*60)
+			self.put(self.daily_growth_rate)
+			log(self.env, f"Grey container {self.index} level got increased to {tons_to_string(self.level)}")
 
 
 
@@ -80,19 +87,19 @@ class OperatingVehicle(simpy.Container):
 		self.route = [] # Scheduled route for a day
 		self.city = city # City object
 
-		self.vehicle_max_runtime = vehicles_config['vehicle_max_runtime']
-		self.vehicle_break_time = vehicles_config['vehicle_break_time']
-		self.lunch_breakes_allowed = vehicles_config['lunch_breakes_allowed']
+		self.max_shift_duration = vehicles_config['max_shift_duration']
+		self.break_duration = vehicles_config['break_duration']
+		self.allow_break = vehicles_config['allow_break']
 
-		self.shift_start_time = None # Daily shift start time
+		self.shift_start_time = 0 # Daily shift start time
 		self.vehicle_current_runtime = 0 # Runtime for a day
 		self.time_to_complete_next_task = 0
 
 		self.current_destinaiton = None # Current site to move to
 		self.current_location = 0 # Depot
 
-		super().__init__(env, capacity=vehicles_config['vehicle_load_capacity'])
-		print(f"Truck {self.index} is available for a shift")
+		super().__init__(env, capacity=vehicles_config['load_capacity'])
+		log(env, f"Truck {self.index} is available for a shift")
 
 
 	#Add function for a schedulded break quickly later
@@ -100,11 +107,11 @@ class OperatingVehicle(simpy.Container):
 		"""
 		If there are any lunch breaks left for the today's shift. If so stops vehicle for a break
 		"""
-		print("Check up on break time")
-		if self.vehicle_current_runtime >= self.vehicle_max_runtime / 2:
-			print(f"Vehicle {self.index} stops on a lunch_break at {self.env.now}")
-			self.lunch_breakes_allowed = 0
-			yield self.env.timeout(self.vehicle_break_time)
+		log(self.env, "Check up on break time")
+		if self.vehicle_current_runtime >= self.max_shift_duration / 2:
+			log(self.env, f"Vehicle {self.index} stops on a lunch_break")
+			self.allow_break = 0
+			yield self.env.timeout(self.break_duration)
 
 
 	def approximate_next_task(self):#TODO!!!!!!!!!!
@@ -121,10 +128,10 @@ class OperatingVehicle(simpy.Container):
 		"""Function that will make vehicle go to depot and reset daily parameters"""
 		#curr runtime + next task approx >= maxruntime
 		#
-		print(f"Shift for truck {self.index} over at {self.env.now} with runtime of {self.vehicle_current_runtime}")
-		#print(333333, math.ceil(self.env.now / 1440) * 1440)
+		log(self.env, f"Shift for truck {self.index} over with runtime of {time_to_string(self.vehicle_current_runtime)}")
+		#log(env, 333333, math.ceil(self.env.now / 1440) * 1440)
 		#to_timeout = 
-		#print(to_timeout)
+		#log(env, to_timeout)
 
 		yield self.env.timeout(math.ceil(self.env.now / 1440) * 1440 - self.env.now)
 		
@@ -137,8 +144,7 @@ class OperatingVehicle(simpy.Container):
 		# other working time  #later
 		current_runtime = self.env.now - self.shift_start_time
 		self.vehicle_current_runtime = current_runtime
-		print(f"Vehicle {self.index} current runtime updated! Now is {self.vehicle_current_runtime}")
-
+		log(self.env, f"Vehicle {self.index} current runtime updated!")
 
 
 	def drop_load(self):
@@ -147,10 +153,10 @@ class OperatingVehicle(simpy.Container):
 		"""
 		
 		yield self.env.timeout(self.city.distance_matrix[self.current_destinaiton.index][0]) # Drive to base
-		print(f"Truck {self.index} arrives to DEPOT at {self.env.now}")
+		log(self.env, f"Truck {self.index} arrives to DEPOT")
 		self.current_location = 0
 		yield self.env.timeout(5) #Drop off time
-		print(f"Truck {self.index} drops {self.level} tonns on DEPOT at {self.env.now}")
+		log(self.env, f"Truck {self.index} drops {tons_to_string(self.level)} on DEPOT")
 		self.get(self.level)
 
 
@@ -159,16 +165,16 @@ class OperatingVehicle(simpy.Container):
 		Picking up of container routine
 		"""
 		
-		#print("Picking up load ..../....\\..")
-		#print(type(self.city.distance_matrix[0]))
-		#print(self.city.distance_matrix[0][self.current_destinaiton.index])
+		#log(env, "Picking up load ..../....\\..")
+		#log(env, type(self.city.distance_matrix[0]))
+		#log(env, self.city.distance_matrix[0][self.current_destinaiton.index])
 		yield self.env.timeout(self.city.distance_matrix[0][self.current_destinaiton.index]) # Drive time here
-		print(f"Truck {self.index} arrives to {self.current_destinaiton.index} at {self.env.now}")
+		log(self.env, f"Truck {self.index} arrives to {self.current_destinaiton.index}")
 		self.current_location = self.current_destinaiton.index
 		yield self.env.timeout(self.city.loading_time) # Picking up time
 		available_space = self.capacity - self.level
-		#print(available_space)
-		#print(type(self.current_destinaiton))
+		#log(env, available_space)
+		#log(env, type(self.current_destinaiton))
 		if self.current_destinaiton.level >= available_space:
 			to_pick_up = available_space
 		else:
@@ -179,51 +185,44 @@ class OperatingVehicle(simpy.Container):
 			self.current_destinaiton.get(to_pick_up)
 			self.put(to_pick_up)
 		else:
-			print(f"Empty container at {self.current_destinaiton.index}")
+			log(self.env, f"Empty container at {self.current_destinaiton.index}")
 	
-		print(f"Truck {self.index} picks up {to_pick_up} tonns on {self.current_destinaiton.index} at {self.env.now}")
-		print(f"{self.current_destinaiton.level} tonns left on gray site {self.current_destinaiton.index}")
+		log(self.env, f"Truck {self.index} picks up {tons_to_string(to_pick_up)} on {self.current_destinaiton.index}")
+		log(self.env, f"{tons_to_string(self.current_destinaiton.level)} left on gray site {self.current_destinaiton.index}")
 	
 		#load['current_load'] += to_pick_up
-		print(f"Truck {self.index} now has {self.level} tonns at {self.env.now}")
+		log(self.env, f"Truck {self.index} now has {tons_to_string(self.level)}")
 		if self.level == self.capacity:
-				print(f"Truck {self.index} enroute to DEPOT at {self.env.now}")
+				log(self.env, f"Truck {self.index} enroute to DEPOT")
 				yield self.env.process(self.drop_load())
-
-
-	
-
-
-
-
 
 	def simulate_route(self):
 		"""
 		Simulate given route for vehicle
 		"""
 		# for site in route
-		print(f"Truck {self.index} has started it's shift at {self.env.now}")
-		self.shift_start_time = self.env.now
+		log(self.env, f"Truck {self.index} has started it's shift")
+		
 		self.vehicle_current_runtime = 0
 		for site in self.route:
 
-			#print(site.level)
+			#log(env, site.level)
 			self.statistics()
 			self.current_destinaiton = site
 			self.approximate_next_task()
 
-			if self.vehicle_current_runtime > self.vehicle_max_runtime:
+			if self.vehicle_current_runtime > self.max_shift_duration:
 
 				yield self.env.process(self.end_shift())
 			else:
 				# Approximate next tasks
 				# if over allowed runtime end shift
-				print(f"Truck {self.index} is heading towards site {self.current_destinaiton.index} at {self.env.now}")
-				#print(self.pick_up_load())
+				log(self.env, f"Truck {self.index} is heading towards site {self.current_destinaiton.index}")
+				#log(env, self.pick_up_load())
 				yield self.env.process(self.pick_up_load())
 				
 				#self.approximate_next_task()
-				if self.lunch_breakes_allowed:
+				if self.allow_break:
 					yield self.env.process(self.lunch_break())
 
 
@@ -232,10 +231,10 @@ class OperatingVehicle(simpy.Container):
 
 # City
 class City:
-	def __init__(self, city_config):
+	def __init__(self, env, city_config):
 
 		self.name = city_config['name'] # Name of city to simulate arbitraryx
-		self.env = city_config['env']
+		self.env = env
 		self.P_VALUE = city_config['P_VALUE'] # Got from sim config
 
 		self.num_grey_vehicles = city_config['num_grey_vehicles']
@@ -250,7 +249,7 @@ class City:
 
 		self.num_blue_pickup_sites = city_config['num_blue_pickup_sites'] # Initialaize total number of blue containers
 
-		self.vehicle_max_runtime = city_config['vehicles_config']['vehicle_max_runtime'] # Max runitime of the shift
+		self.max_shift_duration = city_config['vehicles_config']['max_shift_duration'] # Max runitime of the shift
 		self.drivetime_range = city_config['drivetime_range']
 		self.loading_time = city_config['loading_time']
 
@@ -261,11 +260,12 @@ class City:
 		"""
 		Creating containers 
 		"""
+		log(self.env, f"Creating {self.num_grey_pickup_sites} containers")
 		for i in range(self.num_grey_pickup_sites):
 			capacity = random.randint(*self.grey_site_capacity_range)
 			self.grey_pick_sites.append(GreyPickUpSite(self.env, i, None, capacity, capacity*random.uniform(*self.grey_site_initial_load_range)))
 
-		#print(self.grey_pick_sites[0].index) #test
+		#log(env, self.grey_pick_sites[0].index) #test
 
 
 	def create_vehicles(self):
@@ -284,9 +284,9 @@ class City:
 		"""
 
 		for grey_site in self.grey_pick_sites:
-			#print(grey_site.level)
+			#log(env, grey_site.level)
 			if grey_site.level >= grey_site.capacity * self.P_VALUE:
-				#print(grey_site)
+				#log(env, grey_site)
 				if not grey_site.request:
 					print(f'Initial request range assigned. for {grey_site.index}')
 					grey_site.request = random.randint(*self.grey_site_requested_range)
@@ -317,7 +317,7 @@ class City:
 		Distribute containers to existing trucks
 		"""
 		# n_tasks for one truck
-		n_tasks = int(self.vehicle_max_runtime / (sum(self.drivetime_range) / 2 + self.loading_time * 2))
+		n_tasks = int(self.max_shift_duration / (sum(self.drivetime_range) / 2 + self.loading_time * 2))
 		print(f"Approximated numbered of tasks for 1 vehicle for schedulling: {n_tasks}")
 		print(f"There are currently {len(self.full_grey_sites)} full grey sites ready, with {self.num_grey_vehicles} vehicles ready for work.")
 
@@ -332,12 +332,12 @@ class City:
 			for i in route_indexes:
 				route.append(self.full_grey_sites[i])
 
-			#print(5555555555, type(route_indexes[1]))
-			#print(5555555555, type(route[1]))
-			#print(type(self.full_grey_sites[1]))
+			#log(env, 5555555555, type(route_indexes[1]))
+			#log(env, 5555555555, type(route[1]))
+			#log(env, type(self.full_grey_sites[1]))
 			vehicle.route = route
 
-			#print(vehicle.index, vehicle.route)
+			#log(env, vehicle.index, vehicle.route)
 
 		#yield self.env.timeout(math.ceil(self.env.now / 1440) * 1440 - self.env.now)
 
@@ -365,28 +365,18 @@ class City:
 			distance_matrix[np.triu_indices(num_locations, k=1)] = np.random.randint(min, max, size=(num_distances))
 			distance_matrix[np.tril_indices(num_locations, k=-1)] = np.random.randint(min, max, size=(num_distances))
 		
-		for i in distance_matrix:
-			print(i)
+#		for i in distance_matrix:
+#			print(i)
 		
 		self.distance_matrix = distance_matrix
 
-
-
-	def refill_containers(self): 
-		"""
-		Add new waste to containers based on their parameters
-		"""
-		# Daily growth rate
-		for container in self.grey_pick_sites:
-			container.put(container.daily_growth_rate)
-		print("All grey containers are updated!")
-		#yield self.env.timeout(math.ceil(self.env.now / 1440) * 1440 - self.env.now)
 
 	def start_daily_shift(self):
 		"""
 		Daily shift starting
 		"""
 		for vehicle in self.operating_vehicles:
+			self.shift_start_time = self.env.now
 			self.env.process(vehicle.simulate_route())
 
 		#yield self.env.timeout(math.ceil(self.env.now / 1440) * 1440 - self.env.now)
@@ -410,25 +400,24 @@ class Simulation:
 
 	def run(self):
 		env = simpy.Environment()
-		city_config['env'] = env
-		city_config['P_VALUE'] =sim_config['P_VALUE']
+		city_config['P_VALUE'] = sim_config['P_VALUE']
 
-		self.city = City(city_config)
+		self.city = City(env, city_config)
 		self.city.create_waste_pick_up_sites()
-		self.city.create_random_distance_matrix()
-		self.city.create_vehicles()
+#		self.city.create_random_distance_matrix()
+#		self.city.create_vehicles()
 		
 		#while True:
-		#print(f"Starting for day {i}")
-		self.city.select_grey_sites()
+		#log(env, f"Starting for day {i}")
+#		self.city.select_grey_sites()
 		# Clear runtime only not load
-		self.city.assign_grey_sites()
+#		self.city.assign_grey_sites()
 		# collect waste
-		self.city.start_daily_shift()
-		self.city.refill_containers()
-		env.timeout(math.ceil(env.now / 1440) * 1440 - env.now)
+#		self.city.start_daily_shift()
+		#self.city.refill_containers()
+#		env.timeout(math.ceil(env.now / 1440) * 1440 - env.now)
 		env.run(until=self.runtime)
-		print(env.now)
+		log(env, env.now)
 
 
 		
