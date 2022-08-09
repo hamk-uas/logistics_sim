@@ -25,7 +25,7 @@ city_config = {
 	'drivetime_range' : [5, 60], # Minutes
 	'num_grey_pickup_sites' : 100, # N
 
-	'num_grey_vehicles' : 2, # N
+	'num_grey_vehicles' : 3, # N
 
 	'num_blue_pickup_sites' : 0, # N
 	#'vehicles_config' : vehicles_config
@@ -307,6 +307,7 @@ class City:
 	def monitor_requests(self):
 		"""Read requests of the sites daily"""
 		while True:
+			self.full_grey_sites = sorted(self.full_grey_sites, key=lambda x: x.request, reverse=True)
 			log(self.env, f"There are currently {len(self.full_grey_sites)} full grey sites ready, with {self.num_grey_vehicles} vehicles ready for work.")
 			yield self.env.timeout(24*60)
 
@@ -406,19 +407,9 @@ class Simulation:
 
 		self.city = City(self.env, city_config)
 		
-		#daily logic
-		#self.city.assign_grey_sites()
-		
-		#while True:
-		#log(env, f"Starting for day {i}")
 
-		# Clear runtime only not load
-
-		# collect waste
 		yield self.env.process(self.city.start_daily_shift())
-		#self.city.refill_containers()
-#		env.timeout(math.ceil(env.now / 1440) * 1440 - env.now)
-		#env.run(until=self.runtime)
+
 		log(env, env.now)
 
 
