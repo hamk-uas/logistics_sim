@@ -1,0 +1,1849 @@
+﻿ID;Osoite;Kunta;Kartonkipakkaukset;Lasipakkaukset;Metalli;Muovipakkaukset;Paperi;Vaatteet
+01-10142;Riitaniityntie 19, Onkimaa;Askola;X;X;X;;X;
+01-10143;Pappilantie 1, Askola;Askola;X;X;X;X;X;X
+01-10144;Helkamäentie 34, Monninkylä;Askola;X;X;X;;X;X
+01-10170;Kilonkuja 4, Espoo;Espoo;X;X;X;X;X;X
+01-10171;Kilonpuistonkatu 14, Espoo;Espoo;X;X;X;X;X;X
+01-10172;Valakuja 1, Espoo;Espoo;X;X;X;X;X;X
+01-10174;Hiiralantie 2, Espoo;Espoo;X;X;X;;X;X
+01-10175;Kirstintie 9 A, Espoo;Espoo;X;X;X;;X;X
+01-10176;Hansatie 3, Espoo;Espoo;X;X;X;;X;X
+01-10178;Kivenlahdentie 11, Espoo;Espoo;X;X;X;;X;X
+01-10179;Kylänportti 16, Espoo;Espoo;X;X;X;X;X;X
+01-10184;Leppävaarankatu 3-9, Espoo;Espoo;X;X;X;X;X;
+01-10185;Vanha Maantie 13 A, Espoo;Espoo;X;X;X;;X;X
+01-10186;Martinsillantie 10, Espoo;Espoo;X;X;X;X;X;X
+01-10187;Puronvarsi, Espoo;Espoo;X;X;X;;X;X
+01-10188;Lintukorpi, Espoo;Espoo;X;X;X;;X;X
+01-10189;Harmaaparranpolku, Espoo;Espoo;X;X;X;;X;X
+01-10190;Lystimäentie, Espoo;Espoo;X;X;X;;X;X
+01-10191;Kutojantie 3, Espoo;Espoo;X;X;X;X;X;
+01-10192;Sinimäentie 4, Espoo;Espoo;X;X;X;X;X;X
+01-10193;Oxfotintie 1, Espoo;Espoo;X;X;X;X;X;X
+01-10194;Suokulma, Espoo;Espoo;X;X;X;;X;X
+01-10196;Riistatie 2, Espoo;Espoo;X;X;X;;X;X
+01-10197;Aarnivalkeantie 14, Espoo;Espoo;X;X;X;X;X;X
+01-10198;Kotkapolku 2, Espoo;Espoo;X;X;X;;X;X
+01-10199;Kuusiniementie 1, Espoo;Espoo;X;X;X;X;X;X
+01-10200;Kokinkyläntie 1, Espoo;Espoo;X;X;X;X;X;X
+01-10202;Pitkännotkontie 27, Espoo;Espoo;X;X;X;X;X;X
+01-10203;Lähderanta, Espoo;Espoo;X;X;X;X;X;X
+01-10204;Kuunkehrä 2, Espoo;Espoo;X;X;X;X;X;X
+01-10205;Malminkorpi 2, Espoo;Espoo;X;X;X;X;X;X
+01-10206;Riihiniityntie, Espoo;Espoo;X;X;X;;X;X
+01-10207;Alatörmä 4, Espoo;Espoo;X;X;X;X;X;X
+01-10208;Juvankartanontie 33, Espoo;Espoo;X;X;X;;X;X
+01-10209;Niipperintie, Espoo;Espoo;X;X;X;X;X;X
+01-10321;Ratakatu 17, Hanko;Hanko;X;X;X;X;X;
+01-10323;Lähteentie 1, Hanko;Hanko;X;X;X;;X;X
+01-10327;Kadermonkatu 36, Hanko;Hanko;X;X;X;;X;X
+01-10329;Satamatie 1, Lappohja;Hanko;X;X;X;;X;X
+01-10382;Hiihtäjäntie 2 A, Helsinki;Helsinki;X;X;X;X;X;X
+01-10383;Hitsaajankatu 16, Helsinki;Helsinki;X;X;X;;X;X
+01-10385;Koulumestarintie, Helsinki;Helsinki;X;X;X;;X;X
+01-10390;Muuttolinnuntie, Helsinki;Helsinki;X;X;X;X;X;X
+01-10391;Takaniitynkuja 2, Helsinki;Helsinki;X;X;X;;X;X
+01-10392;Rusthollarintie 19, Helsinki;Helsinki;X;X;X;;X;X
+01-10394;Allastie 3, Helsinki;Helsinki;X;X;X;;X;X
+01-10396;Teemuntie, Helsinki;Helsinki;X;X;X;;X;X
+01-10399;Jakomäentie 2a, Helsinki;Helsinki;X;X;X;X;X;X
+01-10401;Laajalahdentie 30, Helsinki;Helsinki;X;X;X;X;X;X
+01-10402;Naantalintie 2, Helsinki;Helsinki;X;X;X;;X;X
+01-10403;Koirasaarentie, Helsinki;Helsinki;X;X;X;X;X;X
+01-10404;Kuvernöörintie 6, Helsinki;Helsinki;X;X;X;X;X;X
+01-10406;Maneesikatu, Helsinki;Helsinki;X;X;X;X;X;X
+01-10407;Riihenkulma, Helsinki;Helsinki;X;X;X;;X;X
+01-10408;Satumaanpolku, Helsinki;Helsinki;X;X;X;;X;X
+01-10409;Simpukkakuja 2, Helsinki;Helsinki;X;X;X;;X;X
+01-10410;Ristipellonkuja 2, Helsinki;Helsinki;X;X;X;;X;X
+01-10412;Kantelettarentie 1, Helsinki;Helsinki;X;X;X;X;X;X
+01-10413;Lauttasaarentie, Helsinki;Helsinki;X;X;X;;X;X
+01-10417;Ostostie 6, Helsinki;Helsinki;X;X;X;X;X;X
+01-10418;Pajamäentie 12-14, Helsinki;Helsinki;X;X;X;;X;
+01-10420;Torpparinmäentie 1 A, Helsinki;Helsinki;X;X;X;X;X;X
+01-10421;Riskutie, Helsinki;Helsinki;X;X;X;;X;X
+01-10422;Karhusaarentie 34, Helsinki;Helsinki;X;X;X;;X;
+01-10423;Reelinki 45, Helsinki;Helsinki;X;X;X;X;X;X
+01-10425;Perkiöntie, Helsinki;Helsinki;X;X;X;X;X;X
+01-10426;Kiskontie, Helsinki;Helsinki;X;X;X;;X;
+01-10427;Penttilänaukio, Helsinki;Helsinki;X;X;X;X;X;X
+01-10428;Jousimiehentie 1, Helsinki;Helsinki;X;X;X;X;X;X
+01-10429;Pikkusuonkuja 1, Helsinki;Helsinki;X;X;X;X;X;X
+01-10431;Meri-Rastilan Tie 4, Helsinki;Helsinki;X;X;X;;X;X
+01-10432;Isonvillasaarentie, Helsinki;Helsinki;X;X;X;X;X;X
+01-10435;Kulosaarentie 2, Helsinki;Helsinki;X;X;X;;X;X
+01-10436;Landbontie 2, Helsinki;Helsinki;X;X;X;;X;X
+01-11180;Mäntylänkatu 2, Karkkila;Karkkila;X;X;X;X;X;X
+01-11187;Järvenpääntie 1, Karkkila;Karkkila;X;X;X;;X;
+01-11270;Helsingintie, Kauniainen;Kauniainen;X;X;X;;X;X
+01-11271;Stenbergintie, Kauniainen;Kauniainen;X;X;X;X;X;X
+01-11394;Asemankaari 1, Kirkkonummi;Kirkkonummi;X;X;X;;X;X
+01-11395;Munkinmäentie 29, Kirkkonummi;Kirkkonummi;X;X;X;X;X;X
+01-11396;Hevoshaansilta, Kirkkonummi;Kirkkonummi;X;X;X;X;X;X
+01-11397;Hirvitie 3-5, Kirkkonummi;Kirkkonummi;X;X;X;X;X;X
+01-11398;Ravalsintie 14, Kirkkonummi;Kirkkonummi;X;X;X;;X;X
+01-11399;Sokeritehtaantie 9, Kantvik;Kirkkonummi;X;X;X;X;X;
+01-11400;Tinankuja 1, Masala;Kirkkonummi;X;X;X;X;X;X
+01-11401;Sirkkelitie, Lapinkylä;Kirkkonummi;X;X;X;;X;X
+01-11402;Puronsuuntie 14, Veikkola;Kirkkonummi;X;X;X;X;X;X
+01-11403;Medvastintie 7, Jorvas;Kirkkonummi;X;X;X;;X;
+01-12109;Mäntynummentie 40, Lohja;Lohja;X;X;X;;X;X
+01-12111;Ojamonharjuntie 61, Lohja;Lohja;X;X;X;X;X;X
+01-12114;Kaivoslammenkatu, Lohja;Lohja;X;X;X;;X;
+01-12116;Puistokatu, Lohja;Lohja;X;X;X;;X;X
+01-12119;Routiontie 20, Lohja;Lohja;X;X;X;;X;X
+01-12127;Rantapuisto 23, Lohja;Lohja;X;X;X;;X;X
+01-12130;Oilaantie 6, Nummi;Lohja;X;X;X;X;X;X
+01-12133;Nujulantie, Lohja;Lohja;X;X;X;;X;
+01-12134;Myyryntie 1, Lohja;Lohja;X;X;X;;X;
+01-12135;Seisaketie 1, Lohja;Lohja;X;X;X;X;X;X
+01-12138;Virkkalantie 5, Lohja;Lohja;X;X;X;;X;
+01-12140;Keskustie, Karjalohja;Lohja;X;X;X;;X;
+01-12144;Marskintie 4 - 6, Lohja;Lohja;X;X;X;;X;
+01-12145;Lohjansaarentie 300, Lohja;Lohja;X;X;X;;X;
+01-12146;Turuntie 815, Saukkola;Lohja;X;X;X;;X;X
+01-12147;Hyrsyläntie 57, Saukkola;Lohja;X;X;X;;X;
+01-12149;Pohjolantie, Saukkola;Lohja;X;X;X;;X;
+01-12150;Somerontie 10, Koisjärvi;Lohja;X;X;X;;X;
+01-12153;Lönnrotintie 47, Sammatti;Lohja;X;X;X;;X;X
+01-12154;Turuntie 917, Koisjärvi;Lohja;X;X;X;X;X;
+01-12156;Karisjärventie, Ikkala;Lohja;X;X;X;;X;
+01-12208;Rauhalantie 57, Loviisa;Loviisa;X;X;X;;X;X
+01-12209;Saaristotie 2, Loviisa;Loviisa;X;X;X;X;X;X
+01-12211;Ilmarisentie 2, Valko;Loviisa;X;X;X;;X;
+01-12218;Suurpellontie 2, Koskenkylän Saha;Loviisa;X;X;X;X;X;X
+01-12220;Kenttätie, Tesjoki;Loviisa;X;X;X;;X;
+01-12222;Eskilomintie 20, Liljendal;Loviisa;X;X;X;;X;X
+01-12226;Frimansintie 4, Isnäs;Loviisa;X;X;X;;X;
+01-12228;Kabbölentie 1241, Isnäs;Loviisa;X;X;X;;X;
+01-12229;Sarvisalontie 1035, Härkäpää;Loviisa;X;X;X;;X;
+01-12589;Ojaniituntie 1, Klaukkala;Nurmijärvi;X;X;X;X;X;X
+01-12590;Herustentie 248, Hyvinkää;Nurmijärvi;X;X;X;;X;
+01-12591;Ketunkopintie 2, Röykkä;Nurmijärvi;X;X;X;;X;X
+01-12596;Lopentie 20, Perttula;Nurmijärvi;X;X;X;;X;X
+01-13089;Rantalantie 664, Laukkoski;Pornainen;X;X;X;;X;
+01-13091;Aurinkomäentie 4, Pornainen;Pornainen;X;X;X;;X;X
+01-13092;Humalakorventie 3, Halkia;Pornainen;X;X;X;;X;
+01-13093;Nummentie 4, Halkia;Pornainen;X;X;X;;X;
+01-13095;Maistraatinkatu 2, Porvoo;Porvoo;X;X;X;;X;X
+01-13096;Laivurinkatu, Porvoo;Porvoo;X;X;X;;X;X
+01-13097;Rauhankatu 16, Porvoo;Porvoo;X;X;X;;X;X
+01-13098;Pellingintie, Porvoo;Porvoo;X;X;X;;X;X
+01-13101;Hornhattulantie 38, Porvoo;Porvoo;X;X;X;;X;X
+01-13104;Jernbölentie, Porvoo;Porvoo;X;X;X;;X;X
+01-13105;Hamarintie 45, Porvoo;Porvoo;X;X;X;;X;X
+01-13112;Mansikkasuontie 21, Porvoo;Porvoo;X;X;X;;X;X
+01-13114;Huhtisentie 7, Porvoo;Porvoo;X;X;X;;X;X
+01-13118;Rinnetie 9, Hamari;Porvoo;X;X;X;X;X;X
+01-13119;Veckjärventie 314, Porvoo;Porvoo;X;X;X;;X;
+01-13121;Tarkkistentie 155, Porvoo;Porvoo;X;X;X;;X;
+01-13122;Kerkkoontie 94, Kerkkoo;Porvoo;X;X;X;;X;
+01-13123;Kaarenkyläntie 112, Porvoo;Porvoo;X;X;X;;X;
+01-13129;Kulloonlahdentie 17, Kulloo;Porvoo;X;X;X;;X;X
+01-13130;Palokunnantie 5, Kulloonkylä;Porvoo;X;X;X;;X;
+01-13132;Tuohisuontie, Anttila;Porvoo;X;X;X;;X;
+01-13133;Rengastie, Hinthaara;Porvoo;X;X;X;;;X
+01-13134;Söderbyntie 384, Suurpellinki;Porvoo;X;X;X;;X;
+01-13135;Tirmontie 613, Tirmo;Porvoo;X;X;X;;X;
+01-13136;Vessööntie 192, Porvoo;Porvoo;X;X;X;;X;
+01-13137;Vanha Viipurintie 13, Ilola;Porvoo;X;X;X;;X;
+01-13138;Epoontie 505, Porvoo;Porvoo;X;X;X;;X;
+01-13139;Järvikyläntie 5, Jakari;Porvoo;X;X;X;;X;
+01-13233;Ratakatu 59, Karjaa;Raasepori;X;X;X;;X;X
+01-13235;Ajurinpuisto 2, Tammisaari;Raasepori;X;X;X;;X;X
+01-13236;Erottajankatu 13, Tammisaari;Raasepori;X;X;X;;X;X
+01-13237;Rautatienkatu 19, Tammisaari;Raasepori;X;X;X;X;X;
+01-13238;Raaseporintie 14, Tammisaari;Raasepori;X;X;X;X;X;X
+01-13240;Ensikuja 2, Karjaa;Raasepori;X;X;X;;X;X
+01-13244;Teletie, Pohjankuru;Raasepori;X;X;X;X;X;X
+01-13247;Österbyntie 52, Tammisaari;Raasepori;X;X;X;;X;X
+01-13248;Lepinpellonkatu 2, Karjaa;Raasepori;X;X;X;X;X;
+01-13249;Lintukaari, Dragsvik;Raasepori;X;X;X;;X;X
+01-13255;Peltorivi 22, Fiskari;Raasepori;X;X;X;;X;
+01-13260;Kuivuritie 1, Karjaa;Raasepori;X;X;X;;X;
+01-13263;Pitäjäntie 21, Tenhola;Raasepori;X;X;X;;X;X
+01-13265;Linderintie 72, Mustio;Raasepori;X;X;X;;X;X
+01-13267;Lillnäsintie 8, Bromarv;Raasepori;X;X;X;;X;
+01-13822;Kaskiniitynkuja 1, Sipoo;Sipoo;X;X;X;X;X;X
+01-13823;Kaskikylänkuja 2, Sipoo;Sipoo;X;X;X;X;X;X
+01-13829;Rautatiekuja 4, Söderkulla;Sipoo;X;X;X;;X;X
+01-13830;Läntinen Suursuonkuja 1, Sipoo;Sipoo;X;X;X;;X;X
+01-13831;Storörintie 7, Västerskog;Sipoo;X;X;X;;X;
+01-13833;Lintukaari 20, Söderkulla;Sipoo;X;X;X;;X;X
+01-13834;Linnanpellontie 455, Sipoo;Sipoo;X;X;X;;X;
+01-13836;Paippistentie 512, Paippinen;Sipoo;X;X;X;;X;
+01-13837;Uusi Porvoontie 1558, Box;Sipoo;X;X;X;;X;X
+01-13838;Kalkkirannantie 585, Kalkkiranta;Sipoo;X;X;X;;X;
+01-13840;Gesterbyntie 83, Sipoo;Sipoo;X;X;X;;X;
+01-13843;Flemingintie 3, Siuntio;Siuntio;X;X;X;X;X;X
+01-13845;Lappersintie 48, Siuntio Kk;Siuntio;X;X;X;;X;X
+01-14507;Lahdentie 88, Vantaa;Vantaa;X;X;X;;X;
+01-14508;Paarmatie 2, Vantaa;Vantaa;X;X;X;X;X;X
+01-14509;Hakokuja 4, Vantaa;Vantaa;X;X;X;;X;X
+01-14510;Niinikuja 2, Vantaa;Vantaa;X;X;X;;X;X
+01-14511;Koivukyläntie 52, Vantaa;Vantaa;X;X;X;;X;
+01-14512;Sananjalantie, Vantaa;Vantaa;X;X;X;;X;X
+01-14513;Laajavuorenkuja 2, Vantaa;Vantaa;X;X;X;X;X;X
+01-14515;Hosantie 2, Vantaa;Vantaa;X;X;X;X;X;
+01-14516;Eräkuja 1 A, Vantaa;Vantaa;X;X;X;X;X;X
+01-14517;Maalinauhantie 11, Vantaa;Vantaa;X;X;X;;X;X
+01-14518;Mäyräkuja 2, Vantaa;Vantaa;X;X;X;X;X;X
+01-14519;Urpiaisentie 11, Vantaa;Vantaa;X;X;X;;X;X
+01-14520;Vantaanportinkatu 4, Vantaa;Vantaa;X;X;X;X;X;X
+01-14522;Läntinen Valkoisenlähteentie 54, Vantaa;Vantaa;X;X;X;X;X;X
+01-14523;Unikkotie 20, Vantaa;Vantaa;X;X;X;;X;X
+01-14524;Lähdepuistontie 1, Vantaa;Vantaa;X;X;X;X;X;X
+01-14525;Piikkikuja, Vantaa;Vantaa;X;X;X;;X;X
+01-14526;Rekolantie 53, Vantaa;Vantaa;X;X;X;X;X;X
+01-14527;Hanabölentie 17, Vantaa;Vantaa;X;X;X;;X;X
+01-14528;Tammiston Kauppatie 9, Vantaa;Vantaa;X;X;X;X;X;X
+01-14529;Ainontie 1, Vantaa;Vantaa;X;X;X;X;X;X
+01-14530;Lammaskuja 1, Vantaa;Vantaa;X;X;X;X;X;X
+01-14531;Vantaanlaaksontie, Vantaa;Vantaa;X;X;X;;X;X
+01-14533;Vanha Porvoontie 340, Vantaa;Vantaa;X;X;X;;X;
+01-14534;Peijaksentie 2, Vantaa;Vantaa;X;X;X;;X;X
+01-14535;Nietostie 19, Vantaa;Vantaa;X;X;X;X;X;X
+01-14536;Venuksenkuja 2, Vantaa;Vantaa;X;X;X;;X;X
+01-14537;Huuhkajatie 1, Vantaa;Vantaa;X;X;X;X;X;X
+01-14538;Valkoisenlähteentie 49, Vantaa;Vantaa;X;X;X;;X;X
+01-14540;Pohjolantie 2, Vantaa;Vantaa;X;X;X;X;X;X
+01-14541;Vantaanrinne 14, Vantaa;Vantaa;X;X;X;;X;
+01-14542;Isonmännyntie 14, Vantaa;Vantaa;X;X;X;;X;X
+01-14543;Kenraalintie 6, Vantaa;Vantaa;X;X;X;;X;X
+01-14544;Mäntymäki 4, Vantaa;Vantaa;X;X;X;;X;
+01-14587;Naaranpajuntie 1, Nummela;Vihti;X;X;X;X;X;X
+01-14588;Keskikuja 3, Nummela;Vihti;X;X;X;X;X;X
+01-14597;Kenttätie 1, Ojakkala;Vihti;X;X;X;;X;X
+01-14598;Vakolantie 13, Vihti;Vihti;X;X;X;;X;
+01-14601;Tervalammentie 408, Tervalampi;Vihti;X;X;X;;X;
+01-14983;Itätuulenkuja, Espoo;Espoo;X;X;X;X;X;X
+01-14984;Rusthollarinkatu 2, Espoo;Espoo;X;X;X;X;X;X
+01-14985;Matinpuronpolku, Espoo;Espoo;X;X;X;X;X;X
+01-14986;Brobackantie 1 - 3, Espoo;Espoo;X;X;X;X;X;X
+01-14988;Pirkkolantie 25, Helsinki;Helsinki;X;X;X;X;X;X
+01-14989;Käskynhaltijantie 11, Helsinki;Helsinki;X;X;X;;X;X
+01-14990;Kenttätie 3, Helsinki;Helsinki;X;X;X;X;X;
+01-14991;Kuusmiehentie 13, Helsinki;Helsinki;X;X;X;;X;X
+01-14992;Lipputie 11, Vantaa;Vantaa;X;X;X;X;X;X
+01-15084;Tammisalontie 5, Helsinki;Helsinki;X;X;X;;X;X
+01-15089;Ryynimyllynkatu 1, Helsinki;Helsinki;X;X;X;;X;X
+01-20330;Gotlanninkatu 11, Helsinki;Helsinki;X;X;X;X;X;X
+01-20596;Isoseppälä 14, Klaukkala;Nurmijärvi;X;X;X;X;X;X
+01-20859;Latokartanonkaari 23, Helsinki;Helsinki;X;X;X;X;X;X
+01-20976;Hankasuontie 2, Helsinki;Helsinki;X;X;X;X;X;X
+01-21191;Mäntylänkatu 1, Karkkila;Karkkila;X;X;X;;X;X
+01-21255;Amiraalintie 2, Söderkulla;Sipoo;X;X;X;X;X;X
+01-21307;Aleksanterinkaari 1, Porvoo;Porvoo;X;X;X;X;X;X
+01-21391;Lehtolantie 2, Pusula;Lohja;X;X;X;X;X;X
+01-21515;Harjunseläntie 1, Lohja;Lohja;X;X;X;X;X;X
+01-21969;Lasitehtaankatu 3, Hanko Pohjoinen;Hanko;X;X;X;X;X;
+01-22121;Hakosenkuja 2, Karjalohja;Lohja;X;X;X;;X;X
+01-22192;Arkkitehdintie 5, Loviisa;Loviisa;X;X;X;X;X;
+01-22219;Koskitie 2, Pornainen;Pornainen;X;X;X;X;X;
+01-22330;Lönnrotintie 12, Sammatti;Lohja;X;X;X;;X;
+01-22426;Kirjavantie 2, Vihti;Vihti;X;X;X;X;X;X
+01-22457;Mahlamäentie 2, Nurmijärvi;Nurmijärvi;X;X;X;X;X;X
+01-22482;Lahnuksentie 2, Klaukkala;Nurmijärvi;X;X;X;;X;X
+01-22915;Torpparintie 38, Otalampi;Vihti;X;X;X;X;X;X
+01-22939;Magneettikatu 2, Espoo;Espoo;X;X;X;X;X;X
+01-22940;Niipperintie 3, Espoo;Espoo;X;X;X;X;X;X
+01-30012;Asentajantie 1, Porvoo;Porvoo;X;X;X;X;X;X
+01-30029;Suomenlinnan Huoltoranta, Helsinki;Helsinki;X;X;X;;;
+01-30030;Kotimäentie 4, Espoo;Espoo;X;X;X;;X;
+01-30055;Kartanontie 2, Sundsberg;Kirkkonummi;X;X;X;X;X;X
+01-30063;Lehmijärventie 2, Lohja;Lohja;X;X;X;X;X;X
+01-30070;Paikkarinkatu 11, Lohja;Lohja;X;X;X;X;X;X
+01-30074;Kauppanummentie 2, Nurmijärvi;Nurmijärvi;X;X;X;X;X;X
+01-30075;Kiljavantie 5, Rajamäki;Nurmijärvi;X;X;X;X;X;X
+01-30082;Lasihytti 2, Espoo;Espoo;X;X;X;X;X;X
+01-30101;Asemankulma 2, Kirkkonummi;Kirkkonummi;X;X;X;X;X;X
+01-30107;Riistatie, Porvoo;Porvoo;X;X;X;;X;X
+01-30114;Tiesmäenkuja 1, Vihti;Vihti;X;X;X;;X;X
+01-30116;Piispansilta 11, Espoo;Espoo;X;X;X;X;;
+01-30131;Hiidenportti 1, Helsinki;Helsinki;X;X;X;X;X;
+01-30133;Kynäkatu 6, Espoo;Espoo;X;X;X;X;X;X
+01-30137;Hermannin Rantatie 5, Helsinki;Helsinki;X;X;X;X;X;
+01-30140;Espoonlahdenkatu 8, Espoo;Espoo;X;X;X;X;X;
+01-30141;Ulappatie 6, Inkoo;Inkoo;X;X;X;X;X;X
+02-10001;Asemakatu 10, Akaa;Akaa;X;X;X;X;X;
+02-10004;Holkerintie 2, Akaa;Akaa;X;X;X;X;X;X
+02-10008;Turuntie 3, Akaa;Akaa;X;X;X;X;X;X
+02-10015;Yrittäjäntie 4, Akaa;Akaa;X;X;X;X;X;
+02-10020;Jokiniementie, Akaa;Akaa;X;X;X;X;X;
+02-10146;Huuskantie, Aura;Aura;X;X;X;X;X;X
+02-10148;Sillankorvantie, Aura;Aura;X;X;X;;X;X
+02-10149;Käyräntie, Aura Kk;Aura;X;X;X;;X;
+02-10237;Yhtiönkatu, Forssa;Forssa;X;X;X;X;X;X
+02-10238;Miemolantie 2, Forssa;Forssa;X;X;X;X;X;X
+02-10244;Hämeentie 31, Forssa;Forssa;X;X;X;;;
+02-10251;Järvenpääntie, Forssa;Forssa;X;X;X;;X;X
+02-10252;Harjutie, Forssa;Forssa;X;X;X;;X;
+02-10253;Vieremäntie, Forssa;Forssa;X;X;X;;X;
+02-10787;Asemakuja 1, Jokioinen;Jokioinen;X;X;X;X;X;
+02-11015;Riihelänkaari, Kaarina;Kaarina;X;X;X;;X;
+02-11020;Hakatie, Piikkiö;Kaarina;X;X;X;;X;
+02-11023;Silkkikatu, Littoinen;Kaarina;X;X;X;;X;X
+02-11029;Tallakatu 1, Littoinen;Kaarina;X;X;X;;X;X
+02-11031;Vaakunatie 41, Kaarina;Kaarina;X;X;X;;X;
+02-11034;Keskikesäntie, Kaarina;Kaarina;X;X;X;;X;X
+02-11036;Puostantie, Piikkiö;Kaarina;X;X;X;X;X;
+02-11040;Muurikinkatu, Littoinen;Kaarina;X;X;X;;X;
+02-11041;Menninkäisenkatu, Turku;Kaarina;X;X;X;;X;
+02-11044;Rauvolantie, Piispanristi;Kaarina;X;X;X;;X;X
+02-11045;Poikluomantie, Piispanristi;Kaarina;X;X;X;;X;
+02-11049;Ahdintie, Piispanristi;Kaarina;X;X;X;;X;
+02-11051;Hulkkiontie 15, Kaarina;Kaarina;X;X;X;;X;
+02-11052;Reivikatu 5-7, Turku;Kaarina;X;X;X;X;X;X
+02-11053;Untolantie, Littoinen;Kaarina;X;X;X;;X;
+02-11054;Kuusistonkaari, Kuusisto;Kaarina;X;X;X;;X;
+02-11055;Hiiskanaukeantie, Littoinen;Kaarina;X;X;X;;X;
+02-11057;Hiiskantie, Littoinen;Kaarina;X;X;X;;X;
+02-11059;Rauhalinnantie 26, Kaarina;Kaarina;X;X;X;;X;X
+02-11062;Sipiläntie, Piikkiö;Kaarina;X;X;X;;X;
+02-11064;Juliantie 1, Piikkiö;Kaarina;X;X;X;;X;
+02-11066;Sahantie, Piikkiö;Kaarina;X;X;X;;X;
+02-11338;Björkbodantie 82, Björkboda;Kemiönsaari;X;X;X;;X;
+02-11339;Kullantie 150, Dragsfjärd;Kemiönsaari;X;X;X;;X;X
+02-11340;Furumalmintie 1, Dragsfjärd;Kemiönsaari;X;X;X;;X;X
+02-11344;Kasnäsintie 1296, Kasnäs;Kemiönsaari;X;X;X;;X;
+02-11346;Lammalantie 91, Västanfjärd;Kemiönsaari;X;X;X;;X;
+02-11347;Kolapakantie, Taalintehdas;Kemiönsaari;X;X;X;;X;X
+02-11349;Norrlandintie 5, Rosala;Kemiönsaari;X;X;X;;X;
+02-11350;Vikarentie 5, Hiittinen;Kemiönsaari;X;X;X;;X;
+02-11921;Kauppakatu 3, Laitila;Laitila;X;X;X;X;X;X
+02-12073;Teollisuuskuja 1, Lieto;Lieto;X;X;X;;X;X
+02-12076;Helininpolku, Lieto;Lieto;X;X;X;;X;
+02-12077;Kahlojantie, Lieto;Lieto;X;X;X;;X;
+02-12078;Koulukuja, Ilmarinen;Lieto;X;X;X;;X;
+02-12080;Hanhenkaari 3, Lieto;Lieto;X;X;X;X;X;
+02-12090;Takamannintie, Lieto As;Lieto;X;X;X;;X;
+02-12163;Satakunnantie 17, Loimaa;Loimaa;X;X;X;X;X;X
+02-12166;Melliläntie 108, Mellilä;Loimaa;X;X;X;;X;
+02-12169;Loimijoentie 82, Alastaro;Loimaa;X;X;X;X;X;X
+02-12172;Hirvikoskentie, Loimaa;Loimaa;X;X;X;;X;
+02-12176;Hirvikoskentie 213, Loimaa;Loimaa;X;X;X;;X;X
+02-12265;Metsäniityntie 9, Marttila;Marttila;X;X;X;;X;X
+02-12266;Härkätie 723, Marttila;Marttila;X;X;X;;X;
+02-12269;Vesilaitoksentie 1, Lemu;Masku;X;X;X;X;X;X
+02-12273;Keskuskaari 7, Masku;Masku;X;X;X;X;X;X
+02-12275;Tanilantie, Masku;Masku;X;X;X;;X;
+02-12278;Seppäläntie, Masku;Masku;X;X;X;;X;
+02-12282;Aarnentie, Masku;Masku;X;X;X;;X;
+02-12286;Ohensaarentie, Masku;Masku;X;X;X;;X;
+02-12288;Vesiläntie 12, Askainen;Masku;X;X;X;;X;
+02-12427;Nihattulantie, Mynämäki;Mynämäki;X;X;X;X;X;X
+02-12429;Mietoistenkuja, Nousiainen;Nousiainen;X;X;X;X;X;X
+02-12430;Kirkkotie 14, Mietoinen;Mynämäki;X;X;X;;X;X
+02-12431;Tavastilantie 1, Mietoinen;Mynämäki;X;X;X;;X;
+02-12432;Mäntytie, Mynämäki;Mynämäki;X;X;X;;X;
+02-12437;Pyhäntie 2, Hietamäki;Mynämäki;X;X;X;X;X;
+02-12439;Karjalantie 10, Mynämäki;Mynämäki;X;X;X;;X;
+02-12442;Yläneentie 1563, Mynämäki;Mynämäki;X;X;X;;X;
+02-12492;Rajatie 1, Merimasku;Naantali;X;X;X;;X;
+02-12495;Vanhatie 3, Rymättylä;Naantali;X;X;X;X;X;
+02-12504;Tiilenkantajantie 4, Naantali;Naantali;X;X;X;X;X;
+02-12505;Ukko-Pekan Tie, Naantali;Naantali;X;X;X;X;X;X
+02-12506;Nuhjalantie 8, Naantali;Naantali;X;X;X;;X;X
+02-12509;Nätkelmäkatu, Naantali;Naantali;X;X;X;X;X;X
+02-12510;Paltteentie, Merimasku;Naantali;X;X;X;;X;
+02-12513;Soinistentie 170, Naantali;Naantali;X;X;X;X;X;X
+02-12526;Rööläntie 394, Röölä;Naantali;X;X;X;;X;
+02-12576;Vahdontie, Nousiainen;Nousiainen;X;X;X;;X;
+02-12631;Yläneentie 10, Oripää;Oripää;X;X;X;;X;X
+02-12730;Syybyntie 1, Paimio;Paimio;X;X;X;;X;
+02-12731;Vistantie 63, Paimio;Paimio;X;X;X;X;X;X
+02-12733;Jägerhornintie 2, Paimio;Paimio;X;X;X;;X;
+02-12734;Mustankorventie 1, Preitilä;Paimio;X;X;X;;X;
+02-12742;Furustigen, Nauvo;Parainen;X;X;X;;X;
+02-12761;Tennbyntie 29, Parainen;Parainen;X;X;X;;X;X
+02-12771;Kotkatie, Parainen;Parainen;X;X;X;;X;
+02-12786;Österbyntie 58, Parainen;Parainen;X;X;X;;X;X
+02-12789;Nilsbynkaari, Lielahti Tl;Parainen;X;X;X;;X;
+02-12790;Garsbölentie, Lielahti Tl;Parainen;X;X;X;;X;
+02-12831;Vånon Koulupolku, Parainen;Parainen;X;X;X;;X;
+02-13142;Lauttakyläntie 42, Punkalaidun;Punkalaidun;X;X;X;;X;X
+02-13222;Kauppakuja, Riihikoski;Pöytyä;X;X;X;X;X;X
+02-13272;Lehtismäentie, Raisio;Raisio;X;X;X;;X;
+02-13279;Tenavakatu, Raisio;Raisio;X;X;X;;X;X
+02-13284;Jertantie, Raisio;Raisio;X;X;X;X;X;X
+02-13288;Porekatu 3, Raisio;Raisio;X;X;X;;X;
+02-13291;Keskitie, Raisio;Raisio;X;X;X;;X;
+02-13293;Tupatie, Raisio;Raisio;X;X;X;;X;
+02-13295;Haikarintie, Raisio;Raisio;X;X;X;;X;X
+02-13299;Honkakatu, Raisio;Raisio;X;X;X;;X;X
+02-13302;Kaanaanrannantie 2, Raisio;Raisio;X;X;X;X;X;X
+02-13303;Makslantie, Turku;Raisio;X;X;X;;X;
+02-13476;Ohjaluodontie 2, Rusko;Rusko;X;X;X;X;X;X
+02-13477;Talkootie, Rusko;Rusko;X;X;X;;X;
+02-13478;Levolantie 36, Rusko;Rusko;X;X;X;;X;
+02-13479;Untontie, Vahto;Rusko;X;X;X;;X;
+02-13480;Valkiavuorentie, Vahto;Rusko;X;X;X;;X;X
+02-13538;Sähkökuja 3, Halikko;Salo;X;X;X;X;X;X
+02-13539;Prismantie 2, Halikko;Salo;X;X;X;X;X;X
+02-13542;Kalkkimäenrinne 2, Salo;Salo;X;X;X;X;X;X
+02-13543;Yrjäläntie 1, Muurla;Salo;X;X;X;;X;
+02-13544;Muurlantie 351, Muurla;Salo;X;X;X;;X;X
+02-13545;Karjalankatu 23, Salo;Salo;X;X;X;X;X;X
+02-13546;Veräjänkorvankatu 2, Salo;Salo;X;X;X;;X;
+02-13548;Juurikaskatu 4, Salo;Salo;X;X;X;X;X;
+02-13550;Karlstadintie 2, Perniö;Salo;X;X;X;;X;
+02-13552;Salaistentie 1, Salo;Salo;X;X;X;;X;
+02-13554;Kuruntie 29, Halikko;Salo;X;X;X;;X;
+02-13555;Horninkatu, Salo;Salo;X;X;X;;X;
+02-13557;Mustamäentie 153, Halikko As;Salo;X;X;X;;X;
+02-13558;Kiskontie 2260, Kisko;Salo;X;X;X;;X;X
+02-13560;Tyryntie 1, Pertteli;Salo;X;X;X;;X;X
+02-13565;Häntintie 1, Salo;Salo;X;X;X;;X;
+02-13569;Hirvitie 4, Märynummi;Salo;X;X;X;;X;
+02-13572;Raitkorventie 2, Perniö As;Salo;X;X;X;;X;
+02-13573;Tiirantie 2, Särkisalo;Salo;X;X;X;;X;
+02-13576;Paloasemantie 3, Kuusjoki;Salo;X;X;X;;X;X
+02-13581;Säästäjäntie 1, Vaskio;Salo;X;X;X;X;X;
+02-13584;Suomusjärventie 81, Kiikala;Salo;X;X;X;;X;
+02-13587;Kitulantie 6, Suomusjärvi;Salo;X;X;X;;X;X
+02-13588;Marttilankatu 35, Sastamala;Sastamala;X;X;X;X;X;X
+02-13592;Käsityökatu 18, Sastamala;Sastamala;X;X;X;X;X;X
+02-13593;Meijerinahde, Sastamala;Sastamala;X;X;X;;X;X
+02-13595;Maakunnantie 8, Sastamala;Sastamala;X;X;X;;X;
+02-13602;Päätie 11, Sastamala;Sastamala;X;X;X;X;X;X
+02-13606;Uotsolantie 35, Sastamala;Sastamala;X;X;X;X;X;X
+02-13971;Tammelantie 30, Tammela;Tammela;X;X;X;X;X;X
+02-13972;Ruisluodontie, Tammela;Tammela;X;X;X;;X;X
+02-13984;Härkätie 341, Letku;Tammela;X;X;X;;X;
+02-14074;Autokeitaantie, Tarvasjoki;Lieto;X;X;X;;X;
+02-14138;Kyyrläntie 10, Turku;Turku;X;X;X;;X;
+02-14203;Uudenmaantie 17, Turku;Turku;X;X;X;X;X;
+02-14232;Paattistentie 884, Paattinen;Turku;X;X;X;X;X;X
+02-14283;Säkäkuja, Turku;Turku;X;X;X;;X;X
+02-14286;Pitkämäenkatu 4, Turku;Turku;X;X;X;;X;
+02-14301;Vanha Kakskerrantie 2, Turku;Turku;X;X;X;X;X;X
+02-14306;Gregorius Ix:N Tie 8, Turku;Turku;X;X;X;X;X;X
+02-14310;Kastakaisenkatu, Turku;Turku;X;X;X;;X;
+02-14311;Annikanpolku 1, Turku;Turku;X;X;X;X;X;X
+02-14312;Lauklähteenkatu, Turku;Turku;X;X;X;X;X;X
+02-14313;Vanha Tampereentie 108, Turku;Turku;X;X;X;X;X;X
+02-14314;Viilarinkatu 3, Turku;Turku;X;X;X;X;X;X
+02-14325;Mittumaarintie 73, Turku;Turku;X;X;X;X;X;X
+02-14339;Tammistontie, Turku;Turku;X;X;X;;X;X
+02-14340;Mittumaarintie 3, Turku;Turku;X;X;X;;X;
+02-14394;Peltorinteentie 1, Urjala;Urjala;X;X;X;X;X;X
+02-14395;Huhdintie 14, Urjala As;Urjala;X;X;X;X;X;X
+02-14431;Ketunkalliontie 1, Uusikaupunki;Uusikaupunki;X;X;X;X;X;X
+02-14741;Perttulantie 5, Ypäjä;Ypäjä;X;X;X;;X;X
+02-14936;Turuntie 6, Somero;Somero;X;X;X;X;X;X
+02-14943;Piilipuunkatu 2, Raisio;Raisio;X;X;X;X;X;X
+02-14944;Kalevantie 41, Turku;Turku;X;X;X;X;X;X
+02-14945;Kairiskulmantie 3, Piispanristi;Kaarina;X;X;X;X;X;
+02-14947;Vinkkiläntie 13, Vinkkilä;Vehmaa;X;X;X;;X;X
+02-14948;Pajamäentie 3, Pyhäranta;Pyhäranta;X;X;X;;X;X
+02-14978;Itäkaari 20, Turku;Turku;X;X;X;X;X;X
+02-14979;Markulantie 150, Turku;Turku;X;X;X;X;X;X
+02-14980;Viilarinkatu 8, Turku;Turku;X;X;X;;X;
+02-15021;Hedbergintie 2, Kemiö;Kemiönsaari;X;X;X;;X;
+02-15025;Tapulikuja 6, Forssa;Forssa;X;X;X;X;X;X
+02-15026;Myllynkatu 2, Raisio;Raisio;X;X;X;X;X;X
+02-15034;Kivimaantie 8, Kustavi;Kustavi;X;X;X;X;X;X
+02-15037;Mattistentie, Uusikaupunki;Uusikaupunki;X;X;X;;X;
+02-15038;Sorvakon Rantatie, Uusikaupunki;Uusikaupunki;X;X;X;X;;
+02-15040;Tyllikuja, Uusikaupunki;Uusikaupunki;X;X;X;X;X;
+02-15041;Timmerkärrintie, Kirjala;Parainen;X;X;X;;X;
+02-15046;Kauppakatu, Punkalaidun;Punkalaidun;X;X;X;X;X;X
+02-15069;Hämeentie 24-30, Salo;Salo;X;X;X;X;X;X
+02-15094;Hemmintie, Pertteli;Salo;X;X;X;;X;
+02-20492;Aleksis Kiven Katu 11, Loimaa;Loimaa;X;X;X;X;X;X
+02-20723;Eteläinen Puistokatu, Forssa;Forssa;X;X;X;X;;
+02-20960;Kauppakatu 8, Laitila;Laitila;X;X;X;X;X;X
+02-21070;Hyrköistentie 28, Turku;Turku;X;X;X;;X;X
+02-21181;Kapponkatu 17, Raisio;Raisio;X;X;X;X;X;X
+02-21333;Hämeentie 23, Koski Tl;Koski Tl;X;X;X;;X;X
+02-21354;Hovirinnantie 5, Kaarina;Kaarina;X;X;X;X;X;X
+02-21501;Metallikatu 3, Turku;Turku;X;X;X;;X;X
+02-21555;Engelsbyntie 15, Kemiö;Kemiönsaari;X;X;X;X;X;X
+02-21615;Kiikostentie 34, Sastamala;Sastamala;X;X;X;;;
+02-21983;Voudinkatu 5, Raisio;Raisio;X;X;X;X;X;X
+02-22149;Niuskalankatu 2, Turku;Turku;X;X;X;;X;X
+02-22174;Rauhalinnankaari 2, Salo;Salo;X;X;X;X;X;X
+02-22241;Jokipellontie, Paimio;Paimio;X;X;X;X;X;X
+02-22292;Kirkkoesplanadi 32, Parainen;Parainen;X;X;X;X;X;X
+02-22363;Talolankatu 75, Turku;Turku;X;X;X;X;X;X
+02-22396;Kauppakuja 2, Sastamala;Sastamala;X;X;X;;X;X
+02-22415;Teijontie 67, Teijo;Salo;X;X;X;;;
+02-22489;Tiisalantie 140, Sastamala;Sastamala;X;X;X;X;X;X
+02-22490;Humppilantie 20, Humppila;Humppila;X;X;X;X;;X
+02-22564;Joensuuntie 5, Somero;Somero;X;X;X;;;X
+02-22628;Tulotie, Taivassalo;Taivassalo;X;X;X;;X;X
+02-30001;Sätiläntie, Kyrö;Pöytyä;X;X;X;;X;
+02-30013;Itsenäisyydentie 66, Sastamala;Sastamala;X;X;X;X;X;
+02-30018;Ihoden Kylätie 27, Ihode;Pyhäranta;X;X;X;;;
+02-30039;Vainioperäntie, Yläne;Pöytyä;X;X;X;;X;X
+02-30066;Valtatie 1, Akaa;Akaa;X;X;X;X;X;X
+02-30073;Hämeen Härkätie 648, Tarvasjoki;Lieto;X;X;X;;X;X
+02-30083;Garpintie 1, Laitila;Laitila;X;X;X;;X;X
+02-30084;Kirkkotie 2, Sastamala;Sastamala;X;X;X;;X;
+02-30085;Nikkilänkatu 4, Forssa;Forssa;X;X;X;;;X
+02-30090;Sirkesalontie 2, Akaa;Akaa;X;X;X;;X;
+02-30094;Timperintie 8, Sauvo;Sauvo;X;X;X;X;X;X
+02-30115;Vakkatie 1, Kalanti;Uusikaupunki;X;X;X;X;X;
+02-30118;Paakarinpolku 4, Uusikaupunki;Uusikaupunki;X;X;X;X;X;
+02-30119;Metsämaantie 622, Metsämaa;Loimaa;X;X;X;;X;X
+02-30120;Ylikulmantie 300, Kuusjoki;Salo;X;X;X;X;;
+02-30136;Kenttätie 1, Jokioinen;Jokioinen;X;X;X;;X;X
+02-30143;Vammalantie 7, Sastamala;Sastamala;X;X;X;X;X;
+03-10134;Joenkulmantie, Vesivehmaa;Asikkala;X;X;X;;;
+03-10139;Kenttätie 20, Kalkkinen;Asikkala;X;X;X;;X;
+03-10336;Aulangontie 681, Pekola;Hattula;X;X;X;X;X;
+03-10338;Apilakaarre 1, Parola;Hattula;X;X;X;;X;
+03-10345;Tammitie 5, Oitti;Hausjärvi;X;X;X;X;X;X
+03-10348;Asemantie 4, Hikiä;Hausjärvi;X;X;X;X;X;X
+03-10351;Ryttyläntie 1, Ryttylä;Hausjärvi;X;X;X;;X;X
+03-10358;Vääksyntie 5, Vierumäki;Heinola;X;X;X;X;X;X
+03-10359;Siltakatu 24, Heinola;Heinola;X;X;X;X;X;X
+03-10360;Vuorikatu 2, Heinola;Heinola;X;X;X;;X;X
+03-10365;Marjoniementie 1, Heinola Kk;Heinola;X;X;X;X;X;X
+03-10366;Karjalantie 90, Myllyoja;Heinola;X;X;X;;X;
+03-10367;Lusintie 612, Lusi;Heinola;X;X;X;;X;
+03-10438;Paimelantie 54, Kalliola;Hollola;X;X;X;;X;
+03-10443;Tervamäentie 2, Kukkila;Hollola;X;X;X;X;X;X
+03-10444;Nostavantie 382, Lahti;Hollola;X;X;X;;X;X
+03-10445;Urheilukentäntie 2, Herrala;Hollola;X;X;X;;X;
+03-10447;Rantatie 946, Hollola Kk;Hollola;X;X;X;X;X;
+03-10472;Riihimäenkatu 10, Hyvinkää;Hyvinkää;X;X;X;X;X;X
+03-10474;Hyvinkäänkatu 15, Hyvinkää;Hyvinkää;X;X;X;X;X;X
+03-10481;Ahdenkallionkatu, Hyvinkää;Hyvinkää;X;X;X;;X;X
+03-10486;Uudenmaankatu 106, Hyvinkää;Hyvinkää;X;X;X;X;X;X
+03-10487;Jussilankatu 5, Hyvinkää;Hyvinkää;X;X;X;X;X;X
+03-10489;Lehmustie 1, Hyvinkää;Hyvinkää;X;X;X;X;X;
+03-10490;Talvisillankatu 1, Hyvinkää;Hyvinkää;X;X;X;X;X;X
+03-10491;Alttarikiventie 1, Hyvinkää;Hyvinkää;X;X;X;X;X;X
+03-10494;Rajalantie 4 B, Hyvinkää;Hausjärvi;X;X;X;;;
+03-10509;Mommilantie 12, Lammi;Hämeenlinna;X;X;X;X;X;X
+03-10512;Mommilantie 1, Lammi;Hämeenlinna;X;X;X;X;X;X
+03-10515;Karhitie 2, Hämeenlinna;Hämeenlinna;X;X;X;;X;X
+03-10517;Talaskuja 1, Hämeenlinna;Hämeenlinna;X;X;X;X;X;X
+03-10518;Katsastusmiehentie 6, Hämeenlinna;Hämeenlinna;X;X;X;X;X;X
+03-10519;Wartiamäentie 2, Hämeenlinna;Hämeenlinna;X;X;X;X;X;X
+03-10537;Viertokatu 31, Hämeenlinna;Hämeenlinna;X;X;X;;X;X
+03-10542;Hallintotie 2, Iittala;Hämeenlinna;X;X;X;X;X;X
+03-10544;Mantereenlinnantie 4, Hämeenlinna;Hämeenlinna;X;X;X;X;X;X
+03-10548;Suolijärventie 9, Tuulos;Hämeenlinna;X;X;X;;X;
+03-10552;Hauhontie 1626, Eteläinen;Hämeenlinna;X;X;X;;X;X
+03-10559;Alvettulantie 177, Alvettula;Hämeenlinna;X;X;X;;X;
+03-10735;Kauppakuja 1, Turenki;Janakkala;X;X;X;;X;X
+03-10737;Harvialantie 3, Turenki;Janakkala;X;X;X;X;X;X
+03-10739;Tammirannan Puistotie, Tervakoski;Janakkala;X;X;X;;X;X
+03-10743;Tapailantie 10, Turenki;Janakkala;X;X;X;;X;X
+03-10745;Koljalankuja 1, Turenki;Janakkala;X;X;X;;X;
+03-10747;Sääjärventie 47, Harviala;Janakkala;X;X;X;;X;
+03-10751;Haukankalliontie 6, Leppäkoski;Janakkala;X;X;X;;X;X
+03-11001;Helsingintie 41, Järvenpää;Järvenpää;X;X;X;X;X;X
+03-11005;Pihkakatu 2, Järvenpää;Järvenpää;X;X;X;;X;X
+03-11007;Vanhankyläntie 65, Järvenpää;Järvenpää;X;X;X;;X;X
+03-11008;Loutinkatu 59, Järvenpää;Järvenpää;X;X;X;X;X;X
+03-11010;Kaskitie 2, Järvenpää;Järvenpää;X;X;X;X;X;X
+03-11011;Pellonkulmantie 2, Järvenpää;Järvenpää;X;X;X;X;X;X
+03-11013;Puistotie 27-29, Järvenpää;Järvenpää;X;X;X;X;X;X
+03-11358;Kalevankatu 65, Kerava;Kerava;X;X;X;;X;X
+03-11362;Kantokatu 11, Kerava;Kerava;X;X;X;X;X;X
+03-11363;Ilmarisentie 5, Kerava;Kerava;X;X;X;;X;X
+03-11364;Koivikontie 31, Kerava;Kerava;X;X;X;X;X;X
+03-11368;Kurkelankatu 18, Kerava;Kerava;X;X;X;X;X;X
+03-11369;Luhtaniituntie, Kerava;Kerava;X;X;X;;X;X
+03-11372;Ratatie 24, Kerava;Kerava;X;X;X;X;X;X
+03-11876;Ruukintie 1, Järvelä;Kärkölä;X;X;X;X;X;X
+03-11878;Lappilanraitti 4, Lappila;Kärkölä;X;X;X;;X;X
+03-11893;Hennalankatu 5, Lahti;Lahti;X;X;X;X;X;X
+03-11903;Heinlammintie 29, Lahti;Lahti;X;X;X;X;X;X
+03-11909;Petsamonkatu 9, Lahti;Lahti;X;X;X;X;X;X
+03-11911;Johanneksenkatu 4, Lahti;Lahti;X;X;X;X;X;X
+03-11915;Kauppiaankatu 2, Lahti;Lahti;X;X;X;X;X;X
+03-11916;Vuorisenkatu 4, Lahti;Lahti;X;X;X;X;X;X
+03-12190;Yhdystie 3, Loppi;Loppi;X;X;X;X;X;X
+03-12191;Kauppatie 9, Loppi;Loppi;X;X;X;X;X;X
+03-12446;Mäntymäentie 2, Mäntsälä;Mäntsälä;X;X;X;X;X;X
+03-12459;Viljamaantie 9, Saarentaus;Mäntsälä;X;X;X;X;X;X
+03-12463;Oitintie 12, Sälinkää;Mäntsälä;X;X;X;;X;
+03-12527;Rakokiventie 27, Nastola;Lahti;X;X;X;X;X;X
+03-12617;Erkontie 16, Orimattila;Orimattila;X;X;X;X;X;X
+03-12618;Kärrytie 1, Orimattila;Orimattila;X;X;X;X;X;X
+03-12621;Sinivuokonkuja, Orimattila;Orimattila;X;X;X;;X;X
+03-12623;Keiturintie 14, Luhtikylä;Orimattila;X;X;X;;X;
+03-12625;Pennalantie 107, Pennala;Orimattila;X;X;X;;X;
+03-12627;Kuivannontie 604, Kuivanto;Orimattila;X;X;X;;X;
+03-12719;Kauppatie 1, Padasjoki;Padasjoki;X;X;X;X;X;X
+03-12721;Maakeskenraitti 9, Maakeski;Padasjoki;X;X;X;;X;
+03-12723;Kylänraitti 23, Auttoinen;Padasjoki;X;X;X;;X;
+03-13140;Veteraanitie 11, Pukkila;Pukkila;X;X;X;X;X;X
+03-13372;Voimalankatu 2, Riihimäki;Riihimäki;X;X;X;X;X;X
+03-13375;Lopentie 22, Riihimäki;Riihimäki;X;X;X;X;X;X
+03-13379;Kontiontie 34, Riihimäki;Riihimäki;X;X;X;X;X;X
+03-13381;Oravankatu 2, Riihimäki;Riihimäki;X;X;X;;X;X
+03-13383;Erkyläntie 76, Riihimäki;Riihimäki;X;X;X;;X;X
+03-13387;Merkoksenkatu 7, Riihimäki;Riihimäki;X;X;X;X;X;X
+03-13394;Metsurinkatu, Riihimäki;Riihimäki;X;X;X;;X;X
+03-13960;Särkilahdentie 3, Sysmä;Sysmä;X;X;X;X;X;X
+03-14354;Tuusulantie 76, Tuusula;Tuusula;X;X;X;X;X;X
+03-14355;Autoasemankatu 1, Tuusula;Tuusula;X;X;X;X;X;X
+03-14357;Terttuseljankuja, Tuusula;Tuusula;X;X;X;X;X;X
+03-14359;Mikkolantie 1, Tuusula;Tuusula;X;X;X;;X;X
+03-14360;Hyrylänkatu 6, Tuusula;Tuusula;X;X;X;X;X;X
+03-14363;Kirkkotie 49, Tuusula;Tuusula;X;X;X;;X;X
+03-14367;Jokelantie 917, Jokela;Tuusula;X;X;X;X;X;X
+03-14374;Pertuntie 34, Jokela;Tuusula;X;X;X;;X;X
+03-14377;Kurjentie 3, Tuusula;Tuusula;X;X;X;X;X;
+03-14485;Sorrilankatu 2, Valkeakoski;Valkeakoski;X;X;X;;X;X
+03-14493;Pellervontie 1, Valkeakoski;Valkeakoski;X;X;X;X;X;X
+03-14499;Rantoontie 5, Kärjenniemi;Valkeakoski;X;X;X;X;X;
+03-14500;Pälkäneentie 487, Valkeakoski;Valkeakoski;X;X;X;;X;
+03-14501;Huittulantie 146, Sääksmäki;Valkeakoski;X;X;X;X;X;
+03-14762;Raitakatu 1, Haarajoki;Järvenpää;X;X;X;X;X;X
+03-14763;Heimolantie 3, Tervakoski;Janakkala;X;X;X;X;X;X
+03-14771;Ajokatu 83, Lahti;Lahti;X;X;X;X;X;X
+03-14772;Ajokatu 53, Lahti;Lahti;X;X;X;X;X;X
+03-14773;Tapanilankatu 6, Lahti;Lahti;X;X;X;;X;X
+03-14774;Kiveriönkatu 32, Lahti;Lahti;X;X;X;X;X;X
+03-14775;Pajatie 2, Artjärvi;Orimattila;X;X;X;X;X;X
+03-14782;Maakaupantie 1, Vääksy;Asikkala;X;X;X;X;;X
+03-14784;Hevossaarentie 1, Heinola;Heinola;X;X;X;X;X;X
+03-14975;Keskustie 16, Hämeenkoski;Hollola;X;X;X;X;X;X
+03-15042;Kauppakaari 4, Nastola;Lahti;X;X;X;X;X;X
+03-20169;Tuulosentie 14, Tuulos;Hämeenlinna;X;X;X;;X;
+03-20325;Kauppakatu 13, Lahti;Lahti;X;X;X;X;X;X
+03-20651;Heinolan Vanhatie 25, Lahti;Lahti;X;X;X;X;X;X
+03-21149;Kinnalantie 4, Parola;Hattula;X;X;X;X;X;X
+03-21215;Keskuskatu 26a, Heinola;Heinola;X;X;X;X;X;X
+03-21221;Hauhontie 16, Hauho;Hämeenlinna;X;X;X;X;X;X
+03-21260;Peltosaarenkatu 1, Riihimäki;Riihimäki;X;X;X;X;X;X
+03-21326;Vanhatie 37, Heinola Kk;Heinola;X;X;X;X;X;X
+03-21375;Keskustie 8, Myrskylä;Myrskylä;X;X;X;X;X;X
+03-21437;Alasenkatu 1, Lahti;Lahti;X;X;X;X;X;X
+03-21665;Tallitie 4, Parola;Hattula;X;X;X;;X;X
+03-21675;Kiekkokatu 4, Lahti;Lahti;X;X;X;;X;X
+03-21700;Särkilahdentie 4, Sysmä;Sysmä;X;X;X;X;X;X
+03-21886;Kerananpolku 1, Kerava;Kerava;X;X;X;;X;X
+03-21991;Vehnätie 2, Järvenpää;Järvenpää;X;X;X;X;X;X
+03-22032;Puistokuja 2, Jokela;Tuusula;X;X;X;X;X;X
+03-22064;Läyliäistenraitti 120, Läyliäinen;Loppi;X;X;X;X;X;X
+03-22534;Lähdetie 2, Villähde;Lahti;X;X;X;X;X;X
+03-22549;Päivänsäteenkatu 2, Lahti;Lahti;X;X;X;X;X;X
+03-22571;Lahelantie 280, Lahela;Tuusula;X;X;X;;X;X
+03-22916;Lasitehtaantie 63, Riihimäki;Riihimäki;X;X;X;;;X
+03-22935;Tarmontie 7, Hollola;Hollola;X;X;X;X;X;X
+03-30053;Visamäentie 16, Hämeenlinna;Hämeenlinna;X;X;X;;X;X
+03-30067;Helsingintie 126, Lahti;Lahti;X;X;X;X;X;X
+03-30077;Rehtorinkatu, Järvenpää;Järvenpää;X;X;X;;X;X
+03-30091;Kravunarkunkatu, Hyvinkää;Hyvinkää;X;X;X;;;X
+03-30093;Asemakatu 2, Mäntsälä;Mäntsälä;X;X;X;X;X;X
+03-30098;Sammonojantie 11, Hämeenlinna;Hämeenlinna;X;X;X;;;X
+03-30111;Rengonraitti 10 B, Renko;Hämeenlinna;X;X;X;X;X;X
+03-30126;Vasalankaari, Valkeakoski;Valkeakoski;X;X;X;X;X;X
+03-30128;Harvialantie 4, Hämeenlinna;Hämeenlinna;X;X;X;X;X;X
+03-30129;Urheilukentäntie 14, Ryttylä;Hausjärvi;X;X;X;X;X;
+03-30132;Kirvesmiehentie 2, Tuusula;Tuusula;X;X;X;X;X;X
+03-30139;Jylhäntie 8, Launonen;Loppi;X;X;X;X;;
+03-30142;Ahvenistontie 13, Hämeenlinna;Hämeenlinna;X;X;X;X;X;X
+04-10306;Helsingintie 1 A, Hamina;Hamina;X;X;X;X;X;X
+04-10307;Riekontie 3, Poitsila;Hamina;X;X;X;;X;
+04-10308;Rautatienkatu 2, Hamina;Hamina;X;X;X;X;X;X
+04-10311;Tuhkamäenpolku 1, Hamina;Hamina;X;X;X;;;X
+04-10312;Tallinmäenkatu 5, Hamina;Hamina;X;X;X;;X;X
+04-10313;Seurantalontie 6, Hamina;Hamina;X;X;X;;X;
+04-10314;Mäkeläntie 1, Neuvoton;Hamina;X;X;X;X;X;X
+04-10597;Merrankuja 2, Kausala;Iitti;X;X;X;X;X;X
+04-10661;Karhumäenkatu 1, Imatra;Imatra;X;X;X;X;X;X
+04-10662;Joutsenonkatu 36, Imatra;Imatra;X;X;X;X;X;X
+04-10665;Tietäjänkatu 2, Imatra;Imatra;X;X;X;X;X;X
+04-10667;Rouskunkatu 11, Imatra;Imatra;X;X;X;;X;X
+04-10668;Suuntakatu 1, Imatra;Imatra;X;X;X;X;X;X
+04-10669;Vallinkoskentie 2, Imatra;Imatra;X;X;X;;X;
+04-10670;Onnelankaarto 2, Imatra;Imatra;X;X;X;;X;X
+04-10671;Niskapietiläntie 4, Imatra;Imatra;X;X;X;X;X;X
+04-11572;Sahankatu 2, Kotka;Kotka;X;X;X;;X;X
+04-11574;Tilhintie 27, Kotka;Kotka;X;X;X;;X;X
+04-11576;Papinkatu 3, Kotka;Kotka;X;X;X;;X;X
+04-11579;Jumalniementie 8, Kotka;Kotka;X;X;X;X;X;X
+04-11581;Suursaarenkatu 3, Kotka;Kotka;X;X;X;X;X;X
+04-11582;Hiidenkirnuntie, Kotka;Kotka;X;X;X;;X;
+04-11583;Karhulantie 30, Kotka;Kotka;X;X;X;X;X;
+04-11584;Hakamäentie 1, Kotka;Kotka;X;X;X;X;X;X
+04-11586;Hirssaarentie 4, Kotka;Kotka;X;X;X;X;X;X
+04-11587;Lautakatontie, Kotka;Kotka;X;X;X;;X;X
+04-11588;Koivulantie, Kotka;Kotka;X;X;X;;X;X
+04-11589;Haminantie 1, Kotka;Kotka;X;X;X;X;X;
+04-11592;Tarinatie 2, Kotka;Kotka;X;X;X;X;X;X
+04-11595;Tervasharjunkatu 1, Kuusankoski;Kouvola;X;X;X;X;X;X
+04-11596;Tommolankatu 9, Kouvola;Kouvola;X;X;X;X;X;X
+04-11598;Haukikuja 2, Kouvola;Kouvola;X;X;X;X;X;X
+04-11602;Talonpojantie 2, Kouvola;Kouvola;X;X;X;;X;X
+04-11603;Lukionkuja, Kuusankoski;Kouvola;X;X;X;X;X;X
+04-11604;Väkevänkuja 2, Kuusankoski;Kouvola;X;X;X;;X;X
+04-11605;Utinkatu 65, Kouvola;Kouvola;X;X;X;X;X;X
+04-11609;Tunnelikatu, Kouvola;Kouvola;X;X;X;;X;X
+04-11615;Tasankotie 13, Kouvola;Kouvola;X;X;X;X;X;X
+04-11616;Kalliokatu 1, Kouvola;Kouvola;X;X;X;;X;X
+04-11617;Kiltatie 10, Kuusankoski;Kouvola;X;X;X;X;X;X
+04-11621;Hallitie 2, Keltakangas;Kouvola;X;X;X;X;X;
+04-11628;Keskikoskentie 3, Myllykoski;Kouvola;X;X;X;X;X;X
+04-11632;Kuusaantie, Voikkaa;Kouvola;X;X;X;X;X;X
+04-11642;Suviojantie 2, Koria;Kouvola;X;X;X;;X;X
+04-11643;Kyminasemantie 6, Koria;Kouvola;X;X;X;X;X;X
+04-11647;Kalevantie 1, Valkeala;Kouvola;X;X;X;;X;X
+04-11648;Kauniskankaantie 2, Valkeala;Kouvola;X;X;X;X;X;X
+04-11653;Selänpääntie 594, Selänpää;Kouvola;X;X;X;;X;
+04-11657;Jänkhäntie 1, Koria;Kouvola;X;X;X;;X;
+04-11665;Alakylänraitti 6, Tuohikotti;Kouvola;X;X;X;;X;
+04-11669;Kaipiaistentie 14, Kaipiainen;Kouvola;X;X;X;;X;
+04-11676;Mäntyharjuntie 1265, Jaala;Kouvola;X;X;X;;X;
+04-11925;Lapinjärventie 1, Lapinjärvi;Lapinjärvi;X;X;X;X;X;X
+04-11970;Kaakkoiskaari 22, Lappeenranta;Lappeenranta;X;X;X;X;X;X
+04-11972;Huoltokatu 1, Lappeenranta;Lappeenranta;X;X;X;X;X;X
+04-11974;Ylämaantie 3016, Ylämaa;Lappeenranta;X;X;X;X;X;
+04-11976;Kivistönkatu 2, Lappeenranta;Lappeenranta;X;X;X;X;X;X
+04-11978;Keskuskatu 4, Joutseno;Lappeenranta;X;X;X;X;X;X
+04-11980;Karankokatu 6, Lappeenranta;Lappeenranta;X;X;X;;X;X
+04-11983;Puhakankatu 9-11, Lappeenranta;Lappeenranta;X;X;X;X;X;X
+04-11985;Sunisenkatu 1, Lappeenranta;Lappeenranta;X;X;X;X;X;
+04-11988;Valtakatu 70, Lappeenranta;Lappeenranta;X;X;X;X;X;X
+04-11991;Korpikunnaankatu 1, Lappeenranta;Lappeenranta;X;X;X;X;X;X
+04-11994;Toikansuontie 4, Lappeenranta;Lappeenranta;X;X;X;X;X;X
+04-11998;Hartikkalankatu 23, Lappeenranta;Lappeenranta;X;X;X;;X;X
+04-12000;Mattilantie, Lappeenranta;Lappeenranta;X;X;X;;X;
+04-12003;Lavolantie 63, Lappeenranta;Lappeenranta;X;X;X;;X;
+04-12006;Kangastie 2, Pulp;Lappeenranta;X;X;X;;X;X
+04-12009;Pihlajatie 1, Rauha;Lappeenranta;X;X;X;X;X;X
+04-12010;Penttiläntie 635, Joutseno;Lappeenranta;X;X;X;;X;
+04-12033;Iitiäntie 4, Lemi;Lemi;X;X;X;X;X;
+04-12034;Raikulitie 1, Kuukanniemi;Lemi;X;X;X;;X;
+04-12036;Huttulantie 854, Kotimäki;Lemi;X;X;X;;X;
+04-12242;Linnalantie 42, Taavetti;Luumäki;X;X;X;X;X;X
+04-12245;Väliväyläntie 828, Kannuskoski;Luumäki;X;X;X;;X;
+04-12246;Suoanttilantie 8, Luumäki;Luumäki;X;X;X;X;X;
+04-12483;Tiilikkalantie 542, Mäntyharju;Mäntyharju;X;X;X;;X;
+04-12842;Parikkalantie 19, Parikkala;Parikkala;X;X;X;X;X;X
+04-12845;Rinnekatu 1, Särkisalmi;Parikkala;X;X;X;;X;X
+04-12850;Uukuniementie 1, Uukuniemi;Parikkala;X;X;X;;X;
+04-12852;Akapohjantie 2, Saari;Parikkala;X;X;X;;X;
+04-13166;Malminsuontie 2, Siltakylä;Pyhtää;X;X;X;X;X;X
+04-13353;Roihankatu 3, Simpele;Rautjärvi;X;X;X;X;X;X
+04-13354;Vihviläkuja 2, Simpele;Rautjärvi;X;X;X;;X;
+04-13356;Poikkitie 21, Rautjärvi;Rautjärvi;X;X;X;;X;
+04-13357;Rautjärventie 90, Rautjärvi;Rautjärvi;X;X;X;;X;
+04-13457;Lietlahdentie 9, Puntala;Ruokolahti;X;X;X;;X;
+04-13459;Puumalantie 967, Virmutjoki;Ruokolahti;X;X;X;;X;
+04-13463;Puumalantie 2031, Syyspohja;Ruokolahti;X;X;X;;X;
+04-13464;Mustakulkkulantie 3, Kaiturinpää;Ruokolahti;X;X;X;;X;
+04-13639;Pitkämäentie 6, Savitaipale;Savitaipale;X;X;X;;X;
+04-13640;Torikatu 1, Savitaipale;Savitaipale;X;X;X;X;X;X
+04-13966;Rauhamäentie 3, Taipalsaari;Taipalsaari;X;X;X;;X;
+04-14627;Museotie 1336, Ravijoki;Virolahti;X;X;X;;X;
+04-14628;Museotie 1878, Klamila;Virolahti;X;X;X;;;
+04-14629;Itätie 2, Virolahti;Virolahti;X;X;X;X;X;
+04-14786;Voisalmentie 9, Lappeenranta;Lappeenranta;X;X;X;X;X;X
+04-14982;Pyhtääntie 38 - 40, Pyhtää;Pyhtää;X;X;X;;X;X
+04-15014;Koivistontie 2 A, Pukaro;Lapinjärvi;X;X;X;;;X
+04-15032;Hurttalantie, Miehikkälä;Miehikkälä;X;X;X;;;
+04-15068;Vihannanranta 1, Mäntyharju;Mäntyharju;X;X;X;;X;
+04-20579;Keskuskatu 3, Joutseno;Lappeenranta;X;X;X;;X;X
+04-21017;Elimäentie 30, Anjala;Kouvola;X;X;X;;X;X
+04-21037;Mäenpääntie 4, Pyhältö;Hamina;X;X;X;X;X;
+04-21225;Joutsenonkatu 32, Imatra;Imatra;X;X;X;;X;
+04-21246;Kyöperiläntie 4, Pilkanmaa;Kouvola;X;X;X;X;X;X
+04-21257;Vanhamaantie 16, Elimäki;Kouvola;X;X;X;X;X;X
+04-21296;Sippolantie 20, Sippola;Kouvola;X;X;X;;X;
+04-21477;Jaalantie 117, Jaala;Kouvola;X;X;X;X;X;X
+04-21478;Pentinpolku 2, Mäntyharju;Mäntyharju;X;X;X;X;X;X
+04-21626;Harjantauksentie 11, Kotka;Kotka;X;X;X;X;X;X
+04-21648;Joukahaisentie 36, Husula;Hamina;X;X;X;X;X;X
+04-21691;Torikatu 8, Imatra;Imatra;X;X;X;;X;X
+04-21789;Näkkimistöntie 16, Vuohijärvi;Kouvola;X;X;X;;X;
+04-21822;Standertskjöldinkatu 6, Lappeenranta;Lappeenranta;X;X;X;X;X;X
+04-21875;Liisanpolku 2, Ruokolahti;Ruokolahti;X;X;X;X;X;X
+04-22018;Kartanokatu 2-6, Kouvola;Kouvola;X;X;X;;X;X
+04-22020;Valvatinkatu 3, Imatra;Imatra;X;X;X;X;X;X
+04-22067;Ensontie 41, Imatra;Imatra;X;X;X;;X;
+04-22194;Pokakuja 1, Kotka;Kotka;X;X;X;;X;
+04-22384;Spännärintie 2 A, Inkeroinen;Kouvola;X;X;X;X;X;X
+04-22435;Satamatie 30, Lappeenranta;Lappeenranta;X;X;X;X;X;X
+04-22523;Vuolenkoskentie 1471, Huutotöyry;Iitti;X;X;X;X;X;
+04-22788;Pyhällöntie 2, Suur-Miehikkälä;Miehikkälä;X;X;X;;;
+04-22894;Kuhatie 5, Saimaanharju;Taipalsaari;X;X;X;X;X;
+04-22917;Hirsimäenkatu 1, Lappeenranta;Lappeenranta;X;X;X;;X;
+04-30007;Koulupolku 8, Porlammi;Lapinjärvi;X;X;X;;X;X
+04-30048;Utintie 88, Utti;Kouvola;X;X;X;;X;X
+05-11147;Opistonkatu 2, Kankaanpää;Kankaanpää;X;X;X;;X;
+05-11889;Köyliöntie 1, Köyliö;Säkylä;X;X;X;;X;X
+05-11890;Pyhän Henrikintie 2, Köyliö;Säkylä;X;X;X;;X;
+05-12247;Lukkarilantie 1, Luvia;Eurajoki;X;X;X;X;X;X
+05-12297;Varvintie 9, Merikarvia;Merikarvia;X;X;X;;X;
+05-13008;Kolmiokatu 2, Pori;Pori;X;X;X;X;X;X
+05-13012;Harmaalinnantie 23, Pori;Pori;X;X;X;X;X;
+05-13014;Pietiläntie 8, Pori;Pori;X;X;X;X;X;X
+05-13026;Ylikartanontie 1, Pori;Pori;X;X;X;;X;X
+05-13033;Kaivokatu 7, Pori;Pori;X;X;X;X;X;
+05-13036;Yrttitie 1, Pori;Pori;X;X;X;X;X;X
+05-13040;Kuninkaanlahdenkatu 3, Pori;Pori;X;X;X;X;X;X
+05-13042;Eteläväylä 2, Pori;Pori;X;X;X;X;X;X
+05-13045;Kotkantie 1, Pori;Pori;X;X;X;X;X;X
+05-13049;Lukkarinsannantie 2, Pori;Pori;X;X;X;X;X;X
+05-13057;Hakalantie 7, Noormarkku;Pori;X;X;X;;X;
+05-13060;Korpraalintie 40, Pori;Pori;X;X;X;;X;X
+05-13063;Lehtolantie 13, Söörmarkku;Pori;X;X;X;;X;
+05-13065;Rauhalammintie 1, Noormarkku;Pori;X;X;X;X;X;X
+05-13066;Kiviaidantie 11, Pori;Pori;X;X;X;;X;X
+05-13069;Ahlaistentie 658, Ahlainen;Pori;X;X;X;;X;
+05-13072;Egyptinkorventie 1, Noormarkku;Pori;X;X;X;;X;
+05-13075;Uniluodonkatu 25, Pori;Pori;X;X;X;X;X;
+05-13077;Lyttyläntie 1138, Pori;Pori;X;X;X;;X;
+05-13078;Liemolantie 1, Pori;Pori;X;X;X;;X;
+05-13080;Santojentie 6, Pori;Pori;X;X;X;;X;
+05-13321;Äyhönjärventie 1, Rauma;Rauma;X;X;X;X;X;X
+05-13324;Karjalankatu 5, Rauma;Rauma;X;X;X;X;X;X
+05-13327;Porintie 4, Rauma;Rauma;X;X;X;X;X;X
+05-13330;Teollisuuskatu 2, Rauma;Rauma;X;X;X;X;X;X
+05-13962;Palomiehentie 9, Säkylä;Säkylä;X;X;X;X;X;X
+05-14938;Vanhatie 11, Pomarkku;Pomarkku;X;X;X;X;X;
+05-14939;Vuohiniityntie, Kankaanpää;Kankaanpää;X;X;X;;X;
+05-14940;Jämijärventie 23, Jämijärvi;Jämijärvi;X;X;X;X;X;X
+05-14941;Tykkööntie 1080, Suurimaa;Jämijärvi;X;X;X;;X;
+05-14955;Tikkulantie 2, Pori;Pori;X;X;X;X;X;
+05-14956;Itäkeskuksenkaari 6, Pori;Pori;X;X;X;X;X;X
+05-14957;Itäkeskuksenkaari 8, Pori;Pori;X;X;X;;X;
+05-14958;Friitalantie 18, Ulvila;Ulvila;X;X;X;X;X;X
+05-14959;Ravanintie 1, Vanha-Ulvila;Ulvila;X;X;X;;X;X
+05-14960;Harjavallankatu 12, Harjavalta;Harjavalta;X;X;X;X;X;X
+05-15070;Riihikuja 16, Pori;Pori;X;X;X;X;X;X
+05-15071;Nahkurintie 1, Lavia;Pori;X;X;X;;;
+05-15073;Tapalankatu, Kankaanpää;Kankaanpää;X;X;X;;X;X
+05-15074;Kankaanpääntie 2, Siikainen;Siikainen;X;X;X;;X;
+05-15075;Unajantie 2, Kortela;Rauma;X;X;X;;X;
+05-15078;Valssikatu, Kankaanpää;Kankaanpää;X;X;X;;X;
+05-15079;Niinisalonkatu 46, Niinisalo;Kankaanpää;X;X;X;;X;
+05-15080;Härmäntie, Pori;Pori;X;X;X;;X;
+05-15082;Loimijoentie 89, Huittinen;Huittinen;X;X;X;X;X;
+05-15093;Olkiluodontie 8, Eurajoki;Eurajoki;X;X;X;;X;
+05-20926;Sahamäentie 25, Lappi;Rauma;X;X;X;X;X;
+05-21098;Kauppakulma 2, Huittinen;Huittinen;X;X;X;;X;
+05-21148;Satakunnankatu 13, Eura;Eura;X;X;X;X;X;
+05-21157;Finpyyntie 10, Noormarkku;Pori;X;X;X;X;X;X
+05-21562;Risto Rytin Katu 37, Huittinen;Huittinen;X;X;X;X;X;
+05-21683;Särmänkatu 1, Huittinen;Huittinen;X;X;X;X;X;X
+05-21736;Teljänportti 3, Kokemäki;Kokemäki;X;X;X;X;X;X
+05-21776;Haapionkatu 14, Kokemäki;Kokemäki;X;X;X;X;X;
+05-22133;Satakunnankatu 4, Eura;Eura;X;X;X;X;X;
+05-22416;Vanhakoivistontie 10, Pori;Pori;X;X;X;;X;X
+05-22531;Kauppatie 51, Merikarvia;Merikarvia;X;X;X;X;X;X
+05-22556;Asemakatu 1, Kankaanpää;Kankaanpää;X;X;X;X;X;
+05-22623;Riikontie 2, Eurajoki;Eurajoki;X;X;X;X;X;
+05-22651;Porhontie 4, Honkajoki;Kankaanpää;X;X;X;;X;X
+05-22658;Kylä-Karviantie 10, Karvia;Karvia;X;X;X;;X;X
+05-22803;Mukkalantie 4, Ala-Honkajoki;Kankaanpää;X;X;X;;X;
+05-30002;Kollantie 156, Kolla;Rauma;X;X;X;;X;
+05-30004;Arontie 7-9, Nakkila;Nakkila;X;X;X;X;X;
+05-30005;Kunnankuja 3, Kiukainen;Eura;X;X;X;;X;
+05-30008;Paneliantie 36, Panelia;Eura;X;X;X;;X;X
+05-30009;Maakunnantie 3, Säkylä;Säkylä;X;X;X;;;
+05-30020;Spindeltie 2, Rauma;Rauma;X;X;X;;X;
+05-30023;Kangasnummentie 2, Eurajoki;Eurajoki;X;X;X;;X;
+05-30027;Palomiehentie 10, Säkylä;Säkylä;X;X;X;X;X;
+05-30028;Tampereentie 5-7, Lavia;Pori;X;X;X;;;
+05-30034;Kylä-Karviantie 36, Karvia;Karvia;X;X;X;;;
+05-30035;Kodisjoentie 91, Rauma;Rauma;X;X;X;;X;
+05-30113;Siltapuistonkatu 9-15, Pori;Pori;X;X;X;;X;X
+05-30135;Etupalokuja 2, Ulvila;Ulvila;X;X;X;X;;
+06-10501;Torikatu 8, Kyröskoski;Hämeenkyrö;X;X;X;X;X;
+06-10502;Valtakatu 46, Kyröskoski;Hämeenkyrö;X;X;X;;X;X
+06-10504;Heiskankuja 3, Hämeenkyrö;Hämeenkyrö;X;X;X;;X;
+06-10505;Härkikuja 10, Hämeenkyrö;Hämeenkyrö;X;X;X;;X;X
+06-10506;Eteläntie 2, Kyröskoski;Hämeenkyrö;X;X;X;;X;
+06-10812;Osuustie 2, Korkeakoski;Juupajoki;X;X;X;;X;X
+06-11125;Puusepäntie 31, Kangasala;Kangasala;X;X;X;X;X;X
+06-11128;Laureenintie 1, Ruutana;Kangasala;X;X;X;;X;
+06-11129;Ruutanantie 869, Ruutana;Kangasala;X;X;X;;X;
+06-11130;Ellintie 3, Kangasala;Kangasala;X;X;X;X;X;
+06-11134;Mäkirinteentie 10, Kangasala;Kangasala;X;X;X;X;X;X
+06-11135;Loukkukuja 1, Kangasala;Kangasala;X;X;X;;X;X
+06-11136;Asemantie 470, Kangasala As;Kangasala;X;X;X;;X;
+06-11137;Riihenkorventie 7, Suinula;Kangasala;X;X;X;;X;
+06-11141;Isoniementie 1, Sahalahti;Kangasala;X;X;X;;X;
+06-11145;Kautialankuja 3, Tohkala;Kangasala;X;X;X;;X;
+06-12039;Halkolantie 16, Lempäälä;Lempäälä;X;X;X;;X;X
+06-12042;Hauralantie 6, Lempäälä;Lempäälä;X;X;X;;X;
+06-12043;Lehtopolku 15, Lempäälä;Lempäälä;X;X;X;;X;
+06-12045;Vanattarantie 2, Lempäälä;Lempäälä;X;X;X;;X;X
+06-12046;Koskitie 27, Lempäälä;Lempäälä;X;X;X;;X;
+06-12047;Lähdetie 2, Lempäälä;Lempäälä;X;X;X;;X;X
+06-12048;Taavetintie 11, Lempäälä;Lempäälä;X;X;X;;X;
+06-12049;Tampereentie 272, Lempäälä;Lempäälä;X;X;X;X;X;X
+06-12466;Hallituskatu 25, Mänttä;Mänttä-Vilppula;X;X;X;X;X;X
+06-12555;Kyyninkatu 22, Nokia;Nokia;X;X;X;X;X;X
+06-12557;Brakelintie, Nokia;Nokia;X;X;X;;X;X
+06-12558;Mukaniityntie, Nokia;Nokia;X;X;X;;X;
+06-12560;Siurontie 72, Siuro;Nokia;X;X;X;;X;
+06-12563;Kuntokatu 2, Nokia;Nokia;X;X;X;X;X;
+06-12564;Nuijamiestentie 5, Nokia;Nokia;X;X;X;X;X;X
+06-12565;Pajakatu 28, Nokia;Nokia;X;X;X;;X;X
+06-12567;Vihnusjärvenkatu, Nokia;Nokia;X;X;X;;X;
+06-12568;Linnavuorentie 14, Linnavuori;Nokia;X;X;X;;X;
+06-12634;Asematie 13, Orivesi As;Orivesi;X;X;X;;X;X
+06-12635;Käpytie 3, Orivesi As;Orivesi;X;X;X;;X;X
+06-12637;Sotaveteraanintie, Orivesi;Orivesi;X;X;X;X;X;X
+06-12853;Keskuskatu 9, Parkano;Parkano;X;X;X;X;X;X
+06-12993;Kenkätie 4, Pirkkala;Pirkkala;X;X;X;X;X;X
+06-12994;Palmrothintie 2, Pirkkala;Pirkkala;X;X;X;X;X;X
+06-12996;Kyöstintie 4, Pirkkala;Pirkkala;X;X;X;;X;X
+06-12997;Killontori 1, Pirkkala;Pirkkala;X;X;X;;X;X
+06-12998;Kreetantie 9, Pirkkala;Pirkkala;X;X;X;;X;
+06-12999;Ruotutie 1, Pirkkala;Pirkkala;X;X;X;;X;
+06-13000;Keihästie 1, Pirkkala;Pirkkala;X;X;X;;X;
+06-13002;Anian Rantatie 97, Pirkkala;Pirkkala;X;X;X;;X;
+06-13202;Seuratie 1, Luopioinen;Pälkäne;X;X;X;;X;X
+06-13204;Keskustie 4, Pälkäne;Pälkäne;X;X;X;X;X;X
+06-13206;Miemolantie 8, Aitoo;Pälkäne;X;X;X;;X;
+06-13473;Eeliksentie 1, Visuvesi;Ruovesi;X;X;X;;X;
+06-13985;Rusthollinkatu 5, Tampere;Tampere;X;X;X;;X;X
+06-13986;Närhinpolku 8, Tampere;Tampere;X;X;X;;X;
+06-13987;Järvensivuntie 63, Tampere;Tampere;X;X;X;;X;
+06-13988;Kuikankatu 3 - 5, Tampere;Tampere;X;X;X;;X;
+06-13989;Kumpulantie 1, Tampere;Tampere;X;X;X;X;X;X
+06-13990;Pirkankatu 7, Tampere;Tampere;X;X;X;;X;X
+06-13991;Satakunnankatu 50, Tampere;Tampere;X;X;X;;X;
+06-13992;Päivölänkatu 1, Tampere;Tampere;X;X;X;;X;
+06-13993;Tahmelan Viertotie 41, Tampere;Tampere;X;X;X;;X;
+06-13994;Viinikankatu 40, Tampere;Tampere;X;X;X;X;X;X
+06-13996;Nalkalankatu 1, Tampere;Tampere;X;X;X;;;X
+06-13998;Pispalan Valtatie 28, Tampere;Tampere;X;X;X;;X;X
+06-13999;Ruovedenkatu 1, Tampere;Tampere;X;X;X;;X;X
+06-14001;Ahvenisjärventie 21, Tampere;Tampere;X;X;X;X;X;X
+06-14002;Pinninkatu 23, Tampere;Tampere;X;X;X;X;;X
+06-14011;Tilkonmäenkatu 1, Tampere;Tampere;X;X;X;X;X;X
+06-14012;Arkkitehdinkatu 9, Tampere;Tampere;X;X;X;;X;X
+06-14013;Näyttelijänkatu 26, Tampere;Tampere;X;X;X;;X;X
+06-14015;Vähäniemenkatu 42, Tampere;Tampere;X;X;X;;X;X
+06-14016;Isoniemenkatu 27 - 29, Tampere;Tampere;X;X;X;;X;X
+06-14017;Kyläkeinunkatu 25-27, Tampere;Tampere;X;X;X;;X;
+06-14018;Martinpojankatu 4 A, Tampere;Tampere;X;X;X;X;X;X
+06-14019;Harjuntausta 7, Tampere;Tampere;X;X;X;X;X;X
+06-14020;Turvesuonkatu 2, Tampere;Tampere;X;X;X;X;X;X
+06-14021;Orimuskatu 8, Tampere;Tampere;X;X;X;;X;X
+06-14022;Pysäkkikatu 16, Tampere;Tampere;X;X;X;;X;
+06-14023;Ylöjärventie 45, Tampere;Tampere;X;X;X;;X;X
+06-14024;Ahlmanintie 20, Tampere;Tampere;X;X;X;;X;
+06-14025;Koivulantie 2, Tampere;Tampere;X;X;X;;X;X
+06-14026;Pispalan Valtatie 126-128, Tampere;Tampere;X;X;X;;X;X
+06-14028;Kaupinkatu 1, Tampere;Tampere;X;X;X;;X;X
+06-14029;Lempääläntie 21, Tampere;Tampere;X;X;X;X;X;X
+06-14032;Käpytie 1, Tampere;Tampere;X;X;X;;X;X
+06-14033;Huikkaanaukio 2, Tampere;Tampere;X;X;X;;X;
+06-14034;Jaakonmäenkatu 5, Tampere;Tampere;X;X;X;;X;X
+06-14035;Vuoreksen Puistokatu 66, Tampere;Tampere;X;X;X;;;
+06-14038;Myllypuronkatu 17, Tampere;Tampere;X;X;X;;X;
+06-14039;Tyvikatu 7, Tampere;Tampere;X;X;X;;X;X
+06-14040;Sammonkatu 75, Tampere;Tampere;X;X;X;X;X;X
+06-14043;Havumetsänkatu 1, Tampere;Tampere;X;X;X;;X;X
+06-14044;Mikkolankatu 12 - 14, Tampere;Tampere;X;X;X;;X;X
+06-14045;Juvelankatu 11, Tampere;Tampere;X;X;X;;;
+06-14047;Jurvalankatu 4, Tampere;Tampere;X;X;X;;X;X
+06-14048;Tesoman Valtatie 37, Tampere;Tampere;X;X;X;X;X;X
+06-14049;Nuijatie 31, Tampere;Tampere;X;X;X;;;
+06-14050;Ryydynkatu 1, Tampere;Tampere;X;X;X;;X;X
+06-14051;Nivarinkatu 1, Tampere;Tampere;X;X;X;;X;
+06-14052;Liikekatu 3, Tampere;Tampere;X;X;X;X;X;X
+06-14053;Annalankatu 3, Tampere;Tampere;X;X;X;X;X;X
+06-14054;Multisillankatu 2, Tampere;Tampere;X;X;X;X;X;X
+06-14055;Pulkkakatu 4, Tampere;Tampere;X;X;X;;X;X
+06-14056;Virontörmänkatu 9, Tampere;Tampere;X;X;X;;X;X
+06-14059;Reuharinkatu 19 - 21, Tampere;Tampere;X;X;X;;X;X
+06-14060;Nuolialantie 40, Tampere;Tampere;X;X;X;;X;X
+06-14061;Pitkäniemenkatu 9, Tampere;Tampere;X;X;X;X;X;X
+06-14062;Sorilanraitti 8, Tampere;Tampere;X;X;X;;X;
+06-14063;Kaitavedentie 115, Tampere;Tampere;X;X;X;;X;X
+06-14065;Kahnankatu 2, Kämmenniemi;Tampere;X;X;X;X;X;
+06-14630;Pääskyntie 3, Virrat;Virrat;X;X;X;X;X;X
+06-14712;Aittatie, Viljakkala;Ylöjärvi;X;X;X;;X;X
+06-14715;Elotie 1, Ylöjärvi;Ylöjärvi;X;X;X;X;X;X
+06-14717;Hatolantie 3, Vuorentausta;Ylöjärvi;X;X;X;;X;
+06-14718;Asemantie 2, Ylöjärvi;Ylöjärvi;X;X;X;;X;X
+06-14719;Mastontie 8, Ylöjärvi;Ylöjärvi;X;X;X;;X;X
+06-14722;Siivikkalantie 8, Siivikkala;Ylöjärvi;X;X;X;;X;
+06-14729;Metsäkyläntie 20, Julkujärvi;Ylöjärvi;X;X;X;X;X;
+06-14730;Hakalantie 1, Lakiala;Ylöjärvi;X;X;X;;X;
+06-14733;Heinisuontie 2, Ylinen;Ylöjärvi;X;X;X;;X;
+06-15067;Huhtatie 7, Vesilahti;Vesilahti;X;X;X;X;X;X
+06-15091;Tampereentie 453, Lempäälä;Lempäälä;X;X;X;X;X;X
+06-20921;Finnentie 1, Kangasala;Kangasala;X;X;X;;X;X
+06-21083;Sipiläntie 2, Nokia;Nokia;X;X;X;X;X;
+06-21440;Tuulikalliontie 47, Vesilahti;Vesilahti;X;X;X;;X;X
+06-21503;Ratakistonkatu 7, Tampere;Tampere;X;X;X;X;X;X
+06-21596;Mäentakusenkatu 1, Tampere;Tampere;X;X;X;X;X;X
+06-21838;Ideaparkinkatu 8, Lempäälä;Lempäälä;X;X;X;X;X;X
+06-21846;Kauppatie 1-3, Kuru;Ylöjärvi;X;X;X;;;
+06-21877;Pääskyntie 13, Virrat;Virrat;X;X;X;X;X;X
+06-21905;Runttimäentie 8, Mänttä;Mänttä-Vilppula;X;X;X;;X;X
+06-21940;Teollisuustalontie 2, Ikaalinen;Ikaalinen;X;X;X;X;X;
+06-22102;Leipurinkatu 10, Nokia;Nokia;X;X;X;;;
+06-22337;Suolaniityntie 4, Ylöjärvi;Ylöjärvi;X;X;X;X;X;X
+06-22874;Karhoistentie 3, Ikaalinen;Ikaalinen;X;X;X;X;;
+06-30011;Lukukorventie, Ylöjärvi;Ylöjärvi;X;X;X;;;
+06-30015;Yrittäjäkatu 10, Nokia;Nokia;X;X;X;X;X;X
+06-30021;Tehtaantie 17, Kolho;Mänttä-Vilppula;X;X;X;;X;
+06-30038;Lylyntie 335, Lyly;Juupajoki;X;X;X;;X;
+06-30041;Hupakankorvenkatu 2, Tampere;Tampere;X;X;X;;;
+06-30044;Liikekatu 3, Lempäälä;Lempäälä;X;X;X;X;X;X
+06-30050;Juvankatu 14, Tampere;Tampere;X;X;X;X;;X
+06-30058;Suokatu 6 B, Vilppula;Mänttä-Vilppula;X;X;X;;X;
+06-30062;Humalankatu 1, Parkano;Parkano;X;X;X;X;;
+06-30065;Lähdevainiontie 1, Ylöjärvi;Ylöjärvi;X;X;X;X;X;X
+06-30078;Sudenkatu 29, Tampere;Tampere;X;X;X;;X;
+06-30088;Hiitintie 1, Tampere;Ylöjärvi;X;X;X;;X;X
+06-30089;Keisarinviitta 2, Pirkkala;Pirkkala;X;X;X;;X;
+06-30092;Peurankuja 1, Tampere;Tampere;X;X;X;;X;X
+06-30096;Joensuuntie 6, Ruovesi;Ruovesi;X;X;X;X;X;X
+06-30104;Mäyränmäenkatu, Tampere;Tampere;X;X;X;X;X;X
+06-30121;Koukkuaurankatu 10, Tampere;Tampere;X;X;X;;;
+06-30122;Luottikatu 1, Tampere;Tampere;X;X;X;;;
+06-30123;Niinipuunkaari, Tampere;Tampere;X;X;X;;;
+07-10834;Pihkatie 2, Jyväskylä;Jyväskylä;X;X;X;X;X;X
+07-10840;Vaajakoskentie 67, Jyväskylä;Jyväskylä;X;X;X;X;X;X
+07-10845;Kiulu 4, Jyväskylä;Jyväskylä;X;X;X;X;X;
+07-10849;Polvitie 1 A, Jyväskylä;Jyväskylä;X;X;X;X;X;
+07-10854;Ahjokatu 7, Jyväskylä;Jyväskylä;X;X;X;X;X;
+07-10855;Kangasvuorentie, Jyväskylä;Jyväskylä;X;X;X;;X;
+07-10857;Tervaruukinkatu 1, Tikkakoski;Jyväskylä;X;X;X;X;X;
+07-10861;Nevakatu 1, Jyväskylä;Jyväskylä;X;X;X;X;X;
+07-10865;Kylmälahdentie 6, Jyväskylä;Jyväskylä;X;X;X;X;X;X
+07-10868;Niittytie 35, Jyväskylä;Jyväskylä;X;X;X;;X;X
+07-10870;Vaajakoskentie 119, Vaajakoski;Jyväskylä;X;X;X;X;X;
+07-10871;Naattiantie 11, Jyväskylä;Jyväskylä;X;X;X;;X;
+07-10873;Tikka-Mikonmutka 1, Jyväskylä;Jyväskylä;X;X;X;;X;
+07-10881;Palokanorsi 1, Palokka;Jyväskylä;X;X;X;X;X;
+07-10883;Parviaisentie 4, Säynätsalo;Jyväskylä;X;X;X;;X;
+07-10884;Torikatu 1 A, Säynätsalo;Jyväskylä;X;X;X;;X;
+07-10897;Vesangantie 75, Jyväskylä;Jyväskylä;X;X;X;X;X;
+07-10907;Koluntie 2, Puuppola;Jyväskylä;X;X;X;;X;
+07-10911;Kuohunraitti 53, Kuohu;Jyväskylä;X;X;X;;X;
+07-10922;Kalliomäentie 5, Längelmäki;Jämsä;X;X;X;;X;X
+07-10925;Kenraalintie 7, Jämsänkoski;Jämsä;X;X;X;;X;X
+07-10926;Koskenväylä 5, Jämsänkoski;Jämsä;X;X;X;X;X;X
+07-10933;Keskuskatu 23, Jämsä;Jämsä;X;X;X;X;X;X
+07-10942;Kauppakatu, Kaipola;Jämsä;X;X;X;;X;
+07-10946;Keskustie, Halli;Jämsä;X;X;X;;X;
+07-10983;Jämsänkoskentie 7, Koskenpää;Jämsä;X;X;X;;X;
+07-12418;Muuramentie 54, Muurame;Muurame;X;X;X;X;X;X
+07-12423;Saarenkyläntie 4, Muurame;Muurame;X;X;X;;X;
+07-12424;Purotie 7, Kinkomaa;Muurame;X;X;X;;X;
+07-12425;Nokkatie, Muurame;Muurame;X;X;X;;X;
+07-14761;Taipaleentie 6, Sumiainen;Äänekoski;X;X;X;;X;
+07-14787;Hakulintie 4, Luhanka;Luhanka;X;X;X;;X;
+07-14788;Yhdystie 9, Joutsa;Joutsa;X;X;X;X;X;
+07-14789;Toivakantie 30, Toivakka;Toivakka;X;X;X;X;X;X
+07-14793;Osuuskuntatie 2, Niemisjärvi;Hankasalmi;X;X;X;;;
+07-14798;Leivonmäentie 18, Leivonmäki;Joutsa;X;X;X;;X;
+07-14804;Salontie 2, Hankasalmi As;Hankasalmi;X;X;X;;X;X
+07-14818;Pieksämäentie 15, Hankasalmi;Hankasalmi;X;X;X;;X;
+07-14831;Venekoskentie 483, Veneranta;Hankasalmi;X;X;X;;X;
+07-14931;Virastotie 1, Uurainen;Uurainen;X;X;X;;X;X
+07-14932;Keskustie 18, Multia;Multia;X;X;X;;X;
+07-14981;Ristikiventie 1, Jyväskylä;Jyväskylä;X;X;X;;X;
+07-15016;Asematie 5, Kangasniemi;Kangasniemi;X;X;X;X;;X
+07-15043;Keuruuntie 27, Keuruu;Keuruu;X;X;X;X;X;
+07-15044;Linturaitti 10, Keuruu;Keuruu;X;X;X;;X;X
+07-15054;Asemakatu 22, Suolahti;Äänekoski;X;X;X;X;X;X
+07-15066;Kirkkolahdentie, Korpilahti;Jyväskylä;X;X;X;X;X;
+07-15087;Karhujärventie 1, Leppävesi;Laukaa;X;X;X;;X;
+07-15088;Kangastie 4, Hirvensalmi;Hirvensalmi;X;X;X;X;X;X
+07-20991;Toritie 54, Kuhmoinen;Kuhmoinen;X;X;X;X;X;X
+07-21303;Saarijärventie 50-52, Palokka;Jyväskylä;X;X;X;X;X;X
+07-21491;Parviaisentie 6, Säynätsalo;Jyväskylä;X;X;X;X;;
+07-21534;Vehkakatu 5, Jyväskylä;Jyväskylä;X;X;X;X;X;
+07-21609;Vasarakatu 29, Jyväskylä;Jyväskylä;X;X;X;X;X;X
+07-21620;Siltakatu 10, Jämsä;Jämsä;X;X;X;X;X;X
+07-22637;Haavistontie 2, Vihtavuori;Laukaa;X;X;X;X;X;X
+07-22648;Liepeentie 17, Lievestuore;Laukaa;X;X;X;X;X;X
+07-22654;Pertuntie 21, Pertunmaa;Pertunmaa;X;X;X;;;
+07-22659;Pihlajavedentie 7, Haapamäki;Keuruu;X;X;X;X;X;X
+07-22660;Konginkankaantie 185, Konginkangas;Äänekoski;X;X;X;;X;
+07-22662;Karikontie 2, Petäjävesi;Petäjävesi;X;X;X;;X;X
+07-22675;Laukaantie 29, Laukaa;Laukaa;X;X;X;X;X;X
+07-22679;Lossintie 44, Äänekoski;Äänekoski;X;X;X;;X;
+07-22680;Halkorannankuja 1, Hirvensalmi;Hirvensalmi;X;X;X;;;
+07-22681;Puistokatu 12, Äänekoski;Äänekoski;X;X;X;;X;X
+07-22684;Keskustie 26, Hankasalmi;Hankasalmi;X;X;X;X;X;X
+07-22685;Työskintie 3, Äänekoski;Äänekoski;X;X;X;X;X;
+07-22687;Matkakatu 2, Äänekoski;Äänekoski;X;X;X;;X;
+07-22897;Mäyrätie 1, Kuortti;Pertunmaa;X;X;X;;;
+07-22926;Asematie 1, Vaajakoski;Jyväskylä;X;X;X;X;X;X
+07-30042;Tervantie 2, Keuruu;Keuruu;X;X;X;X;X;X
+07-30059;Asemakatu 13, Suolahti;Äänekoski;X;X;X;;X;
+07-30079;Yhdystie 2, Hartola;Hartola;X;X;X;X;X;X
+07-30086;Kaivokatu 1, Jyväskylä;Jyväskylä;X;X;X;X;X;X
+08-10368;Luostaritie 2, Karvionkanava;Heinävesi;X;X;X;;X;
+08-10369;Kermantie 13, Heinävesi;Heinävesi;X;X;X;;X;X
+08-10575;Kaarikatu 18, Iisalmi;Iisalmi;X;X;X;;X;X
+08-10576;Parkatintie 2, Iisalmi;Iisalmi;X;X;X;X;X;X
+08-10578;Eteläntie 4, Iisalmi;Iisalmi;X;X;X;X;X;X
+08-10580;Tuumakatu 1, Iisalmi;Iisalmi;X;X;X;;X;X
+08-10581;Satamakatu 10, Iisalmi;Iisalmi;X;X;X;;X;X
+08-10583;Lehtomäentie 100, Iisalmi;Iisalmi;X;X;X;;X;
+08-10584;Peltosalmentie 11, Iisalmi;Iisalmi;X;X;X;;X;X
+08-10587;Hernejärventie 1085, Hernejärvi;Iisalmi;X;X;X;;X;
+08-10591;Pielavedentie 711, Iisalmi;Iisalmi;X;X;X;;X;
+08-10593;Runnintie 374, Runni;Iisalmi;X;X;X;;X;
+08-10643;Kauppatie 9, Ilomantsi;Ilomantsi;X;X;X;X;X;X
+08-10647;Iknonvaarantie 18, Sonkaja;Ilomantsi;X;X;X;;X;
+08-10648;Vehnävaarantie 2 A, Maukkula;Ilomantsi;X;X;X;;X;
+08-10650;Huhuksentie 45, Huhus;Ilomantsi;X;X;X;;X;
+08-10759;Rantakatu 34, Joensuu;Joensuu;X;X;X;;X;X
+08-10760;Suvikatu 16, Joensuu;Joensuu;X;X;X;X;X;X
+08-10761;Niinivaarantie 74, Joensuu;Joensuu;X;X;X;;X;X
+08-10764;Lonikintie 16, Joensuu;Joensuu;X;X;X;;X;X
+08-10765;Uimarintie 1, Joensuu;Joensuu;X;X;X;;X;X
+08-10766;Vanamokatu 26, Joensuu;Joensuu;X;X;X;;X;X
+08-10767;Voimatie 2, Joensuu;Joensuu;X;X;X;X;X;X
+08-10769;Noljakankaari 1-3, Joensuu;Joensuu;X;X;X;;X;X
+08-10770;Sädekuja 2, Joensuu;Joensuu;X;X;X;;X;X
+08-10771;Kettuvaarantie 28, Joensuu;Joensuu;X;X;X;;X;X
+08-10772;Pataluodonkatu 1, Joensuu;Joensuu;X;X;X;;X;X
+08-10773;Lasinpuhaltajantie 3, Joensuu;Joensuu;X;X;X;;X;X
+08-10775;Joensuuväylä 911, Heinävaara;Joensuu;X;X;X;;X;X
+08-10778;Ilomantsintie 4238, Kovero;Joensuu;X;X;X;;X;X
+08-10779;Virastotie 26 B, Tuupovaara;Joensuu;X;X;X;;X;X
+08-10794;Valtatie 1, Kuvansi;Joroinen;X;X;X;;X;X
+08-10797;Maavedentie 1656, Maavesi;Joroinen;X;X;X;;X;
+08-10798;Mutalantie 3, Joroinen;Joroinen;X;X;X;X;X;X
+08-10801;Rantatie 2, Muuruvesi;Kuopio;X;X;X;;X;
+08-10804;Säyneisentie 7, Säyneinen;Kuopio;X;X;X;;X;
+08-10805;Hankamäentie 1109, Viitaniemi;Kuopio;X;X;X;;X;
+08-10808;Kirkkotie 4, Juuka;Juuka;X;X;X;X;X;X
+08-10816;Harjutie 2-4, Juva;Juva;X;X;X;;X;X
+08-11149;Toritie 1, Kannonkoski;Kannonkoski;X;X;X;X;X;
+08-11193;Keskustie 2, Karstula;Karstula;X;X;X;X;X;
+08-11287;Sininentie 205, Keitele;Keitele;X;X;X;;X;
+08-11382;Kauppatie, Kinnula;Kinnula;X;X;X;;X;X
+08-11404;Kiteentie 75, Kitee;Kitee;X;X;X;;X;X
+08-11430;Kukkomäentie 17, Kiuruvesi;Kiuruvesi;X;X;X;X;X;X
+08-11432;Valtakatu 2, Kiuruvesi;Kiuruvesi;X;X;X;X;X;X
+08-11546;Asemakuja 1, Konnevesi;Konnevesi;X;X;X;X;X;X
+08-11548;Pohjatuulentie 6, Lehmo;Kontiolahti;X;X;X;;X;
+08-11550;Kuurna-Kulhontie 125, Kulho;Kontiolahti;X;X;X;;X;
+08-11553;Holoppalantie 2, Jakokoski;Kontiolahti;X;X;X;;X;
+08-11554;Selkientie 47 B, Lehtoi;Kontiolahti;X;X;X;;X;
+08-11764;Lakeissuontie 7, Kuopio;Kuopio;X;X;X;;X;X
+08-11766;Neulamäentie 28, Kuopio;Kuopio;X;X;X;;X;X
+08-11770;Matintie 17, Nilsiä;Kuopio;X;X;X;X;X;X
+08-11772;Jalkasenkatu 5, Kuopio;Kuopio;X;X;X;X;X;
+08-11774;Vesurikuja 1, Kuopio;Kuopio;X;X;X;;X;X
+08-11779;Keskustie 26, Riistavesi;Kuopio;X;X;X;X;X;X
+08-11781;Kolmisopentie 1, Kuopio;Kuopio;X;X;X;X;X;X
+08-11786;Savilahdentie 10, Kuopio;Kuopio;X;X;X;X;X;X
+08-11788;Särkiniementie 1, Kuopio;Kuopio;X;X;X;;X;X
+08-11791;Rauhalahdentie 17, Kuopio;Kuopio;X;X;X;;X;X
+08-11792;Kellokuja 6, Kuopio;Kuopio;X;X;X;;X;
+08-11794;Tahkovuorentie 1, Tahkovuori;Kuopio;X;X;X;X;X;
+08-11796;Kiekkotie 3, Kuopio;Kuopio;X;X;X;;X;X
+08-11798;Itkonniemenkatu 14, Kuopio;Kuopio;X;X;X;;X;X
+08-11805;Karintie 237, Siikajärvi;Kuopio;X;X;X;;X;
+08-11806;Sänkimäentie 1194, Pajulahti;Kuopio;X;X;X;;X;
+08-11809;Palonurmentie 780, Palonurmi;Kuopio;X;X;X;;X;
+08-11926;Lapinlahdentie 7, Varpaisjärvi;Lapinlahti;X;X;X;X;X;X
+08-11928;Linnansalmentie 12, Lapinlahti;Lapinlahti;X;X;X;X;X;X
+08-11929;Peltoniementie, Lapinlahti;Lapinlahti;X;X;X;;X;X
+08-12053;Keilatie 1, Oravikoski;Leppävirta;X;X;X;;X;X
+08-12055;Paukarlahdentie 133, Paukarlahti;Leppävirta;X;X;X;;X;
+08-12056;Vehmersalmentie 389 B, Konnuslahti;Leppävirta;X;X;X;;X;X
+08-12058;Käpytie 12, Sorsakoski;Leppävirta;X;X;X;;X;X
+08-12064;Pielisentie 34, Lieksa;Lieksa;X;X;X;X;X;X
+08-12065;Korpi-Jaakonkatu 31, Lieksa;Lieksa;X;X;X;;X;
+08-12067;Rantalantie 13, Lieksa;Lieksa;X;X;X;;X;X
+08-12071;Kolintie 94, Koli;Lieksa;X;X;X;;X;X
+08-12099;Selkärannantie 1, Liperi;Liperi;X;X;X;;X;X
+08-12101;Kievarintie 1, Ylämylly;Liperi;X;X;X;X;X;X
+08-12102;Käsämäntie 1 A, Käsämä;Liperi;X;X;X;;X;
+08-12106;Tutjuntie 88 B, Roukalahti;Liperi;X;X;X;;X;
+08-12303;Paloasemantie 15, Haukivuori;Mikkeli;X;X;X;X;X;
+08-12307;Vanhamäentie 1, Mikkeli;Mikkeli;X;X;X;X;X;
+08-12317;Porrassalmenkatu 67-69, Mikkeli;Mikkeli;X;X;X;;X;X
+08-12320;Pihlajatie 3, Mikkeli;Mikkeli;X;X;X;X;X;
+08-12321;Kalliolanrinne 2, Mikkeli;Mikkeli;X;X;X;;X;
+08-12333;Graanintie 1, Mikkeli;Mikkeli;X;X;X;X;X;X
+08-12340;Visulahdentie 6, Mikkeli;Mikkeli;X;X;X;;X;X
+08-12353;Kääriäläntie 1, Anttola;Mikkeli;X;X;X;;X;
+08-12361;Akuntie 1, Otava;Mikkeli;X;X;X;X;X;
+08-12580;Porokylänkatu 21, Nurmes;Nurmes;X;X;X;X;X;X
+08-12581;Lehtovaarankatu 8-10, Nurmes;Nurmes;X;X;X;X;X;X
+08-12931;Kukkaroniementie 3, Pieksämäki;Pieksämäki;X;X;X;X;X;X
+08-12933;Kaakinmäenkatu 22, Pieksämäki;Pieksämäki;X;X;X;;X;X
+08-12940;Seunalantie 2, Naarajärvi;Pieksämäki;X;X;X;X;X;X
+08-12946;Niittylammentie 13, Montola;Pieksämäki;X;X;X;;X;
+08-12952;Heikinlammentie 1, Jäppilä;Pieksämäki;X;X;X;;X;X
+08-12953;Kauppakuja 1, Virtasalmi;Pieksämäki;X;X;X;;X;
+08-12955;Asemantie 1, Siikamäki;Pieksämäki;X;X;X;;X;
+08-12957;Puistotie 34, Pielavesi;Pielavesi;X;X;X;X;X;X
+08-12959;Säviäntie 5, Säviä;Pielavesi;X;X;X;;X;
+08-12964;Kiuruvedentie 1634, Vaaraslahti;Pielavesi;X;X;X;;X;
+08-13003;Käsämäntie 5 B, Sotkuma;Polvijärvi;X;X;X;;X;X
+08-13157;Satamatie 4, Puumala;Puumala;X;X;X;;X;
+08-13163;Hurissalontie 140, Hurissalo;Puumala;X;X;X;X;X;
+08-13352;Yläluostantie 1110 A, Ylä-Luosta;Rautavaara;X;X;X;;X;
+08-13483;Torikatu 5, Saarijärvi;Saarijärvi;X;X;X;X;X;X
+08-13484;Paavontie 28, Saarijärvi;Saarijärvi;X;X;X;;X;
+08-13485;Ilolantie 4, Saarijärvi;Saarijärvi;X;X;X;;X;X
+08-13648;Kaartilantie 9, Savonlinna;Savonlinna;X;X;X;;X;
+08-13649;Tulliportinkatu 10, Savonlinna;Savonlinna;X;X;X;X;X;X
+08-13656;Nojanmaantie 15, Savonlinna;Savonlinna;X;X;X;X;X;X
+08-13657;Suuri Savontie 1, Savonlinna;Savonlinna;X;X;X;;X;
+08-13658;Pihlajavedentie 21, Savonlinna;Savonlinna;X;X;X;;X;
+08-13659;Nuottamiehentie 2, Savonlinna;Savonlinna;X;X;X;;X;X
+08-13662;Perätuvantie 3, Kumpuranta;Savonlinna;X;X;X;;X;
+08-13671;Putikontie 20, Putikko;Savonlinna;X;X;X;;X;
+08-13674;Tuunaansaarentie 2, Punkaharju;Savonlinna;X;X;X;;X;X
+08-13678;Pohjukantie 1, Haapakallio;Savonlinna;X;X;X;;X;
+08-13803;Simpantie 2, Vuorela;Siilinjärvi;X;X;X;X;X;X
+08-13807;Vallantie 21, Toivala;Siilinjärvi;X;X;X;;X;
+08-13814;Harvalaisentie 2, Kuuslahti;Siilinjärvi;X;X;X;;X;
+08-13815;Rantatie 7, Jännevirta;Siilinjärvi;X;X;X;;X;
+08-13927;Rutakontie 30, Sonkajärvi;Sonkajärvi;X;X;X;X;X;X
+08-13935;Sukevantie 16, Sukeva;Sonkajärvi;X;X;X;X;X;X
+08-13949;Ainonkatu, Suonenjoki;Suonenjoki;X;X;X;X;X;X
+08-13952;Ysitie 3399, Suonenjoki;Suonenjoki;X;X;X;;X;
+08-13953;Iisvedenraitti 26, Iisvesi;Suonenjoki;X;X;X;;X;
+08-14101;Onkamontie 341, Onkamo;Tohmajärvi;X;X;X;;X;X
+08-14505;Keskuskatu 43, Valtimo;Nurmes;X;X;X;X;X;X
+08-14545;Relanderinkatu 30, Varkaus;Varkaus;X;X;X;X;X;X
+08-14547;Sorvikatu 3, Varkaus;Varkaus;X;X;X;X;X;X
+08-14549;Atolantie 7, Varkaus;Varkaus;X;X;X;;X;X
+08-14550;Savontie 44, Varkaus;Varkaus;X;X;X;;X;X
+08-14552;Jäppiläntie 66, Varkaus;Varkaus;X;X;X;;X;X
+08-14555;Nurkanniementie 2, Varkaus;Varkaus;X;X;X;;X;X
+08-14578;Petterintie 18, Vieremä;Vieremä;X;X;X;X;X;X
+08-14585;Ouluntie 3138, Salahmi;Vieremä;X;X;X;;X;
+08-14765;Kalevalankatu 25, Kuopio;Kuopio;X;X;X;;X;X
+08-14768;Puistotie 1, Kontiolahti;Kontiolahti;X;X;X;X;X;
+08-14769;Linjatie 2, Joensuu;Joensuu;X;X;X;X;X;X
+08-14770;Kylätie 33, Rantasalmi;Rantasalmi;X;X;X;X;X;
+08-14904;Kerimäentie 1, Villala;Kitee;X;X;X;;X;
+08-14919;Hovilankatu 7, Outokumpu;Outokumpu;X;X;X;;X;X
+08-14928;Varislahdentie 2, Varislahti;Outokumpu;X;X;X;;X;
+08-14953;Päivärannantie 18, Kuopio;Kuopio;X;X;X;X;X;X
+08-14954;Kovalantie 112, Mikkeli;Mikkeli;X;X;X;;X;
+08-15019;Jyväskyläntie 31a, Saarijärvi;Saarijärvi;X;X;X;;X;X
+08-20642;Olavinkatu 57, Savonlinna;Savonlinna;X;X;X;;X;
+08-20658;Vieremäntie 5, Vieremä;Vieremä;X;X;X;X;X;
+08-20714;Pankakoskentie 1, Pankakoski;Lieksa;X;X;X;;X;
+08-21033;Viinijärventie 15-17, Viinijärvi;Liperi;X;X;X;;X;X
+08-21054;Multamäentie 22, Kerimäki;Savonlinna;X;X;X;X;X;X
+08-21066;Brahentie 14, Ristiina;Mikkeli;X;X;X;X;X;
+08-21097;Kangaslammintie 12, Kangaslampi;Varkaus;X;X;X;;;X
+08-21240;Kullervonkatu 1, Savonlinna;Savonlinna;X;X;X;;X;X
+08-21279;Vanha Valtatie 4, Reijola;Joensuu;X;X;X;;X;X
+08-21368;Virastotie 1, Kivijärvi;Kivijärvi;X;X;X;;X;X
+08-21418;Väinöläntie 4, Lieksa;Lieksa;X;X;X;;X;X
+08-21565;Harjunraitti 17, Uimaharju;Joensuu;X;X;X;;X;X
+08-21568;Kauppatie 10, Punkaharju;Savonlinna;X;X;X;X;X;
+08-21574;Keskustie 18, Vesanto;Vesanto;X;X;X;X;X;X
+08-21618;Marjalantie 2, Joensuu;Joensuu;X;X;X;;X;X
+08-21627;Keskitie 23, Tuusniemi;Tuusniemi;X;X;X;X;X;X
+08-21629;Asematie 1, Lapinlahti;Lapinlahti;X;X;X;;X;
+08-21637;Jääskeläntie 2, Polvijärvi;Polvijärvi;X;X;X;X;X;
+08-21730;Keskustie 26 A 1, Pylkönmäki;Saarijärvi;X;X;X;;X;
+08-21734;Hainarintie 1, Tohmajärvi;Tohmajärvi;X;X;X;X;X;X
+08-21768;Joensuuväylä 11 A, Kiihtelysvaara;Joensuu;X;X;X;;X;
+08-21772;Savontie 21, Rautavaara;Rautavaara;X;X;X;X;X;X
+08-21797;Sorakuja 4, Siilinjärvi;Siilinjärvi;X;X;X;X;X;X
+08-21835;Mikkelintie 47, Anttola;Mikkeli;X;X;X;;X;
+08-21870;Hammaslahdentie 19, Hammaslahti;Joensuu;X;X;X;;X;X
+08-21880;Kermantie 1, Heinävesi;Heinävesi;X;X;X;;X;
+08-21899;Maaningantie 25, Maaninka;Kuopio;X;X;X;X;X;X
+08-22002;Kirkonkyläntie 1, Suomenniemi;Mikkeli;X;X;X;;X;
+08-22095;Julkulanniementie 5, Kuopio;Kuopio;X;X;X;;X;
+08-22141;Lossitie 3, Keitele;Keitele;X;X;X;X;X;X
+08-22161;Polvijärventie 1, Polvijärvi;Polvijärvi;X;X;X;X;X;X
+08-22167;Kuopiontie 10, Rautalampi;Rautalampi;X;X;X;X;X;X
+08-22342;Alanteentie 38, Sulkava;Sulkava;X;X;X;X;X;
+08-22383;Kesälahdentie 39, Kesälahti;Kitee;X;X;X;X;X;X
+08-22387;Myllytie 1, Tervo;Tervo;X;X;X;X;X;
+08-22451;Keskustie 9, Liperi;Liperi;X;X;X;;X;X
+08-22462;Kiteentie 1, Kitee;Kitee;X;X;X;X;X;X
+08-22475;Kaavintie 1 B, Kaavi;Kaavi;X;X;X;X;X;
+08-22493;Alavinkatu 27, Outokumpu;Outokumpu;X;X;X;X;X;X
+08-22522;Kolmitähkäntie 2b, Savonranta;Savonlinna;X;X;X;;X;
+08-22524;Mintunkatu 2, Joensuu;Joensuu;X;X;X;;X;X
+08-22581;Kiertotie 2, Varkaus;Varkaus;X;X;X;;X;
+08-22600;Keskuskatu 18, Kontiolahti;Kontiolahti;X;X;X;X;X;X
+08-22624;Kolintie 10, Ahmovaara;Juuka;X;X;X;;X;
+08-22632;Puhoslahdentie 2, Puhos;Kitee;X;X;X;;X;X
+08-22656;Säästötie 2, Enonkoski;Enonkoski;X;X;X;;X;X
+08-22664;Kirkkotie 1, Rääkkylä;Rääkkylä;X;X;X;X;X;X
+08-22698;Kylätie 23, Rantasalmi;Rantasalmi;X;X;X;X;X;X
+08-22708;Postikuja 1, Viitasaari;Viitasaari;X;X;X;X;X;
+08-22712;Asematie 1, Pihtipudas;Pihtipudas;X;X;X;X;X;
+08-22767;Länsirannantie 2299, Hirvilahti;Kuopio;X;X;X;;X;
+08-22855;Vehmersalmentie 1696 B, Tuppurinmäki;Leppävirta;X;X;X;;;
+08-22903;Alapitkäntie 45, Alapitkä;Lapinlahti;X;X;X;X;X;
+08-22920;Marjalantie 18, Joensuu;Joensuu;X;X;X;;X;X
+08-22923;Laitilantie 1, Siilinjärvi;Siilinjärvi;X;X;X;;X;
+08-22924;Juankoskentie 19, Juankoski;Kuopio;X;X;X;X;X;X
+08-22925;Kissakuusentie 2, Karttula;Kuopio;X;X;X;X;X;
+08-22927;Kokkosalmentie 7, Viitasaari;Viitasaari;X;X;X;X;;
+08-22936;Aholahdentie 14, Savonlinna;Savonlinna;X;X;X;;X;X
+08-23009;Vitostie 1779, Kuopio;Kuopio;X;X;X;;X;
+08-23010;Karikontie 1, Mikkeli;Mikkeli;X;X;X;X;X;X
+08-23029;Pirtinkaari 28, Kuopio;Kuopio;X;X;X;;X;
+08-30006;Puavontie 2, Vehmersalmi;Kuopio;X;X;X;X;X;X
+08-30014;Karjalantie 1, Juuka;Juuka;X;X;X;X;X;X
+08-30016;Hiihtäjäntie 1, Juva;Juva;X;X;X;X;X;
+08-30031;Ensolantie 1, Lehmo;Kontiolahti;X;X;X;X;X;X
+08-30033;Vehmasmäentie 17, Vehmasmäki;Kuopio;X;X;X;;X;
+08-30037;Niskantie 42, Eno;Joensuu;X;X;X;X;X;X
+08-30057;Metsolantie 3, Suonenjoki;Suonenjoki;X;X;X;;X;X
+08-30064;Otavantie 1, Otava;Mikkeli;X;X;X;X;X;X
+08-30071;Kangaskatu 6, Pieksämäki;Pieksämäki;X;X;X;X;X;
+08-30076;Nurmeksentie 69, Joensuu;Joensuu;X;X;X;;X;X
+08-30100;Matkuksentie 60, Kuopio;Kuopio;X;X;X;X;X;X
+08-30105;Peltolantie 2, Lehmo;Kontiolahti;X;X;X;;X;
+08-30117;Tarhurintie 3, Leppävirta;Leppävirta;X;X;X;X;X;X
+09-10029;Järvikatu 3-5, Alajärvi;Alajärvi;X;X;X;;X;
+09-10040;Kurejoentie 2, Alajärvi;Alajärvi;X;X;X;X;X;X
+09-10047;Kiventie 1, Alajärvi;Alajärvi;X;X;X;X;X;X
+09-10060;Luomantie 76, Luoma-Aho;Alajärvi;X;X;X;;X;
+09-10088;Keskustie 3, Alavieska;Alavieska;X;X;X;;X;X
+09-10097;Piirantie 1, Alavus;Alavus;X;X;X;X;X;X
+09-10098;Harrintie 1, Alavus;Alavus;X;X;X;;X;
+09-10099;Talonpojantie, Alavus;Alavus;X;X;X;;X;
+09-10100;Järviluomantie 5, Alavus;Alavus;X;X;X;;X;X
+09-10101;Heinontie 1, Alavus;Alavus;X;X;X;;X;
+09-10103;Keskustie 5, Töysä;Alavus;X;X;X;;X;
+09-10104;Tuurinkyläntie 31, Tuuri;Alavus;X;X;X;;X;
+09-10105;Pysäkkitie, Tuuri;Alavus;X;X;X;;X;
+09-10223;Kauppatie 2, Evijärvi;Evijärvi;X;X;X;;X;
+09-10260;Kustaa Vaasankatu 3, Haapajärvi;Haapajärvi;X;X;X;;X;X
+09-10271;Aholantie 19, Oksava;Haapajärvi;X;X;X;;X;
+09-10628;Kahmankuja 1, Ilmajoki;Ilmajoki;X;X;X;X;X;
+09-10630;Huhdantie 1, Ilmajoki;Ilmajoki;X;X;X;;X;X
+09-10632;Havuselantie 4, Koskenkorva;Ilmajoki;X;X;X;;X;
+09-10636;Jäpintie 2, Ilmajoki;Ilmajoki;X;X;X;;X;
+09-10637;Saunamäentie 360, Pojanluoma;Ilmajoki;X;X;X;;X;
+09-10641;Ahonkyläntie 1, Tuomikylä;Ilmajoki;X;X;X;;X;
+09-10699;Honkajoentie 14, Isojoki;Isojoki;X;X;X;;X;
+09-10709;Lukkarinmäentie, Isokyrö;Isokyrö;X;X;X;;X;X
+09-10715;Viljavarastontie 2, Orismala;Isokyrö;X;X;X;;X;
+09-10718;Jalastie 27, Jalasjärvi;Kurikka;X;X;X;;X;
+09-10721;Keskustie 33, Jalasjärvi;Kurikka;X;X;X;;X;
+09-10722;Koskitie 21, Jalasjärvi;Kurikka;X;X;X;X;X;
+09-10727;Jokipiintie 145, Jokipii;Kurikka;X;X;X;;X;
+09-10730;Tampereentie 1566, Koskue;Kurikka;X;X;X;;X;
+09-10733;Pohjolantie 10, Luopajärvi;Kurikka;X;X;X;;X;
+09-11098;Merenojantie 2, Kalajoki;Kalajoki;X;X;X;;X;X
+09-11100;Haahdentie 2, Himanka;Kalajoki;X;X;X;;X;X
+09-11105;Kalajoentie 38, Kalajoki;Kalajoki;X;X;X;X;X;X
+09-11117;Matkailutie 3, Kalajoki;Kalajoki;X;X;X;;X;
+09-11121;Sievintie 10, Rautio;Kalajoki;X;X;X;;X;X
+09-11159;Tukkitie 3, Kannus;Kannus;X;X;X;X;X;X
+09-11160;Siltakatu 6, Kannus;Kannus;X;X;X;;X;X
+09-11177;Alakyläntie 4, Karijoki;Karijoki;X;X;X;;X;X
+09-11218;Lellavantie 1, Kauhajoki;Kauhajoki;X;X;X;X;X;X
+09-11220;Puistotie 61, Kauhajoki;Kauhajoki;X;X;X;;X;
+09-11221;Savikyläntie 15, Kauhajoki;Kauhajoki;X;X;X;X;X;X
+09-11223;Aronkuja 17, Kauhajoki As;Kauhajoki;X;X;X;;X;X
+09-11226;Eteläinen Yhdystie 1, Kauhajoki;Kauhajoki;X;X;X;;X;X
+09-11242;Oikotie 18, Päntäne;Kauhajoki;X;X;X;;;
+09-11252;Jääkärintie 53, Kortesjärvi;Kauhava;X;X;X;;X;X
+09-11272;Kappelintie, Kaustinen;Kaustinen;X;X;X;X;X;
+09-11273;Terveystie 4, Kaustinen;Kaustinen;X;X;X;;X;X
+09-11377;Kihniöntie 4, Kihniö;Kihniö;X;X;X;;X;
+09-11381;Niskoksentie 2, Kihniö;Kihniö;X;X;X;;X;
+09-11456;Vaasantie 49-73, Kokkola;Kokkola;X;X;X;;X;
+09-11458;Tykkitie, Kokkola;Kokkola;X;X;X;;X;
+09-11465;Kaarlelankatu 24, Kokkola;Kokkola;X;X;X;;X;
+09-11467;Rautatienkatu 10, Kokkola;Kokkola;X;X;X;;X;
+09-11469;Pohjolankatu 33-34, Kokkola;Kokkola;X;X;X;;X;
+09-11470;Kaanaanmaantie 12-15, Kokkola;Kokkola;X;X;X;;X;
+09-11471;Kaljaasi 1, Kokkola;Kokkola;X;X;X;;X;
+09-11473;Kulimäentie, Kokkola;Kokkola;X;X;X;;X;
+09-11474;Ilkantie, Kokkola;Kokkola;X;X;X;;X;
+09-11477;Heinolankaari 1, Kokkola;Kokkola;X;X;X;X;X;X
+09-11479;Halkokarintie 20, Kokkola;Kokkola;X;X;X;;X;
+09-11482;Ventuksentie 47, Kokkola;Kokkola;X;X;X;;X;
+09-11483;Lasimestarintie 1-2, Kokkola;Kokkola;X;X;X;;X;
+09-11485;Linnusperäntie 1, Kokkola;Kokkola;X;X;X;;X;
+09-11487;Kälviäntie 33, Kälviä;Kokkola;X;X;X;;X;
+09-11488;Herman Renlundinkatu 26, Kokkola;Kokkola;X;X;X;;X;
+09-11490;Laajalahdentie 22, Kokkola;Kokkola;X;X;X;;X;
+09-11491;Prismantie, Kokkola;Kokkola;X;X;X;X;X;X
+09-11495;Laxinpolku, Kokkola;Kokkola;X;X;X;;X;
+09-11498;Purotie 3, Kokkola;Kokkola;X;X;X;;X;
+09-11499;Kuusitie 3-5, Kokkola;Kokkola;X;X;X;;X;
+09-11503;Oravankatu 32, Kokkola;Kokkola;X;X;X;;X;
+09-11506;Kattholmantie 1, Kokkola;Kokkola;X;X;X;;X;
+09-11507;Kytösavuntie 2, Kokkola;Kokkola;X;X;X;;X;
+09-11509;Koivuhaantie, Kokkola;Kokkola;X;X;X;;X;
+09-11512;Alaviirteentie 4, Lohtaja;Kokkola;X;X;X;;X;X
+09-11529;Öjantie, Öja;Kokkola;X;X;X;;X;
+09-11544;Vionojantie 36, Ullava;Kokkola;X;X;X;;X;
+09-11563;Söderbyvägen 2, Molpe;Korsnäs;X;X;X;;X;
+09-11685;Köydenpunojankatu 24, Kristiinankaupunki;Kristiinankaupunki;X;X;X;X;X;
+09-11686;Lapväärtintie 2, Kristiinankaupunki;Kristiinankaupunki;X;X;X;;X;
+09-11687;Mariantie 4, Lapväärtti;Kristiinankaupunki;X;X;X;;X;X
+09-11694;Friivelintie 1, Skaftung;Kristiinankaupunki;X;X;X;;;
+09-11695;Härkmerentie 474, Härkmeri;Kristiinankaupunki;X;X;X;;X;
+09-11697;Siipyyntie 725, Siipyy;Kristiinankaupunki;X;X;X;;X;
+09-11701;Murikantie 1, Alaveteli;Kruunupyy;X;X;X;;X;X
+09-11703;Norra Terjärvvägen 15, Teerijärvi;Kruunupyy;X;X;X;;X;
+09-11707;Kruunupyyntie 9, Kruunupyy;Kruunupyy;X;X;X;X;X;X
+09-11813;Koulutie 1, Kuortane;Kuortane;X;X;X;;X;X
+09-11814;Keskustie 43, Kuortane;Kuortane;X;X;X;;X;
+09-11817;Länsirannantie 461, Mäyry;Kuortane;X;X;X;;X;
+09-11826;Laurintie 22, Kurikka;Kurikka;X;X;X;X;X;
+09-11830;Asematie 6, Kurikka;Kurikka;X;X;X;;X;
+09-11833;Paulaharjuntie, Kurikka;Kurikka;X;X;X;;X;
+09-11834;Saumantie 26, Kurikka;Kurikka;X;X;X;;X;
+09-11837;Hiekkatie, Kurikka;Kurikka;X;X;X;;X;
+09-11838;Kiskontie 20, Kurikka;Kurikka;X;X;X;;X;
+09-11848;Ruotumiehentie 6, Panttila;Kurikka;X;X;X;;X;
+09-12014;Latojantie 9, Lapua;Lapua;X;X;X;X;X;
+09-12015;Lapuan Tori, Lapua;Lapua;X;X;X;;X;
+09-12021;Vasunmäentie 10, Lapua;Lapua;X;X;X;;X;
+09-12026;Kuortaneentie 1506, Tiistenjoki;Lapua;X;X;X;;X;
+09-12027;Kuortaneentie 1994, Lakaluoma;Lapua;X;X;X;;X;
+09-12061;Lestintie 38 A, Lestijärvi;Lestijärvi;X;X;X;X;X;X
+09-12234;Assarskärsvägen 1, Luoto;Luoto;X;X;X;;X;
+09-12236;Bosundintie 57a, Bosund;Luoto;X;X;X;;X;
+09-12237;Kärlekavägen, Eugmo;Luoto;X;X;X;;X;
+09-12238;Kackurvägen, Luoto;Luoto;X;X;X;X;X;X
+09-12254;Viaksentie 94, Övermalax;Maalahti;X;X;X;;X;X
+09-12255;Petalaxvägen 22, Petolahti;Maalahti;X;X;X;;X;
+09-12295;Vanhatie 3, Merijärvi;Merijärvi;X;X;X;;X;X
+09-12381;Koskövägen, Koivulahti;Mustasaari;X;X;X;;X;
+09-12382;Koivulahdentie 2, Koivulahti;Mustasaari;X;X;X;;X;X
+09-12385;Himisbackantie 1, Sulva;Mustasaari;X;X;X;;X;
+09-12389;Lundvägen, Helsingby;Mustasaari;X;X;X;;X;
+09-12390;Tuovilantie 450, Helsingby;Mustasaari;X;X;X;;X;
+09-12391;Svedjentie, Mustasaari;Mustasaari;X;X;X;;X;
+09-12396;Kosköntie 704, Koskö;Mustasaari;X;X;X;;X;
+09-12400;Sommarösundintie 263, Södra Vallgrund;Mustasaari;X;X;X;;X;
+09-12539;Toritie 13, Nivala;Nivala;X;X;X;X;X;X
+09-12598;Åvägen 4, Närpiö;Närpiö;X;X;X;;X;X
+09-12599;Närpesvägen 27, Närpiö;Närpiö;X;X;X;X;X;X
+09-12601;Tegelbruksvägen 10, Närpiö As;Närpiö;X;X;X;;X;
+09-12608;Gamla Landsvägen 6, Norrnäs;Närpiö;X;X;X;;X;
+09-12611;Bäcklidvägen 10, Pjelax;Närpiö;X;X;X;;X;
+09-12613;Kronolandsvägen 3, Pirttikylä;Närpiö;X;X;X;;X;
+09-12614;Nämpnäsvägen 82, Nämpnäs;Närpiö;X;X;X;;X;
+09-12616;Vasavägen 1621, Ylimarkku;Närpiö;X;X;X;;X;
+09-12645;Oulaistenkatu 15, Oulainen;Oulainen;X;X;X;;X;X
+09-12647;Keskuskatu 21, Oulainen;Oulainen;X;X;X;X;X;X
+09-12872;Steinpottvägen, Ähtävä;Pedersören kunta;X;X;X;;X;
+09-12876;Vaasantie 8, Pännäinen;Pedersören kunta;X;X;X;X;X;X
+09-12877;Industrigatan, Kolppi;Pedersören kunta;X;X;X;;X;
+09-12878;Laidunkuja 1, Edsevö;Pedersören kunta;X;X;X;;X;
+09-12885;Ytteressentie 174, Ytteresse;Pedersören kunta;X;X;X;;X;
+09-12909;Hietaniementie 1, Perho;Perho;X;X;X;;X;
+09-12966;Köpmansgatan, Pietarsaari;Pietarsaari;X;X;X;;X;
+09-12967;Tehtaankatu, Pietarsaari;Pietarsaari;X;X;X;X;X;X
+09-12970;Vestersundsgatan, Pietarsaari;Pietarsaari;X;X;X;;X;
+09-12972;Köpmansgatan, Pietarsaari;Pietarsaari;X;X;X;;X;
+09-12974;Järnvägsgatan, Pietarsaari;Pietarsaari;X;X;X;;X;
+09-12975;Ahlströminkatu 22, Pietarsaari;Pietarsaari;X;X;X;;X;
+09-12976;Hermelingränd, Pietarsaari;Pietarsaari;X;X;X;;X;
+09-12978;Pursimiehenkatu 63, Pietarsaari;Pietarsaari;X;X;X;;X;
+09-12979;Borgarmalmsvägen, Pietarsaari;Pietarsaari;X;X;X;;X;
+09-12980;Länsinummentori 2, Pietarsaari;Pietarsaari;X;X;X;;X;
+09-12982;Itäkunnaantie 2, Pietarsaari;Pietarsaari;X;X;X;;X;
+09-12986;Kyrkvärdsvägen, Pietarsaari;Pietarsaari;X;X;X;;X;
+09-12987;Oinaansaarentie 1, Pietarsaari;Pietarsaari;X;X;X;;X;X
+09-12988;Lysarholmsvägen, Pietarsaari;Pietarsaari;X;X;X;;X;
+09-12989;Ahotie 49, Pietarsaari;Pietarsaari;X;X;X;;X;
+09-12990;India, Pietarsaari;Pietarsaari;X;X;X;;X;
+09-13177;Kokkolantie 1116, Yppäri;Pyhäjoki;X;X;X;;X;
+09-13178;Antintie 4, Pyhäsalmi;Pyhäjärvi;X;X;X;;X;X
+09-13179;Ollintie 9, Pyhäsalmi;Pyhäjärvi;X;X;X;;X;
+09-13180;Mustaparrantie 1, Pyhäsalmi;Pyhäjärvi;X;X;X;;X;X
+09-13187;Tornitie 3, Pyhäkumpu;Pyhäjärvi;X;X;X;;X;
+09-13364;Reisjärventie 3, Reisjärvi;Reisjärvi;X;X;X;;X;X
+09-13692;Hyllykalliontie 2, Hyllykallio;Seinäjoki;X;X;X;X;X;X
+09-13694;Keskustie 20, Peräseinäjoki;Seinäjoki;X;X;X;;X;
+09-13697;Kaukolanraitti 2, Ylistaro;Seinäjoki;X;X;X;;X;
+09-13703;Riskulankaari, Seinäjoki;Seinäjoki;X;X;X;;X;
+09-13705;Keikkoahde 2, Seinäjoki;Seinäjoki;X;X;X;;X;
+09-13706;Uittomiehenkatu, Seinäjoki;Seinäjoki;X;X;X;;X;
+09-13710;Päivölänkatu 2, Seinäjoki;Seinäjoki;X;X;X;;X;
+09-13715;Puskantie 13, Seinäjoki;Seinäjoki;X;X;X;;X;X
+09-13717;Valkiavuorentie 2, Nurmo;Seinäjoki;X;X;X;;X;X
+09-13719;Peltokukanviita, Seinäjoki;Seinäjoki;X;X;X;;X;
+09-13721;Savottatie, Seinäjoki;Seinäjoki;X;X;X;;X;
+09-13722;Laatokankatu 2, Seinäjoki;Seinäjoki;X;X;X;;X;
+09-13723;Suunnistajanreitti 2, Seinäjoki;Seinäjoki;X;X;X;;X;
+09-13724;Kytöpolku 2, Seinäjoki;Seinäjoki;X;X;X;X;X;
+09-13725;Katajalaaksonkatu, Seinäjoki;Seinäjoki;X;X;X;;X;
+09-13728;Suupohjantie 45, Seinäjoki;Seinäjoki;X;X;X;X;X;X
+09-13729;Toritaival 2, Seinäjoki;Seinäjoki;X;X;X;;X;X
+09-13733;Kyrkösjärventie, Seinäjoki;Seinäjoki;X;X;X;;X;
+09-13734;Keskustie 43, Peräseinäjoki;Seinäjoki;X;X;X;;X;
+09-13735;Päivölänkatu 40, Hyllykallio;Seinäjoki;X;X;X;X;X;
+09-13736;Penttiläntie 60, Hyllykallio;Seinäjoki;X;X;X;;X;
+09-13739;Viljanmaantie 5, Ylistaro As;Seinäjoki;X;X;X;;X;
+09-13740;Ruuskalantie 54, Ylistaro;Seinäjoki;X;X;X;;X;
+09-13745;Isokoskentie 1095, Isokoski;Seinäjoki;X;X;X;;X;
+09-13748;Kalajärventie 96, Peräseinäjoki;Seinäjoki;X;X;X;;;
+09-13750;Kitinojantie 49, Halkosaari;Seinäjoki;X;X;X;;X;
+09-13752;Kitinojantie 654, Kitinoja;Seinäjoki;X;X;X;;X;
+09-13754;Jouttikoskentie 25, Louko;Seinäjoki;X;X;X;;X;
+09-13755;Seinäjoentie 791, Louko;Seinäjoki;X;X;X;;X;
+09-13756;Haapaluomantie 337 B, Haapaluoma;Seinäjoki;X;X;X;;X;
+09-13759;Kourantie 581, Koura;Seinäjoki;X;X;X;;X;
+09-13764;Haikolantie 19, Sievi;Sievi;X;X;X;;X;
+09-13771;Korhosenkatu 19, Sievi As;Sievi;X;X;X;;X;
+09-13778;Pulkkilantie 21, Pulkkila;Siikalatva;X;X;X;;X;X
+09-13779;Härmäntie, Kestilä;Siikalatva;X;X;X;;X;X
+09-13783;Paavolantie 6, Rantsila;Siikalatva;X;X;X;;X;X
+09-13785;Pulkkilantie 1, Pulkkila;Siikalatva;X;X;X;X;;
+09-13786;Keskustie 10, Piippola;Siikalatva;X;X;X;;X;X
+09-13901;Teollisuustie 1, Soini;Soini;X;X;X;X;X;X
+09-14086;Porvarintie 14, Teuva;Teuva;X;X;X;;X;X
+09-14088;Mikkiläntie 11, Teuva;Teuva;X;X;X;X;;X
+09-14095;Pysäkkitie 19, Äystö;Teuva;X;X;X;;X;
+09-14098;Horontie 1349, Horo;Teuva;X;X;X;;X;
+09-14105;Ullavantie 2, Toholampi;Toholampi;X;X;X;;X;X
+09-14109;Kannustie 599, Laitala;Toholampi;X;X;X;;X;
+09-14112;Poikkitie, Sykäräinen;Toholampi;X;X;X;;X;
+09-14408;Topeliusesplanaden, Uusikaarlepyy;Uusikaarlepyy;X;X;X;;X;
+09-14411;Frillmossantie 2, Uusikaarlepyy;Uusikaarlepyy;X;X;X;;X;X
+09-14426;Monäsvägen 542, Hirvlax;Uusikaarlepyy;X;X;X;;X;
+09-14439;Pajutie, Vaasa;Vaasa;X;X;X;;X;X
+09-14440;Vanhan Vaasankatu, Vaasa;Vaasa;X;X;X;;X;
+09-14441;Aleksis Kiventie, Vaasa;Vaasa;X;X;X;;X;X
+09-14442;Paukkulantie, Vaasa;Vaasa;X;X;X;;X;X
+09-14443;Sala-Ampujankatu, Vaasa;Vaasa;X;X;X;;X;X
+09-14445;Laturintie 1, Vaasa;Vaasa;X;X;X;;X;X
+09-14446;Jukolantie 1, Vaasa;Vaasa;X;X;X;X;X;X
+09-14447;Hyttystie, Vaasa;Vaasa;X;X;X;;X;X
+09-14448;Vallhallantien, Vaasa;Vaasa;X;X;X;;X;X
+09-14449;Kokkokalliontie 2-6, Vaasa;Vaasa;X;X;X;X;X;X
+09-14450;Västervikintie 2, Vaasa;Vaasa;X;X;X;X;X;
+09-14451;Ympyrätie, Vaasa;Vaasa;X;X;X;;X;X
+09-14452;Nunnanpolku, Vaasa;Vaasa;X;X;X;;X;X
+09-14453;Kukkaiskatu, Vaasa;Vaasa;X;X;X;;X;X
+09-14454;Gerbyntie, Vaasa;Vaasa;X;X;X;;X;X
+09-14455;Kuninkaantie 65-69, Vaasa;Vaasa;X;X;X;;X;
+09-14457;Laivakatu 13, Vaasa;Vaasa;X;X;X;;X;X
+09-14459;Joutsenenkatu, Vaasa;Vaasa;X;X;X;;X;
+09-14460;Postikatu, Vaasa;Vaasa;X;X;X;;X;X
+09-14462;Mäntymaantie 2, Vaasa;Vaasa;X;X;X;;X;X
+09-14463;Kulmakatu, Vaasa;Vaasa;X;X;X;;X;X
+09-14465;Merikaarrontie 885, Merikaarto;Vaasa;X;X;X;;X;
+09-14466;Rantatie, Vaasa;Vaasa;X;X;X;;X;
+09-14467;Koivutie, Vaasa;Vaasa;X;X;X;;X;
+09-14468;Västervikintie, Vaasa;Vaasa;X;X;X;;X;
+09-14469;Tiilitehtaankatu, Vaasa;Vaasa;X;X;X;;X;X
+09-14470;Patteriniementie, Vaasa;Vaasa;X;X;X;;X;
+09-14471;Karhuntie 81, Vaasa;Vaasa;X;X;X;;X;X
+09-14472;Rajarinne, Vaasa;Vaasa;X;X;X;;X;
+09-14473;Kiitokaari 2, Vaasa;Vaasa;X;X;X;;X;
+09-14474;Runsorintie 194, Vaasa;Vaasa;X;X;X;;X;X
+09-14476;Malamontie 2, Tervajoki;Vaasa;X;X;X;;X;
+09-14478;Pitkäniityntie, Sundom;Vaasa;X;X;X;;X;X
+09-14481;Söderlandintie, Vaasa;Vaasa;X;X;X;;X;X
+09-14482;Kaarnatie 1, Vaasa;Vaasa;X;X;X;X;X;
+09-14564;Kirkkotanhua 1, Veteli;Veteli;X;X;X;;X;X
+09-14565;Lehtisaarentie 15, Veteli;Veteli;X;X;X;;X;
+09-14569;Finniläntie 4, Räyrinki;Veteli;X;X;X;;X;
+09-14572;Patanantie 781, Patana;Veteli;X;X;X;;X;
+09-14609;Suksitie 21, Vimpeli;Vimpeli;X;X;X;;X;X
+09-14646;Maksamaantie 239, Maksamaa;Vöyri;X;X;X;;X;X
+09-14648;Vöråvägen 1, Vöyri;Vöyri;X;X;X;X;X;X
+09-14651;Koulutie 9, Maksamaa;Vöyri;;X;X;;X;
+09-14660;Österö 2073, Maksamaa;Vöyri;X;X;X;;X;
+09-14671;Kärklaxvägen 332, Maksamaa;Vöyri;X;X;X;;X;
+09-14690;Rautatiekatu 11, Ylivieska;Ylivieska;X;X;X;;X;X
+09-14692;Ollilanojankatu 2, Ylivieska;Ylivieska;X;X;X;;X;
+09-14693;Savarinkatu 6, Ylivieska;Ylivieska;X;X;X;;X;X
+09-14695;Petäjätie 2, Ylivieska;Ylivieska;X;X;X;;X;
+09-14700;Joutsentie 9, Ylivieska;Ylivieska;X;X;X;;X;X
+09-14746;Alatie 22, Ähtäri;Ähtäri;X;X;X;X;X;
+09-14747;Puistotie 14, Ähtäri;Ähtäri;X;X;X;;X;
+09-14748;Ostolantie 8, Ähtäri;Ähtäri;X;X;X;;X;X
+09-14751;Moksuntie, Inha;Ähtäri;X;X;X;;X;
+09-14949;Vallgrundintie 1, Raippaluoto;Mustasaari;X;X;X;;X;
+09-14951;Malminkatu 12, Maalahti;Maalahti;X;X;X;X;X;X
+09-14952;Teollisuustie 3, Korsnäs;Korsnäs;X;X;X;;X;X
+09-14961;Kauppatie 82, Kauhava;Kauhava;X;X;X;;X;X
+09-14963;Vanha Vaasantie 1, Ylihärmä;Kauhava;X;X;X;;X;X
+09-14964;Saharavainiontie 1, Härmä;Kauhava;X;X;X;;X;X
+09-14965;Pensalantie 147, Jepua;Uusikaarlepyy;X;X;X;;X;X
+09-14967;Vaasantie 137, Pietarsaari;Pietarsaari;X;X;X;;X;X
+09-14973;Yrittäjäntie 5, Alajärvi;Alajärvi;X;X;X;X;X;
+09-14977;Tehtaantie 5, Seinäjoki;Seinäjoki;X;X;X;X;X;X
+09-15000;Savarinkatu 2, Ylivieska;Ylivieska;X;X;X;X;X;X
+09-15001;Kalliontie 19, Nivala;Nivala;X;X;X;X;X;X
+09-15002;Kantolantie 2, Sievi;Sievi;X;X;X;X;X;X
+09-15003;Pulkkilantie 33, Haapavesi;Haapavesi;X;X;X;X;X;X
+09-15004;Kokkolantie 75, Oravainen;Vöyri;X;X;X;;X;X
+09-15013;Urheilupolku, Vähäkyrö;Vaasa;X;X;X;X;X;X
+09-15064;Outokummuntie 4, Kokkola;Kokkola;X;X;X;;X;
+09-15065;Metsämäentie, Kokkola;Kokkola;X;X;X;;X;
+09-15090;Vetelintie 3, Halsua;Halsua;X;X;X;X;X;X
+09-15092;Niementie 81, Marinkainen;Kokkola;X;X;X;;X;
+09-20094;Vaasantie 2, Kyyjärvi;Kyyjärvi;X;X;X;X;X;
+09-20409;Keskustie 15, Piippola;Siikalatva;X;X;X;;X;
+09-20601;Keskuskatu 16, Kärsämäki;Kärsämäki;X;X;X;;X;X
+09-20659;Pöntisentie 4, Vimpeli;Vimpeli;X;X;X;X;X;X
+09-20700;Vanhatie 52, Pyhäjoki;Pyhäjoki;X;X;X;;X;
+09-20748;Keskustie 10, Pyhäntä;Pyhäntä;X;X;X;;X;X
+09-20854;Paavolantie 21, Rantsila;Siikalatva;X;X;X;;X;
+09-21057;Frosteruksenkatu 3, Kärsämäki;Kärsämäki;X;X;X;;;
+09-21121;Hahdonkuja 1, Jurva;Kurikka;X;X;X;;X;X
+09-21162;Kivistöntie 30, Seinäjoki;Seinäjoki;X;X;X;X;X;X
+09-21173;Nissintie 30-32, Lappajärvi;Lappajärvi;X;X;X;X;X;X
+09-21179;Kälviäntie 32, Kälviä;Kokkola;X;X;X;;X;X
+09-21200;Kruunupyyntie 44, Kokkola;Kokkola;X;X;X;;X;X
+09-21270;Ollintie 12-14, Pyhäsalmi;Pyhäjärvi;X;X;X;X;;X
+09-21311;Reservikomppaniankatu 2, Oulainen;Oulainen;X;X;X;;X;X
+09-21324;Kauppatie 6, Laihia;Laihia;X;X;X;X;X;X
+09-21356;Keskustie 27, Jalasjärvi;Kurikka;X;X;X;;X;X
+09-21378;Savarinkatu 9, Ylivieska;Ylivieska;X;X;X;X;;
+09-21485;Marttilantie 1, Isokyrö;Isokyrö;X;X;X;X;X;X
+09-21528;Keskustie 1, Lehtimäki;Alajärvi;X;X;X;X;X;X
+09-21701;Ullavantie 11, Toholampi;Toholampi;X;X;X;;X;X
+09-21720;Sundomintie 128, Sundom;Vaasa;X;X;X;;X;X
+09-21727;Santapellontie 2, Pietarsaari;Pietarsaari;X;X;X;;X;X
+09-21802;Koskitie 17, Koskenkorva;Ilmajoki;X;X;X;;X;X
+09-21957;Ammesmäentie 191, Itäkylä;Lappajärvi;X;X;X;;X;X
+09-22054;Marianrannankatu 1, Kaskinen;Kaskinen;X;X;X;;X;X
+09-22100;Tehtaankatu 43, Kokkola;Kokkola;X;X;X;;X;
+09-22224;Asematie 8, Myllymäki;Ähtäri;X;X;X;;X;X
+09-22884;Kuusilahdentie 2, Vaasa;Vaasa;X;X;X;;X;X
+09-22914;Myllytie 24, Uusikaarlepyy;Uusikaarlepyy;X;X;X;X;X;X
+09-30026;Puusepäntie, Rantatöysä;Alavus;X;X;X;;;
+09-30032;Hansatie 3, Ilmajoki;Ilmajoki;X;X;X;X;X;X
+09-30036;Kasikulma 1, Kälviä;Kokkola;X;X;X;;X;
+09-30043;Liiketie 2, Pyhäsalmi;Pyhäjärvi;X;X;X;;X;
+09-30069;Kauppakatu 19, Haapajärvi;Haapajärvi;X;X;X;X;;
+09-30072;Smedsbyvägen 224, Mustasaari;Mustasaari;X;X;X;X;X;X
+09-30097;Ruukintie 177, Seinäjoki;Seinäjoki;X;X;X;;X;
+09-30099;Peltopassi 2, Kauhava;Kauhava;X;X;X;X;X;
+09-30138;Elementtitehtaantie, Vaasa;Vaasa;X;X;X;X;;
+10-10293;Luovontie 150, Hailuoto;Hailuoto;X;X;X;;X;
+10-10466;Hyryntie 45, Hyrynsalmi;Hyrynsalmi;X;X;X;;X;X
+10-10469;Ahokuja 1, Hyrynsalmi;Hyrynsalmi;X;X;X;;;
+10-10569;Kisatie 2, Ii;Ii;X;X;X;;X;
+10-10570;Sorosentie 2, Ii;Ii;X;X;X;X;X;
+10-10571;Sassintie, Olhava;Ii;X;X;X;;X;
+10-10574;Kuivajoentie 15, Kuivaniemi;Ii;X;X;X;;X;
+10-11073;Kauppakatu 10, Kajaani;Kajaani;X;X;X;X;X;X
+10-11076;Syväojankatu 4, Kajaani;Kajaani;X;X;X;X;X;
+10-11077;Kasarminkatu 16, Kajaani;Kajaani;X;X;X;X;X;X
+10-11078;Veturitie 1, Kajaani;Kajaani;X;X;X;X;X;X
+10-11079;Taikatie 4, Kajaani;Kajaani;X;X;X;;X;X
+10-11080;Onnelantie Länsi, Kajaani;Kajaani;X;X;X;;X;X
+10-11081;Onnelantie Itä, Kajaani;Kajaani;X;X;X;;X;X
+10-11084;Kisatie 30, Kajaani;Kajaani;X;X;X;;X;X
+10-11086;Sissikatu 14, Kajaani;Kajaani;X;X;X;;X;X
+10-11087;Vehkatie 1, Kajaani;Kajaani;X;X;X;;X;X
+10-11088;Myötärinteentie 1, Kajaani;Kajaani;X;X;X;;X;X
+10-11089;Soidinkatu 1, Kajaani;Kajaani;X;X;X;;X;X
+10-11091;Patrosentie 2, Kajaani;Kajaani;X;X;X;;X;X
+10-11092;Mainuantie 3, Kajaani;Kajaani;X;X;X;;X;X
+10-11095;Kaivosmittaajantie, Otanmäki;Kajaani;X;X;X;;X;X
+10-11096;Nissiläntie 2, Vuolijoki;Kajaani;X;X;X;;X;X
+10-11295;Miilukatu 6, Kemi;Kemi;X;X;X;;X;
+10-11298;Asemakatu 1, Kemi;Kemi;X;X;X;X;X;X
+10-11299;Keskuspuistokatu 1, Kemi;Kemi;X;X;X;;X;X
+10-11301;Hepolantie 1, Kemi;Kemi;X;X;X;;X;X
+10-11302;Karjalahdenkatu, Kemi;Kemi;X;X;X;X;X;X
+10-11304;Koivuharjunkatu 55, Kemi;Kemi;X;X;X;;X;X
+10-11331;Väylätie, Keminmaa;Keminmaa;X;X;X;;X;X
+10-11334;Jauholantie 1-3, Keminmaa;Keminmaa;X;X;X;X;X;X
+10-11336;Vajokkaantie 4, Lautiosaari;Keminmaa;X;X;X;;X;X
+10-11354;Zeppeliinintie 1, Kempele;Kempele;X;X;X;X;X;X
+10-11721;Koulukatu 13, Kuhmo;Kuhmo;X;X;X;;X;X
+10-12095;Pitkäkoskentie 15, Liminka;Liminka;X;X;X;;X;X
+10-12097;Rantakurvi 6, Liminka;Liminka;X;X;X;;X;
+10-12231;Lumijoentie 2, Lumijoki;Lumijoki;X;X;X;;X;X
+10-12367;Valtatie 16, Muhos;Muhos;X;X;X;X;X;
+10-12370;Hotintie 2, Rova;Muhos;X;X;X;X;X;
+10-12371;Mettäperäntie 1, Jokirinne;Muhos;X;X;X;X;X;X
+10-12662;Ouluntie 122, Ylikiiminki;Oulu;X;X;X;;X;
+10-12663;Ouluntie 651, Ylikiiminki;Oulu;X;X;X;;X;
+10-12665;Kissaojankuja 4, Kello;Oulu;X;X;X;X;X;X
+10-12667;Torikatu 63, Oulu;Oulu;X;X;X;;X;
+10-12669;Alasintie 12, Oulu;Oulu;X;X;X;X;X;
+10-12670;Nuottasaarentie 1, Oulu;Oulu;X;X;X;X;X;
+10-12671;Kauppakuja, Haukipudas;Oulu;X;X;X;X;X;X
+10-12673;Karhuojantie 2, Oulunsalo;Oulu;X;X;X;X;X;X
+10-12674;Neuvoksenkuja 2, Oulunsalo;Oulu;X;X;X;;X;
+10-12675;Rantakatu, Oulu;Oulu;X;X;X;;X;
+10-12677;Jatkotie 1, Oulu;Oulu;X;X;X;;X;
+10-12678;Revonkuja 2, Oulu;Oulu;X;X;X;;X;X
+10-12679;Paljetie 4, Oulu;Oulu;X;X;X;X;X;
+10-12681;Paakakatu, Oulu;Oulu;X;X;X;;X;
+10-12682;Tullimiehentie 2, Oulu;Oulu;X;X;X;;X;
+10-12684;Kultatie 1, Oulu;Oulu;X;X;X;;X;
+10-12685;Tehtaankatu 3, Oulu;Oulu;X;X;X;X;X;
+10-12686;Kuovitie 7, Oulu;Oulu;X;X;X;;X;
+10-12687;Kalikkatie 1, Oulu;Oulu;X;X;X;;X;X
+10-12688;Kaakkurinkulma 1, Oulu;Oulu;X;X;X;;X;
+10-12689;Palokankaantie 301, Oulu;Oulu;X;X;X;X;X;X
+10-12690;Äimätie 2, Oulu;Oulu;X;X;X;;X;X
+10-12691;Leväsuontie 27, Oulu;Oulu;X;X;X;;X;
+10-12692;Laakeritie 4, Oulu;Oulu;X;X;X;X;X;X
+10-12693;Kauppalinnankuja 1, Oulu;Oulu;X;X;X;X;X;X
+10-12694;Sammonkatu, Oulu;Oulu;X;X;X;;X;
+10-12695;Mäkituvantie 8, Oulu;Oulu;X;X;X;;X;X
+10-12696;Taakakepintie 1, Oulu;Oulu;X;X;X;;X;X
+10-12697;Menninkäisentie 2, Oulu;Oulu;X;X;X;X;X;X
+10-12699;Metsokankaantie 5, Oulu;Oulu;X;X;X;X;X;X
+10-12700;Jukolankuja 3, Oulu;Oulu;X;X;X;;X;X
+10-12701;Ranta-Kastellintie 4, Oulu;Oulu;X;X;X;;X;X
+10-12702;Koisotie 1, Oulu;Oulu;X;X;X;;X;
+10-12703;Väliahontie 49, Oulu;Oulu;X;X;X;;X;
+10-12704;Taskisentie 1, Oulu;Oulu;X;X;X;X;X;X
+10-12705;Martinniementie 1, Haukipudas;Oulu;X;X;X;;X;
+10-12706;Rita-Aukiontie 2, Oulu;Oulu;X;X;X;X;X;X
+10-12707;Kangaskontiontie 3, Oulu;Oulu;X;X;X;;X;
+10-12709;Välikyläntie 20, Jääli;Oulu;X;X;X;;X;
+10-12711;Kauppareitti 2, Kiiminki;Oulu;X;X;X;X;X;X
+10-12713;Kuivasjärventie 5, Kontio;Oulu;X;X;X;;X;
+10-12715;Karjalantie 7, Yli-Ii;Oulu;X;X;X;;X;
+10-12738;Puolangantie 9, Paltamo;Paltamo;X;X;X;;X;X
+10-13153;Kuntotie 5, Puolanka;Puolanka;X;X;X;;X;X
+10-13226;Palokunnankatu 37, Raahe;Raahe;X;X;X;;X;
+10-13229;Ollinkalliontie 2, Raahe;Raahe;X;X;X;X;X;X
+10-13230;Antinkankaantie 32, Raahe;Raahe;X;X;X;;X;
+10-13232;Puistotie 3, Pattijoki;Raahe;X;X;X;;X;
+10-13400;Saukontie 39, Ristijärvi;Ristijärvi;X;X;X;;X;X
+10-13818;Ratatie, Simo;Simo;X;X;X;X;X;X
+10-13821;Sänkeläntie 2, Maksniemi;Simo;X;X;X;;X;
+10-13938;Kiulutie, Vuokatti;Sotkamo;X;X;X;;X;X
+10-13939;Ratatie 37, Sotkamo;Sotkamo;X;X;X;X;X;X
+10-13941;Risteentie 12, Suomussalmi;Suomussalmi;X;X;X;X;X;X
+10-13942;Ämmänkatu 2, Suomussalmi;Suomussalmi;X;X;X;;X;X
+10-13943;Rahtimiehentie 1, Suomussalmi Kk;Suomussalmi;X;X;X;;X;X
+10-14082;Kurjentie 1, Tervola;Tervola;X;X;X;X;X;X
+10-14114;Muuntamonkatu, Tornio;Tornio;X;X;X;X;X;X
+10-14117;Holmantie 2, Tornio;Tornio;X;X;X;;X;X
+10-14119;Länsiranta 10, Tornio;Tornio;X;X;X;;X;X
+10-14120;Isopalontie, Tornio;Tornio;X;X;X;;X;X
+10-14124;Jokivarrentie 810, Tornio;Tornio;X;X;X;;X;
+10-14127;Jokivarrentie, Tornio;Tornio;X;X;X;;X;X
+10-14388;Vanhatie 5, Tyrnävä;Tyrnävä;X;X;X;X;X;X
+10-14389;Kauttaranta 42, Tyrnävä;Tyrnävä;X;X;X;X;X;
+10-14390;Takalontie 9, Temmes;Tyrnävä;X;X;X;;X;X
+10-14402;Laitilantie 10, Utajärvi;Utajärvi;X;X;X;X;X;
+10-14403;Postilantie, Utajärvi;Utajärvi;X;X;X;;X;
+10-14405;Ahmasjärventie 2, Ahmas;Utajärvi;X;X;X;;X;
+10-14436;Vaalantie 26, Vaala;Vaala;X;X;X;;X;X
+10-14968;Kainuuntie 123, Kuhmo;Kuhmo;X;X;X;X;X;X
+10-15007;Sähkötie 1, Pudasjärvi;Pudasjärvi;X;X;X;X;X;X
+10-15008;Siikasavontie 2, Ruukki;Siikajoki;X;X;X;;X;
+10-15009;Keskustie, Paavola;Siikajoki;X;X;X;;X;
+10-15010;Tiirantie 4, Siikajoki;Siikajoki;X;X;X;;X;X
+10-15011;Keskuskatu 2, Revonlahti;Siikajoki;X;X;X;X;X;
+10-15012;Vesikarintie 14, Tupos;Liminka;X;X;X;X;X;X
+10-15018;Sihtuunantie 28, Tornio;Tornio;X;X;X;;X;X
+10-15022;Kirkkotie 2, Muhos;Muhos;X;X;X;;X;X
+10-15031;Sotaplassintie 2, Pattijoki;Raahe;X;X;X;;X;X
+10-15039;Pekkalantie, Vihanti;Raahe;X;X;X;;X;
+10-15086;Arkkukarintie, Arkkukari;Raahe;X;X;X;;X;
+10-20379;Vanhatie 52, Utajärvi;Utajärvi;X;X;X;;;X
+10-20610;Tupoksentie 9, Liminka;Liminka;X;X;X;X;X;
+10-20920;Väliahontie 62, Oulu;Oulu;X;X;X;X;X;
+10-21673;Niurontie 7, Ylitornio;Ylitornio;X;X;X;X;X;X
+10-21897;Kauppiaantie 1, Oulunsalo;Oulu;X;X;X;X;X;
+10-22085;Alkkulanraitti 79, Ylitornio;Ylitornio;X;X;X;;X;X
+10-22261;Nelostie 2391, Loue;Tervola;X;X;X;;X;
+10-22423;Sammonkatu 2, Kemi;Kemi;X;X;X;;X;X
+10-22554;Veitsiluodontie 19, Kemi;Kemi;X;X;X;;;X
+10-22713;Asematie 8, Vihanti;Raahe;X;X;X;;;
+10-22733;Kauppatie 8, Pudasjärvi;Pudasjärvi;X;X;X;;X;
+10-22921;Aapistie 2, Oulu;Oulu;X;X;X;X;X;
+10-30024;Kirkkoahontie 115, Linnantaus;Kajaani;X;X;X;;;
+10-30040;Pietarilantie 46, Pudasjärvi;Pudasjärvi;X;X;X;;X;
+10-30106;Olvasjärventie 1, Juorkuna;Utajärvi;X;X;X;;X;
+10-30110;Nakertajantie 1, Kajaani;Kajaani;X;X;X;;X;
+10-30130;Kulunnantie 202, Kajaani;Kajaani;X;X;X;;X;
+10-30134;Tiilitie 2, Kempele;Kempele;X;X;X;;;
+11-10164;Kustaavantie 1, Enontekiö;Enontekiö;X;X;X;X;X;
+11-10674;Juutuanvaarantie, Inari;Inari;X;X;X;;X;
+11-10676;Jokostie 2, Saariselkä;Inari;X;X;X;;X;
+11-10686;Kaamasentie 2844, Kaamanen;Inari;X;X;X;;X;
+11-11306;Kuumaniemenkatu, Kemijärvi;Kemijärvi;X;X;X;;X;
+11-11307;Värjärintie, Kemijärvi;Kemijärvi;X;X;X;;X;
+11-11308;Aaponkatu, Kemijärvi;Kemijärvi;X;X;X;;X;
+11-11309;Särkeläntie, Kemijärvi;Kemijärvi;X;X;X;;X;
+11-11312;Koulutie, Kallaanvaara;Kemijärvi;X;X;X;;X;
+11-11314;Laakakero, Pyhätunturi;Pelkosenniemi;X;X;X;;X;
+11-11316;Koulukuja, Isokylä;Kemijärvi;X;X;X;;X;
+11-12373;Taavantie, Muonio;Muonio;X;X;X;;X;
+11-12891;Koulutie, Pelkosenniemi;Pelkosenniemi;X;X;X;X;X;
+11-12897;Ahjotie, Pello;Pello;X;X;X;;X;
+11-13307;Pappilantie, Ranua;Ranua;X;X;X;;X;
+11-13308;Hillakatu 1, Ranua;Ranua;X;X;X;;X;
+11-13312;Impiöntie 33 A, Impiö;Ranua;X;X;X;;X;
+11-13405;Ounasvaarantie 15, Rovaniemi;Rovaniemi;X;X;X;;X;X
+11-13406;Kuusamontie 4947, Vanttauskoski;Rovaniemi;X;X;X;;X;
+11-13408;Niskanperänkuja 11, Rovaniemi;Rovaniemi;X;X;X;;X;
+11-13410;Risutie, Rovaniemi;Rovaniemi;X;X;X;;X;X
+11-13413;Vennivaarantie, Rovaniemi;Rovaniemi;X;X;X;;X;
+11-13416;Sivutie, Rovaniemi;Rovaniemi;X;X;X;;X;X
+11-13417;Teollisuustie 2, Rovaniemi;Rovaniemi;X;X;X;X;X;X
+11-13420;Tikanperä 3, Rovaniemi;Rovaniemi;X;X;X;;X;
+11-13421;Nurmipolku 2, Rovaniemi;Rovaniemi;X;X;X;;X;
+11-13422;Vaaralammentie, Rovaniemi;Rovaniemi;X;X;X;;X;
+11-13423;Pulkamontie, Saarenkylä;Rovaniemi;X;X;X;X;X;X
+11-13424;Marjamatka, Rovaniemi;Rovaniemi;X;X;X;;X;
+11-13425;Lapinkävijäntie 3, Rovaniemi;Rovaniemi;X;X;X;;X;X
+11-13426;Veitikantie, Rovaniemi;Rovaniemi;X;X;X;;X;
+11-13427;Paavalniementie, Rovaniemi;Rovaniemi;X;X;X;;X;
+11-13428;Pyöryäntie, Rovaniemi;Rovaniemi;X;X;X;;X;
+11-13430;Hillerintie, Rovaniemi;Rovaniemi;X;X;X;;X;
+11-13431;Kemijoen Itäpuolentie 1470, Rautiosaari;Rovaniemi;X;X;X;;X;
+11-13433;Jussilanvaarantie, Hirvas;Rovaniemi;X;X;X;;X;
+11-13434;Saaruantie 1, Rovaniemi;Rovaniemi;X;X;X;;X;
+11-13438;Lohikuja, Lohiniva;Rovaniemi;X;X;X;;X;
+11-13440;Puhakantie, Sonka;Rovaniemi;X;X;X;;X;
+11-13441;Ulkulantie 65, Kivitaipale;Rovaniemi;X;X;X;;X;
+11-13444;Mäkipuistontie, Muurola;Rovaniemi;X;X;X;;X;X
+11-13448;Kemintie, Jaatila;Rovaniemi;X;X;X;;X;
+11-13449;Koulutie, Oikarainen;Rovaniemi;X;X;X;;X;
+11-13450;Opinpolku, Meltaus;Rovaniemi;X;X;X;;X;
+11-13451;Liikekuja 3, Vikajärvi;Rovaniemi;X;X;X;;X;
+11-13687;Sauherrantie, Savukoski;Savukoski;X;X;X;X;X;
+11-13851;Lapintie, Sodankylä;Sodankylä;X;X;X;X;X;
+11-13853;Luppokeino, Luosto;Sodankylä;X;X;X;;;
+11-13855;Laukotie, Luosto;Sodankylä;X;X;X;;X;
+11-13865;Ivalontie 2, Sodankylä;Sodankylä;X;X;X;;X;X
+11-13886;Tuirantie 4, Kierinki;Sodankylä;X;X;X;;;
+11-14994;Asematie 1, Kolari;Kolari;X;X;X;;X;
+11-14995;Tirroniementie 1, Ylläsjärvi;Kolari;X;X;X;;X;
+11-14996;Sannanrannantie 3, Äkäslompolo;Kolari;X;X;X;X;X;
+11-14997;Jokijalantie 65, Kolari;Kolari;X;X;X;;X;
+11-14999;Sisuntie 2, Sieppijärvi;Kolari;X;X;X;;X;
+11-15005;Pirttikoskentie 2169, Juuniemi;Rovaniemi;X;X;X;;X;
+11-15006;Keskustie 34, Ranua;Ranua;X;X;X;X;X;X
+11-15027;Rukanriutta, Rukatunturi;Kuusamo;X;X;X;;;
+11-15028;Käyläntie 9, Kuusamo;Kuusamo;X;X;X;;X;
+11-15029;Vanttajantie, Kuusamo;Kuusamo;X;X;X;;X;X
+11-15030;Huoparintie 1, Kuusamo;Kuusamo;X;X;X;X;X;X
+11-15033;Sivulantie 8, Äkäslompolo;Kolari;X;X;X;;X;
+11-15047;Länsipuolentie 42, Lankojärvi;Pello;X;X;X;;X;
+11-21104;Sevettijärventie 12200, Näätämö;Inari;X;X;X;;;
+11-21338;Jäämerentie 8, Sodankylä;Sodankylä;X;X;X;;;
+11-21517;Käsivarrentie 14205, Kilpisjärvi;Enontekiö;X;X;X;;;
+11-21540;Pellontie 23, Pello;Pello;X;X;X;X;X;X
+11-21595;Petsamontie 2, Ivalo;Inari;X;X;X;;X;
+11-21723;Puthaanrannantie 4, Muonio;Muonio;X;X;X;X;;
+11-21836;Valtatie 68, Kittilä;Kittilä;X;X;X;X;X;
+11-21867;Kirkkokatu 5, Kemijärvi;Kemijärvi;X;X;X;X;;
+11-22122;Leviraitti 18, Sirkka;Kittilä;X;X;X;X;X;
+11-22299;Jokiväylä 40, Rovaniemi;Rovaniemi;X;X;X;;X;X
+11-22301;Sinetänsalmentie 8, Sinettä;Rovaniemi;X;X;X;;X;
+11-22726;Kauppatie 11, Taivalkoski;Taivalkoski;X;X;X;X;X;
+11-22727;Talonpojantie 1, Taivalkoski;Taivalkoski;X;X;X;;X;X
+11-22729;Posiontie 26, Posio;Posio;X;X;X;X;X;X
+11-22744;Ylätenontie 24, Karigasniemi;Utsjoki;X;X;X;;;
+11-30003;Santeri Ivalontie 2, Kuusamo;Kuusamo;X;X;X;;X;
+11-30019;Miessipolku 1, Utsjoki;Utsjoki;X;X;X;;;
+11-30025;Tasalantie 13, Salla;Salla;X;X;X;X;X;
+11-30052;Tenontörmä 16, Nuorgam;Utsjoki;X;X;X;;X;
+11-30056;Sairaalantie 4, Ivalo;Inari;X;X;X;;X;
+11-30060;Jokijalantie 2, Kolari;Kolari;X;X;X;X;;
+11-30095;Ivalontie 17, Ivalo;Inari;X;X;X;X;;
+11-30112;Lampelankatu 3, Rovaniemi;Rovaniemi;X;X;X;;X;

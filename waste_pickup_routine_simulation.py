@@ -23,9 +23,9 @@ city_config = {
 	'name' : 'Turku',
 
 	'drivetime_range' : [5, 60], # Minutes
-	'num_grey_pickup_sites' : 100, # N
+	'num_grey_pickup_sites' : 2000, # N
 
-	'num_grey_vehicles' : 3, # N
+	'num_grey_vehicles' : 15, # N
 
 	'num_blue_pickup_sites' : 0, # N
 	#'vehicles_config' : vehicles_config
@@ -34,7 +34,7 @@ city_config = {
 sim_config = {
 	#'runtime' : 7*24*60,  # Week *day*hours*minutes Minutes
 	'runtime_days' : 7,
-	'P_VALUE' : 0.8, # % Of container to be reported # For automated system # Minimum allowed to be picked up
+	'P_VALUE' : 0.8 , # % Of container to be reported # For automated system # Minimum allowed to be picked up
 	'T_VALUE' : 30 # Time to go off route to pick up an extra contianer nearby
 	# 'grey_site_requested_range' : [0, 7], also optimizing # later
 }

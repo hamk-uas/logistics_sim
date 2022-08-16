@@ -1,0 +1,523 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    63.03362,
+                    24.0042
+                ]
+            },
+            "properties": {
+                "name": "Alaj\u00e4rvi",
+                "Osoite": "Kyyj\u00e4rventie 1054, 62900 ALAJ\u00c4RVI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    60.24119,
+                    24.54112
+                ]
+            },
+            "properties": {
+                "name": "Espoo",
+                "Osoite": "\u00c4mm\u00e4ssuonkuja 8, 02820 ESPOO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    60.79055,
+                    23.58573
+                ]
+            },
+            "properties": {
+                "name": "Forssa",
+                "Osoite": "Kiimassuontie 127, 30420 FORSSA"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    60.94042,
+                    24.47973
+                ]
+            },
+            "properties": {
+                "name": "H\u00e4meenlinna",
+                "Osoite": "Karanojantie 178, 13430 H\u00c4MEENLINNA"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    63.54408,
+                    27.21326
+                ]
+            },
+            "properties": {
+                "name": "Iisalmi",
+                "Osoite": "Kivirannantie 22\u201326, 74130 IISALMI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    62.7124,
+                    22.71598
+                ]
+            },
+            "properties": {
+                "name": "Ilmajoki",
+                "Osoite": "Laskunm\u00e4entie 15, 60760 POJANLUOMA"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    62.62868,
+                    29.76085
+                ]
+            },
+            "properties": {
+                "name": "Joensuu",
+                "Osoite": "Raatekankaantie 18, 80100 JOENSUU"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    62.28891,
+                    25.79861
+                ]
+            },
+            "properties": {
+                "name": "Jyv\u00e4skyl\u00e4",
+                "Osoite": "Sepelitie 6, 40320 JYV\u00c4SKYL\u00c4"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    61.90182,
+                    25.14409
+                ]
+            },
+            "properties": {
+                "name": "J\u00e4ms\u00e4",
+                "Osoite": "Myllyharjuntie 18, 42300 J\u00c4MS\u00c4NKOSKI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    64.15713,
+                    27.63115
+                ]
+            },
+            "properties": {
+                "name": "Kajaani",
+                "Osoite": "Mustantie 500, 87100 KAJAANI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    60.37399,
+                    25.1044
+                ]
+            },
+            "properties": {
+                "name": "Kerava",
+                "Osoite": "Karhuntassuntie 59, 04260 KERAVA"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    67.5912,
+                    24.92633
+                ]
+            },
+            "properties": {
+                "name": "Kittil\u00e4",
+                "Osoite": "Rovaniementie 699, 99100 KITTIL\u00c4"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    60.48415,
+                    26.92255
+                ]
+            },
+            "properties": {
+                "name": "Kotka",
+                "Osoite": "Hovinsaarentie 1, 48200 KOTKA"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    60.74681,
+                    26.86353
+                ]
+            },
+            "properties": {
+                "name": "Kouvola",
+                "Osoite": "Ekokaari 50, 46860 KELTAKANGAS"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    62.83061,
+                    27.52069
+                ]
+            },
+            "properties": {
+                "name": "Kuopio",
+                "Osoite": "Kaatopaikantie 316, 70800 KUOPIO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    65.95697,
+                    29.11759
+                ]
+            },
+            "properties": {
+                "name": "Kuusamo",
+                "Osoite": "Poratie 4, 93999 KUUSAMO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    60.96433,
+                    25.6973
+                ]
+            },
+            "properties": {
+                "name": "Lahti",
+                "Osoite": "Liimaajankatu 2, 15520 LAHTI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    61.0358,
+                    28.19207
+                ]
+            },
+            "properties": {
+                "name": "Lappeenranta",
+                "Osoite": "Palosuonkatu 12, 53550 LAPPEENRANTA"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    60.25144,
+                    24.14293
+                ]
+            },
+            "properties": {
+                "name": "Lohja",
+                "Osoite": "Munkkaanm\u00e4ki 51, 08500 LOHJA AS."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    61.69132,
+                    27.19491
+                ]
+            },
+            "properties": {
+                "name": "Mikkeli",
+                "Osoite": "Takojankatu 5, 50150 MIKKELI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    63.13318,
+                    21.76205
+                ]
+            },
+            "properties": {
+                "name": "Mustasaari",
+                "Osoite": "Stormossenintie 56, 66530 KOIVULAHTI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    65.0529,
+                    25.56649
+                ]
+            },
+            "properties": {
+                "name": "Oulu",
+                "Osoite": "Liitintie 29, 90630 OULU"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    63.65357,
+                    22.80393
+                ]
+            },
+            "properties": {
+                "name": "Pietarsaari",
+                "Osoite": "Launisaarentie 90, 68600 PIETARSAARI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    61.40102,
+                    21.69178
+                ]
+            },
+            "properties": {
+                "name": "Pori",
+                "Osoite": "Raumantie 980, 29100 LUVIA"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    60.41724,
+                    25.71475
+                ]
+            },
+            "properties": {
+                "name": "Porvoo",
+                "Osoite": "Ritam\u00e4entie 20, 06200 PORVOO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    61.15296,
+                    21.58305
+                ]
+            },
+            "properties": {
+                "name": "Rauma",
+                "Osoite": "Lakarinkatu 11, 26510 RAUMA"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    66.48678,
+                    25.64122
+                ]
+            },
+            "properties": {
+                "name": "Rovaniemi",
+                "Osoite": "Betonitie 3, 96320 ROVANIEMI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    62.805866,
+                    25.269081
+                ]
+            },
+            "properties": {
+                "name": "Saarij\u00e4rvi",
+                "Osoite": "Kannonkoskentie 1134, 43100 Saarij\u00e4rvi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    60.38381,
+                    23.22262
+                ]
+            },
+            "properties": {
+                "name": "Salo",
+                "Osoite": "Helsingintie 541, 24100 SALO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    61.83596,
+                    29.20662
+                ]
+            },
+            "properties": {
+                "name": "Savonlinna",
+                "Osoite": "Nissil\u00e4npolku 4, 58430 KULENNOINEN"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    61.108797,
+                    22.254732
+                ]
+            },
+            "properties": {
+                "name": "S\u00e4kyl\u00e4",
+                "Osoite": "Luvalahdentie 323, 27710 K\u00f6yli\u00f6"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    61.50809,
+                    23.58123
+                ]
+            },
+            "properties": {
+                "name": "Tampere",
+                "Osoite": "Teollisuustie 9, 33330 TAMPERE"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    61.54106,
+                    23.97612
+                ]
+            },
+            "properties": {
+                "name": "Tampere",
+                "Osoite": "Tarastenj\u00e4rventie 66, 33680 TAMPERE"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    62.53528,
+                    21.69461
+                ]
+            },
+            "properties": {
+                "name": "Teuva",
+                "Osoite": "Horontie 526, 64700 TEUVA"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    65.91005,
+                    24.36761
+                ]
+            },
+            "properties": {
+                "name": "Tornio",
+                "Osoite": "Kalkkimaantie 614, 95460 TORNIO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    60.50525,
+                    22.31647
+                ]
+            },
+            "properties": {
+                "name": "Turku",
+                "Osoite": "Vaskikatu 13, 20380 TURKU"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    64.09521,
+                    24.58459
+                ]
+            },
+            "properties": {
+                "name": "Ylivieska",
+                "Osoite": "Vestianv\u00e4yl\u00e4 71, 84460 YLIVIESKA"
+            }
+        }
+    ]
+}
