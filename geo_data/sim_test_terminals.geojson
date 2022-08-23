@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "sim_test_terminals",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "name": "Forssa", "Osoite": "Kiimassuontie 127, 30420 FORSSA" }, "geometry": { "type": "Point", "coordinates": [ 23.58573, 60.79055 ] } },
+{ "type": "Feature", "properties": { "name": "Hämeenlinna", "Osoite": "Karanojantie 178, 13430 HÄMEENLINNA" }, "geometry": { "type": "Point", "coordinates": [ 24.47973, 60.94042 ] } }
+]
+}
