@@ -31,12 +31,12 @@ class PickupSite():
 		self.sim = sim
 		self.index = index
 
-		self.capacity = random.uniform(*sim.pickup_site_config['capacity_range'])
-		self.level = self.capacity*random.uniform(0, sim.fleet_operator_config['relative_level_threshold_for_pickup'])
+		self.capacity = self.sim.config['pickup_sites'][index]['capacity']
+		self.level = self.sim.config['pickup_sites'][index]['level']
 		self.log(f"Initial level: {tons_to_string(self.level)} / {tons_to_string(self.capacity)} ({to_percentage_string(self.level / self.capacity)})")
 		self.levelListeners = []
 
-		self.daily_growth_rate = self.capacity*np.random.lognormal(np.log(1 / ((14 + 21) / 2)), 0.1) # Log-normal dist of 2 to 3 weeks to be full.
+		self.daily_growth_rate = self.sim.config['pickup_sites'][index]['daily_growth_rate']
 		self.log(f"Growth rate: {tons_to_string(self.daily_growth_rate)} / day")
 
 		self.growth_process = sim.env.process(self.grow_daily_forever())
@@ -100,19 +100,6 @@ class Vehicle():
 		if (self.load_level > self.capacity):
 			self.warn("Overload")
 
-class FleetOperator():
-
-	def log(self, message):
-		self.sim.log(f"Fleet operator #{self.index}: {message}")
-
-	def warn(self, message):
-		self.sim.warn(f"Fleet operator #{self.index}: {message}")
-
-	def __init__(self, sim, index):
-		self.sim = sim
-		self.index = index		
-		self.vehicles = [Vehicle(sim, self, i) for i in range(self.fleet_operator_config["num_vehicles"])]
-
 
 class PickupSiteOperator():	
 
@@ -126,27 +113,11 @@ class PickupSiteOperator():
 		self.sim = sim
 		self.index = index
 		self.pickup_sites = []
-		self.activity = sim.env.process(self.daily_monitoring())
-
-	def daily_monitoring(self):
-		while True:
-			self.log(f"Monitored levels: {', '.join(map(lambda x: to_percentage_string(x.level/x.capacity), self.pickup_sites))}")
-			yield self.sim.env.timeout(24*60) # Could be infinitely long
-			
-	def site_needs_pickup(self, site, threshold):
-		self.log(f"Site #{site.index} went past {tons_to_string(threshold)} and needs pickup")
-
-		#self.pickup_contractor.request_pickup(site)
-
-	def site_full(self, site):
-		self.warn(f"Site #{site.index} is full.")
 
 	def assign_as_operator_of_pickup_site(self, site):
 		self.pickup_sites.append(site)
 		threshold = self.sim.fleet_operator_config["relative_level_threshold_for_pickup"]*site.capacity
 		self.log(f"Set threshold {tons_to_string(threshold)} for site {site.index}")
-		site.addLevelListener(self.site_needs_pickup, threshold, {"site": site, "threshold": threshold})
-		site.addLevelListener(self.site_full, site.capacity, {"site": site})
 
 
 class WastePickupSimulation():
@@ -155,22 +126,28 @@ class WastePickupSimulation():
 		print(f"{time_to_string(self.env.now)} - {message}")
 
 	def warn(self, message):
-		print(f"{time_to_string(self.env.now)} WARNING - {message}")
+		print(f"{time_to_string(self.env.now)} WARNING - {message}")	
 
 	def __init__(self, config):
-		self.pickup_site_config = config["pickup_site"]
-		self.vehicle_config = config["vehicle"]
-		self.sim_config = config["sim"]
-		self.pickup_site_operator_config = config["pickup_site_operator"]
-		self.fleet_operator_config = config["fleet_operator"]
-		self.area_config = config["area"]
-		self.sim_config = config["sim"]
-		
-	def simulate(self):
+		self.config = config
+		self.locations = list(map(lambda x: x['coordinates'], [*config['pickup_sites'], *config['terminals'], *config['depots']]))
+
+	def site_full(self, site):
+		self.warn(f"Site #{site.index} is full.")
+
+	def daily_monitoring(self):
+		while True:
+			self.log(f"Monitored levels: {', '.join(map(lambda x: to_percentage_string(x.level/x.capacity), self.pickup_sites))}")
+			yield self.sim.env.timeout(24*60) # Could be infinitely long
+
+	def sim_init(self):
 		self.env = simpy.Environment()
 		self.pickup_sites = [PickupSite(self, i) for i in range(self.area_config["num_pickup_sites"])]
-		self.pickup_site_operator = PickupSiteOperator(self, 0)
-		for x in self.pickup_sites:
-			self.pickup_site_operator.assign_as_operator_of_pickup_site(x)
+		for site in self.pickup_sites:
+			site.addLevelListener(self.site_full, site.capacity, {"site": site})
+		self.daily_monitoring_activity = self.env.process(self.daily_monitoring())
+		self.vehicles = [Vehicle(sim, self, i) for i in range(self.config["num_vehicles"])]
+
+	def sim_run(self):
 		self.env.run(until=self.sim_config["runtime_days"]*24*60)
 		self.log("Simulation finished")
