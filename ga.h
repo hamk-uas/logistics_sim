@@ -1,12 +1,7 @@
-// c_optimize - Genetic algorithm optimizer library for the open loop, fixed starting point traveling salesman problem.
-//
-// Based on a Python version written in 2020 by Genrikh Ekkerman, Häme University of Applied Sciences.
-// Written in 2020 by Olli Niemitalo, Häme University of Applied Sciences.
+// Copyright 2022 HÃ¤me University of Applied Sciences
+// Authors: Olli Niemitalo
 // 
-// This work is licensed under the Creative Commons CC0 1.0 Universal License/Waiver:
-// https://creativecommons.org/publicdomain/zero/1.0/
-// To the extent possible under law, the authors and Häme University of Applied Sciences have waived all copyright and related or neighboring rights to this work.
-// This work is distributed without any warranty.
+// This work is licensed under the MIT license and is distributed without any warranty.
 
 // -*- compile-command: "g++ genetic_algorithm_own_test.cpp -std=c++17 -march=native -I. -O3 -ffast-math -fopenmp -o test" -*-
 
@@ -18,6 +13,31 @@
 #include <limits>
 #include <omp.h>
 #include <cstddef>
+
+#include "nlohmann/json.hpp"
+using json = nlohmann::json;
+
+struct PickupSite {
+  float capacity;
+  float level;
+  float growth_rate;
+};
+
+struct RoutingInput {
+  std::vector<std::vector<float>> distance_matrix;
+  std::vector<PickupSite> pickup_sites;
+};
+
+void from_json(const json& j, PickupSite& x) {
+    j.at("capacity").get_to(x.capacity);
+    j.at("level").get_to(x.level);
+    j.at("growth_rate").get_to(x.growth_rate);
+}
+
+void from_json(const json& j, RoutingInput& x) {
+    j.at("distance_matrix").get_to(x.distance_matrix);
+    j.at("pickup_sites").get_to(x.pickup_sites);
+}
 
 const int simdIntParallelCount = alignof(std::max_align_t)/sizeof(int); // How many ints fit to the maximum alignment interval
 
@@ -145,7 +165,7 @@ public:
   // distanceMatrix = concatenated rows of the distance matrix
   // populationSize = population size, must be a multiple of simdIntParallelCount (typically 4), -1 = auto based on numGenes.
   // seed = random number generator seed. Worker threads use seed + 1, seed + 2, ...
- Optimizer(int numGenes, const int *distanceMatrix, int populationSize = -1, unsigned seed = std::chrono::system_clock::now().time_since_epoch().count()): numGenes(numGenes), distanceMatrix(distanceMatrix), populationSize(populationSize = calcPopulationSize(numGenes, populationSize)), randomNumberGenerator(seed), maxNumThreads(omp_get_max_threads())
+ Optimizer(int numGenes, , int populationSize = -1, unsigned seed = std::chrono::system_clock::now().time_since_epoch().count()): numGenes(numGenes), distanceMatrix(distanceMatrix), populationSize(populationSize = calcPopulationSize(numGenes, populationSize)), randomNumberGenerator(seed), maxNumThreads(omp_get_max_threads())
  {
    threadStates = new aligned_ThreadState[maxNumThreads];   
    for (int thread = 0; thread < maxNumThreads; thread++) {
