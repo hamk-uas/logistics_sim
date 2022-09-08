@@ -1,0 +1,41 @@
+{
+    "code": "Ok",
+    "routes": [
+        {
+            "geometry": "iolsJipqtCbGkb@rK}Q~JgNjEdHhHc@bSjq@vSbSpM~YdTjXpIdXl^of@bi@yl@~CKnb@zz@`HbZ`RftAiBtMz@xKoKzLaDyHp@mJyA}I",
+            "legs": [
+                {
+                    "steps": [],
+                    "distance": 7613.9,
+                    "duration": 600,
+                    "summary": "",
+                    "weight": 3876.7
+                }
+            ],
+            "distance": 7613.9,
+            "duration": 600,
+            "weight_name": "routability",
+            "weight": 3876.7
+        }
+    ],
+    "waypoints": [
+        {
+            "hint": "OocBgOiGAYCUAAAAGAAAAGcAAAAAAAAAUKIlQ5V2zkEFvuFCAAAAAJQAAAAYAAAAZwAAAAAAAADnAAAAz_J1ATYOowMW83UBng6jAwgAzwaTpxfp",
+            "distance": 12.208162,
+            "name": "Papinniityntie",
+            "location": [
+                24.507087,
+                61.017654
+            ]
+        },
+        {
+            "hint": "5s0UgJ-DAYAFAAAABgAAAKIAAABSAAAAzQRWQKJHbECP9thCnOhXQgUAAAAGAAAAogAAAFIAAADnAAAA24B1ATVtogPegHUBM22iAwoAvwKTpxfp",
+            "distance": 0.275789,
+            "name": "Visakaarre",
+            "location": [
+                24.477915,
+                60.976437
+            ]
+        }
+    ]
+}
