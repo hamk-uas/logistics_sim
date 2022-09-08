@@ -1,0 +1,1012 @@
+{
+    "code": "Ok",
+    "routes": [
+        {
+            "geometry": "iolsJipqtCbGkb@rK}Q~JgNjEdHhHc@bSjq@vSbSpM~YdTjXpIdXl^of@bi@yl@~CKnb@zz@`HbZ`RftAiBtMz@xKoKzLaDyHp@mJyA}I",
+            "legs": [
+                {
+                    "steps": [
+                        {
+                            "intersections": [
+                                {
+                                    "out": 0,
+                                    "entry": [
+                                        true
+                                    ],
+                                    "bearings": [
+                                        108
+                                    ],
+                                    "location": [
+                                        24.507087,
+                                        61.017654
+                                    ]
+                                },
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.50754,
+                                        61.017581
+                                    ],
+                                    "bearings": [
+                                        30,
+                                        105,
+                                        210,
+                                        285
+                                    ],
+                                    "entry": [
+                                        true,
+                                        true,
+                                        true,
+                                        false
+                                    ],
+                                    "in": 3
+                                },
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.509595,
+                                        61.017154
+                                    ],
+                                    "bearings": [
+                                        30,
+                                        120,
+                                        210,
+                                        300
+                                    ],
+                                    "entry": [
+                                        false,
+                                        true,
+                                        true,
+                                        false
+                                    ],
+                                    "in": 3
+                                },
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.509757,
+                                        61.017113
+                                    ],
+                                    "bearings": [
+                                        30,
+                                        120,
+                                        210,
+                                        300
+                                    ],
+                                    "entry": [
+                                        true,
+                                        true,
+                                        false,
+                                        false
+                                    ],
+                                    "in": 3
+                                },
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.512472,
+                                        61.016439
+                                    ],
+                                    "bearings": [
+                                        30,
+                                        120,
+                                        300
+                                    ],
+                                    "entry": [
+                                        true,
+                                        true,
+                                        false
+                                    ],
+                                    "in": 2
+                                },
+                                {
+                                    "out": 0,
+                                    "location": [
+                                        24.513092,
+                                        61.016218
+                                    ],
+                                    "bearings": [
+                                        135,
+                                        210,
+                                        315
+                                    ],
+                                    "entry": [
+                                        true,
+                                        true,
+                                        false
+                                    ],
+                                    "in": 2
+                                },
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.51578,
+                                        61.014332
+                                    ],
+                                    "bearings": [
+                                        60,
+                                        150,
+                                        225,
+                                        330
+                                    ],
+                                    "entry": [
+                                        true,
+                                        true,
+                                        true,
+                                        false
+                                    ],
+                                    "in": 3
+                                }
+                            ],
+                            "driving_side": "right",
+                            "geometry": "iolsJipqtCLyAH{@Z_DFa@He@NeALq@F_@Hg@Jq@Jm@BYBWjAeHN}@Pw@XcARm@Vk@Ti@R_@bHuJPUBEPK\\IPIJOBGJYNm@Vk@fB_CdBcCT[",
+                            "mode": "driving",
+                            "duration": 83,
+                            "maneuver": {
+                                "bearing_after": 108,
+                                "type": "depart",
+                                "modifier": "left",
+                                "bearing_before": 0,
+                                "location": [
+                                    24.507087,
+                                    61.017654
+                                ]
+                            },
+                            "weight": 83,
+                            "distance": 873.4,
+                            "name": "Papinniityntie"
+                        },
+                        {
+                            "intersections": [
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.518217,
+                                        61.012407
+                                    ],
+                                    "bearings": [
+                                        60,
+                                        225,
+                                        330
+                                    ],
+                                    "entry": [
+                                        true,
+                                        true,
+                                        false
+                                    ],
+                                    "in": 2
+                                },
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.516614,
+                                        61.01095
+                                    ],
+                                    "bearings": [
+                                        0,
+                                        180,
+                                        300
+                                    ],
+                                    "entry": [
+                                        false,
+                                        true,
+                                        true
+                                    ],
+                                    "in": 0
+                                }
+                            ],
+                            "driving_side": "right",
+                            "geometry": "qnksJ{ustCTx@N^Zv@`@n@`@j@^\\d@Xd@Lp@L^Eh@Il@Kn@Qh@Q",
+                            "mode": "driving",
+                            "duration": 28.2,
+                            "maneuver": {
+                                "bearing_after": 230,
+                                "type": "end of road",
+                                "modifier": "right",
+                                "bearing_before": 147,
+                                "location": [
+                                    24.518217,
+                                    61.012407
+                                ]
+                            },
+                            "weight": 28.2,
+                            "distance": 308.4,
+                            "name": "Ruununmyllyntie"
+                        },
+                        {
+                            "intersections": [
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.51693,
+                                        61.009898
+                                    ],
+                                    "bearings": [
+                                        60,
+                                        240,
+                                        345
+                                    ],
+                                    "entry": [
+                                        true,
+                                        true,
+                                        false
+                                    ],
+                                    "in": 2
+                                },
+                                {
+                                    "out": 2,
+                                    "location": [
+                                        24.514726,
+                                        61.009162
+                                    ],
+                                    "bearings": [
+                                        45,
+                                        150,
+                                        225
+                                    ],
+                                    "entry": [
+                                        false,
+                                        true,
+                                        true
+                                    ],
+                                    "in": 0
+                                },
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.507772,
+                                        61.005813
+                                    ],
+                                    "bearings": [
+                                        30,
+                                        210,
+                                        240
+                                    ],
+                                    "entry": [
+                                        false,
+                                        true,
+                                        true
+                                    ],
+                                    "in": 0
+                                },
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.50761,
+                                        61.005625
+                                    ],
+                                    "bearings": [
+                                        30,
+                                        195,
+                                        285
+                                    ],
+                                    "entry": [
+                                        false,
+                                        true,
+                                        true
+                                    ],
+                                    "in": 0
+                                },
+                                {
+                                    "lanes": [
+                                        {
+                                            "valid": true,
+                                            "indications": [
+                                                "straight"
+                                            ]
+                                        },
+                                        {
+                                            "valid": false,
+                                            "indications": [
+                                                "right"
+                                            ]
+                                        }
+                                    ],
+                                    "out": 1,
+                                    "location": [
+                                        24.507561,
+                                        61.005567
+                                    ],
+                                    "bearings": [
+                                        15,
+                                        195,
+                                        285
+                                    ],
+                                    "entry": [
+                                        false,
+                                        true,
+                                        false
+                                    ],
+                                    "in": 0
+                                }
+                            ],
+                            "driving_side": "right",
+                            "geometry": "{~jsJymstC`@nBb@nBd@nBf@fB@Fz@vCp@`CzBvHpBdHj@xAf@nA|@hBv@vAf@t@j@n@`@\\b@^JHbCbB~@j@LFp@d@lAdAv@x@n@~@r@lABDh@bAz@nBf@pAz@~B~@bCr@bBj@nAn@lAt@jA~@rAr@x@p@r@zBxBfBhBv@~@hAzAbB|CrAvCbD|In@`CHXBX@^",
+                            "mode": "driving",
+                            "duration": 153.1,
+                            "maneuver": {
+                                "bearing_after": 237,
+                                "type": "end of road",
+                                "modifier": "right",
+                                "bearing_before": 167,
+                                "location": [
+                                    24.51693,
+                                    61.009898
+                                ]
+                            },
+                            "ref": "10",
+                            "weight": 153.1,
+                            "distance": 2023.6,
+                            "name": "Tuuloksentie"
+                        },
+                        {
+                            "intersections": [
+                                {
+                                    "out": 2,
+                                    "location": [
+                                        24.493694,
+                                        60.996083
+                                    ],
+                                    "bearings": [
+                                        90,
+                                        135,
+                                        270
+                                    ],
+                                    "entry": [
+                                        false,
+                                        false,
+                                        true
+                                    ],
+                                    "in": 0
+                                },
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.493603,
+                                        60.996088
+                                    ],
+                                    "bearings": [
+                                        90,
+                                        255,
+                                        315
+                                    ],
+                                    "entry": [
+                                        false,
+                                        true,
+                                        true
+                                    ],
+                                    "in": 0
+                                },
+                                {
+                                    "out": 2,
+                                    "location": [
+                                        24.49326,
+                                        60.996002
+                                    ],
+                                    "bearings": [
+                                        0,
+                                        45,
+                                        195
+                                    ],
+                                    "entry": [
+                                        false,
+                                        false,
+                                        true
+                                    ],
+                                    "in": 1
+                                }
+                            ],
+                            "driving_side": "right",
+                            "geometry": "ohhsJq|ntCAP@XDTHRHBLCDCDIFU",
+                            "mode": "driving",
+                            "duration": 5.5,
+                            "maneuver": {
+                                "exit": 2,
+                                "bearing_after": 275,
+                                "type": "roundabout",
+                                "modifier": "straight",
+                                "bearing_before": 262,
+                                "location": [
+                                    24.493694,
+                                    60.996083
+                                ]
+                            },
+                            "ref": "10",
+                            "weight": 5.5,
+                            "distance": 55.6,
+                            "name": "Harvialantie"
+                        },
+                        {
+                            "intersections": [
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.493441,
+                                        60.995779
+                                    ],
+                                    "bearings": [
+                                        105,
+                                        135,
+                                        300
+                                    ],
+                                    "entry": [
+                                        true,
+                                        true,
+                                        false
+                                    ],
+                                    "in": 2
+                                },
+                                {
+                                    "out": 0,
+                                    "location": [
+                                        24.49411,
+                                        60.995481
+                                    ],
+                                    "bearings": [
+                                        150,
+                                        315,
+                                        330
+                                    ],
+                                    "entry": [
+                                        true,
+                                        false,
+                                        true
+                                    ],
+                                    "in": 1
+                                },
+                                {
+                                    "out": 0,
+                                    "location": [
+                                        24.49837,
+                                        60.991966
+                                    ],
+                                    "bearings": [
+                                        150,
+                                        240,
+                                        330
+                                    ],
+                                    "entry": [
+                                        true,
+                                        true,
+                                        false
+                                    ],
+                                    "in": 2
+                                },
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.501806,
+                                        60.988827
+                                    ],
+                                    "bearings": [
+                                        75,
+                                        150,
+                                        255,
+                                        330
+                                    ],
+                                    "entry": [
+                                        true,
+                                        true,
+                                        true,
+                                        false
+                                    ],
+                                    "in": 3
+                                }
+                            ],
+                            "driving_side": "right",
+                            "geometry": "sfhsJ_{ntCP_@Rm@Tw@T_@|EsG~C_EdEkFbBsBpEmFfG_HxCaDpF_G`IuH`DuDz@qAz@eArAsBFGJABAJ?",
+                            "mode": "driving",
+                            "duration": 101,
+                            "maneuver": {
+                                "exit": 2,
+                                "bearing_after": 132,
+                                "type": "exit roundabout",
+                                "modifier": "straight",
+                                "bearing_before": 122,
+                                "location": [
+                                    24.493441,
+                                    60.995779
+                                ]
+                            },
+                            "ref": "10",
+                            "weight": 101,
+                            "distance": 1504.2,
+                            "name": "Harvialantie"
+                        },
+                        {
+                            "intersections": [
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.506946,
+                                        60.984001
+                                    ],
+                                    "bearings": [
+                                        45,
+                                        210,
+                                        345
+                                    ],
+                                    "entry": [
+                                        false,
+                                        true,
+                                        false
+                                    ],
+                                    "in": 2
+                                }
+                            ],
+                            "driving_side": "right",
+                            "geometry": "_}esJmoqtCDFHDF@JAJGJM",
+                            "mode": "driving",
+                            "duration": 3.2,
+                            "maneuver": {
+                                "exit": 1,
+                                "bearing_after": 203,
+                                "type": "roundabout",
+                                "modifier": "right",
+                                "bearing_before": 160,
+                                "location": [
+                                    24.506946,
+                                    60.984001
+                                ]
+                            },
+                            "ref": "10",
+                            "weight": 3.2,
+                            "distance": 35.2,
+                            "name": "Turun valtatie"
+                        },
+                        {
+                            "intersections": [
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.506991,
+                                        60.983704
+                                    ],
+                                    "bearings": [
+                                        135,
+                                        180,
+                                        330
+                                    ],
+                                    "entry": [
+                                        true,
+                                        true,
+                                        false
+                                    ],
+                                    "in": 2
+                                },
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.50376,
+                                        60.98171
+                                    ],
+                                    "bearings": [
+                                        45,
+                                        225,
+                                        255
+                                    ],
+                                    "entry": [
+                                        false,
+                                        true,
+                                        true
+                                    ],
+                                    "in": 0
+                                },
+                                {
+                                    "out": 2,
+                                    "location": [
+                                        24.503223,
+                                        60.981388
+                                    ],
+                                    "bearings": [
+                                        45,
+                                        165,
+                                        225
+                                    ],
+                                    "entry": [
+                                        false,
+                                        false,
+                                        true
+                                    ],
+                                    "in": 0
+                                },
+                                {
+                                    "out": 3,
+                                    "location": [
+                                        24.502626,
+                                        60.981017
+                                    ],
+                                    "bearings": [
+                                        0,
+                                        45,
+                                        60,
+                                        210
+                                    ],
+                                    "entry": [
+                                        false,
+                                        false,
+                                        false,
+                                        true
+                                    ],
+                                    "in": 1
+                                }
+                            ],
+                            "driving_side": "right",
+                            "geometry": "c{esJuoqtCRCN@ZHV^R`@L^Rn@Tn@Lf@FXp@dBRb@jBvD`@v@~@jBhAtB\\j@Zf@dC~DzDfHbBrCvArC~AvDxAnEz@tChA|F`A~FxA~K~AxLn@xErA|JhBtMjA`JlB|L",
+                            "mode": "driving",
+                            "duration": 132.8,
+                            "maneuver": {
+                                "exit": 1,
+                                "bearing_after": 172,
+                                "type": "exit roundabout",
+                                "modifier": "slight right",
+                                "bearing_before": 146,
+                                "location": [
+                                    24.506991,
+                                    60.983704
+                                ]
+                            },
+                            "ref": "10",
+                            "weight": 132.8,
+                            "distance": 1951.7,
+                            "name": "Turun valtatie"
+                        },
+                        {
+                            "intersections": [
+                                {
+                                    "out": 2,
+                                    "location": [
+                                        24.479389,
+                                        60.973198
+                                    ],
+                                    "bearings": [
+                                        60,
+                                        240,
+                                        270
+                                    ],
+                                    "entry": [
+                                        false,
+                                        true,
+                                        true
+                                    ],
+                                    "in": 0
+                                },
+                                {
+                                    "out": 2,
+                                    "location": [
+                                        24.478242,
+                                        60.973403
+                                    ],
+                                    "bearings": [
+                                        120,
+                                        150,
+                                        315
+                                    ],
+                                    "entry": [
+                                        false,
+                                        true,
+                                        true
+                                    ],
+                                    "in": 0
+                                },
+                                {
+                                    "out": 2,
+                                    "location": [
+                                        24.475576,
+                                        60.973521
+                                    ],
+                                    "bearings": [
+                                        60,
+                                        225,
+                                        255
+                                    ],
+                                    "entry": [
+                                        false,
+                                        false,
+                                        true
+                                    ],
+                                    "in": 0
+                                }
+                            ],
+                            "driving_side": "right",
+                            "geometry": "oycsJecltCBnA?J?HALAJCLCJCJGLKTGZINGNKZI\\G^Gb@Eb@Cl@Ab@@b@@f@B\\Fl@Jr@Nr@Bd@Df@Ff@",
+                            "mode": "driving",
+                            "destinations": "130: Helsinki, Hämeenlinna",
+                            "duration": 23.4,
+                            "maneuver": {
+                                "bearing_after": 264,
+                                "type": "off ramp",
+                                "modifier": "slight right",
+                                "bearing_before": 241,
+                                "location": [
+                                    24.479389,
+                                    60.973198
+                                ]
+                            },
+                            "weight": 23.4,
+                            "distance": 264.3,
+                            "name": ""
+                        },
+                        {
+                            "intersections": [
+                                {
+                                    "out": 2,
+                                    "location": [
+                                        24.474989,
+                                        60.97343
+                                    ],
+                                    "bearings": [
+                                        75,
+                                        135,
+                                        330
+                                    ],
+                                    "entry": [
+                                        false,
+                                        true,
+                                        true
+                                    ],
+                                    "in": 0
+                                },
+                                {
+                                    "out": 2,
+                                    "location": [
+                                        24.472915,
+                                        60.975045
+                                    ],
+                                    "bearings": [
+                                        150,
+                                        330,
+                                        345
+                                    ],
+                                    "entry": [
+                                        false,
+                                        false,
+                                        true
+                                    ],
+                                    "in": 0
+                                }
+                            ],
+                            "driving_side": "right",
+                            "geometry": "}zcsJugktCiArBKPW`@g@r@y@hAeBhBMLODE@ULSFK?",
+                            "mode": "driving",
+                            "duration": 22.6,
+                            "maneuver": {
+                                "bearing_after": 322,
+                                "type": "end of road",
+                                "modifier": "right",
+                                "bearing_before": 251,
+                                "location": [
+                                    24.474989,
+                                    60.97343
+                                ]
+                            },
+                            "ref": "130",
+                            "weight": 22.6,
+                            "distance": 256,
+                            "name": "Helsingintie"
+                        },
+                        {
+                            "intersections": [
+                                {
+                                    "out": 0,
+                                    "location": [
+                                        24.472772,
+                                        60.975431
+                                    ],
+                                    "bearings": [
+                                        45,
+                                        165,
+                                        240
+                                    ],
+                                    "entry": [
+                                        true,
+                                        false,
+                                        false
+                                    ],
+                                    "in": 1
+                                }
+                            ],
+                            "driving_side": "right",
+                            "geometry": "mgdsJyyjtCCGEECC",
+                            "mode": "driving",
+                            "duration": 0.9,
+                            "maneuver": {
+                                "exit": 1,
+                                "bearing_after": 45,
+                                "type": "roundabout",
+                                "modifier": "right",
+                                "bearing_before": 348,
+                                "location": [
+                                    24.472772,
+                                    60.975431
+                                ]
+                            },
+                            "weight": 0.9,
+                            "distance": 9.4,
+                            "name": "Visamäentie"
+                        },
+                        {
+                            "intersections": [
+                                {
+                                    "out": 1,
+                                    "location": [
+                                        24.47286,
+                                        60.975502
+                                    ],
+                                    "bearings": [
+                                        0,
+                                        60,
+                                        195
+                                    ],
+                                    "entry": [
+                                        true,
+                                        true,
+                                        false
+                                    ],
+                                    "in": 2
+                                },
+                                {
+                                    "out": 0,
+                                    "location": [
+                                        24.473354,
+                                        60.975662
+                                    ],
+                                    "bearings": [
+                                        60,
+                                        240,
+                                        255
+                                    ],
+                                    "entry": [
+                                        true,
+                                        false,
+                                        true
+                                    ],
+                                    "in": 1
+                                },
+                                {
+                                    "out": 0,
+                                    "location": [
+                                        24.473545,
+                                        60.975711
+                                    ],
+                                    "bearings": [
+                                        45,
+                                        150,
+                                        240
+                                    ],
+                                    "entry": [
+                                        true,
+                                        true,
+                                        false
+                                    ],
+                                    "in": 2
+                                }
+                            ],
+                            "driving_side": "right",
+                            "geometry": "{gdsJkzjtCCECOCUEUEOGOAKG[K[KSMU[e@[a@KO",
+                            "mode": "driving",
+                            "duration": 14.6,
+                            "maneuver": {
+                                "exit": 1,
+                                "bearing_after": 56,
+                                "type": "exit roundabout",
+                                "modifier": "slight right",
+                                "bearing_before": 16,
+                                "location": [
+                                    24.47286,
+                                    60.975502
+                                ]
+                            },
+                            "weight": 14.6,
+                            "distance": 117.1,
+                            "name": "Visamäentie"
+                        },
+                        {
+                            "intersections": [
+                                {
+                                    "classes": [
+                                        "restricted"
+                                    ],
+                                    "out": 1,
+                                    "location": [
+                                        24.474335,
+                                        60.97624
+                                    ],
+                                    "bearings": [
+                                        30,
+                                        105,
+                                        210
+                                    ],
+                                    "entry": [
+                                        true,
+                                        true,
+                                        false
+                                    ],
+                                    "in": 2
+                                }
+                            ],
+                            "driving_side": "right",
+                            "geometry": "oldsJscktCDUBUBOHaAJaADk@?GFs@?k@?YCk@A_@Eo@Ey@Ks@GQUi@EIIQIQCI",
+                            "mode": "driving",
+                            "duration": 31.7,
+                            "maneuver": {
+                                "bearing_after": 111,
+                                "type": "turn",
+                                "modifier": "right",
+                                "bearing_before": 30,
+                                "location": [
+                                    24.474335,
+                                    60.97624
+                                ]
+                            },
+                            "weight": 3308.4,
+                            "distance": 215,
+                            "name": "Visakaarre"
+                        },
+                        {
+                            "intersections": [
+                                {
+                                    "in": 0,
+                                    "entry": [
+                                        true
+                                    ],
+                                    "bearings": [
+                                        223
+                                    ],
+                                    "location": [
+                                        24.477915,
+                                        60.976437
+                                    ]
+                                }
+                            ],
+                            "driving_side": "right",
+                            "geometry": "wmdsJ_zktC",
+                            "mode": "driving",
+                            "duration": 0,
+                            "maneuver": {
+                                "bearing_after": 0,
+                                "location": [
+                                    24.477915,
+                                    60.976437
+                                ],
+                                "bearing_before": 43,
+                                "type": "arrive"
+                            },
+                            "weight": 0,
+                            "distance": 0,
+                            "name": "Visakaarre"
+                        }
+                    ],
+                    "distance": 7613.9,
+                    "duration": 600,
+                    "summary": "Tuuloksentie, Turun valtatie",
+                    "weight": 3876.7
+                }
+            ],
+            "distance": 7613.9,
+            "duration": 600,
+            "weight_name": "routability",
+            "weight": 3876.7
+        }
+    ],
+    "waypoints": [
+        {
+            "hint": "OocBgOiGAYCUAAAAGAAAAGcAAAAAAAAAUKIlQ5V2zkEFvuFCAAAAAJQAAAAYAAAAZwAAAAAAAADnAAAAz_J1ATYOowMW83UBng6jAwgAzwaTpxfp",
+            "distance": 12.208162,
+            "name": "Papinniityntie",
+            "location": [
+                24.507087,
+                61.017654
+            ]
+        },
+        {
+            "hint": "5s0UgJ-DAYAFAAAABgAAAKIAAABSAAAAzQRWQKJHbECP9thCnOhXQgUAAAAGAAAAogAAAFIAAADnAAAA24B1ATVtogPegHUBM22iAwoAvwKTpxfp",
+            "distance": 0.275789,
+            "name": "Visakaarre",
+            "location": [
+                24.477915,
+                60.976437
+            ]
+        }
+    ]
+}
