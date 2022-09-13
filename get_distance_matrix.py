@@ -30,6 +30,12 @@ def test():
 	request_distance_matrix(coords)
 
 
+def process_request(coords):
+	if len(coords) * len(coords) >= 3500:
+		distance_matrix = request_distance_matrix(coords[:50])
+
+
+
 
 def request_distance_matrix(coords):
 	"""Function to make an API request for a distacne matrix"""
@@ -58,11 +64,11 @@ def request_distance_matrix(coords):
 		with open('geo_data/distance_matrix.json', 'w') as outfile:
 			json.dump(response.json(), outfile, indent=4)
 
-		print(response.json().keys())
+		#print(response.json().keys())
 
-		print(print(response.json()['metadata']))
+		#print(print(response.json()['metadata']))
 
-		return response.json()
+		return response.json()['distances']
 
 	else:
 		with open(filename, 'r') as file:

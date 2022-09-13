@@ -8,6 +8,8 @@ import random
 import functools
 from geopy.distance import geodesic
 
+from get_distance_matrix import request_distance_matrix
+
 
 def time_to_string(minutes):
 	hours = math.floor(minutes/60)
@@ -340,6 +342,19 @@ def preprocess_sim_config(sim_config):
 			sim_config['duration_matrix'][b_index, a_index] = sim_config['distance_matrix'][b_index, a_index] / 1000 / 80 * 60 # 80 km/h
 	sim_config['distance_matrix'] = sim_config['distance_matrix'].tolist()
 	sim_config['duration_matrix'] = sim_config['duration_matrix'].tolist()
+
+	print(55555555, sim_config['location_coordinates'])
+
+	# Request distacne matrix
+	matrix_json = request_distance_matrix(sim_config['location_coordinates'])
+	print(len(sim_config['location_coordinates']))
+	print(matrix_json.keys())
+	sim_config['distance_matrix'] = matrix_json['distances'] 
+	print(sim_config['distance_matrix'])
+	# locations as a list of lists wit lat, long sim_config['location_coordinates']
+	# pass it to API function 
+	# store distacne matrix
+
 
 	with open('sim_config.json', 'w') as outfile:
 		json.dump(sim_config, outfile, indent=4)

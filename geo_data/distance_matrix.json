@@ -1,0 +1,13 @@
+{
+    "error": {
+        "code": 6004,
+        "message": "Request parameters exceed the server configuration limits. Only a total of 3500 routes are allowed."
+    },
+    "info": {
+        "engine": {
+            "version": "6.7.0",
+            "build_date": "2022-02-18T19:37:41Z"
+        },
+        "timestamp": 1663065156266
+    }
+}
