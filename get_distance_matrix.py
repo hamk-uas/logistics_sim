@@ -1,80 +1,55 @@
 from secrets import API_key
 
-from os.path import exists
-
-
 import json
 import requests
 import openrouteservice
-import pandas as pd
+import numpy as np
 
-def test():
-	print("Testing with some coords we have here...")
-	with open('geo_data/sim_test_sites.geojson') as pickup_sites_file:
-		pickup_sites_geojson = json.load(pickup_sites_file)
+def get_distance_and_duration_matrix(coords):
+	block_side_length = 50
+
+	distance_matrix = np.ndarray((len(coords), len(coords)), dtype=np.float64)
+	duration_matrix = np.ndarray((len(coords), len(coords)), dtype=np.float64)
+
+	block_corners = np.arange(0, len(coords), block_side_length).tolist()
+	if block_corners[-1] < len(coords):
+		block_corners.append(len(coords))
+
+	for i in range(len(block_corners) - 1):
+		for j in range(len(block_corners) - 1):
+			source_indexes = np.arange(block_corners[i], block_corners[i + 1]).tolist()
+			destination_indexes = np.arange(block_corners[j], block_corners[j + 1]).tolist()
+			print("Making a routing API request")
+			api_results = api_request_distance_and_duration_matrix(coords, source_indexes, destination_indexes)
+			distance_matrix[block_corners[i]:block_corners[i + 1], block_corners[j]:block_corners[j + 1]] = api_results['distance_matrix']
+			duration_matrix[block_corners[i]:block_corners[i + 1], block_corners[j]:block_corners[j + 1]] = api_results['duration_matrix']
+
+	return {
+		"distance_matrix": distance_matrix,
+		"duration_matrix": duration_matrix,
+	}
+
+def api_request_distance_and_duration_matrix(coords, source_indexes, destination_indexes):
+	"""Function to make an API request for a distance matrix and a duration matrix"""
+
+	headers = {
+		'Accept': 'application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8',
+		'Authorization': API_key,
+		'Content-Type': 'application/json; charset=utf-8'
+	}
 	
-	print(pickup_sites_geojson.keys())
+	body = {
+		"locations": coords,
+		"sources": source_indexes,
+		"destinations": destination_indexes,
+		"metrics": ["distance", "duration"]
+	}
 	
-	df = pd.DataFrame()
-	
-	for i in range(len(pickup_sites_geojson['features'])):
-		df_geometry = pd.DataFrame(pickup_sites_geojson['features'][i]['geometry'])
-		df_row = df_geometry['coordinates']
-		df = df.append(df_row, ignore_index = True)
-	
-	print(df.shape)
-	coords = df.values.tolist()
-	
-	print(coords)
+	response = requests.post('https://api.openrouteservice.org/v2/matrix/driving-car', json=body, headers=headers)
+	response.raise_for_status()
+	response_json = response.json()
 
-	request_distance_matrix(coords)
-
-
-def process_request(coords):
-	if len(coords) * len(coords) >= 3500:
-		distance_matrix = request_distance_matrix(coords[:50])
-
-
-
-
-def request_distance_matrix(coords):
-	"""Function to make an API request for a distacne matrix"""
-
-	filename = 'geo_data/distance_matrix.json'
-
-	file_exists = exists(filename)
-
-	if not False:
-
-		headers = {
-			'Accept': 'application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8',
-			'Authorization': API_key,
-			'Content-Type': 'application/json; charset=utf-8'
-		}
-		
-		body = {"locations":coords,"metrics":["distance", "duration"]}
-		
-		response = requests.post('https://api.openrouteservice.org/v2/matrix/driving-car', json=body, headers=headers)
-		
-		print(response.status_code, response.reason)
-		print(response.json())
-	
-	
-
-		with open('geo_data/distance_matrix.json', 'w') as outfile:
-			json.dump(response.json(), outfile, indent=4)
-
-		#print(response.json().keys())
-
-		#print(print(response.json()['metadata']))
-
-		return response.json()['distances']
-
-	else:
-		with open(filename, 'r') as file:
-			distance_matrix = json.load(file)
-		return distance_matrix
-
-
-
-
+	return {
+		'distance_matrix': np.array(response_json["distances"], dtype=np.float64),
+		'duration_matrix': np.array(response_json["durations"], dtype=np.float64)/60 # Convert from seconds to minutes
+	}

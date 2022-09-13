@@ -7,8 +7,9 @@ import json
 import random
 import functools
 from geopy.distance import geodesic
+from os.path import exists
 
-from get_distance_matrix import request_distance_matrix
+from get_distance_matrix import get_distance_and_duration_matrix
 
 
 def time_to_string(minutes):
@@ -165,9 +166,9 @@ class Vehicle():
 				return f"TODO: Stationary location other than home depot not implemented"
 		return "TODO: En route location not implemented"
 
-	def get_location_coordinates(self):
+	def get_location_lonlats(self):
 		if self.moving == False:
-			return self.sim.location_coordinates[self.location_index]
+			return self.sim.location_lonlats[self.location_index]
 		return (None, None) # TODO
 
 	def put_load(value):
@@ -288,7 +289,7 @@ class WastePickupSimulation():
 		self.log("Simulation finished")
 
 
-def preprocess_sim_config(sim_config):
+def preprocess_sim_config(sim_config, sim_config_filename):
 
 	# Create configurations for pickup sites using known data and random values	
 	sim_config['pickup_sites'] = []
@@ -297,7 +298,7 @@ def preprocess_sim_config(sim_config):
 	for pickup_site in pickup_sites_geojson['features']:
 		pickup_site_config = {
 			**pickup_site['properties'],
-			'coordinates': tuple(pickup_site['geometry']['coordinates']),
+			'lonlats': tuple(pickup_site['geometry']['coordinates']),
 			'capacity': random.randrange(1, 4)
 		}
 		pickup_site_config['daily_growth_rate'] = pickup_site_config['capacity']*np.random.lognormal(np.log(1 / ((14 + 21) / 2)), 0.1) # Log-normal dist of 2 to 3 weeks to be full.
@@ -311,7 +312,7 @@ def preprocess_sim_config(sim_config):
 	for terminal in terminals_geojson['features']:
 		terminal_config = {
 			**terminal['properties'],
-			'coordinates': tuple(terminal['geometry']['coordinates'])
+			'lonlats': tuple(terminal['geometry']['coordinates'])
 		}
 		sim_config['terminals'].append(terminal_config)
 		
@@ -322,39 +323,40 @@ def preprocess_sim_config(sim_config):
 		depot_config = {
 			**depot['properties'],
 			**sim_config['depots'][index],
-			'coordinates': tuple(depot['geometry']['coordinates'])
+			'lonlats': tuple(depot['geometry']['coordinates'])
 		}
 		sim_config['depots'][index] = depot_config
 
-	# Collect coordinates of everything into a list of location coordinates. Store the location indexes
-	def set_location_index_and_get_coordinates(x, location_index):
+	# Collect lonlats of everything into a list of location lonlats. Store the location indexes
+	def set_location_index_and_get_lonlats(x, location_index):
 		x['location_index'] = location_index
-		return x['coordinates']
+		return x['lonlats']
 
-	sim_config['location_coordinates'] = list(map(lambda x: set_location_index_and_get_coordinates(x[1], x[0]), enumerate([*sim_config['pickup_sites'], *sim_config['terminals'], *sim_config['depots']])))
+	sim_config['location_lonlats'] = list(map(lambda x: set_location_index_and_get_lonlats(x[1], x[0]), enumerate([*sim_config['pickup_sites'], *sim_config['terminals'], *sim_config['depots']])))
 
-	# Calculate geodesic distance matrix
-	sim_config['distance_matrix'] = np.ndarray((len(sim_config['location_coordinates']), len(sim_config['location_coordinates'])), dtype=np.float32)
-	sim_config['duration_matrix'] = np.ndarray((len(sim_config['location_coordinates']), len(sim_config['location_coordinates'])), dtype=np.float32)
-	for b_index, b in enumerate(sim_config['location_coordinates']):
-		for a_index, a in enumerate(sim_config['location_coordinates']):
-			sim_config['distance_matrix'][b_index, a_index] = geodesic(a, b).m
-			sim_config['duration_matrix'][b_index, a_index] = sim_config['distance_matrix'][b_index, a_index] / 1000 / 80 * 60 # 80 km/h
-	sim_config['distance_matrix'] = sim_config['distance_matrix'].tolist()
-	sim_config['duration_matrix'] = sim_config['duration_matrix'].tolist()
+	# Load previous sim config
+	with open(sim_config_filename) as cached_sim_config_file:
+		cached_sim_config = json.load(cached_sim_config_file)
 
-	print(55555555, sim_config['location_coordinates'])
+	# Use previous distance and duration matrixes if the locations match within 1m of total absolute error
+	if np.sum(np.absolute(np.array(cached_sim_config['location_lonlats']) - np.array(sim_config['location_lonlats']))) < 1:
+		sim_config['distance_matrix'] = cached_sim_config['distance_matrix']
+		sim_config['duration_matrix'] = cached_sim_config['duration_matrix']
+	else:
+		# Calculate geodesic distance and duration matrixes
+		#geodesic_distance_matrix = np.ndarray((len(sim_config['location_lonlats']), len(sim_config['location_lonlats'])), dtype=np.float32)
+		#geodesic_duration_matrix = np.ndarray((len(sim_config['location_lonlats']), len(sim_config['location_lonlats'])), dtype=np.float32)
+		#for b_index, b in enumerate(sim_config['location_lonlats']):
+			#for a_index, a in enumerate(sim_config['location_lonlats']):
+				#geodesic_distance_matrix[b_index, a_index] = geodesic((a[1], a[0]), (b[1], b[0])).m  #geodesic() uses latlon
+				#geodesic_duration_matrix[b_index, a_index] = geodesic_distance_matrix[b_index, a_index] / 1000 / 60 * 60 # / 1000m/km / 60km/h / 60min/h
+		#sim_config['geodesic_distance_matrix'] = geodesic_distance_matrix.tolist()
+		#sim_config['geodesic_duration_matrix'] = geodesic_duration_matrix.tolist()
 
-	# Request distacne matrix
-	matrix_json = request_distance_matrix(sim_config['location_coordinates'])
-	print(len(sim_config['location_coordinates']))
-	print(matrix_json.keys())
-	sim_config['distance_matrix'] = matrix_json['distances'] 
-	print(sim_config['distance_matrix'])
-	# locations as a list of lists wit lat, long sim_config['location_coordinates']
-	# pass it to API function 
-	# store distacne matrix
+		# Get routing API based distance and duration matrixes
+		distance_and_duration_matrixes = get_distance_and_duration_matrix(sim_config['location_lonlats'])
+		sim_config['distance_matrix'] = distance_and_duration_matrixes["distance_matrix"].tolist()
+		sim_config['duration_matrix'] = distance_and_duration_matrixes["duration_matrix"].tolist()
 
-
-	with open('sim_config.json', 'w') as outfile:
+	with open(sim_config_filename, 'w') as outfile:
 		json.dump(sim_config, outfile, indent=4)

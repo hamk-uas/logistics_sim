@@ -25,6 +25,6 @@ sim_config = {
 	]
 }
 
-waste_pickup_sim.preprocess_sim_config(sim_config)
+waste_pickup_sim.preprocess_sim_config(sim_config, 'sim_config.json')
 sim = waste_pickup_sim.WastePickupSimulation(sim_config)
 sim.sim_run()

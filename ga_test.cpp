@@ -9,9 +9,6 @@
 #include "nlohmann/json.hpp"
 using json = nlohmann::json;
 
-// GA: 0  1  2  3  4  5  6  7  8  9  10  11  12
-//   p0 p1 p2 p3 p4 p5 p7 p0 p1 p2 p3 p4 p5 p7
-
 struct PickupSite
 {
   float capacity;
