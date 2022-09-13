@@ -6,4 +6,4 @@ sites_data_file = 'ekopisteet.csv'
 
 df = pd.read_csv(f'geo_data/{sites_data_file}')
 
-print(df.size)
+print(df.size)tea

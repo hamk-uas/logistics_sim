@@ -4,6 +4,8 @@ import random
 import numpy as np
 import queue as queue
 
+from distance_matrix_request import request_distance_matrix
+print(help(request_distance_matrix))
 
 def time_to_string(minutes):
 	hours = math.floor(minutes/60)
@@ -30,6 +32,7 @@ class PickupSite():
 	def __init__(self, sim, index):
 		self.sim = sim
 		self.index = index
+		self.location_index = index
 
 		self.capacity = self.sim.config['pickup_sites'][index]['capacity']
 		self.level = self.sim.config['pickup_sites'][index]['level']
@@ -71,6 +74,34 @@ class PickupSite():
 			yield self.sim.env.timeout(24*60)
 			#self.log(f"Level increase to {tons_to_string(self.level + self.daily_growth_rate)} / {tons_to_string(self.capacity)}  ({to_percentage_string((self.level + self.daily_growth_rate) / self.capacity)})")
 			self.put(self.daily_growth_rate)
+
+
+class Terminal():
+	def log(self, message):
+		self.sim.log(f"Terminal #{self.index}: {message}")
+
+	def warn(self, message):
+		self.sim.warn(f"Terminal #{self.index}: {message}")
+
+	def __init__(self, sim, index):
+		self.sim = sim
+		self.index = index
+		self.location_index = len(sim.config['pickup_sites']) + index 
+
+class Depot():
+	def log(self, message):
+		self.sim.log(f"Depot #{self.index}: {message}")
+
+	def warn(self, message):
+		self.sim.warn(f"Depot #{self.index}: {message}")
+
+	def __init__(self, sim, index):
+		self.sim = sim
+		self.index = index
+		self.location_index = len(sim.config['pickup_sites']) + len(sim.config['terminals']) + index 
+
+
+
 
 
 class Vehicle():	
@@ -142,11 +173,12 @@ class WastePickupSimulation():
 
 	def sim_init(self):
 		self.env = simpy.Environment()
-		self.pickup_sites = [PickupSite(self, i) for i in range(self.area_config["num_pickup_sites"])]
+		#self.pickup_sites = [PickupSite(self, i) for i in range(self.config["num_pickup_sites"])]
+		self.pickup_sites = [PickupSite(self, i) for i in range(len(self.config['pickup_sites']))]
 		for site in self.pickup_sites:
 			site.addLevelListener(self.site_full, site.capacity, {"site": site})
 		self.daily_monitoring_activity = self.env.process(self.daily_monitoring())
-		self.vehicles = [Vehicle(sim, self, i) for i in range(self.config["num_vehicles"])]
+		self.vehicles = [Vehicle(sim, self, i) for i in range(self.config['depots'][0]["num_vehicles"])] # indexing of depots FIX
 
 	def sim_run(self):
 		self.env.run(until=self.sim_config["runtime_days"]*24*60)

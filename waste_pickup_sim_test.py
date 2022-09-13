@@ -4,6 +4,8 @@ import waste_pickup_sim
 import random
 from geopy.distance import geodesic
 
+
+
 sim_config = {	
 	'vehicle': {
 		'load_capacity' : 18, # Tonnes
@@ -25,9 +27,10 @@ sim_config = {
 }
 
 # Init area config without locations
-sim_config['location_coordinates'] = []
-sim_config['locations'] = []
-sim_config['num_locations'] = 0
+#sim_config['location_coordinates'] = []
+#sim_config['locations'] = []
+#sim_config['num_locations'] = 0
+#sim_config['num_pickup_sites'] = 0
 
 # Create configurations for pickup sites using known data and random values
 sim_config['pickup_sites'] = []
@@ -47,7 +50,7 @@ sim_config['terminals'] = []
 with open('geo_data/sim_test_terminals.geojson') as terminals_file:
      terminals_geojson = json.load(terminals_file)
 for terminal in terminals_geojson['features']:
-	terminal['properties']['sim_location_index'] = sim_config['num_locations']
+	#terminal['properties']['sim_location_index'] = sim_config['num_pickup_sites']
 	terminal_config = {
 		**terminal['properties'],
 		'coordinates': tuple(terminal['geometry']['coordinates'])
@@ -61,6 +64,7 @@ with open('sim_config.json', 'w') as outfile:
 
 # Create simulation. It will index all locations to sim.locations
 sim = waste_pickup_sim.WastePickupSimulation(sim_config)
+print(0000, sim)
 
 # Calculate geodesic distance matrix
 print("Calculating geodesic distance matrix...")
@@ -70,7 +74,10 @@ for b_index, b in enumerate(sim.locations):
 		distance_matrix[b_index, a_index] = geodesic(a, b).km
 print("Done")
 
-sim.sim_init(distance_matrix)
+#print(sim)
+with open('sim_config.json', 'w') as f:
+	json.dump(sim_config, f)
+sim.sim_init()
 #sim.sim_run()
 
 routing_input = {
