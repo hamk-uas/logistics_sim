@@ -14,35 +14,6 @@
 #include <omp.h>
 #include <cstddef>
 
-#include "nlohmann/json.hpp"
-using json = nlohmann::json;
-
-struct PickupSite
-{
-  float capacity;
-  float level;
-  float growth_rate;
-};
-
-struct RoutingInput
-{
-  std::vector<std::vector<float>> distance_matrix;
-  std::vector<PickupSite> pickup_sites;
-};
-
-void from_json(const json &j, PickupSite &x)
-{
-  j.at("capacity").get_to(x.capacity);
-  j.at("level").get_to(x.level);
-  j.at("growth_rate").get_to(x.growth_rate);
-}
-
-void from_json(const json &j, RoutingInput &x)
-{
-  j.at("distance_matrix").get_to(x.distance_matrix);
-  j.at("pickup_sites").get_to(x.pickup_sites);
-}
-
 const int simdIntParallelCount = alignof(std::max_align_t) / sizeof(int); // How many ints fit to the maximum alignment interval
 
 // An optimizer class with will store the population and its costs, and has everything needed for the optimization.
@@ -60,8 +31,8 @@ private:
   int *shot;
   int **population;
   int **nextGen;
-  const int *distanceMatrix;
-  int *nextGenCosts;
+  double (&costFunction)(const int *);
+  double *nextGenCosts;
   std::mt19937 randomNumberGenerator; // For main thread
   aligned_ThreadState *threadStates;  // For parallel threads
   int maxNumThreads;
@@ -83,7 +54,7 @@ private:
   // Calculate statistics of the population (find the best chromosome)
   void calcStats()
   {
-    bestCost = INT_MAX;
+    bestCost = DBL_MAX;
     for (int j = 0; j < populationSize; j++)
     {
       if (costs[j] < bestCost)
@@ -95,27 +66,9 @@ private:
   }
 
 public:
-  int bestCost; // Current best cost
+  double bestCost; // Current best cost
   int *best;    // Current best
-  int *costs;   // Current costs in population
-
-  // Calculate cost of a chromosome
-  static int cost(const int *genes, int numGenes, const int *distanceMatrix)
-  {
-    int cost = 0;
-    for (int i = 0; i < numGenes - 1; i++)
-    {
-      int g0 = genes[i];
-      int g1 = genes[i + 1];
-      cost += distanceMatrix[g0 + numGenes * g1];
-    }
-    return cost;
-  }
-
-  int cost(const int *genes) const
-  {
-    return cost(genes, numGenes, distanceMatrix);
-  }
+  double *costs;   // Current costs in population
 
   // Initialize population and calculate statistics. Called automatically in constructor
   void initPopulation()
@@ -127,7 +80,7 @@ public:
         population[j][i] = i;
       }
       std::shuffle(population[j] + 1, population[j] + numGenes, randomNumberGenerator);
-      costs[j] = cost(population[j]);
+      costs[j] = costFunction(population[j]);
       nextGen[j][0] = 0;
     }
     calcStats();
@@ -175,7 +128,7 @@ public:
           int p0 = shot[j + k];
           int p1 = j + k;
           crossover(population[p0], population[p1], nextGen[j + k], omp_get_thread_num());
-          nextGenCosts[j + k] = cost(nextGen[j + k]);
+          nextGenCosts[j + k] = costFunction(nextGen[j + k]);
           if (nextGenCosts[j + k] > costs[j + k])
           {
             std::swap(population[j + k], nextGen[j + k]);
@@ -194,7 +147,7 @@ public:
   // distanceMatrix = concatenated rows of the distance matrix
   // populationSize = population size, must be a multiple of simdIntParallelCount (typically 4), -1 = auto based on numGenes.
   // seed = random number generator seed. Worker threads use seed + 1, seed + 2, ...
-  Optimizer(int numGenes, , int populationSize = -1, unsigned seed = std::chrono::system_clock::now().time_since_epoch().count()) : numGenes(numGenes), distanceMatrix(distanceMatrix), populationSize(populationSize = calcPopulationSize(numGenes, populationSize)), randomNumberGenerator(seed), maxNumThreads(omp_get_max_threads())
+  Optimizer(int numGenes, double (&costFunction)(const int *), int populationSize = -1, unsigned seed = std::chrono::system_clock::now().time_since_epoch().count()) : numGenes(numGenes), costFunction(costFunction), populationSize(populationSize = calcPopulationSize(numGenes, populationSize)), randomNumberGenerator(seed), maxNumThreads(omp_get_max_threads())
   {
     threadStates = new aligned_ThreadState[maxNumThreads];
     for (int thread = 0; thread < maxNumThreads; thread++)
@@ -206,8 +159,8 @@ public:
     shot = new int[populationSize];
     population = new int *[populationSize];
     nextGen = new int *[populationSize];
-    costs = new int[populationSize];
-    nextGenCosts = new int[populationSize];
+    costs = new double[populationSize];
+    nextGenCosts = new double[populationSize];
     for (int j = 0; j < populationSize; j++)
     {
       population[j] = new int[numGenes];

@@ -34,14 +34,14 @@ class PickupSite():
 	def __init__(self, sim, index):
 		self.sim = sim
 		self.index = index
+		self.location_index = sim.config['pickup_sites'][self.index]['location_index']
 
 		self.capacity = self.sim.config['pickup_sites'][index]['capacity']
 		self.level = self.sim.config['pickup_sites'][index]['level']
-		self.log(f"Initial level: {tons_to_string(self.level)} / {tons_to_string(self.capacity)} ({to_percentage_string(self.level / self.capacity)})")
 		self.levelListeners = []
 
 		self.daily_growth_rate = self.sim.config['pickup_sites'][index]['daily_growth_rate']
-		self.log(f"Growth rate: {tons_to_string(self.daily_growth_rate)} / day")
+		self.log(f"Initial level: {tons_to_string(self.level)} of {tons_to_string(self.capacity)} ({to_percentage_string(self.level / self.capacity)}), growth rate: {tons_to_string(self.daily_growth_rate)}/day")
 
 		self.growth_process = sim.env.process(self.grow_daily_forever())
 
@@ -89,21 +89,63 @@ class Vehicle():
 		self.index = index
 		self.depot_index = depot_index
 
+		# Load and capacity
 		self.load_capacity = sim.config['vehicle_template']['load_capacity']
-		self.load_level = 0		
+		self.load_level = 0
 
-		self.route_today = []
+		# Location and movement
+		self.moving = False
+		self.location_index = sim.depots[self.depot_index].location_index
+		# TODO: routing
 
-		self.log(f"Belongs to depot #{depot_index}")
+		self.log(self.get_location_string())
 
-	def get_location(self):
-		return None # *** Todo
+	def get_location_string(self):
+		if self.moving == False:
+			if self.location_index == self.sim.depots[self.depot_index].location_index:
+				return f"Stationary at depot #{self.depot_index} (home depot)"
+			else:
+				return f"TODO: Stationary location other than home depot not implemented"
+		return "TODO: En route location not implemented"
+
+	def get_location_coordinates(self):
+		if self.moving == False:
+			return self.sim.location_coordinates[self.location_index]
+		return "TODO: En route location not implemented"
 
 	def put_load(value):
 		self.load_level += value
 		self.log(f"Load level increased to {tons_to_string(self.load_level)} / {tons_to_string(self.load_capacity)} ({to_percentage_string(self.load_level/self.load_capacity)})")
 		if (self.load_level > self.capacity):
 			self.warn("Overload")
+
+
+# Depot class
+class Depot():	
+	def log(self, message):
+		self.sim.log(f"Depot #{self.index}: {message}")
+
+	def warn(self, message):
+		self.sim.warn(f"Depot #{self.index}: {message}")
+
+	def __init__(self, sim, index):
+		self.sim = sim
+		self.index = index
+		self.location_index = sim.config['depots'][self.index]['location_index']
+
+
+# Terminal class
+class Terminal():	
+	def log(self, message):
+		self.sim.log(f"Terminal #{self.index}: {message}")
+
+	def warn(self, message):
+		self.sim.warn(f"Terminal #{self.index}: {message}")
+
+	def __init__(self, sim, index):
+		self.sim = sim
+		self.index = index
+		self.location_index = sim.config['terminals'][self.index]['location_index']
 
 
 class WastePickupSimulation():
@@ -123,6 +165,12 @@ class WastePickupSimulation():
 		# Create pickup sites as objects
 		self.pickup_sites = [PickupSite(self, i) for i in range(len(self.config['pickup_sites']))]
 
+		# Create depots as objects
+		self.depots = [Depot(self, i) for i in range(len(self.config['depots']))]
+
+		# Create terminals as objects
+		self.terminals = [Terminal(self, i) for i in range(len(self.config['terminals']))]
+
 		# Create vehicles as objects
 		self.vehicles = []
 		for depot_index, depot in enumerate(self.config['depots']):
@@ -134,16 +182,18 @@ class WastePickupSimulation():
 		self.daily_monitoring_activity = self.env.process(self.daily_monitoring())
 
 		routing_input = {
-			'pickup_sites': list(map(lambda x: {
-				'capacity': x.capacity,
-				'level': x.level,
-				'growth_rate': x.daily_growth_rate/(24*60)
+			'pickup_sites': list(map(lambda pickup_site: {
+				'capacity': pickup_site.capacity,
+				'level': pickup_site.level,
+				'growth_rate': pickup_site.daily_growth_rate/(24*60)
 			}, self.pickup_sites)),
-			'depots': list(map(lambda x: {
-				'num_vehicles': x['num_vehicles']
+			'depots': list(map(lambda depot: {
 			}, self.config["depots"])),
-			'terminals': list(map(lambda x: {
+			'terminals': list(map(lambda terminal: {
 			}, self.config["terminals"])),
+			'vehicles': list(map(lambda vehicle: {
+				'load_capacity': vehicle.load_capacity
+			}, self.vehicles)),
 			'distance_matrix': self.config['distance_matrix'],
 			'duration_matrix': self.config['duration_matrix']
 		}
