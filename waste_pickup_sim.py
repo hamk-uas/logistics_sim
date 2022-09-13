@@ -3,6 +3,10 @@ import simpy
 import random
 import numpy as np
 import queue as queue
+import json
+import random
+import functools
+from geopy.distance import geodesic
 
 
 def time_to_string(minutes):
@@ -80,16 +84,17 @@ class Vehicle():
 	def warn(self, message):
 		self.sim.warn(f"Vehicle #{self.index}: {message}")
 
-	def __init__(self, sim, index):
+	def __init__(self, sim, index, depot_index):
 		self.sim = sim
 		self.index = index
+		self.depot_index = depot_index
 
-		self.load_capacity = sim.vehicle_config["load_capacity"]
-		self.load_level = 0
+		self.load_capacity = sim.config['vehicle_template']['load_capacity']
+		self.load_level = 0		
 
-		self.route = []
-		self.depart_index = None
-		self.depart_time = None
+		self.route_today = []
+
+		self.log(f"Belongs to depot #{depot_index}")
 
 	def get_location(self):
 		return None # *** Todo
@@ -101,25 +106,6 @@ class Vehicle():
 			self.warn("Overload")
 
 
-class PickupSiteOperator():	
-
-	def log(self, message):
-		self.sim.log(f"Pickup site operator #{self.index}: {message}")
-
-	def warn(self, message):
-		self.sim.warn(f"Pickup site operator #{self.index}: {message}")
-
-	def __init__(self, sim, index):
-		self.sim = sim
-		self.index = index
-		self.pickup_sites = []
-
-	def assign_as_operator_of_pickup_site(self, site):
-		self.pickup_sites.append(site)
-		threshold = self.sim.fleet_operator_config["relative_level_threshold_for_pickup"]*site.capacity
-		self.log(f"Set threshold {tons_to_string(threshold)} for site {site.index}")
-
-
 class WastePickupSimulation():
 
 	def log(self, message):
@@ -128,9 +114,42 @@ class WastePickupSimulation():
 	def warn(self, message):
 		print(f"{time_to_string(self.env.now)} WARNING - {message}")	
 
-	def __init__(self, config):
+	def __init__(self, config):		
 		self.config = config
-		self.locations = list(map(lambda x: x['coordinates'], [*config['pickup_sites'], *config['terminals'], *config['depots']]))
+
+		# Create SimPy environment
+		self.env = simpy.Environment()
+
+		# Create pickup sites as objects
+		self.pickup_sites = [PickupSite(self, i) for i in range(len(self.config['pickup_sites']))]
+
+		# Create vehicles as objects
+		self.vehicles = []
+		for depot_index, depot in enumerate(self.config['depots']):
+			for i in range(depot['num_vehicles']):
+				self.vehicles.append(Vehicle(self, len(self.vehicles), depot_index))
+
+		for site in self.pickup_sites:
+			site.addLevelListener(self.site_full, site.capacity, {"site": site})
+		self.daily_monitoring_activity = self.env.process(self.daily_monitoring())
+
+		routing_input = {
+			'pickup_sites': list(map(lambda x: {
+				'capacity': x.capacity,
+				'level': x.level,
+				'growth_rate': x.daily_growth_rate/(24*60)
+			}, self.pickup_sites)),
+			'depots': list(map(lambda x: {
+				'num_vehicles': x['num_vehicles']
+			}, self.config["depots"])),
+			'terminals': list(map(lambda x: {
+			}, self.config["terminals"])),
+			'distance_matrix': self.config['distance_matrix'],
+			'duration_matrix': self.config['duration_matrix']
+		}
+
+		with open('routing_input.json', 'w') as outfile:
+			json.dump(routing_input, outfile, indent=4)
 
 	def site_full(self, site):
 		self.warn(f"Site #{site.index} is full.")
@@ -140,14 +159,65 @@ class WastePickupSimulation():
 			self.log(f"Monitored levels: {', '.join(map(lambda x: to_percentage_string(x.level/x.capacity), self.pickup_sites))}")
 			yield self.sim.env.timeout(24*60) # Could be infinitely long
 
-	def sim_init(self):
-		self.env = simpy.Environment()
-		self.pickup_sites = [PickupSite(self, i) for i in range(self.area_config["num_pickup_sites"])]
-		for site in self.pickup_sites:
-			site.addLevelListener(self.site_full, site.capacity, {"site": site})
-		self.daily_monitoring_activity = self.env.process(self.daily_monitoring())
-		self.vehicles = [Vehicle(sim, self, i) for i in range(self.config["num_vehicles"])]
-
 	def sim_run(self):
 		self.env.run(until=self.sim_config["runtime_days"]*24*60)
 		self.log("Simulation finished")
+
+
+def preprocess_sim_config(sim_config):
+
+	# Create configurations for pickup sites using known data and random values	
+	sim_config['pickup_sites'] = []
+	with open(sim_config['pickup_sites_filename']) as pickup_sites_file:
+		pickup_sites_geojson = json.load(pickup_sites_file)
+	for pickup_site in pickup_sites_geojson['features']:
+		pickup_site_config = {
+			**pickup_site['properties'],
+			'coordinates': tuple(pickup_site['geometry']['coordinates']),
+			'capacity': random.randrange(1, 4)
+		}
+		pickup_site_config['daily_growth_rate'] = pickup_site_config['capacity']*np.random.lognormal(np.log(1 / ((14 + 21) / 2)), 0.1) # Log-normal dist of 2 to 3 weeks to be full.
+		pickup_site_config['level'] = pickup_site_config['capacity']*np.random.uniform(0, 0.8)
+		sim_config['pickup_sites'].append(pickup_site_config)
+
+	# Create configurations for terminals using known data
+	sim_config['terminals'] = []
+	with open(sim_config['terminals_filename']) as terminals_file:
+		terminals_geojson = json.load(terminals_file)
+	for terminal in terminals_geojson['features']:
+		terminal_config = {
+			**terminal['properties'],
+			'coordinates': tuple(terminal['geometry']['coordinates'])
+		}
+		sim_config['terminals'].append(terminal_config)
+		
+	# Create configurations for depots
+	with open(sim_config['depots_filename']) as depots_file:
+		depots_geojson = json.load(depots_file)
+	for index, depot in enumerate(depots_geojson['features']):
+		depot_config = {
+			**depot['properties'],
+			**sim_config['depots'][index],
+			'coordinates': tuple(depot['geometry']['coordinates'])
+		}
+		sim_config['depots'][index] = depot_config
+
+	# Collect coordinates of everything into a list of location coordinates. Store the location indexes
+	def set_location_index_and_get_coordinates(x, location_index):
+		x['location_index'] = location_index
+		return x['coordinates']
+
+	sim_config['location_coordinates'] = list(map(lambda x: set_location_index_and_get_coordinates(x[1], x[0]), enumerate([*sim_config['pickup_sites'], *sim_config['terminals'], *sim_config['depots']])))
+
+	# Calculate geodesic distance matrix
+	sim_config['distance_matrix'] = np.ndarray((len(sim_config['location_coordinates']), len(sim_config['location_coordinates'])), dtype=np.float32)
+	sim_config['duration_matrix'] = np.ndarray((len(sim_config['location_coordinates']), len(sim_config['location_coordinates'])), dtype=np.float32)
+	for b_index, b in enumerate(sim_config['location_coordinates']):
+		for a_index, a in enumerate(sim_config['location_coordinates']):
+			sim_config['distance_matrix'][b_index, a_index] = geodesic(a, b).m
+			sim_config['duration_matrix'][b_index, a_index] = sim_config['distance_matrix'][b_index, a_index] / 1000 / 80 * 60 # 80 km/h
+	sim_config['distance_matrix'] = sim_config['distance_matrix'].tolist()
+	sim_config['duration_matrix'] = sim_config['duration_matrix'].tolist()
+
+	with open('sim_config.json', 'w') as outfile:
+		json.dump(sim_config, outfile, indent=4)

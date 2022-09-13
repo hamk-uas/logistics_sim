@@ -1,307 +1,1411 @@
 {
-    "pickup_sites": [
-        {
-            "capacity": 1,
-            "level": 0.1882880487794264,
-            "growth_rate": 3.3260931674912976e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.4921995961000186,
-            "growth_rate": 3.9084839949481036e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.40886741737570054,
-            "growth_rate": 4.941241181998499e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.5505451032809456,
-            "growth_rate": 3.870325122309526e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.3090963478495738,
-            "growth_rate": 4.5588794787329244e-05
-        },
-        {
-            "capacity": 3,
-            "level": 0.48379701843228196,
-            "growth_rate": 0.00013567569509640714
-        },
-        {
-            "capacity": 3,
-            "level": 1.7012670167621446,
-            "growth_rate": 0.00013997271635486256
-        },
-        {
-            "capacity": 1,
-            "level": 0.3914216898024848,
-            "growth_rate": 3.3730779961553294e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.13929940960455145,
-            "growth_rate": 3.861813049533643e-05
-        },
-        {
-            "capacity": 2,
-            "level": 1.0680267314980654,
-            "growth_rate": 7.054388529804186e-05
-        },
-        {
-            "capacity": 2,
-            "level": 0.91288681770622,
-            "growth_rate": 8.407358310150484e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.42467157842536624,
-            "growth_rate": 4.255723996216119e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.35977100712554755,
-            "growth_rate": 3.704406086676439e-05
-        },
-        {
-            "capacity": 3,
-            "level": 2.327871817390302,
-            "growth_rate": 0.00013256007767702965
-        },
-        {
-            "capacity": 2,
-            "level": 0.6040610520207527,
-            "growth_rate": 9.077872121876631e-05
-        },
-        {
-            "capacity": 2,
-            "level": 1.5890486140732891,
-            "growth_rate": 6.084330763802163e-05
-        },
-        {
-            "capacity": 3,
-            "level": 2.13800643923366,
-            "growth_rate": 0.00010951065767148269
-        },
-        {
-            "capacity": 3,
-            "level": 2.243715147466219,
-            "growth_rate": 0.00013319321648821867
-        },
-        {
-            "capacity": 2,
-            "level": 1.4299353609717942,
-            "growth_rate": 7.733663953414101e-05
-        },
-        {
-            "capacity": 2,
-            "level": 0.14983665918246844,
-            "growth_rate": 7.513531399962375e-05
-        },
-        {
-            "capacity": 3,
-            "level": 2.308963511874288,
-            "growth_rate": 0.00013868820207562957
-        },
-        {
-            "capacity": 2,
-            "level": 1.1443023768495004,
-            "growth_rate": 7.023566510235848e-05
-        },
-        {
-            "capacity": 2,
-            "level": 1.4565662086384226,
-            "growth_rate": 8.342492944657452e-05
-        },
-        {
-            "capacity": 2,
-            "level": 0.11445672652102311,
-            "growth_rate": 8.393351146812526e-05
-        },
-        {
-            "capacity": 2,
-            "level": 1.5239470366717636,
-            "growth_rate": 8.751117210527393e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.1072595753623296,
-            "growth_rate": 3.5257622202565354e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.2719299470884824,
-            "growth_rate": 4.4876193477195455e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.7096547327821898,
-            "growth_rate": 4.1209351834713515e-05
-        },
-        {
-            "capacity": 3,
-            "level": 0.265051148741787,
-            "growth_rate": 0.00011631673274727914
-        },
-        {
-            "capacity": 1,
-            "level": 0.7548726932011367,
-            "growth_rate": 4.0667945902815136e-05
-        },
-        {
-            "capacity": 3,
-            "level": 2.018885162970743,
-            "growth_rate": 0.00010342744752626809
-        },
-        {
-            "capacity": 1,
-            "level": 0.48731406284941753,
-            "growth_rate": 4.0260531631663155e-05
-        },
-        {
-            "capacity": 3,
-            "level": 0.9398957199082217,
-            "growth_rate": 0.00011153375092185352
-        },
-        {
-            "capacity": 3,
-            "level": 0.28439352916773625,
-            "growth_rate": 0.0001122883841699061
-        },
-        {
-            "capacity": 1,
-            "level": 0.3182703778912919,
-            "growth_rate": 4.459639713994084e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.4130069341684636,
-            "growth_rate": 3.995538197307146e-05
-        },
-        {
-            "capacity": 3,
-            "level": 0.38565955442183975,
-            "growth_rate": 0.00010834199458334548
-        },
-        {
-            "capacity": 2,
-            "level": 1.4709222873246768,
-            "growth_rate": 8.752606429249317e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.24754091674719556,
-            "growth_rate": 3.6575719615175847e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.32151275248269856,
-            "growth_rate": 4.991567951107697e-05
-        },
-        {
-            "capacity": 2,
-            "level": 1.2452254350863026,
-            "growth_rate": 9.876598866941322e-05
-        },
-        {
-            "capacity": 2,
-            "level": 1.3500595874679993,
-            "growth_rate": 7.304812707596823e-05
-        },
-        {
-            "capacity": 3,
-            "level": 2.222802662285866,
-            "growth_rate": 0.00011641469496892171
-        },
-        {
-            "capacity": 2,
-            "level": 0.4789084150312702,
-            "growth_rate": 7.816110241533767e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.7084796475844293,
-            "growth_rate": 4.265475695588791e-05
-        },
-        {
-            "capacity": 3,
-            "level": 0.039701529986771435,
-            "growth_rate": 0.00011745531299754716
-        },
-        {
-            "capacity": 2,
-            "level": 0.571750878389609,
-            "growth_rate": 8.78897290746659e-05
-        },
-        {
-            "capacity": 2,
-            "level": 0.5226701047226504,
-            "growth_rate": 8.028658805145804e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.6256519838434598,
-            "growth_rate": 4.555740307335508e-05
-        },
-        {
-            "capacity": 2,
-            "level": 0.7303483194448939,
-            "growth_rate": 6.973730223324959e-05
-        },
-        {
-            "capacity": 2,
-            "level": 0.472458919613441,
-            "growth_rate": 7.845447314870276e-05
-        },
-        {
-            "capacity": 3,
-            "level": 0.2906221181750603,
-            "growth_rate": 0.00013037036725528894
-        },
-        {
-            "capacity": 2,
-            "level": 0.13036940587219892,
-            "growth_rate": 7.73711478871216e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.6422297555575656,
-            "growth_rate": 4.605849434790714e-05
-        },
-        {
-            "capacity": 2,
-            "level": 1.3318502174895412,
-            "growth_rate": 7.500749155555319e-05
-        },
-        {
-            "capacity": 2,
-            "level": 1.0612248698634976,
-            "growth_rate": 8.129973665269344e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.20861139404276985,
-            "growth_rate": 4.3897038494875686e-05
-        },
-        {
-            "capacity": 1,
-            "level": 0.11019542784928645,
-            "growth_rate": 4.1345915399927095e-05
-        }
-    ],
+    "vehicle_template": {
+        "load_capacity": 18,
+        "max_shift_duration": 540,
+        "break_duration": 45,
+        "num_breaks_per_shift": 1,
+        "pickup_duration": 15
+    },
     "depots": [
         {
-            "num_vehicles": 2
+            "name": "Forssa",
+            "Osoite": "Kiimassuontie 127, 30420 FORSSA",
+            "num_vehicles": 2,
+            "coordinates": [
+                23.58573,
+                60.79055
+            ],
+            "location_index": 60
         },
         {
-            "num_vehicles": 2
+            "name": "H\u00c3\u00a4meenlinna",
+            "Osoite": "Karanojantie 178, 13430 H\u00c3\u201eMEENLINNA",
+            "num_vehicles": 2,
+            "coordinates": [
+                24.47973,
+                60.94042
+            ],
+            "location_index": 61
+        }
+    ],
+    "sim_name": "Turku",
+    "sim_runtime_days": 14,
+    "pickup_sites_filename": "geo_data/sim_test_sites.geojson",
+    "depots_filename": "geo_data/sim_test_terminals.geojson",
+    "terminals_filename": "geo_data/sim_test_terminals.geojson",
+    "pickup_sites": [
+        {
+            "ID": "02-10237",
+            "Osoite": "Yhti\u00c3\u00b6nkatu, Forssa",
+            "Kunta": "Forssa",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                23.6326336,
+                60.812518
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.04789574161187469,
+            "level": 0.1882880487794264,
+            "location_index": 0
+        },
+        {
+            "ID": "02-10238",
+            "Osoite": "Miemolantie 2, Forssa",
+            "Kunta": "Forssa",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                23.633618378655196,
+                60.8051199
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.05628216952725269,
+            "level": 0.4921995961000186,
+            "location_index": 1
+        },
+        {
+            "ID": "02-10244",
+            "Osoite": "H\u00c3\u00a4meentie 31, Forssa",
+            "Kunta": "Forssa",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 0,
+            "Vaatteet": 0,
+            "coordinates": [
+                23.6340278,
+                60.8146963
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.07115387302077839,
+            "level": 0.40886741737570054,
+            "location_index": 2
+        },
+        {
+            "ID": "02-10251",
+            "Osoite": "J\u00c3\u00a4rvenp\u00c3\u00a4\u00c3\u00a4ntie, Forssa",
+            "Kunta": "Forssa",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                23.6554942,
+                60.8150289
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.05573268176125718,
+            "level": 0.5505451032809456,
+            "location_index": 3
+        },
+        {
+            "ID": "02-10252",
+            "Osoite": "Harjutie, Forssa",
+            "Kunta": "Forssa",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 0,
+            "coordinates": [
+                23.6103477,
+                60.8278138
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.06564786449375411,
+            "level": 0.3090963478495738,
+            "location_index": 4
+        },
+        {
+            "ID": "02-10253",
+            "Osoite": "Vierem\u00c3\u00a4ntie, Forssa",
+            "Kunta": "Forssa",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 0,
+            "coordinates": [
+                23.5975259,
+                60.8268816
+            ],
+            "capacity": 3,
+            "daily_growth_rate": 0.19537300093882629,
+            "level": 0.48379701843228196,
+            "location_index": 5
+        },
+        {
+            "ID": "02-13971",
+            "Osoite": "Tammelantie 30, Tammela",
+            "Kunta": "Tammela",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                23.7652597,
+                60.8086653
+            ],
+            "capacity": 3,
+            "daily_growth_rate": 0.20156071155100208,
+            "level": 1.7012670167621446,
+            "location_index": 6
+        },
+        {
+            "ID": "02-13984",
+            "Osoite": "H\u00c3\u00a4rk\u00c3\u00a4tie 341, Letku",
+            "Kunta": "Tammela",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 0,
+            "coordinates": [
+                23.722491631957865,
+                60.6989011
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.04857232314463675,
+            "level": 0.3914216898024848,
+            "location_index": 7
+        },
+        {
+            "ID": "02-15025",
+            "Osoite": "Tapulikuja 6, Forssa",
+            "Kunta": "Forssa",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                23.635846450966053,
+                60.81226325
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.05561010791328446,
+            "level": 0.13929940960455145,
+            "location_index": 8
+        },
+        {
+            "ID": "02-20723",
+            "Osoite": "Etel\u00c3\u00a4inen Puistokatu, Forssa",
+            "Kunta": "Forssa",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 0,
+            "Vaatteet": 0,
+            "coordinates": [
+                23.6172918,
+                60.8105869
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.10158319482918028,
+            "level": 1.0680267314980654,
+            "location_index": 9
+        },
+        {
+            "ID": "02-30085",
+            "Osoite": "Nikkil\u00c3\u00a4nkatu 4, Forssa",
+            "Kunta": "Forssa",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 0,
+            "Vaatteet": 1,
+            "coordinates": [
+                23.629567,
+                60.8208435
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.12106595966616697,
+            "level": 0.91288681770622,
+            "location_index": 10
+        },
+        {
+            "ID": "03-10336",
+            "Osoite": "Aulangontie 681, Pekola",
+            "Kunta": "Hattula",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 0,
+            "coordinates": [
+                24.43856865596942,
+                61.0507815
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.061282425545512116,
+            "level": 0.42467157842536624,
+            "location_index": 11
+        },
+        {
+            "ID": "03-10345",
+            "Osoite": "Tammitie 5, Oitti",
+            "Kunta": "Hausj\u00c3\u00a4rvi",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                25.02810044004329,
+                60.78816215
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.05334344764814072,
+            "level": 0.35977100712554755,
+            "location_index": 12
+        },
+        {
+            "ID": "03-10348",
+            "Osoite": "Asemantie 4, Hiki\u00c3\u00a4",
+            "Kunta": "Hausj\u00c3\u00a4rvi",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.9203486,
+                60.754527
+            ],
+            "capacity": 3,
+            "daily_growth_rate": 0.1908865118549227,
+            "level": 2.327871817390302,
+            "location_index": 13
+        },
+        {
+            "ID": "03-10351",
+            "Osoite": "Ryttyl\u00c3\u00a4ntie 1, Ryttyl\u00c3\u00a4",
+            "Kunta": "Hausj\u00c3\u00a4rvi",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.7557286,
+                60.819134
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.13072135855502348,
+            "level": 0.6040610520207527,
+            "location_index": 14
+        },
+        {
+            "ID": "03-10509",
+            "Osoite": "Mommilantie 12, Lammi",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                25.012108837934186,
+                61.0772001
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.08761436299875115,
+            "level": 1.5890486140732891,
+            "location_index": 15
+        },
+        {
+            "ID": "03-10512",
+            "Osoite": "Mommilantie 1, Lammi",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                25.011176,
+                61.0793775
+            ],
+            "capacity": 3,
+            "daily_growth_rate": 0.15769534704693508,
+            "level": 2.13800643923366,
+            "location_index": 16
+        },
+        {
+            "ID": "03-10515",
+            "Osoite": "Karhitie 2, H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.40870095000001,
+                60.9803552
+            ],
+            "capacity": 3,
+            "daily_growth_rate": 0.1917982317430349,
+            "level": 2.243715147466219,
+            "location_index": 17
+        },
+        {
+            "ID": "03-10517",
+            "Osoite": "Talaskuja 1, H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.47918488200174,
+                60.99843395
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.11136476092916306,
+            "level": 1.4299353609717942,
+            "location_index": 18
+        },
+        {
+            "ID": "03-10518",
+            "Osoite": "Katsastusmiehentie 6, H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.4224441,
+                61.0080461
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.1081948521594582,
+            "level": 0.14983665918246844,
+            "location_index": 19
+        },
+        {
+            "ID": "03-10519",
+            "Osoite": "Wartiam\u00c3\u00a4entie 2, H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.4134768,
+                61.0116307
+            ],
+            "capacity": 3,
+            "daily_growth_rate": 0.1997110109889066,
+            "level": 2.308963511874288,
+            "location_index": 20
+        },
+        {
+            "ID": "03-10537",
+            "Osoite": "Viertokatu 31, H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.4762162,
+                61.0104602
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.10113935774739621,
+            "level": 1.1443023768495004,
+            "location_index": 21
+        },
+        {
+            "ID": "03-10542",
+            "Osoite": "Hallintotie 2, Iittala",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.134970775525936,
+                61.0920756
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.12013189840306732,
+            "level": 1.4565662086384226,
+            "location_index": 22
+        },
+        {
+            "ID": "03-10544",
+            "Osoite": "Mantereenlinnantie 4, H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.5457184,
+                60.9691257
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.12086425651410036,
+            "level": 0.11445672652102311,
+            "location_index": 23
+        },
+        {
+            "ID": "03-10548",
+            "Osoite": "Suolij\u00c3\u00a4rventie 9, Tuulos",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 0,
+            "coordinates": [
+                24.8116598,
+                61.1305821
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.12601608783159446,
+            "level": 1.5239470366717636,
+            "location_index": 24
+        },
+        {
+            "ID": "03-10552",
+            "Osoite": "Hauhontie 1626, Etel\u00c3\u00a4inen",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.6818996,
+                61.0733987
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.05077097597169411,
+            "level": 0.1072595753623296,
+            "location_index": 25
+        },
+        {
+            "ID": "03-10559",
+            "Osoite": "Alvettulantie 177, Alvettula",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 0,
+            "coordinates": [
+                24.4669607,
+                61.1922705
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.06462171860716145,
+            "level": 0.2719299470884824,
+            "location_index": 26
+        },
+        {
+            "ID": "03-10735",
+            "Osoite": "Kauppakuja 1, Turenki",
+            "Kunta": "Janakkala",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.6439513,
+                60.9200425
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.059341466641987466,
+            "level": 0.7096547327821898,
+            "location_index": 27
+        },
+        {
+            "ID": "03-10737",
+            "Osoite": "Harvialantie 3, Turenki",
+            "Kunta": "Janakkala",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.649920409801837,
+                60.9216621
+            ],
+            "capacity": 3,
+            "daily_growth_rate": 0.16749609515608196,
+            "level": 0.265051148741787,
+            "location_index": 28
+        },
+        {
+            "ID": "03-10739",
+            "Osoite": "Tammirannan Puistotie, Tervakoski",
+            "Kunta": "Janakkala",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.6188455,
+                60.8096239
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.058561842100053794,
+            "level": 0.7548726932011367,
+            "location_index": 29
+        },
+        {
+            "ID": "03-10743",
+            "Osoite": "Tapailantie 10, Turenki",
+            "Kunta": "Janakkala",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.6454813,
+                60.924693
+            ],
+            "capacity": 3,
+            "daily_growth_rate": 0.14893552443782604,
+            "level": 2.018885162970743,
+            "location_index": 30
+        },
+        {
+            "ID": "03-10745",
+            "Osoite": "Koljalankuja 1, Turenki",
+            "Kunta": "Janakkala",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 0,
+            "coordinates": [
+                24.636598780734943,
+                60.93387135
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.05797516554959495,
+            "level": 0.48731406284941753,
+            "location_index": 31
+        },
+        {
+            "ID": "03-10747",
+            "Osoite": "S\u00c3\u00a4\u00c3\u00a4j\u00c3\u00a4rventie 47, Harviala",
+            "Kunta": "Janakkala",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 0,
+            "coordinates": [
+                24.6183443,
+                60.9635816
+            ],
+            "capacity": 3,
+            "daily_growth_rate": 0.16060860132746907,
+            "level": 0.9398957199082217,
+            "location_index": 32
+        },
+        {
+            "ID": "03-10751",
+            "Osoite": "Haukankalliontie 6, Lepp\u00c3\u00a4koski",
+            "Kunta": "Janakkala",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.7069592,
+                60.8638545
+            ],
+            "capacity": 3,
+            "daily_growth_rate": 0.16169527320466479,
+            "level": 0.28439352916773625,
+            "location_index": 33
+        },
+        {
+            "ID": "03-12190",
+            "Osoite": "Yhdystie 3, Loppi",
+            "Kunta": "Loppi",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.44163063187456,
+                60.72072385
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.0642188118815148,
+            "level": 0.3182703778912919,
+            "location_index": 34
+        },
+        {
+            "ID": "03-12191",
+            "Osoite": "Kauppatie 9, Loppi",
+            "Kunta": "Loppi",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.4136536,
+                60.7251501
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.057535750041222904,
+            "level": 0.4130069341684636,
+            "location_index": 35
+        },
+        {
+            "ID": "03-13372",
+            "Osoite": "Voimalankatu 2, Riihim\u00c3\u00a4ki",
+            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.7794699,
+                60.7327033
+            ],
+            "capacity": 3,
+            "daily_growth_rate": 0.1560124722000175,
+            "level": 0.38565955442183975,
+            "location_index": 36
+        },
+        {
+            "ID": "03-13375",
+            "Osoite": "Lopentie 22, Riihim\u00c3\u00a4ki",
+            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.76335693311328,
+                60.731105
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.12603753258119016,
+            "level": 1.4709222873246768,
+            "location_index": 37
+        },
+        {
+            "ID": "03-13379",
+            "Osoite": "Kontiontie 34, Riihim\u00c3\u00a4ki",
+            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.7686289,
+                60.7472485
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.05266903624585322,
+            "level": 0.24754091674719556,
+            "location_index": 38
+        },
+        {
+            "ID": "03-13381",
+            "Osoite": "Oravankatu 2, Riihim\u00c3\u00a4ki",
+            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.7520917,
+                60.7561845
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.07187857849595083,
+            "level": 0.32151275248269856,
+            "location_index": 39
+        },
+        {
+            "ID": "03-13383",
+            "Osoite": "Erkyl\u00c3\u00a4ntie 76, Riihim\u00c3\u00a4ki",
+            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.8097348,
+                60.7344362
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.14222302368395504,
+            "level": 1.2452254350863026,
+            "location_index": 40
+        },
+        {
+            "ID": "03-13387",
+            "Osoite": "Merkoksenkatu 7, Riihim\u00c3\u00a4ki",
+            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.7384993,
+                60.7205795
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.10518930298939426,
+            "level": 1.3500595874679993,
+            "location_index": 41
+        },
+        {
+            "ID": "03-13394",
+            "Osoite": "Metsurinkatu, Riihim\u00c3\u00a4ki",
+            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.7911309,
+                60.7120293
+            ],
+            "capacity": 3,
+            "daily_growth_rate": 0.16763716075524726,
+            "level": 2.222802662285866,
+            "location_index": 42
+        },
+        {
+            "ID": "03-14763",
+            "Osoite": "Heimolantie 3, Tervakoski",
+            "Kunta": "Janakkala",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.6292759468338,
+                60.8171697
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.11255198747808624,
+            "level": 0.4789084150312702,
+            "location_index": 43
+        },
+        {
+            "ID": "03-20169",
+            "Osoite": "Tuulosentie 14, Tuulos",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 0,
+            "coordinates": [
+                24.8649397,
+                61.1045526
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.06142285001647859,
+            "level": 0.7084796475844293,
+            "location_index": 44
+        },
+        {
+            "ID": "03-21149",
+            "Osoite": "Kinnalantie 4, Parola",
+            "Kunta": "Hattula",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.3717002,
+                61.0542839
+            ],
+            "capacity": 3,
+            "daily_growth_rate": 0.1691356507164679,
+            "level": 0.039701529986771435,
+            "location_index": 45
+        },
+        {
+            "ID": "03-21221",
+            "Osoite": "Hauhontie 16, Hauho",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.562680989234924,
+                61.17100215
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.1265612098675189,
+            "level": 0.571750878389609,
+            "location_index": 46
+        },
+        {
+            "ID": "03-21260",
+            "Osoite": "Peltosaarenkatu 1, Riihim\u00c3\u00a4ki",
+            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.80200725,
+                60.73928695
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.11561268679409958,
+            "level": 0.5226701047226504,
+            "location_index": 47
+        },
+        {
+            "ID": "03-21665",
+            "Osoite": "Tallitie 4, Parola",
+            "Kunta": "Hattula",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.3722779,
+                61.0533201
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.06560266042563132,
+            "level": 0.6256519838434598,
+            "location_index": 48
+        },
+        {
+            "ID": "03-22064",
+            "Osoite": "L\u00c3\u00a4yli\u00c3\u00a4istenraitti 120, L\u00c3\u00a4yli\u00c3\u00a4inen",
+            "Kunta": "Loppi",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.463171678207488,
+                60.6214379
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.1004217152158794,
+            "level": 0.7303483194448939,
+            "location_index": 49
+        },
+        {
+            "ID": "03-22916",
+            "Osoite": "Lasitehtaantie 63, Riihim\u00c3\u00a4ki",
+            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 0,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.7330504,
+                60.7377734
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.11297444133413198,
+            "level": 0.472458919613441,
+            "location_index": 50
+        },
+        {
+            "ID": "03-30053",
+            "Osoite": "Visam\u00c3\u00a4entie 16, H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.4729566,
+                60.9762436
+            ],
+            "capacity": 3,
+            "daily_growth_rate": 0.18773332884761607,
+            "level": 0.2906221181750603,
+            "location_index": 51
+        },
+        {
+            "ID": "03-30098",
+            "Osoite": "Sammonojantie 11, H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 0,
+            "Paperi": 0,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.37654826841353,
+                60.9754192
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.11141445295745511,
+            "level": 0.13036940587219892,
+            "location_index": 52
+        },
+        {
+            "ID": "03-30111",
+            "Osoite": "Rengonraitti 10 B, Renko",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.2861516,
+                60.8936124
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.06632423186098628,
+            "level": 0.6422297555575656,
+            "location_index": 53
+        },
+        {
+            "ID": "03-30128",
+            "Osoite": "Harvialantie 4, H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.489573388437385,
+                60.99794805
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.1080107878399966,
+            "level": 1.3318502174895412,
+            "location_index": 54
+        },
+        {
+            "ID": "03-30129",
+            "Osoite": "Urheilukent\u00c3\u00a4ntie 14, Ryttyl\u00c3\u00a4",
+            "Kunta": "Hausj\u00c3\u00a4rvi",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 0,
+            "coordinates": [
+                24.76794222624085,
+                60.8191748
+            ],
+            "capacity": 2,
+            "daily_growth_rate": 0.11707162077987855,
+            "level": 1.0612248698634976,
+            "location_index": 55
+        },
+        {
+            "ID": "03-30139",
+            "Osoite": "Jylh\u00c3\u00a4ntie 8, Launonen",
+            "Kunta": "Loppi",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 0,
+            "Vaatteet": 0,
+            "coordinates": [
+                24.574333172613905,
+                60.73821335
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.06321173543262099,
+            "level": 0.20861139404276985,
+            "location_index": 56
+        },
+        {
+            "ID": "03-30142",
+            "Osoite": "Ahvenistontie 13, H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kartonkipakkaukset": 1,
+            "Lasipakkaukset": 1,
+            "Metalli": 1,
+            "Muovipakkaukset": 1,
+            "Paperi": 1,
+            "Vaatteet": 1,
+            "coordinates": [
+                24.4166782,
+                60.9846428
+            ],
+            "capacity": 1,
+            "daily_growth_rate": 0.059538118175895015,
+            "level": 0.11019542784928645,
+            "location_index": 57
         }
     ],
     "terminals": [
-        {},
-        {}
+        {
+            "name": "Forssa",
+            "Osoite": "Kiimassuontie 127, 30420 FORSSA",
+            "coordinates": [
+                23.58573,
+                60.79055
+            ],
+            "location_index": 58
+        },
+        {
+            "name": "H\u00c3\u00a4meenlinna",
+            "Osoite": "Karanojantie 178, 13430 H\u00c3\u201eMEENLINNA",
+            "coordinates": [
+                24.47973,
+                60.94042
+            ],
+            "location_index": 59
+        }
+    ],
+    "location_coordinates": [
+        [
+            23.6326336,
+            60.812518
+        ],
+        [
+            23.633618378655196,
+            60.8051199
+        ],
+        [
+            23.6340278,
+            60.8146963
+        ],
+        [
+            23.6554942,
+            60.8150289
+        ],
+        [
+            23.6103477,
+            60.8278138
+        ],
+        [
+            23.5975259,
+            60.8268816
+        ],
+        [
+            23.7652597,
+            60.8086653
+        ],
+        [
+            23.722491631957865,
+            60.6989011
+        ],
+        [
+            23.635846450966053,
+            60.81226325
+        ],
+        [
+            23.6172918,
+            60.8105869
+        ],
+        [
+            23.629567,
+            60.8208435
+        ],
+        [
+            24.43856865596942,
+            61.0507815
+        ],
+        [
+            25.02810044004329,
+            60.78816215
+        ],
+        [
+            24.9203486,
+            60.754527
+        ],
+        [
+            24.7557286,
+            60.819134
+        ],
+        [
+            25.012108837934186,
+            61.0772001
+        ],
+        [
+            25.011176,
+            61.0793775
+        ],
+        [
+            24.40870095000001,
+            60.9803552
+        ],
+        [
+            24.47918488200174,
+            60.99843395
+        ],
+        [
+            24.4224441,
+            61.0080461
+        ],
+        [
+            24.4134768,
+            61.0116307
+        ],
+        [
+            24.4762162,
+            61.0104602
+        ],
+        [
+            24.134970775525936,
+            61.0920756
+        ],
+        [
+            24.5457184,
+            60.9691257
+        ],
+        [
+            24.8116598,
+            61.1305821
+        ],
+        [
+            24.6818996,
+            61.0733987
+        ],
+        [
+            24.4669607,
+            61.1922705
+        ],
+        [
+            24.6439513,
+            60.9200425
+        ],
+        [
+            24.649920409801837,
+            60.9216621
+        ],
+        [
+            24.6188455,
+            60.8096239
+        ],
+        [
+            24.6454813,
+            60.924693
+        ],
+        [
+            24.636598780734943,
+            60.93387135
+        ],
+        [
+            24.6183443,
+            60.9635816
+        ],
+        [
+            24.7069592,
+            60.8638545
+        ],
+        [
+            24.44163063187456,
+            60.72072385
+        ],
+        [
+            24.4136536,
+            60.7251501
+        ],
+        [
+            24.7794699,
+            60.7327033
+        ],
+        [
+            24.76335693311328,
+            60.731105
+        ],
+        [
+            24.7686289,
+            60.7472485
+        ],
+        [
+            24.7520917,
+            60.7561845
+        ],
+        [
+            24.8097348,
+            60.7344362
+        ],
+        [
+            24.7384993,
+            60.7205795
+        ],
+        [
+            24.7911309,
+            60.7120293
+        ],
+        [
+            24.6292759468338,
+            60.8171697
+        ],
+        [
+            24.8649397,
+            61.1045526
+        ],
+        [
+            24.3717002,
+            61.0542839
+        ],
+        [
+            24.562680989234924,
+            61.17100215
+        ],
+        [
+            24.80200725,
+            60.73928695
+        ],
+        [
+            24.3722779,
+            61.0533201
+        ],
+        [
+            24.463171678207488,
+            60.6214379
+        ],
+        [
+            24.7330504,
+            60.7377734
+        ],
+        [
+            24.4729566,
+            60.9762436
+        ],
+        [
+            24.37654826841353,
+            60.9754192
+        ],
+        [
+            24.2861516,
+            60.8936124
+        ],
+        [
+            24.489573388437385,
+            60.99794805
+        ],
+        [
+            24.76794222624085,
+            60.8191748
+        ],
+        [
+            24.574333172613905,
+            60.73821335
+        ],
+        [
+            24.4166782,
+            60.9846428
+        ],
+        [
+            23.58573,
+            60.79055
+        ],
+        [
+            24.47973,
+            60.94042
+        ],
+        [
+            23.58573,
+            60.79055
+        ],
+        [
+            24.47973,
+            60.94042
+        ]
     ],
     "distance_matrix": [
         [
