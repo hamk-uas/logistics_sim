@@ -23,6 +23,58 @@ def to_percentage_string(number):
 	return f"{number*100:.0f}%"
 
 
+def heuristic_router(routing_input):
+#    "pickup_sites": [
+#        {
+#            "capacity": 2,
+#            "level": 0.9848136938048543,
+#            "growth_rate": 8.10984801062072e-05	
+
+	# Sort sites based on when they become full
+	indexes_and_times_when_full = []
+	for pickup_site_index, pickup_site in enumerate(routing_input['pickup_sites']):
+		time_when_full = (pickup_site['capacity'] - pickup_site['level'])/pickup_site['growth_rate']
+		indexes_and_times_when_full.append((pickup_site_index, time_when_full))
+	indexes_and_times_when_full.sort(key=lambda index_and_time_when_full: index_and_time_when_full[1])
+
+	# Assign destinations to vehicles, in interleaved order so that every vehicle gets the same number of sites
+	vehicle_routes = []
+
+	for vehicle in routing_input['vehicles']:
+		home_depot = routing_input['depots'][vehicle['home_depot_index']]
+		vehicle_routes.append([home_depot['location_index']])
+
+	vehicle_route_durations = [0 for _ in range(len(routing_input['vehicles']))]
+	durations_back_home = [0 for _ in range(len(routing_input['vehicles']))]
+	for index, pickup_site_index_and_time_when_full in enumerate(indexes_and_times_when_full):
+		vehicle_index = index % len(routing_input['vehicles'])
+		vehicle = routing_input['vehicles'][vehicle_index]
+		home_depot_location_index = routing_input['depots'][vehicle['home_depot_index']]['location_index']
+		proposed_location_index = routing_input['pickup_sites'][pickup_site_index_and_time_when_full[0]]['location_index']
+		# Calculate proposed route duration
+		to_proposed_location_duration = routing_input['duration_matrix'][vehicle_routes[vehicle_index][-1]][proposed_location_index]
+		from_proposed_location_to_home_depot_duration = routing_input['duration_matrix'][proposed_location_index][home_depot_location_index]
+		proposed_route_duration = vehicle_route_durations[vehicle_index] + to_proposed_location_duration + from_proposed_location_to_home_depot_duration
+		if proposed_route_duration <= vehicle['max_route_duration']:
+			vehicle_routes[vehicle_index].append(proposed_location_index)
+			vehicle_route_durations[vehicle_index] += to_proposed_location_duration
+			durations_back_home[vehicle_index] = from_proposed_location_to_home_depot_duration
+
+	for vehicle_index, vehicle in enumerate(routing_input['vehicles']):
+		home_depot = routing_input['depots'][vehicle['home_depot_index']]
+		vehicle_routes[vehicle_index].append(home_depot['location_index'])
+		vehicle_route_durations[vehicle_index] += durations_back_home[vehicle_index]
+
+	routing_output = {
+		'vehicles': [{
+			'route': route
+		} for route in vehicle_routes]
+	}
+	
+	print(routing_output)
+
+	return routing_output
+
 class PickupSite():
 
 	def log(self, message):
@@ -84,26 +136,29 @@ class Vehicle():
 	def warn(self, message):
 		self.sim.warn(f"Vehicle #{self.index}: {message}")
 
-	def __init__(self, sim, index, depot_index):
+	def __init__(self, sim, index, home_depot_index):
 		self.sim = sim
 		self.index = index
-		self.depot_index = depot_index
+		self.home_depot_index = home_depot_index
 
 		# Load and capacity
 		self.load_capacity = sim.config['vehicle_template']['load_capacity']
 		self.load_level = 0
 
+		# Work shift
+		self.max_route_duration = sim.config['vehicle_template']['max_route_duration']
+
 		# Location and movement
 		self.moving = False
-		self.location_index = sim.depots[self.depot_index].location_index
+		self.location_index = sim.depots[self.home_depot_index].location_index
 		# TODO: routing
 
 		self.log(self.get_location_string())
 
 	def get_location_string(self):
 		if self.moving == False:
-			if self.location_index == self.sim.depots[self.depot_index].location_index:
-				return f"Stationary at depot #{self.depot_index} (home depot)"
+			if self.location_index == self.sim.depots[self.home_depot_index].location_index:
+				return f"Stationary at depot #{self.home_depot_index} (home depot)"
 			else:
 				return f"TODO: Stationary location other than home depot not implemented"
 		return "TODO: En route location not implemented"
@@ -177,29 +232,13 @@ class WastePickupSimulation():
 			for i in range(depot['num_vehicles']):
 				self.vehicles.append(Vehicle(self, len(self.vehicles), depot_index))
 
+		# Monitor pickup site levels
 		for site in self.pickup_sites:
 			site.addLevelListener(self.site_full, site.capacity, {"site": site})
 		self.daily_monitoring_activity = self.env.process(self.daily_monitoring())
-
-		routing_input = {
-			'pickup_sites': list(map(lambda pickup_site: {
-				'capacity': pickup_site.capacity,
-				'level': pickup_site.level,
-				'growth_rate': pickup_site.daily_growth_rate/(24*60)
-			}, self.pickup_sites)),
-			'depots': list(map(lambda depot: {
-			}, self.config["depots"])),
-			'terminals': list(map(lambda terminal: {
-			}, self.config["terminals"])),
-			'vehicles': list(map(lambda vehicle: {
-				'load_capacity': vehicle.load_capacity
-			}, self.vehicles)),
-			'distance_matrix': self.config['distance_matrix'],
-			'duration_matrix': self.config['duration_matrix']
-		}
-
-		with open('routing_input.json', 'w') as outfile:
-			json.dump(routing_input, outfile, indent=4)
+		
+		# Daily vehicle routing
+		self.daily_routing_activity = self.env.process(self.daily_routing())	
 
 	def site_full(self, site):
 		self.warn(f"Site #{site.index} is full.")
@@ -207,10 +246,43 @@ class WastePickupSimulation():
 	def daily_monitoring(self):
 		while True:
 			self.log(f"Monitored levels: {', '.join(map(lambda x: to_percentage_string(x.level/x.capacity), self.pickup_sites))}")
-			yield self.sim.env.timeout(24*60) # Could be infinitely long
+			yield self.env.timeout(24*60)
+
+	def daily_routing(self):
+		while True:
+			routing_input = {
+				'pickup_sites': list(map(lambda pickup_site: {
+					'capacity': pickup_site.capacity,
+					'level': pickup_site.level,
+					'growth_rate': pickup_site.daily_growth_rate/(24*60),
+					'location_index': pickup_site.location_index
+				}, self.pickup_sites)),
+				'depots': list(map(lambda depot: {
+					'location_index': depot.location_index
+				}, self.depots)),
+				'terminals': list(map(lambda terminal: {
+					'location_index': terminal.location_index
+				}, self.terminals)),
+				'vehicles': list(map(lambda vehicle: {
+					'load_capacity': vehicle.load_capacity,
+					'home_depot_index': vehicle.home_depot_index,
+					'max_route_duration': vehicle.max_route_duration,
+				}, self.vehicles)),
+				'distance_matrix': self.config['distance_matrix'],
+				'duration_matrix': self.config['duration_matrix']
+			}
+
+			with open('routing_input.json', 'w') as outfile:
+				json.dump(routing_input, outfile, indent=4)
+
+			routing_output = heuristic_router(routing_input)
+			# TODO: use the routes
+
+			yield self.env.timeout(24*60)
+
 
 	def sim_run(self):
-		self.env.run(until=self.sim_config["runtime_days"]*24*60)
+		self.env.run(until=self.config["sim_runtime_days"]*24*60)
 		self.log("Simulation finished")
 
 
