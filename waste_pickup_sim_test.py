@@ -8,7 +8,7 @@ sim_config = {
 		'max_daily_shift_duration': 8*60 + 15, # Minutes (9h - 45min break = 8h 15min)
 #		'break_duration': 45, # Minutes # Break Happens after 1/2 of drivetime 
 #		'num_breaks_per_shift': 1,
-#		'pickup_duration': 15 # Minutes
+		'pickup_duration': 15 # Minutes
 	},
 	'depots': [
 		{

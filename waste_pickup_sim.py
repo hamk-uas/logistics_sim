@@ -34,7 +34,7 @@ class PickupSite():
 	def __init__(self, sim, index):
 		self.sim = sim
 		self.index = index
-		self.location_index = sim.config['pickup_sites'][self.index]['location_index']
+		self.location_index = self.sim.config['pickup_sites'][self.index]['location_index']
 
 		self.capacity = self.sim.config['pickup_sites'][index]['capacity']
 		self.level = self.sim.config['pickup_sites'][index]['level']
@@ -111,7 +111,7 @@ class Vehicle():
 	def get_location_coordinates(self):
 		if self.moving == False:
 			return self.sim.location_coordinates[self.location_index]
-		return "TODO: En route location not implemented"
+		return (None, None) # TODO
 
 	def put_load(value):
 		self.load_level += value
@@ -135,7 +135,7 @@ class Depot():
 
 
 # Terminal class
-class Terminal():	
+class Terminal():
 	def log(self, message):
 		self.sim.log(f"Terminal #{self.index}: {message}")
 
