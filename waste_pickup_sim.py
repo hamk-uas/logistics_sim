@@ -338,8 +338,8 @@ def preprocess_sim_config(sim_config, sim_config_filename):
 	with open(sim_config_filename) as cached_sim_config_file:
 		cached_sim_config = json.load(cached_sim_config_file)
 
-	# Use previous distance and duration matrixes if the locations match within 1m of total absolute error
-	if np.sum(np.absolute(np.array(cached_sim_config['location_lonlats']) - np.array(sim_config['location_lonlats']))) < 1:
+	# Use previous distance and duration matrixes if the locations match within 0.001 deg of absolute error
+	if np.sum(np.absolute(np.array(cached_sim_config['location_lonlats']) - np.array(sim_config['location_lonlats']))) < 0.001:
 		sim_config['distance_matrix'] = cached_sim_config['distance_matrix']
 		sim_config['duration_matrix'] = cached_sim_config['duration_matrix']
 	else:

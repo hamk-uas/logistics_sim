@@ -1,351 +1,351 @@
 {
     "pickup_sites": [
         {
-            "capacity": 2,
-            "level": 0.2569291650060924,
-            "growth_rate": 8.708642190547777e-05,
+            "capacity": 1,
+            "level": 0.6221174377803547,
+            "growth_rate": 3.7449365612878284e-05,
             "location_index": 0
         },
         {
-            "capacity": 3,
-            "level": 0.03586195378619914,
-            "growth_rate": 0.00012451293915939605,
+            "capacity": 1,
+            "level": 0.24025430005643988,
+            "growth_rate": 3.6732812882177626e-05,
             "location_index": 1
         },
         {
-            "capacity": 1,
-            "level": 0.41259467957456536,
-            "growth_rate": 4.4562248880587056e-05,
+            "capacity": 2,
+            "level": 1.4507443742918968,
+            "growth_rate": 8.076974042080522e-05,
             "location_index": 2
         },
         {
-            "capacity": 3,
-            "level": 2.1534323123977686,
-            "growth_rate": 0.00011548064175177691,
+            "capacity": 1,
+            "level": 0.7746070404624957,
+            "growth_rate": 4.887081123287471e-05,
             "location_index": 3
         },
         {
-            "capacity": 1,
-            "level": 0.3987390307274347,
-            "growth_rate": 4.409197476356053e-05,
+            "capacity": 3,
+            "level": 2.3890403770234894,
+            "growth_rate": 0.00012478011745837287,
             "location_index": 4
         },
         {
             "capacity": 3,
-            "level": 1.1696158611001337,
-            "growth_rate": 0.00011199157378163713,
+            "level": 0.5173220359407182,
+            "growth_rate": 0.00010810172513651639,
             "location_index": 5
         },
         {
             "capacity": 2,
-            "level": 1.132076190749322,
-            "growth_rate": 8.4864686793879e-05,
+            "level": 0.0253459011484356,
+            "growth_rate": 9.170053648392676e-05,
             "location_index": 6
         },
         {
-            "capacity": 3,
-            "level": 0.7662823421570226,
-            "growth_rate": 0.00011461199982134489,
+            "capacity": 1,
+            "level": 0.5627337340443384,
+            "growth_rate": 3.8166025481626365e-05,
             "location_index": 7
         },
         {
-            "capacity": 1,
-            "level": 0.4855897100787508,
-            "growth_rate": 4.216434276507723e-05,
+            "capacity": 3,
+            "level": 0.19415032912214858,
+            "growth_rate": 0.0001022824285676965,
             "location_index": 8
         },
         {
-            "capacity": 2,
-            "level": 0.7046436293281012,
-            "growth_rate": 6.898479844725653e-05,
+            "capacity": 3,
+            "level": 2.134137738682321,
+            "growth_rate": 0.00010476547492609548,
             "location_index": 9
         },
         {
-            "capacity": 1,
-            "level": 0.6787368906822856,
-            "growth_rate": 4.4413354699678805e-05,
+            "capacity": 3,
+            "level": 0.7354982416578859,
+            "growth_rate": 0.00012113701692497203,
             "location_index": 10
         },
         {
-            "capacity": 1,
-            "level": 0.22434417011848362,
-            "growth_rate": 3.622914809365837e-05,
+            "capacity": 3,
+            "level": 0.3524123660616388,
+            "growth_rate": 0.00012515242216387491,
             "location_index": 11
         },
         {
             "capacity": 3,
-            "level": 1.340069647071183,
-            "growth_rate": 0.00012424067210055592,
+            "level": 0.9793667097780889,
+            "growth_rate": 0.00011580725286463597,
             "location_index": 12
         },
         {
-            "capacity": 2,
-            "level": 0.1897079078468286,
-            "growth_rate": 7.773075079146732e-05,
+            "capacity": 1,
+            "level": 0.1703516145392764,
+            "growth_rate": 4.453377930242678e-05,
             "location_index": 13
         },
         {
             "capacity": 3,
-            "level": 0.8960707965378947,
-            "growth_rate": 0.00012129180011188379,
+            "level": 1.4735074498049083,
+            "growth_rate": 0.0001259585893986419,
             "location_index": 14
         },
         {
             "capacity": 3,
-            "level": 2.217103951553374,
-            "growth_rate": 0.00011016480570472077,
+            "level": 0.4797245967503214,
+            "growth_rate": 0.00011713081640755354,
             "location_index": 15
         },
         {
             "capacity": 2,
-            "level": 1.5122348948782154,
-            "growth_rate": 7.520496641457068e-05,
+            "level": 0.24149448087202272,
+            "growth_rate": 7.582807773357777e-05,
             "location_index": 16
         },
         {
-            "capacity": 3,
-            "level": 0.8718000833273327,
-            "growth_rate": 0.00014656017870989379,
+            "capacity": 1,
+            "level": 0.061529123034290395,
+            "growth_rate": 3.70909436113975e-05,
             "location_index": 17
         },
         {
-            "capacity": 1,
-            "level": 0.5594344126551287,
-            "growth_rate": 3.720172455606964e-05,
+            "capacity": 3,
+            "level": 1.710882561480521,
+            "growth_rate": 0.00012311666507683295,
             "location_index": 18
         },
         {
             "capacity": 2,
-            "level": 0.09092408431967201,
-            "growth_rate": 7.877749018368198e-05,
+            "level": 0.1915152984753249,
+            "growth_rate": 7.013316750739757e-05,
             "location_index": 19
         },
         {
             "capacity": 2,
-            "level": 0.971460803614683,
-            "growth_rate": 8.861466956337054e-05,
+            "level": 0.22770038655936561,
+            "growth_rate": 8.221563449711408e-05,
             "location_index": 20
         },
         {
-            "capacity": 3,
-            "level": 0.8450326742564069,
-            "growth_rate": 0.00012350615825371746,
+            "capacity": 2,
+            "level": 1.455339598152679,
+            "growth_rate": 7.752904001394011e-05,
             "location_index": 21
         },
         {
-            "capacity": 1,
-            "level": 0.039356894659376,
-            "growth_rate": 3.5975533117093365e-05,
+            "capacity": 3,
+            "level": 0.3971757952266144,
+            "growth_rate": 0.0001007379064587326,
             "location_index": 22
         },
         {
-            "capacity": 3,
-            "level": 0.16892027688173306,
-            "growth_rate": 0.00012766044458805076,
+            "capacity": 2,
+            "level": 1.0301016985293332,
+            "growth_rate": 6.876918692893967e-05,
             "location_index": 23
         },
         {
-            "capacity": 3,
-            "level": 1.0819108805777176,
-            "growth_rate": 0.00011813503102269965,
+            "capacity": 1,
+            "level": 0.3852627963887947,
+            "growth_rate": 3.9327788507041254e-05,
             "location_index": 24
         },
         {
-            "capacity": 2,
-            "level": 1.427148525304128,
-            "growth_rate": 6.569130542508668e-05,
+            "capacity": 1,
+            "level": 0.5550925567225905,
+            "growth_rate": 4.123813367873672e-05,
             "location_index": 25
         },
         {
-            "capacity": 3,
-            "level": 1.4020824963037677,
-            "growth_rate": 0.00013966663847116294,
+            "capacity": 1,
+            "level": 0.40254729072733453,
+            "growth_rate": 4.368794807355183e-05,
             "location_index": 26
         },
         {
-            "capacity": 2,
-            "level": 0.4253996559880525,
-            "growth_rate": 8.791025724061552e-05,
+            "capacity": 3,
+            "level": 0.8119887964106165,
+            "growth_rate": 0.00012300866240822335,
             "location_index": 27
         },
         {
-            "capacity": 2,
-            "level": 0.1530441776070225,
-            "growth_rate": 7.873583083153379e-05,
+            "capacity": 1,
+            "level": 0.6863156150781013,
+            "growth_rate": 3.7377173910166065e-05,
             "location_index": 28
         },
         {
-            "capacity": 1,
-            "level": 0.3597765522732749,
-            "growth_rate": 3.7160712108329474e-05,
+            "capacity": 2,
+            "level": 1.4882194039338317,
+            "growth_rate": 8.974670590257945e-05,
             "location_index": 29
         },
         {
-            "capacity": 1,
-            "level": 0.342992802305587,
-            "growth_rate": 3.4834678993779806e-05,
+            "capacity": 2,
+            "level": 1.5245313317644305,
+            "growth_rate": 7.94396309943112e-05,
             "location_index": 30
         },
         {
             "capacity": 1,
-            "level": 0.5214644030083887,
-            "growth_rate": 3.8867874355988625e-05,
+            "level": 0.01656123380261656,
+            "growth_rate": 3.823645708893682e-05,
             "location_index": 31
         },
         {
-            "capacity": 2,
-            "level": 1.0991464898637309,
-            "growth_rate": 9.292835271258469e-05,
+            "capacity": 3,
+            "level": 0.7230071088424372,
+            "growth_rate": 0.0001361152244974695,
             "location_index": 32
         },
         {
             "capacity": 3,
-            "level": 1.8183048969010822,
-            "growth_rate": 0.00011742218897510519,
+            "level": 1.4053519733178457,
+            "growth_rate": 0.00011365184550147043,
             "location_index": 33
         },
         {
             "capacity": 2,
-            "level": 0.7463988327497124,
-            "growth_rate": 8.215651184585576e-05,
+            "level": 0.9302547857881325,
+            "growth_rate": 8.099044494563353e-05,
             "location_index": 34
         },
         {
-            "capacity": 3,
-            "level": 1.9950183147820884,
-            "growth_rate": 0.0001268907009835893,
+            "capacity": 1,
+            "level": 0.22020950343529508,
+            "growth_rate": 4.683868003563155e-05,
             "location_index": 35
         },
         {
-            "capacity": 2,
-            "level": 0.5622842525875393,
-            "growth_rate": 8.927426880838365e-05,
+            "capacity": 3,
+            "level": 0.5304086485741694,
+            "growth_rate": 0.00013141282220688552,
             "location_index": 36
         },
         {
-            "capacity": 1,
-            "level": 0.47586781843232234,
-            "growth_rate": 4.319584918275984e-05,
+            "capacity": 2,
+            "level": 1.1495004691981088,
+            "growth_rate": 0.00010393935844120697,
             "location_index": 37
         },
         {
-            "capacity": 3,
-            "level": 0.1762453566097859,
-            "growth_rate": 0.00011400420418808887,
+            "capacity": 2,
+            "level": 0.4344615563405741,
+            "growth_rate": 8.118649179090725e-05,
             "location_index": 38
         },
         {
-            "capacity": 3,
-            "level": 0.2888191615782467,
-            "growth_rate": 0.00011763248827506849,
+            "capacity": 2,
+            "level": 0.11510416268793584,
+            "growth_rate": 8.959955345588104e-05,
             "location_index": 39
         },
         {
-            "capacity": 2,
-            "level": 0.7588316538768901,
-            "growth_rate": 7.045525331603174e-05,
+            "capacity": 1,
+            "level": 0.6491651674948504,
+            "growth_rate": 3.2644879759805175e-05,
             "location_index": 40
         },
         {
-            "capacity": 1,
-            "level": 0.608183846833107,
-            "growth_rate": 4.2894357859994065e-05,
+            "capacity": 3,
+            "level": 0.6712031676630525,
+            "growth_rate": 0.00012172445123943119,
             "location_index": 41
         },
         {
             "capacity": 2,
-            "level": 0.47382405348995926,
-            "growth_rate": 8.448410541770852e-05,
+            "level": 1.423386812246964,
+            "growth_rate": 8.655242735671559e-05,
             "location_index": 42
         },
         {
-            "capacity": 1,
-            "level": 0.35267438502279624,
-            "growth_rate": 3.877678186857758e-05,
+            "capacity": 3,
+            "level": 0.32119911181030764,
+            "growth_rate": 0.00012011709488981045,
             "location_index": 43
         },
         {
             "capacity": 2,
-            "level": 0.9591608938117435,
-            "growth_rate": 8.319670960213242e-05,
+            "level": 0.30211459819152026,
+            "growth_rate": 7.941305948713591e-05,
             "location_index": 44
         },
         {
-            "capacity": 1,
-            "level": 0.7517858941821751,
-            "growth_rate": 3.495894086248853e-05,
+            "capacity": 2,
+            "level": 1.2064243127079708,
+            "growth_rate": 7.447137721282456e-05,
             "location_index": 45
         },
         {
-            "capacity": 3,
-            "level": 0.6341599443683863,
-            "growth_rate": 0.00012774636475938113,
+            "capacity": 2,
+            "level": 1.4118716595394074,
+            "growth_rate": 9.044198305654442e-05,
             "location_index": 46
         },
         {
-            "capacity": 2,
-            "level": 0.33957663096984486,
-            "growth_rate": 7.809774725954825e-05,
+            "capacity": 3,
+            "level": 2.240071539868694,
+            "growth_rate": 0.00011508861154707588,
             "location_index": 47
         },
         {
-            "capacity": 1,
-            "level": 0.6040899284056667,
-            "growth_rate": 3.723466573720216e-05,
+            "capacity": 2,
+            "level": 1.4366151407540644,
+            "growth_rate": 6.767517414491238e-05,
             "location_index": 48
         },
         {
-            "capacity": 2,
-            "level": 0.44510172868637954,
-            "growth_rate": 7.934880900692565e-05,
+            "capacity": 1,
+            "level": 0.6697273277062623,
+            "growth_rate": 3.9877726033509556e-05,
             "location_index": 49
         },
         {
             "capacity": 3,
-            "level": 1.1769424488895777,
-            "growth_rate": 0.00013196291290762312,
+            "level": 0.8874809728628293,
+            "growth_rate": 0.0001295520388805613,
             "location_index": 50
         },
         {
-            "capacity": 2,
-            "level": 1.4948300516232371,
-            "growth_rate": 7.672638391688068e-05,
+            "capacity": 3,
+            "level": 1.6580523463326804,
+            "growth_rate": 0.00015286881225118443,
             "location_index": 51
         },
         {
-            "capacity": 1,
-            "level": 0.22079877001517645,
-            "growth_rate": 3.394625416880488e-05,
+            "capacity": 3,
+            "level": 1.3987577319994644,
+            "growth_rate": 0.00012608709224675214,
             "location_index": 52
         },
         {
-            "capacity": 1,
-            "level": 0.262391491848918,
-            "growth_rate": 4.3298049986442284e-05,
+            "capacity": 3,
+            "level": 1.6403297621582764,
+            "growth_rate": 0.00010680087621400957,
             "location_index": 53
         },
         {
-            "capacity": 1,
-            "level": 0.3226166844489544,
-            "growth_rate": 4.1395786004031514e-05,
+            "capacity": 3,
+            "level": 1.5316426181596787,
+            "growth_rate": 0.00010683958509874605,
             "location_index": 54
         },
         {
             "capacity": 2,
-            "level": 1.5849580298985027,
-            "growth_rate": 6.690959060401953e-05,
+            "level": 1.5560087734505939,
+            "growth_rate": 7.442628160513646e-05,
             "location_index": 55
         },
         {
             "capacity": 1,
-            "level": 0.5703045414355057,
-            "growth_rate": 4.298272645840477e-05,
+            "level": 0.21286610288289243,
+            "growth_rate": 3.525329749430479e-05,
             "location_index": 56
         },
         {
             "capacity": 2,
-            "level": 0.08341476293490775,
-            "growth_rate": 6.909303306877969e-05,
+            "level": 0.999887550212288,
+            "growth_rate": 6.827467378456036e-05,
             "location_index": 57
         }
     ],
