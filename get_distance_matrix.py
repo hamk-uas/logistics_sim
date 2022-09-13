@@ -1,4 +1,4 @@
-from config import API_key
+from secrets import API_key
 
 from os.path import exists
 
