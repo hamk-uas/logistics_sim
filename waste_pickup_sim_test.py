@@ -3,8 +3,8 @@ import waste_pickup_sim
 import json
 
 sim_config = {	
-	'sim_name' : 'Hämeenlinna and nearby regions',
-	'sim_runtime_days': 1, #14, # Simulation runtime in days
+	'sim_name': 'Hämeenlinna and nearby regions',
+	'sim_runtime_days': 14, #14, # Simulation runtime in days
 	'pickup_sites_filename': 'geo_data/sim_test_sites.geojson',
 	'depots_filename': 'geo_data/sim_test_terminals.geojson',
 	'terminals_filename': 'geo_data/sim_test_terminals.geojson',
