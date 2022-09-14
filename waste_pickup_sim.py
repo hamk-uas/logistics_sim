@@ -17,14 +17,16 @@ def time_to_string(minutes):
 	minutes -= hours*60
 	days = math.floor(hours/24)
 	hours -= days*24
-	return f"{str(days):>3}d {str(hours).zfill(2)}:{str(minutes).zfill(2)}"
+	return f"{str(days):>3}d {str(hours).zfill(2)}:{str(math.floor(minutes)).zfill(2)}"
 
 def tons_to_string(tons):
 	return f"{tons:.3f}t"
 
+def lonlat_to_string(lonlat):
+	return f"({lonlat[0]:.5f}, {lonlat[1]:.5f})"
+
 def to_percentage_string(number):
 	return f"{number*100:.0f}%"
-
 
 def heuristic_router(routing_input):
 #    "pickup_sites": [
@@ -99,8 +101,8 @@ class IndexedLocation(IndexedSimEntity):
 	def __init__(self, sim, index, location_index):
 		super().__init__(sim, index)
 		self.location_index = location_index
+		self.lonlat = sim.config['location_lonlats'][location_index]
 		sim.locations[location_index] = self
-
 
 # Pickup site
 class PickupSite(IndexedLocation):
@@ -118,6 +120,7 @@ class PickupSite(IndexedLocation):
 
 		self.growth_process = sim.env.process(self.grow_daily_forever())
 
+	# Put some amount into the containers at the site
 	def put(self, amount):
 		listeners_to_message_maybe = list(filter(lambda x: self.level < x[1], self.levelListeners))
 		self.level += amount
@@ -126,6 +129,10 @@ class PickupSite(IndexedLocation):
 			self.log(f"Level increase past threshold for {len(listeners_to_message)} listeners.")
 		for x in listeners_to_message:
 			x[0](**x[2])
+
+	# Get some amount from the containers at the site
+	def get(self, amount):
+		self.level -= amount
 
 	def estimate_when_full():
 		# Solve:
@@ -157,7 +164,7 @@ class Vehicle(IndexedSimEntity):
 		super().__init__(sim, index)
 		self.home_depot_index = home_depot_index
 
-		# Load and capacity
+		# Load level and capacity
 		self.load_capacity = sim.config['vehicle_template']['load_capacity']
 		self.load_level = 0
 
@@ -166,29 +173,72 @@ class Vehicle(IndexedSimEntity):
 
 		# Location and movement
 		self.moving = False
-		self.location_index = sim.depots[self.home_depot_index].location_index
-		# TODO: routing
+		self.location_index = sim.depots[self.home_depot_index].location_index		
 
-		self.log(self.get_location_string())
+		self.log(f"At {type(sim.locations[self.location_index]).__name__} #{sim.locations[self.location_index].index}")
 
-	def get_location_string(self):
+
+	# Get current location
+	def get_lonlat(self):
 		if self.moving == False:
-			if self.location_index == self.sim.depots[self.home_depot_index].location_index:
-				return f"Stationary at depot #{self.home_depot_index} (home depot)"
-			else:
-				return f"TODO: Stationary location other than home depot not implemented"
-		return "TODO: En route location not implemented"
+			return self.sim.locations[self.location_index].lonlat
+		else:
+			# Interpolate between current source and destination locations
+			route_step_fractional_progress = (self.sim.env.now - self.route_step_departure_time) / self.sim.duration_matrix[self.route[self.route_step]][self.route[self.route_step + 1]]
+			source_location_lonlats = self.sim.locations[self.route[self.route_step]].lonlat
+			destination_location_lonlats = self.sim.locations[self.route[self.route_step + 1]].lonlat
+			return (
+				source_location_lonlats[0] + route_step_fractional_progress*(source_location_lonlats[0] - source_location_lonlats[0]),
+				source_location_lonlats[1] + route_step_fractional_progress*(source_location_lonlats[1] - source_location_lonlats[1])
+			)
 
-	def get_location_lonlats(self):
-		if self.moving == False:
-			return self.sim.location_lonlats[self.location_index]
-		return (None, None) # TODO
-
-	def put_load(value):
+	def put_load(self, value):
 		self.load_level += value
 		self.log(f"Load level increased to {tons_to_string(self.load_level)} / {tons_to_string(self.load_capacity)} ({to_percentage_string(self.load_level/self.load_capacity)})")
 		if (self.load_level > self.capacity):
 			self.warn("Overload")
+
+	# Assign route for vehicle
+	def assign_route(self, route):
+		self.route_activity = self.sim.env.process(self.run_assign_route(route))
+
+	def run_assign_route(self, route):
+		self.moving = True
+		self.route = route
+		self.route_step_departure_time = self.sim.env.now
+		for self.route_step in range(len(route) - 1):
+			depart_location = self.sim.locations[self.route[self.route_step]]
+			arrive_location = self.sim.locations[self.route[self.route_step + 1]]
+			self.log(f"Depart from {type(depart_location).__name__} #{depart_location.index}")
+			yield self.sim.env.timeout(self.sim.duration_matrix[self.route[self.route_step]][self.route[self.route_step + 1]])
+			self.log(f"Arrive at {type(arrive_location).__name__} #{arrive_location.index}")
+
+			if isinstance(arrive_location, PickupSite):
+				# Arrived at a pickup site
+				pickup_site = arrive_location
+				if pickup_site.level > 0:
+					if self.load_level + pickup_site.level > self.load_capacity: 
+						# Can only take some
+						get_amount = self.load_capacity - self.load_level
+						pickup_site.get(get_amount)
+						self.load_level = self.load_capacity
+					else:
+						# Can take all
+						get_amount = pickup_site.level
+						self.load_level += get_amount
+						pickup_site.get(get_amount)
+					self.log(f"Pick up {tons_to_string(get_amount)} from pickup site #{pickup_site.index} with {tons_to_string(pickup_site.level)} remaining. Vehicle load {tons_to_string(self.load_level)} / {tons_to_string(self.load_capacity)}")
+				else:
+					self.log(f"Nothing to pick up at pickup site #{pickup_site.index}")			
+
+			elif isinstance(arrive_location, Depot):
+				# Arrived at a depot
+				depot = arrive_location
+				self.log(f"Dumped the load {tons_to_string(self.load_level)} at depot #{depot.index}")
+
+		# Mark as not moving at final destination
+		self.moving = False
+		self.location_index = route[-1]
 
 
 # Depot where the vehicles start from in the beginning of the day and go to at the end of the day
@@ -220,6 +270,10 @@ class WastePickupSimulation():
 		# Create SimPy environment
 		self.env = simpy.Environment()
 
+		# Distance and duration matrixes
+		self.distance_matrix = config['distance_matrix']
+		self.duration_matrix = config['duration_matrix']
+
 		# Create a list of locations so that we can easily check the type of a location. These will be populated by any IndexedLocation
 		self.locations = [None for _ in config['location_lonlats']]
 
@@ -246,8 +300,16 @@ class WastePickupSimulation():
 		# Daily vehicle routing
 		self.daily_routing_activity = self.env.process(self.daily_routing())	
 
+		# Hourly vehicle tracking (Could be at higher rate)
+		self.vehicle_tracking_activity = self.env.process(self.vehicle_tracking())	
+
 	def site_full(self, site):
 		self.warn(f"Site #{site.index} is full.")
+
+	def vehicle_tracking(self):
+		while True:
+			self.log(f"Vehicle locations: {', '.join(map(lambda x: lonlat_to_string(x.get_lonlat()), self.vehicles))}")
+			yield self.env.timeout(60)
 
 	def daily_monitoring(self):
 		while True:
@@ -256,6 +318,7 @@ class WastePickupSimulation():
 
 	def daily_routing(self):
 		while True:
+			# Input to routing optimizer
 			routing_input = {
 				'pickup_sites': list(map(lambda pickup_site: {
 					'capacity': pickup_site.capacity,
@@ -282,8 +345,12 @@ class WastePickupSimulation():
 				json.dump(routing_input, outfile, indent=4)
 
 			routing_output = heuristic_router(routing_input)
-			# TODO: use the routes
 
+			# Assign routes
+			for vehicle_index, vehicle_routing_output in enumerate(routing_output['vehicles']):
+				self.vehicles[vehicle_index].assign_route(vehicle_routing_output['route'])
+
+			# Wait 24h until next route optimization
 			yield self.env.timeout(24*60)
 
 
