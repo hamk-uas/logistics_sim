@@ -78,24 +78,42 @@ def heuristic_router(routing_input):
 
 	return routing_output
 
-class PickupSite():
+
+# Any entity in the simulation that has an index which should be mentioned in logging. We don't have other kinds of entities.
+class IndexedSimEntity():
 
 	def log(self, message):
-		self.sim.log(f"Pickup site #{self.index}: {message}")
+		self.sim.log(f"{type(self).__name__} #{self.index}: {message}")
 
 	def warn(self, message):
-		self.sim.warn(f"Pickup site #{self.index}: {message}")
+		self.sim.warn(f"{type(self).__name__}e #{self.index}: {message}")
 
 	def __init__(self, sim, index):
 		self.sim = sim
 		self.index = index
-		self.location_index = self.sim.config['pickup_sites'][self.index]['location_index']
 
-		self.capacity = self.sim.config['pickup_sites'][index]['capacity']
-		self.level = self.sim.config['pickup_sites'][index]['level']
+
+# Any entity in the simulation that is indexed and also has a location index
+class IndexedLocation(IndexedSimEntity):
+
+	def __init__(self, sim, index, location_index):
+		super().__init__(sim, index)
+		self.location_index = location_index
+		sim.locations[location_index] = self
+
+
+# Pickup site
+class PickupSite(IndexedLocation):
+
+	def __init__(self, sim, index):
+
+		super().__init__(sim, index, sim.config['pickup_sites'][index]['location_index'])
+
+		self.capacity = sim.config['pickup_sites'][index]['capacity']
+		self.level = sim.config['pickup_sites'][index]['level']
 		self.levelListeners = []
 
-		self.daily_growth_rate = self.sim.config['pickup_sites'][index]['daily_growth_rate']
+		self.daily_growth_rate = sim.config['pickup_sites'][index]['daily_growth_rate']
 		self.log(f"Initial level: {tons_to_string(self.level)} of {tons_to_string(self.capacity)} ({to_percentage_string(self.level / self.capacity)}), growth rate: {tons_to_string(self.daily_growth_rate)}/day")
 
 		self.growth_process = sim.env.process(self.grow_daily_forever())
@@ -132,16 +150,11 @@ class PickupSite():
 			self.put(self.daily_growth_rate)
 
 
-class Vehicle():	
-	def log(self, message):
-		self.sim.log(f"Vehicle #{self.index}: {message}")
-
-	def warn(self, message):
-		self.sim.warn(f"Vehicle #{self.index}: {message}")
+# Vehicle
+class Vehicle(IndexedSimEntity):	
 
 	def __init__(self, sim, index, home_depot_index):
-		self.sim = sim
-		self.index = index
+		super().__init__(sim, index)
 		self.home_depot_index = home_depot_index
 
 		# Load and capacity
@@ -178,34 +191,21 @@ class Vehicle():
 			self.warn("Overload")
 
 
-# Depot class
-class Depot():	
-	def log(self, message):
-		self.sim.log(f"Depot #{self.index}: {message}")
-
-	def warn(self, message):
-		self.sim.warn(f"Depot #{self.index}: {message}")
+# Depot where the vehicles start from in the beginning of the day and go to at the end of the day
+class Depot(IndexedLocation):
 
 	def __init__(self, sim, index):
-		self.sim = sim
-		self.index = index
-		self.location_index = sim.config['depots'][self.index]['location_index']
+		super().__init__(sim, index, sim.config['depots'][index]['location_index'])
 
 
-# Terminal class
-class Terminal():
-	def log(self, message):
-		self.sim.log(f"Terminal #{self.index}: {message}")
-
-	def warn(self, message):
-		self.sim.warn(f"Terminal #{self.index}: {message}")
+# Terminal where waste is brought to at the end of the day, before returning to depot
+class Terminal(IndexedLocation):
 
 	def __init__(self, sim, index):
-		self.sim = sim
-		self.index = index
-		self.location_index = sim.config['terminals'][self.index]['location_index']
+		super().__init__(sim, index, sim.config['terminals'][index]['location_index'])
 
 
+# Simulation
 class WastePickupSimulation():
 
 	def log(self, message):
@@ -220,18 +220,21 @@ class WastePickupSimulation():
 		# Create SimPy environment
 		self.env = simpy.Environment()
 
+		# Create a list of locations so that we can easily check the type of a location. These will be populated by any IndexedLocation
+		self.locations = [None for _ in config['location_lonlats']]
+
 		# Create pickup sites as objects
-		self.pickup_sites = [PickupSite(self, i) for i in range(len(self.config['pickup_sites']))]
+		self.pickup_sites = [PickupSite(self, i) for i in range(len(config['pickup_sites']))]
 
 		# Create depots as objects
-		self.depots = [Depot(self, i) for i in range(len(self.config['depots']))]
+		self.depots = [Depot(self, i) for i in range(len(config['depots']))]
 
 		# Create terminals as objects
-		self.terminals = [Terminal(self, i) for i in range(len(self.config['terminals']))]
+		self.terminals = [Terminal(self, i) for i in range(len(config['terminals']))]
 
 		# Create vehicles as objects
 		self.vehicles = []
-		for depot_index, depot in enumerate(self.config['depots']):
+		for depot_index, depot in enumerate(config['depots']):
 			for i in range(depot['num_vehicles']):
 				self.vehicles.append(Vehicle(self, len(self.vehicles), depot_index))
 
