@@ -31,7 +31,7 @@ private:
   int *shot;
   int **population;
   int **nextGen;
-  double (&costFunction)(const int *);
+  double (&costFunction)(const int *, int);
   double *nextGenCosts;
   std::mt19937 randomNumberGenerator; // For main thread
   aligned_ThreadState *threadStates;  // For parallel threads
@@ -54,7 +54,7 @@ private:
   // Calculate statistics of the population (find the best chromosome)
   void calcStats()
   {
-    bestCost = DBL_MAX;
+    bestCost = std::numeric_limits<double>::max();
     for (int j = 0; j < populationSize; j++)
     {
       if (costs[j] < bestCost)
@@ -80,7 +80,7 @@ public:
         population[j][i] = i;
       }
       std::shuffle(population[j] + 1, population[j] + numGenes, randomNumberGenerator);
-      costs[j] = costFunction(population[j]);
+      costs[j] = costFunction(population[j], 0);
       nextGen[j][0] = 0;
     }
     calcStats();
@@ -128,7 +128,7 @@ public:
           int p0 = shot[j + k];
           int p1 = j + k;
           crossover(population[p0], population[p1], nextGen[j + k], omp_get_thread_num());
-          nextGenCosts[j + k] = costFunction(nextGen[j + k]);
+          nextGenCosts[j + k] = costFunction(nextGen[j + k], omp_get_thread_num());
           if (nextGenCosts[j + k] > costs[j + k])
           {
             std::swap(population[j + k], nextGen[j + k]);
@@ -147,7 +147,7 @@ public:
   // distanceMatrix = concatenated rows of the distance matrix
   // populationSize = population size, must be a multiple of simdIntParallelCount (typically 4), -1 = auto based on numGenes.
   // seed = random number generator seed. Worker threads use seed + 1, seed + 2, ...
-  Optimizer(int numGenes, double (&costFunction)(const int *), int populationSize = -1, unsigned seed = std::chrono::system_clock::now().time_since_epoch().count()) : numGenes(numGenes), costFunction(costFunction), populationSize(populationSize = calcPopulationSize(numGenes, populationSize)), randomNumberGenerator(seed), maxNumThreads(omp_get_max_threads())
+  Optimizer(int numGenes, double (&costFunction)(const int *, int), int populationSize = -1, unsigned seed = std::chrono::system_clock::now().time_since_epoch().count()) : numGenes(numGenes), costFunction(costFunction), populationSize(populationSize = calcPopulationSize(numGenes, populationSize)), randomNumberGenerator(seed), maxNumThreads(omp_get_max_threads())
   {
     threadStates = new aligned_ThreadState[maxNumThreads];
     for (int thread = 0; thread < maxNumThreads; thread++)
