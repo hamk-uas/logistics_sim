@@ -1,4 +1,5 @@
 import math
+import time
 import simpy
 import random
 import numpy as np
@@ -8,6 +9,7 @@ import random
 import functools
 from geopy.distance import geodesic
 from os.path import exists
+from datetime import datetime
 
 from get_distance_matrix import get_distance_and_duration_matrix
 
@@ -93,6 +95,9 @@ class IndexedSimEntity():
 	def __init__(self, sim, index):
 		self.sim = sim
 		self.index = index
+
+		# Statistics
+		self.total_run_time = 0
 
 
 # Any entity in the simulation that is indexed and also has a location index
@@ -204,6 +209,7 @@ class Vehicle(IndexedSimEntity):
 
 	def run_assign_route(self, route):
 		self.moving = True
+		moving_start_time = self.sim.env.now
 		self.route = route
 		self.route_step_departure_time = self.sim.env.now
 		for self.route_step in range(len(route) - 1):
@@ -238,6 +244,8 @@ class Vehicle(IndexedSimEntity):
 
 		# Mark as not moving at final destination
 		self.moving = False
+		moving_end_time = self.sim.env.now
+		self.total_run_time += moving_end_time - moving_start_time
 		self.location_index = route[-1]
 
 
@@ -259,16 +267,28 @@ class Terminal(IndexedLocation):
 class WastePickupSimulation():
 
 	def log(self, message):
-		print(f"{time_to_string(self.env.now)} - {message}")
+		log_message = f'{time_to_string(self.env.now)} - {message}'
+		print(log_message)
+		# Add to csv log for later vis
+		self.action_log.append(log_message)		
 
 	def warn(self, message):
-		print(f"{time_to_string(self.env.now)} WARNING - {message}")	
+		warn_message = f"{time_to_string(self.env.now)} WARNING - {message}"
+		print(warn_message)	
+		# Add to csv log for later vis
+		self.action_log.append(warn_message)
+		self.sim_records['warnings'].append(warn_message) 
 
 	def __init__(self, config):		
 		self.config = config
+		self.run_start = datetime.now()
 
 		# Create SimPy environment
 		self.env = simpy.Environment()
+
+		# For gathering statistics
+		self.action_log = []
+		self.sim_records = {'warnings' : []}
 
 		# Distance and duration matrixes
 		self.distance_matrix = config['distance_matrix']
@@ -355,8 +375,38 @@ class WastePickupSimulation():
 
 
 	def sim_run(self):
+		start_time = time.time()
 		self.env.run(until=self.config["sim_runtime_days"]*24*60)
-		self.log("Simulation finished")
+		end_time = time.time()
+		self.total_time = end_time-start_time # Excuding config preprocessing
+		self.log(f"Simulation finished with {self.total_time}s of computing")
+
+
+	def save_log(self):
+		"""
+		TODO: Log processor somwhere else
+		"""
+		# Get log from saved Save log as csv file
+		json_log = json.dumps(self.action_log)
+		file_name = f"sim_log_{self.run_start}.json"
+		# TODO! select folder structure for saving data
+		with open(f'run_statistics/{file_name}', 'w') as f:
+			json.dump(json_log, f, indent=4)
+
+
+	def sim_record(self):
+		"""
+		"""
+		# Create a dict (record_[time.now.to_string]that records
+		self.sim_records['computational_time'] = self.total_time # comptutational time
+		self.sim_records['vehicles_runtimes'] = [[v.index, v.total_run_time] for v in self.vehicles] # time of vehicles driving
+		# vechicle driving distance
+		# level listeners alerts # are added in warnings level
+		file_name = f"sim_record_{self.run_start}.json"
+
+
+		with open(f'run_statistics/{file_name}', 'w') as f:
+			json.dump(self.sim_records, f, indent=4)
 
 
 def preprocess_sim_config(sim_config, sim_config_filename):

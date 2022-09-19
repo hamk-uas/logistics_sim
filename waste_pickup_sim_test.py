@@ -25,6 +25,24 @@ sim_config = {
 	]
 }
 
+def hypothesis_test():
+	"""
+	"""
+	# Runs N simulation
+	# logs them to list of jsons 
+	pass 
+
+def test_record():
+	"""
+	"""
+	# List of jsons of sim runs 
+	# Metadata on time avergae time of coptutaion and vehicle dricing time
+	# config
+	pass
+
+
 waste_pickup_sim.preprocess_sim_config(sim_config, 'sim_config.json')
 sim = waste_pickup_sim.WastePickupSimulation(sim_config)
 sim.sim_run()
+sim.save_log()
+sim.sim_record()
