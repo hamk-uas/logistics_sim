@@ -5,7 +5,6 @@ import random
 import numpy as np
 import queue as queue
 import json
-import random
 import functools
 from geopy.distance import geodesic
 from os.path import exists
@@ -180,6 +179,9 @@ class Vehicle(IndexedSimEntity):
 		# Work shift
 		self.max_route_duration = sim.config['vehicle_template']['max_route_duration']
 
+		# Pickup duration
+		self.pickup_duration = sim.config['vehicle_template']['pickup_duration']
+
 		# Location and movement
 		self.moving = False
 		self.location_index = sim.depots[self.home_depot_index].location_index		
@@ -233,11 +235,13 @@ class Vehicle(IndexedSimEntity):
 							get_amount = self.load_capacity - self.load_level
 							pickup_site.get(get_amount)
 							self.load_level = self.load_capacity
+							yield self.sim.env.timeout(self.pickup_duration)
 						else:
 							# Can take all
 							get_amount = pickup_site.level
 							self.load_level += get_amount
 							pickup_site.get(get_amount)
+							yield self.sim.env.timeout(self.pickup_duration)
 						self.log(f"Pick up {tons_to_string(get_amount)} from pickup site #{pickup_site.index} with {tons_to_string(pickup_site.level)} remaining. Vehicle load {tons_to_string(self.load_level)} / {tons_to_string(self.load_capacity)}")
 					else:
 						self.log(f"Nothing to pick up at pickup site #{pickup_site.index}")			
@@ -373,7 +377,7 @@ class WastePickupSimulation():
 					json.dump(routing_input, outfile, indent=4)
 
 				# Comment/uncomment: heuristic router
-				#self.routing_output = heuristic_router(routing_input)
+				self.routing_output = heuristic_router(routing_input)
 
 				# Comment/uncomment: genetic algorithm router
 				system('routing_optimizer')

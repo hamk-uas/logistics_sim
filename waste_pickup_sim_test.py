@@ -1,6 +1,7 @@
 import numpy as np
 import waste_pickup_sim
 import json
+import random
 
 sim_config = {	
 	'sim_name': 'Hämeenlinna and nearby regions',
@@ -17,10 +18,10 @@ sim_config = {
 	},
 	'depots': [
 		{
-			'num_vehicles': 2
+			'num_vehicles': 1
 		},
 		{
-			'num_vehicles': 2
+			'num_vehicles': 1
 		}
 	]
 }
@@ -40,7 +41,8 @@ def test_record():
 	# config
 	pass
 
-
+random.seed(42)
+np.random.seed(42)
 waste_pickup_sim.preprocess_sim_config(sim_config, 'sim_config.json')
 sim = waste_pickup_sim.WastePickupSimulation(sim_config)
 sim.sim_run()
