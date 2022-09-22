@@ -133,7 +133,7 @@ void from_json(const json &j, RoutingInput &x)
   x.num_pickup_site_visits_in_genome = 0;
   for (int i = 0; i < x.pickup_sites.size(); i++) {
     PickupSiteInput site = x.pickup_sites[i];
-    site.max_num_visits = ceil((site.growth_rate*x.sim_duration + site.level)/(site.capacity*0.8));
+    site.max_num_visits = (int)ceil((site.growth_rate*x.sim_duration + site.level)/(site.capacity*0.8));
     for (int j = x.num_pickup_site_visits_in_genome; j < x.num_pickup_site_visits_in_genome + site.max_num_visits; j++) {
       x.gene_to_pickup_site_index.push_back(i);
     }
@@ -284,7 +284,7 @@ public:
       destinationLocationIndex = routingInput.depots[homeDepotIndex].location_index;
       PROC_WAIT_FOR(sim->timeout(routingInput.duration_matrix[sourceLocationIndex][destinationLocationIndex]));
       vehicle->odometer += routingInput.distance_matrix[sourceLocationIndex][destinationLocationIndex];
-      if (debug >= 2) printf("%g Vehicle #%d: arrive at depot #%d\n", sim->get_now()/60, vehicleIndex, homeDepotIndex);
+      if (debug >= 2) printf("%g Vehicle #%d: arrive at depot #%d and dump all %g\n", sim->get_now()/60, vehicleIndex, homeDepotIndex, vehicle->loadLevel);
       vehicle->loadLevel = 0;
     }
 
@@ -325,8 +325,13 @@ public:
         logisticsSim->pickupSites[pickupSiteIndex].level += logisticsSim->routingInput.pickup_sites[pickupSiteIndex].growth_rate*24*60;
         if (logisticsSim->pickupSites[pickupSiteIndex].level > logisticsSim->routingInput.pickup_sites[pickupSiteIndex].capacity) {
           logisticsSim->totalNumPickupSiteOverloadDays++;
+          if (debug >= 2) printf("%g WARNING Site %d overload\n", sim->get_now(), pickupSiteIndex);
         }
       }
+      for (pickupSiteIndex = 0; pickupSiteIndex < logisticsSim->pickupSites.size(); pickupSiteIndex++) {
+        if (debug >= 2) printf("%d\%, ", (int)floor(logisticsSim->pickupSites[pickupSiteIndex].level / logisticsSim->routingInput.pickup_sites[pickupSiteIndex].capacity * 100 + 0.5));
+      }
+      if (debug >= 2) printf("\n");
     }
 
     PT_END();    
@@ -354,7 +359,7 @@ double LogisticsSimulation::costFunction(const int *genome) {
   }
   totalNumPickupSiteOverloadDays = 0;
   vehicles[0].routeStartLoci[0] = 0;
-  // if (debug >= 2) printf("Vehicle #%d will start day %d route at locus %d\n", 0, 0, 0);
+  if (debug >= 2) printf("Vehicle #%d will start day %d route at locus %d\n", 0, 0, 0);
   int vehicleIndex = 0;
   int day = 0;
   for (int locus = 0; locus < routingInput.num_genes; locus++) {
@@ -412,7 +417,7 @@ int main() {
   */
 
   Optimizer optimizer(routingInput.num_genes, logisticsSims);
-  int numGenerations = 50000; // 50000
+  int numGenerations = 500; // 50000
   int numGenerationsPerStep = 100;
   optimizer.initPopulation();
   /*
@@ -430,15 +435,15 @@ int main() {
     optimizer.optimize(numGenerationsPerStep);
   }
   if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.bestCost);
-/*
-  debug++;
+
+  debug++;/*
   for (int i = 0; i < routingInput.num_genes; i++) {
     printf("%d,%d\n", i, optimizer.best[i]);
   }
-  printf("\n");
+  printf("\n");*/
   logisticsSims[0]->costFunction(optimizer.best);
   debug--;
-*/
+
   for (int i = 0; i < omp_get_max_threads(); i++) {
     delete logisticsSims[i];
   }

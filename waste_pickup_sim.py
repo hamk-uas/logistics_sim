@@ -250,6 +250,7 @@ class Vehicle(IndexedSimEntity):
 					# Arrived at a depot
 					depot = arrive_location
 					self.log(f"Dumped the load {tons_to_string(self.load_level)} at depot #{depot.index}")
+					self.load_level = 0
 
 			# Mark as not moving at final destination
 			self.moving = False
@@ -290,7 +291,7 @@ class WastePickupSimulation():
 
 	def __init__(self, config):		
 		self.config = config
-		self.run_start = f"datetime.now()".replace(':', '-')
+		self.run_start = f"{datetime.now()}".replace(':', '-')
 
 		# Create SimPy environment
 		self.env = simpy.Environment()
@@ -380,7 +381,7 @@ class WastePickupSimulation():
 				self.routing_output = heuristic_router(routing_input)
 
 				# Comment/uncomment: genetic algorithm router
-				system('routing_optimizer')
+				system('routing_optimizer>routing_optimizer_log.txt')
 				with open('routing_output_1_1.json') as infile:
 					self.routing_output = json.load(infile)
 
