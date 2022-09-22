@@ -10,6 +10,7 @@ import functools
 from geopy.distance import geodesic
 from os.path import exists
 from datetime import datetime
+from os import system
 
 from get_distance_matrix import get_distance_and_duration_matrix
 
@@ -72,10 +73,13 @@ def heuristic_router(routing_input):
 		vehicle_routes[vehicle_index].append(home_depot['location_index'])
 		vehicle_route_durations[vehicle_index] += durations_back_home[vehicle_index]
 
+	# Heuristic router only routes one day at a time.
 	routing_output = {
-		'vehicles': [{
-			'route': route
-		} for route in vehicle_routes]
+		'days': [{
+			'vehicles': [{
+				'route': route
+			} for route in vehicle_routes]
+		}]
 	}
 	
 	#print(routing_output)
@@ -208,45 +212,46 @@ class Vehicle(IndexedSimEntity):
 		self.route_activity = self.sim.env.process(self.run_assign_route(route))
 
 	def run_assign_route(self, route):
-		self.moving = True
-		moving_start_time = self.sim.env.now
-		self.route = route
-		self.route_step_departure_time = self.sim.env.now
-		for self.route_step in range(len(route) - 1):
-			depart_location = self.sim.locations[self.route[self.route_step]]
-			arrive_location = self.sim.locations[self.route[self.route_step + 1]]
-			self.log(f"Depart from {type(depart_location).__name__} #{depart_location.index}")
-			yield self.sim.env.timeout(self.sim.duration_matrix[self.route[self.route_step]][self.route[self.route_step + 1]])
-			self.log(f"Arrive at {type(arrive_location).__name__} #{arrive_location.index}")
+		if len(route) > 0:
+			self.moving = True
+			moving_start_time = self.sim.env.now
+			self.route = route
+			self.route_step_departure_time = self.sim.env.now
+			for self.route_step in range(len(route) - 1):
+				depart_location = self.sim.locations[self.route[self.route_step]]
+				arrive_location = self.sim.locations[self.route[self.route_step + 1]]
+				self.log(f"Depart from {type(depart_location).__name__} #{depart_location.index}")
+				yield self.sim.env.timeout(self.sim.duration_matrix[self.route[self.route_step]][self.route[self.route_step + 1]])
+				self.log(f"Arrive at {type(arrive_location).__name__} #{arrive_location.index}")
 
-			if isinstance(arrive_location, PickupSite):
-				# Arrived at a pickup site
-				pickup_site = arrive_location
-				if pickup_site.level > 0:
-					if self.load_level + pickup_site.level > self.load_capacity: 
-						# Can only take some
-						get_amount = self.load_capacity - self.load_level
-						pickup_site.get(get_amount)
-						self.load_level = self.load_capacity
+				if isinstance(arrive_location, PickupSite):
+					# Arrived at a pickup site
+					pickup_site = arrive_location
+					if pickup_site.level > 0:
+						if self.load_level + pickup_site.level > self.load_capacity: 
+							# Can only take some
+							get_amount = self.load_capacity - self.load_level
+							pickup_site.get(get_amount)
+							self.load_level = self.load_capacity
+						else:
+							# Can take all
+							get_amount = pickup_site.level
+							self.load_level += get_amount
+							pickup_site.get(get_amount)
+						self.log(f"Pick up {tons_to_string(get_amount)} from pickup site #{pickup_site.index} with {tons_to_string(pickup_site.level)} remaining. Vehicle load {tons_to_string(self.load_level)} / {tons_to_string(self.load_capacity)}")
 					else:
-						# Can take all
-						get_amount = pickup_site.level
-						self.load_level += get_amount
-						pickup_site.get(get_amount)
-					self.log(f"Pick up {tons_to_string(get_amount)} from pickup site #{pickup_site.index} with {tons_to_string(pickup_site.level)} remaining. Vehicle load {tons_to_string(self.load_level)} / {tons_to_string(self.load_capacity)}")
-				else:
-					self.log(f"Nothing to pick up at pickup site #{pickup_site.index}")			
+						self.log(f"Nothing to pick up at pickup site #{pickup_site.index}")			
 
-			elif isinstance(arrive_location, Depot):
-				# Arrived at a depot
-				depot = arrive_location
-				self.log(f"Dumped the load {tons_to_string(self.load_level)} at depot #{depot.index}")
+				elif isinstance(arrive_location, Depot):
+					# Arrived at a depot
+					depot = arrive_location
+					self.log(f"Dumped the load {tons_to_string(self.load_level)} at depot #{depot.index}")
 
-		# Mark as not moving at final destination
-		self.moving = False
-		moving_end_time = self.sim.env.now
-		self.total_run_time += moving_end_time - moving_start_time
-		self.location_index = route[-1]
+			# Mark as not moving at final destination
+			self.moving = False
+			moving_end_time = self.sim.env.now
+			self.total_run_time += moving_end_time - moving_start_time
+			self.location_index = route[-1]
 
 
 # Depot where the vehicles start from in the beginning of the day and go to at the end of the day
@@ -281,7 +286,7 @@ class WastePickupSimulation():
 
 	def __init__(self, config):		
 		self.config = config
-		self.run_start = datetime.now()
+		self.run_start = f"datetime.now()".replace(':', '-')
 
 		# Create SimPy environment
 		self.env = simpy.Environment()
@@ -318,6 +323,7 @@ class WastePickupSimulation():
 		self.daily_monitoring_activity = self.env.process(self.daily_monitoring())
 		
 		# Daily vehicle routing
+		self.routing_output = None # No routes planned yet. The value None will cause them to be planned
 		self.daily_routing_activity = self.env.process(self.daily_routing())	
 
 		# Hourly vehicle tracking (Could be at higher rate)
@@ -338,37 +344,48 @@ class WastePickupSimulation():
 
 	def daily_routing(self):
 		while True:
-			# Input to routing optimizer
-			routing_input = {
-				'pickup_sites': list(map(lambda pickup_site: {
-					'capacity': pickup_site.capacity,
-					'level': pickup_site.level,
-					'growth_rate': pickup_site.daily_growth_rate/(24*60),
-					'location_index': pickup_site.location_index
-				}, self.pickup_sites)),
-				'depots': list(map(lambda depot: {
-					'location_index': depot.location_index
-				}, self.depots)),
-				'terminals': list(map(lambda terminal: {
-					'location_index': terminal.location_index
-				}, self.terminals)),
-				'vehicles': list(map(lambda vehicle: {
-					'load_capacity': vehicle.load_capacity,
-					'home_depot_index': vehicle.home_depot_index,
-					'max_route_duration': vehicle.max_route_duration,
-				}, self.vehicles)),
-				'distance_matrix': self.config['distance_matrix'],
-				'duration_matrix': self.config['duration_matrix']
-			}
+			# Request routing when not currently available
+			if self.routing_output == None or len(self.routing_output['days']) == 0:
+				# Input to routing optimizer
+				routing_input = {
+					'pickup_sites': list(map(lambda pickup_site: {
+						'capacity': pickup_site.capacity,
+						'level': pickup_site.level,
+						'growth_rate': pickup_site.daily_growth_rate/(24*60),
+						'location_index': pickup_site.location_index
+					}, self.pickup_sites)),
+					'depots': list(map(lambda depot: {
+						'location_index': depot.location_index
+					}, self.depots)),
+					'terminals': list(map(lambda terminal: {
+						'location_index': terminal.location_index
+					}, self.terminals)),
+					'vehicles': list(map(lambda vehicle: {
+						'load_capacity': vehicle.load_capacity,
+						'home_depot_index': vehicle.home_depot_index,
+						'max_route_duration': vehicle.max_route_duration,
+					}, self.vehicles)),
+					'distance_matrix': self.config['distance_matrix'],
+					'duration_matrix': self.config['duration_matrix']
+				}
 
-			with open('routing_input.json', 'w') as outfile:
-				json.dump(routing_input, outfile, indent=4)
+				with open('routing_input.json', 'w') as outfile:
+					json.dump(routing_input, outfile, indent=4)
 
-			routing_output = heuristic_router(routing_input)
+				# Comment/uncomment: heuristic router
+				#self.routing_output = heuristic_router(routing_input)
+
+				# Comment/uncomment: genetic algorithm router
+				system('routing_optimizer')
+				with open('routing_output.json') as infile:
+					self.routing_output = json.load(infile)
 
 			# Assign routes
-			for vehicle_index, vehicle_routing_output in enumerate(routing_output['vehicles']):
+			for vehicle_index, vehicle_routing_output in enumerate(self.routing_output['days'][0]['vehicles']):
 				self.vehicles[vehicle_index].assign_route(vehicle_routing_output['route'])
+
+			# We have used the first day of multiple days of routing output. Remove that day from the routing output
+			self.routing_output['days'] = self.routing_output['days'][1:]
 
 			# Wait 24h until next route optimization
 			yield self.env.timeout(24*60)
