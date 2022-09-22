@@ -1,3 +1,4 @@
 *.exe
 .vscode/settings.json
 secrets.py
+routing_optimizer

@@ -106,6 +106,7 @@ struct RoutingInput
   std::vector<VehicleInput> vehicles;
   std::vector<std::vector<float>> distance_matrix;
   std::vector<std::vector<float>> duration_matrix;
+  int output_num_days;
   int sim_duration_days;
   int sim_duration;
   std::vector<int> gene_to_pickup_site_index;
@@ -125,7 +126,8 @@ void from_json(const json &j, RoutingInput &x)
 
   // Do some preprocessing calculations
   // Simulation length
-  x.sim_duration_days = 14; // 14 days
+  x.output_num_days = 14; // Get routes for 14 days
+  x.sim_duration_days = x.output_num_days + 0; // 0 days marginal
   x.sim_duration = x.sim_duration_days*24*60; // * 24h/day * 60min/h
   // The relationship between genes and pickup sites
   x.num_pickup_site_visits_in_genome = 0;
@@ -410,7 +412,7 @@ int main() {
   */
 
   Optimizer optimizer(routingInput.num_genes, logisticsSims);
-  int numGenerations = 500; // 50000
+  int numGenerations = 50000; // 50000
   int numGenerationsPerStep = 100;
   optimizer.initPopulation();
   /*
@@ -428,7 +430,7 @@ int main() {
     optimizer.optimize(numGenerationsPerStep);
   }
   if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.bestCost);
-
+/*
   debug++;
   for (int i = 0; i < routingInput.num_genes; i++) {
     printf("%d,%d\n", i, optimizer.best[i]);
@@ -436,7 +438,7 @@ int main() {
   printf("\n");
   logisticsSims[0]->costFunction(optimizer.best);
   debug--;
-
+*/
   for (int i = 0; i < omp_get_max_threads(); i++) {
     delete logisticsSims[i];
   }
@@ -446,7 +448,7 @@ int main() {
   RoutingOutput routingOutput;
   LogisticsSimulation logisticsSim(routingInput);
   logisticsSim.costFunction(optimizer.best); // Get routeStartLoci
-  for (int day = 0; day < routingInput.sim_duration_days; day++) {
+  for (int day = 0; day < routingInput.output_num_days; day++) {
     DayOutput dayOutput;
     for (int vehicleIndex = 0; vehicleIndex < routingInput.vehicles.size(); vehicleIndex++) {
       VehicleInput &vehicle = routingInput.vehicles[vehicleIndex];
@@ -477,7 +479,7 @@ int main() {
     routingOutput.days.push_back(dayOutput);    
   }
   json j = routingOutput;  
-  std::ofstream o("routing_output.json");
+  std::ofstream o("routing_output_1_1.json");
   o << std::setw(4) << j << std::endl;
 
   return 0;

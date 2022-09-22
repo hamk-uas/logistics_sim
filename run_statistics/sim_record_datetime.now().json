@@ -1,28 +1,34 @@
 {
     "warnings": [
+        "  4d 00:00 WARNING - Site #31 is full.",
         "  5d 00:00 WARNING - Site #22 is full.",
-        "  7d 00:00 WARNING - Site #34 is full.",
-        "  7d 00:00 WARNING - Site #49 is full.",
-        "  9d 00:00 WARNING - Site #29 is full.",
-        " 10d 00:00 WARNING - Site #1 is full.",
-        " 10d 00:00 WARNING - Site #37 is full.",
+        "  5d 00:00 WARNING - Site #50 is full.",
+        "  5d 00:00 WARNING - Site #55 is full.",
+        "  6d 00:00 WARNING - Site #19 is full.",
+        "  6d 00:00 WARNING - Site #33 is full.",
+        "  6d 00:00 WARNING - Site #52 is full.",
+        "  7d 00:00 WARNING - Site #54 is full.",
+        "  9d 00:00 WARNING - Site #16 is full.",
         " 10d 00:00 WARNING - Site #45 is full.",
-        " 11d 00:00 WARNING - Site #13 is full.",
+        " 11d 00:00 WARNING - Site #44 is full.",
+        " 12d 00:00 WARNING - Site #11 is full.",
+        " 12d 00:00 WARNING - Site #17 is full.",
         " 12d 00:00 WARNING - Site #21 is full.",
         " 12d 00:00 WARNING - Site #57 is full.",
-        " 13d 00:00 WARNING - Site #12 is full.",
         " 13d 00:00 WARNING - Site #20 is full.",
-        " 13d 00:00 WARNING - Site #26 is full."
+        " 13d 00:00 WARNING - Site #26 is full.",
+        " 13d 00:00 WARNING - Site #46 is full.",
+        " 13d 00:00 WARNING - Site #48 is full."
     ],
-    "computational_time": 5.89775824546814,
+    "computational_time": 416.53946232795715,
     "vehicles_runtimes": [
         [
             0,
-            2727.5290000000005
+            104.39883333333333
         ],
         [
             1,
-            1921.4640000000034
+            1114.9905000000008
         ]
     ]
 }

@@ -381,7 +381,7 @@ class WastePickupSimulation():
 
 				# Comment/uncomment: genetic algorithm router
 				system('routing_optimizer')
-				with open('routing_output.json') as infile:
+				with open('routing_output_1_1.json') as infile:
 					self.routing_output = json.load(infile)
 
 			# Assign routes
