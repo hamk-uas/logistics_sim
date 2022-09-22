@@ -78,7 +78,7 @@ def heuristic_router(routing_input):
 		} for route in vehicle_routes]
 	}
 	
-	print(routing_output)
+	#print(routing_output)
 
 	return routing_output
 

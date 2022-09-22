@@ -1,0 +1,291 @@
+0 Vehicle #0: depart from depot #0
+0 Vehicle #1: no route for day 0
+0 Vehicle #2: no route for day 0
+0 Vehicle #3: no route for day 0
+0.354153 Vehicle #0: arrive at pickup site #0
+Vehicle #0: empties all 1.843079 of pickup site #0
+0.354153 Vehicle #0: depart from pickup site #0
+0.604153 Vehicle #0: arrive at pickup site #0
+Vehicle #0: nothing to pick up at site #0
+0.604153 Vehicle #0: depart from pickup site #0
+0.900633 Vehicle #0: arrive at pickup site #1
+Vehicle #0: empties all 1.709066 of pickup site #1
+0.900633 Vehicle #0: depart from pickup site #1
+1.15063 Vehicle #0: arrive at pickup site #1
+Vehicle #0: nothing to pick up at site #1
+1.15063 Vehicle #0: depart from pickup site #1
+1.69037 Vehicle #0: arrive at pickup site #7
+Vehicle #0: empties all 0.567683 of pickup site #7
+1.69037 Vehicle #0: depart from pickup site #7
+1.94037 Vehicle #0: arrive at pickup site #7
+Vehicle #0: nothing to pick up at site #7
+1.94037 Vehicle #0: depart from pickup site #7
+2.55428 Vehicle #0: arrive at pickup site #6
+Vehicle #0: empties all 1.594014 of pickup site #6
+2.55428 Vehicle #0: depart from pickup site #6
+2.80428 Vehicle #0: arrive at pickup site #6
+Vehicle #0: nothing to pick up at site #6
+2.80428 Vehicle #0: depart from pickup site #6
+3.19809 Vehicle #0: arrive at pickup site #3
+Vehicle #0: empties all 1.763193 of pickup site #3
+3.19809 Vehicle #0: depart from pickup site #3
+3.44809 Vehicle #0: arrive at pickup site #3
+Vehicle #0: nothing to pick up at site #3
+3.44809 Vehicle #0: depart from pickup site #3
+3.752 Vehicle #0: arrive at pickup site #8
+Vehicle #0: empties all 1.248589 of pickup site #8
+3.752 Vehicle #0: depart from pickup site #8
+4.002 Vehicle #0: arrive at pickup site #8
+Vehicle #0: nothing to pick up at site #8
+4.002 Vehicle #0: depart from pickup site #8
+4.26828 Vehicle #0: arrive at pickup site #2
+Vehicle #0: empties all 0.868597 of pickup site #2
+4.26828 Vehicle #0: depart from pickup site #2
+4.51828 Vehicle #0: arrive at pickup site #2
+Vehicle #0: nothing to pick up at site #2
+4.51828 Vehicle #0: depart from pickup site #2
+4.80551 Vehicle #0: arrive at pickup site #10
+Vehicle #0: empties all 0.473097 of pickup site #10
+4.80551 Vehicle #0: depart from pickup site #10
+5.05551 Vehicle #0: arrive at pickup site #10
+Vehicle #0: nothing to pick up at site #10
+5.05551 Vehicle #0: depart from pickup site #10
+5.37645 Vehicle #0: arrive at pickup site #4
+Vehicle #0: empties all 1.264872 of pickup site #4
+5.37645 Vehicle #0: depart from pickup site #4
+5.62645 Vehicle #0: arrive at pickup site #4
+Vehicle #0: nothing to pick up at site #4
+5.62645 Vehicle #0: depart from pickup site #4
+5.93231 Vehicle #0: arrive at pickup site #5
+Vehicle #0: empties all 0.562589 of pickup site #5
+5.93231 Vehicle #0: depart from pickup site #5
+6.18231 Vehicle #0: arrive at pickup site #5
+Vehicle #0: nothing to pick up at site #5
+6.18231 Vehicle #0: depart from pickup site #5
+6.48026 Vehicle #0: arrive at pickup site #9
+Vehicle #0: empties all 0.561086 of pickup site #9
+6.48026 Vehicle #0: depart from pickup site #9
+6.73026 Vehicle #0: arrive at pickup site #9
+Vehicle #0: nothing to pick up at site #9
+6.73026 Vehicle #0: depart from pickup site #9
+6.82418 Vehicle #0: arrive at depot #0
+24 Vehicle #0: no route for day 1
+24 Vehicle #1: no route for day 1
+24 Vehicle #2: no route for day 1
+24 Vehicle #3: depart from depot #1
+24.5159 Vehicle #3: arrive at pickup site #28
+Vehicle #3: empties all 0.534694 of pickup site #28
+24.5159 Vehicle #3: depart from pickup site #28
+24.7887 Vehicle #3: arrive at pickup site #30
+Vehicle #3: empties all 1.091780 of pickup site #30
+24.7887 Vehicle #3: depart from pickup site #30
+25.0881 Vehicle #3: arrive at pickup site #31
+Vehicle #3: empties all 0.492999 of pickup site #31
+25.0881 Vehicle #3: depart from pickup site #31
+25.4175 Vehicle #3: arrive at pickup site #27
+Vehicle #3: empties all 0.586783 of pickup site #27
+25.4175 Vehicle #3: depart from pickup site #27
+25.907 Vehicle #3: arrive at pickup site #23
+Vehicle #3: empties all 0.642709 of pickup site #23
+25.907 Vehicle #3: depart from pickup site #23
+26.3192 Vehicle #3: arrive at pickup site #18
+Vehicle #3: empties all 0.593804 of pickup site #18
+26.3192 Vehicle #3: depart from pickup site #18
+26.7301 Vehicle #3: arrive at pickup site #19
+Vehicle #3: empties all 0.622482 of pickup site #19
+26.7301 Vehicle #3: depart from pickup site #19
+27.426 Vehicle #3: arrive at pickup site #41
+Vehicle #3: empties all 1.611463 of pickup site #41
+27.426 Vehicle #3: depart from pickup site #41
+27.9224 Vehicle #3: arrive at pickup site #29
+Vehicle #3: empties all 1.211110 of pickup site #29
+27.9224 Vehicle #3: depart from pickup site #29
+28.4239 Vehicle #3: arrive at pickup site #50
+Vehicle #3: empties all 1.792322 of pickup site #50
+28.4239 Vehicle #3: depart from pickup site #50
+28.8119 Vehicle #3: arrive at pickup site #40
+Vehicle #3: empties all 1.611899 of pickup site #40
+28.8119 Vehicle #3: depart from pickup site #40
+29.0936 Vehicle #3: arrive at pickup site #47
+Vehicle #3: empties all 0.564512 of pickup site #47
+29.0936 Vehicle #3: depart from pickup site #47
+29.4243 Vehicle #3: arrive at pickup site #36
+Vehicle #3: empties all 1.207690 of pickup site #36
+29.4243 Vehicle #3: depart from pickup site #36
+29.6743 Vehicle #3: arrive at pickup site #36
+Vehicle #3: nothing to pick up at site #36
+29.6743 Vehicle #3: depart from pickup site #36
+29.9674 Vehicle #3: arrive at pickup site #37
+Vehicle #3: empties all 1.742018 of pickup site #37
+29.9674 Vehicle #3: depart from pickup site #37
+30.3391 Vehicle #3: arrive at pickup site #42
+Vehicle #3: empties all 1.107141 of pickup site #42
+30.3391 Vehicle #3: depart from pickup site #42
+30.8924 Vehicle #3: arrive at pickup site #13
+Vehicle #3: empties all 0.571870 of pickup site #13
+30.8924 Vehicle #3: depart from pickup site #13
+31.4015 Vehicle #3: arrive at pickup site #38
+Vehicle #3: empties all 1.211626 of pickup site #38
+31.4015 Vehicle #3: depart from pickup site #38
+31.8095 Vehicle #3: arrive at depot #1
+48 Vehicle #0: no route for day 2
+48 Vehicle #1: no route for day 2
+48 Vehicle #2: no route for day 2
+48 Vehicle #3: depart from depot #1
+48.5034 Vehicle #3: arrive at pickup site #52
+Vehicle #3: empties all 2.499635 of pickup site #52
+48.5034 Vehicle #3: depart from pickup site #52
+48.7534 Vehicle #3: arrive at pickup site #52
+Vehicle #3: nothing to pick up at site #52
+48.7534 Vehicle #3: depart from pickup site #52
+49.7146 Vehicle #3: arrive at pickup site #24
+Vehicle #3: empties all 0.650171 of pickup site #24
+49.7146 Vehicle #3: depart from pickup site #24
+50.175 Vehicle #3: arrive at pickup site #46
+Vehicle #3: empties all 1.889144 of pickup site #46
+50.175 Vehicle #3: depart from pickup site #46
+50.6918 Vehicle #3: arrive at pickup site #25
+Vehicle #3: empties all 0.622206 of pickup site #25
+50.6918 Vehicle #3: depart from pickup site #25
+51.1653 Vehicle #3: arrive at pickup site #44
+Vehicle #3: empties all 0.668209 of pickup site #44
+51.1653 Vehicle #3: depart from pickup site #44
+51.6078 Vehicle #3: arrive at pickup site #15
+Vehicle #3: empties all 1.270752 of pickup site #15
+51.6078 Vehicle #3: depart from pickup site #15
+51.8746 Vehicle #3: arrive at pickup site #16
+Vehicle #3: empties all 1.228149 of pickup site #16
+51.8746 Vehicle #3: depart from pickup site #16
+52.8706 Vehicle #3: arrive at pickup site #12
+Vehicle #3: empties all 0.652987 of pickup site #12
+52.8706 Vehicle #3: depart from pickup site #12
+53.1206 Vehicle #3: arrive at pickup site #12
+Vehicle #3: nothing to pick up at site #12
+53.1206 Vehicle #3: depart from pickup site #12
+53.8197 Vehicle #3: arrive at pickup site #56
+Vehicle #3: empties all 1.182539 of pickup site #56
+53.8197 Vehicle #3: depart from pickup site #56
+54.1959 Vehicle #3: arrive at pickup site #34
+Vehicle #3: empties all 1.308293 of pickup site #34
+54.1959 Vehicle #3: depart from pickup site #34
+54.4852 Vehicle #3: arrive at pickup site #35
+Vehicle #3: empties all 1.121846 of pickup site #35
+54.4852 Vehicle #3: depart from pickup site #35
+55.1199 Vehicle #3: arrive at depot #1
+72 Vehicle #0: no route for day 3
+72 Vehicle #1: no route for day 3
+72 Vehicle #2: no route for day 3
+72 Vehicle #3: depart from depot #1
+72.5771 Vehicle #3: arrive at pickup site #53
+Vehicle #3: empties all 1.456738 of pickup site #53
+72.5771 Vehicle #3: depart from pickup site #53
+73.1969 Vehicle #3: arrive at pickup site #21
+Vehicle #3: empties all 0.670255 of pickup site #21
+73.1969 Vehicle #3: depart from pickup site #21
+73.6857 Vehicle #3: arrive at pickup site #45
+Vehicle #3: empties all 0.738766 of pickup site #45
+73.6857 Vehicle #3: depart from pickup site #45
+74.0613 Vehicle #3: arrive at pickup site #20
+Vehicle #3: empties all 1.414404 of pickup site #20
+74.0613 Vehicle #3: depart from pickup site #20
+74.4771 Vehicle #3: arrive at pickup site #54
+Vehicle #3: empties all 2.162286 of pickup site #54
+74.4771 Vehicle #3: depart from pickup site #54
+74.943 Vehicle #3: arrive at pickup site #48
+Vehicle #3: empties all 2.043445 of pickup site #48
+74.943 Vehicle #3: depart from pickup site #48
+75.4812 Vehicle #3: arrive at pickup site #26
+Vehicle #3: empties all 2.100810 of pickup site #26
+75.4812 Vehicle #3: depart from pickup site #26
+76.0285 Vehicle #3: arrive at pickup site #11
+Vehicle #3: empties all 0.715989 of pickup site #11
+76.0285 Vehicle #3: depart from pickup site #11
+76.6272 Vehicle #3: arrive at pickup site #57
+Vehicle #3: empties all 1.397446 of pickup site #57
+76.6272 Vehicle #3: depart from pickup site #57
+76.9024 Vehicle #3: arrive at pickup site #17
+Vehicle #3: empties all 0.808657 of pickup site #17
+76.9024 Vehicle #3: depart from pickup site #17
+77.1045 Vehicle #3: arrive at depot #1
+96 Vehicle #0: no route for day 4
+96 Vehicle #1: no route for day 4
+96 Vehicle #2: no route for day 4
+96 Vehicle #3: depart from depot #1
+96.3829 Vehicle #3: arrive at pickup site #51
+Vehicle #3: empties all 2.331783 of pickup site #51
+96.3829 Vehicle #3: depart from pickup site #51
+96.9707 Vehicle #3: arrive at pickup site #22
+Vehicle #3: empties all 0.834818 of pickup site #22
+96.9707 Vehicle #3: depart from pickup site #22
+97.7704 Vehicle #3: arrive at pickup site #32
+Vehicle #3: empties all 1.458907 of pickup site #32
+97.7704 Vehicle #3: depart from pickup site #32
+98.1736 Vehicle #3: arrive at pickup site #28
+Vehicle #3: empties all 0.160408 of pickup site #28
+98.1736 Vehicle #3: depart from pickup site #28
+98.6288 Vehicle #3: arrive at pickup site #33
+Vehicle #3: empties all 0.713267 of pickup site #33
+98.6288 Vehicle #3: depart from pickup site #33
+99.5247 Vehicle #3: arrive at pickup site #49
+Vehicle #3: empties all 2.394221 of pickup site #49
+99.5247 Vehicle #3: depart from pickup site #49
+100.323 Vehicle #3: arrive at pickup site #43
+Vehicle #3: empties all 1.447793 of pickup site #43
+100.323 Vehicle #3: depart from pickup site #43
+100.776 Vehicle #3: arrive at pickup site #39
+Vehicle #3: empties all 2.063444 of pickup site #39
+100.776 Vehicle #3: depart from pickup site #39
+101.224 Vehicle #3: arrive at pickup site #14
+Vehicle #3: empties all 1.438249 of pickup site #14
+101.224 Vehicle #3: depart from pickup site #14
+101.523 Vehicle #3: arrive at pickup site #55
+Vehicle #3: empties all 2.243689 of pickup site #55
+101.523 Vehicle #3: depart from pickup site #55
+101.915 Vehicle #3: arrive at depot #1
+120 Vehicle #0: no route for day 5
+120 Vehicle #1: no route for day 5
+120 Vehicle #2: no route for day 5
+120 Vehicle #3: no route for day 5
+144 Vehicle #0: no route for day 6
+144 Vehicle #1: no route for day 6
+144 Vehicle #2: no route for day 6
+144 Vehicle #3: no route for day 6
+168 Vehicle #0: no route for day 7
+168 Vehicle #1: no route for day 7
+168 Vehicle #2: no route for day 7
+168 Vehicle #3: no route for day 7
+192 Vehicle #0: no route for day 8
+192 Vehicle #1: no route for day 8
+192 Vehicle #2: no route for day 8
+192 Vehicle #3: no route for day 8
+216 Vehicle #0: no route for day 9
+216 Vehicle #1: no route for day 9
+216 Vehicle #2: no route for day 9
+216 Vehicle #3: no route for day 9
+240 Vehicle #0: no route for day 10
+240 Vehicle #1: no route for day 10
+240 Vehicle #2: no route for day 10
+240 Vehicle #3: no route for day 10
+264 Vehicle #0: no route for day 11
+264 Vehicle #1: no route for day 11
+264 Vehicle #2: no route for day 11
+264 Vehicle #3: no route for day 11
+288 Vehicle #0: no route for day 12
+288 Vehicle #1: no route for day 12
+288 Vehicle #2: no route for day 12
+288 Vehicle #3: no route for day 12
+312 Vehicle #0: no route for day 13
+312 Vehicle #1: no route for day 13
+312 Vehicle #2: no route for day 13
+312 Vehicle #3: no route for day 13
+Vehicle #0 overtime: 0 h
+Vehicle #0 odometer reading: 63.0543 km
+Vehicle #1 overtime: 0 h
+Vehicle #1 odometer reading: 0 km
+Vehicle #2 overtime: 0 h
+Vehicle #2 odometer reading: 0 km
+Vehicle #3 overtime: 0 h
+Vehicle #3 odometer reading: 742.166 km
+Total overtime: 0 h
+Total odometer: 805.22 km
+Total pickup site overload days: 0
