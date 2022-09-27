@@ -417,7 +417,7 @@ int main() {
   */
 
   Optimizer optimizer(routingInput.num_genes, logisticsSims);
-  int numGenerations = 50000; // 50000
+  int numGenerations = 200000; // 50000
   int numGenerationsPerStep = 100;
   optimizer.initPopulation();
   /*

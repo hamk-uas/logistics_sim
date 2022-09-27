@@ -196,11 +196,13 @@ class Vehicle(IndexedSimEntity):
 		else:
 			# Interpolate between current source and destination locations
 			route_step_fractional_progress = (self.sim.env.now - self.route_step_departure_time) / self.sim.duration_matrix[self.route[self.route_step]][self.route[self.route_step + 1]]
+			if (route_step_fractional_progress > 1): 
+				route_step_fractional_progress = 1 # After travel there may be time spent working at pickup site
 			source_location_lonlats = self.sim.locations[self.route[self.route_step]].lonlat
 			destination_location_lonlats = self.sim.locations[self.route[self.route_step + 1]].lonlat
 			return (
-				source_location_lonlats[0] + route_step_fractional_progress*(source_location_lonlats[0] - source_location_lonlats[0]),
-				source_location_lonlats[1] + route_step_fractional_progress*(source_location_lonlats[1] - source_location_lonlats[1])
+				source_location_lonlats[0] + route_step_fractional_progress*(destination_location_lonlats[0] - source_location_lonlats[0]),
+				source_location_lonlats[1] + route_step_fractional_progress*(destination_location_lonlats[1] - source_location_lonlats[1])
 			)
 
 	def put_load(self, value):
@@ -218,8 +220,8 @@ class Vehicle(IndexedSimEntity):
 			self.moving = True
 			moving_start_time = self.sim.env.now
 			self.route = route
-			self.route_step_departure_time = self.sim.env.now
 			for self.route_step in range(len(route) - 1):
+				self.route_step_departure_time = self.sim.env.now
 				depart_location = self.sim.locations[self.route[self.route_step]]
 				arrive_location = self.sim.locations[self.route[self.route_step + 1]]
 				self.log(f"Depart from {type(depart_location).__name__} #{depart_location.index}")
@@ -332,15 +334,21 @@ class WastePickupSimulation():
 		self.daily_routing_activity = self.env.process(self.daily_routing())	
 
 		# Hourly vehicle tracking (Could be at higher rate)
-		self.vehicle_tracking_activity = self.env.process(self.vehicle_tracking())	
+		self.vehicle_tracking_activity = self.env.process(self.vehicle_tracking())
+
+		# Route logs
+		self.route_logs = [[] for _ in self.vehicles]
 
 	def site_full(self, site):
 		self.warn(f"Site #{site.index} is full.")
 
 	def vehicle_tracking(self):
 		while True:
-			self.log(f"Vehicle locations: {', '.join(map(lambda x: lonlat_to_string(x.get_lonlat()), self.vehicles))}")
-			yield self.env.timeout(60)
+			#self.log(f"Vehicle locations: {', '.join(map(lambda x: lonlat_to_string(x.get_lonlat()), self.vehicles))}")
+			for vehicle in self.vehicles:
+				if vehicle.moving:
+					self.route_logs[vehicle.index].append((self.env.now, vehicle.get_lonlat()))
+			yield self.env.timeout(0.25)
 
 	def daily_monitoring(self):
 		while True:
@@ -383,7 +391,7 @@ class WastePickupSimulation():
 				# Comment/uncomment: genetic algorithm router
 				system('routing_optimizer>routing_optimizer_log.txt')
 				with open('routing_output_1_1.json') as infile:
-					self.routing_output = json.load(infile)
+					self.routing_output = json.load(infile)				
 
 			# Assign routes
 			for vehicle_index, vehicle_routing_output in enumerate(self.routing_output['days'][0]['vehicles']):
@@ -402,6 +410,11 @@ class WastePickupSimulation():
 		end_time = time.time()
 		self.total_time = end_time-start_time # Excuding config preprocessing
 		self.log(f"Simulation finished with {self.total_time}s of computing")
+		with open(f'routes_log.csv', 'w') as f:
+			print("x,y,t", file=f)
+			for vehicle_log in self.route_logs:
+				for stop in vehicle_log:
+					print(f"{stop[1][0]},{stop[1][1]},{stop[0]}", file=f)
 
 
 	def save_log(self):
