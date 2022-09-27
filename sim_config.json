@@ -13,7 +13,7 @@
         {
             "name": "Forssa",
             "Osoite": "Kiimassuontie 127, 30420 FORSSA",
-            "num_vehicles": 1,
+            "num_vehicles": 0,
             "lonlats": [
                 23.58573,
                 60.79055
@@ -21,8 +21,8 @@
             "location_index": 60
         },
         {
-            "name": "H\u00c3\u00a4meenlinna",
-            "Osoite": "Karanojantie 178, 13430 H\u00c3\u201eMEENLINNA",
+            "name": "H\u00e4meenlinna",
+            "Osoite": "Karanojantie 178, 13430 H\u00c4MEENLINNA",
             "num_vehicles": 1,
             "lonlats": [
                 24.47973,
@@ -34,7 +34,7 @@
     "pickup_sites": [
         {
             "ID": "02-10237",
-            "Osoite": "Yhti\u00c3\u00b6nkatu, Forssa",
+            "Osoite": "Yhti\u00f6nkatu, Forssa",
             "Kunta": "Forssa",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
@@ -72,7 +72,7 @@
         },
         {
             "ID": "02-10244",
-            "Osoite": "H\u00c3\u00a4meentie 31, Forssa",
+            "Osoite": "H\u00e4meentie 31, Forssa",
             "Kunta": "Forssa",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
@@ -91,7 +91,7 @@
         },
         {
             "ID": "02-10251",
-            "Osoite": "J\u00c3\u00a4rvenp\u00c3\u00a4\u00c3\u00a4ntie, Forssa",
+            "Osoite": "J\u00e4rvenp\u00e4\u00e4ntie, Forssa",
             "Kunta": "Forssa",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
@@ -129,7 +129,7 @@
         },
         {
             "ID": "02-10253",
-            "Osoite": "Vierem\u00c3\u00a4ntie, Forssa",
+            "Osoite": "Vierem\u00e4ntie, Forssa",
             "Kunta": "Forssa",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
@@ -167,7 +167,7 @@
         },
         {
             "ID": "02-13984",
-            "Osoite": "H\u00c3\u00a4rk\u00c3\u00a4tie 341, Letku",
+            "Osoite": "H\u00e4rk\u00e4tie 341, Letku",
             "Kunta": "Tammela",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
@@ -205,7 +205,7 @@
         },
         {
             "ID": "02-20723",
-            "Osoite": "Etel\u00c3\u00a4inen Puistokatu, Forssa",
+            "Osoite": "Etel\u00e4inen Puistokatu, Forssa",
             "Kunta": "Forssa",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
@@ -224,7 +224,7 @@
         },
         {
             "ID": "02-30085",
-            "Osoite": "Nikkil\u00c3\u00a4nkatu 4, Forssa",
+            "Osoite": "Nikkil\u00e4nkatu 4, Forssa",
             "Kunta": "Forssa",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
@@ -263,7 +263,7 @@
         {
             "ID": "03-10345",
             "Osoite": "Tammitie 5, Oitti",
-            "Kunta": "Hausj\u00c3\u00a4rvi",
+            "Kunta": "Hausj\u00e4rvi",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -281,8 +281,8 @@
         },
         {
             "ID": "03-10348",
-            "Osoite": "Asemantie 4, Hiki\u00c3\u00a4",
-            "Kunta": "Hausj\u00c3\u00a4rvi",
+            "Osoite": "Asemantie 4, Hiki\u00e4",
+            "Kunta": "Hausj\u00e4rvi",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -300,8 +300,8 @@
         },
         {
             "ID": "03-10351",
-            "Osoite": "Ryttyl\u00c3\u00a4ntie 1, Ryttyl\u00c3\u00a4",
-            "Kunta": "Hausj\u00c3\u00a4rvi",
+            "Osoite": "Ryttyl\u00e4ntie 1, Ryttyl\u00e4",
+            "Kunta": "Hausj\u00e4rvi",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -320,7 +320,7 @@
         {
             "ID": "03-10509",
             "Osoite": "Mommilantie 12, Lammi",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -339,7 +339,7 @@
         {
             "ID": "03-10512",
             "Osoite": "Mommilantie 1, Lammi",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -357,8 +357,8 @@
         },
         {
             "ID": "03-10515",
-            "Osoite": "Karhitie 2, H\u00c3\u00a4meenlinna",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Osoite": "Karhitie 2, H\u00e4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -376,8 +376,8 @@
         },
         {
             "ID": "03-10517",
-            "Osoite": "Talaskuja 1, H\u00c3\u00a4meenlinna",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Osoite": "Talaskuja 1, H\u00e4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -395,8 +395,8 @@
         },
         {
             "ID": "03-10518",
-            "Osoite": "Katsastusmiehentie 6, H\u00c3\u00a4meenlinna",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Osoite": "Katsastusmiehentie 6, H\u00e4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -414,8 +414,8 @@
         },
         {
             "ID": "03-10519",
-            "Osoite": "Wartiam\u00c3\u00a4entie 2, H\u00c3\u00a4meenlinna",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Osoite": "Wartiam\u00e4entie 2, H\u00e4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -433,8 +433,8 @@
         },
         {
             "ID": "03-10537",
-            "Osoite": "Viertokatu 31, H\u00c3\u00a4meenlinna",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Osoite": "Viertokatu 31, H\u00e4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -453,7 +453,7 @@
         {
             "ID": "03-10542",
             "Osoite": "Hallintotie 2, Iittala",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -471,8 +471,8 @@
         },
         {
             "ID": "03-10544",
-            "Osoite": "Mantereenlinnantie 4, H\u00c3\u00a4meenlinna",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Osoite": "Mantereenlinnantie 4, H\u00e4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -490,8 +490,8 @@
         },
         {
             "ID": "03-10548",
-            "Osoite": "Suolij\u00c3\u00a4rventie 9, Tuulos",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Osoite": "Suolij\u00e4rventie 9, Tuulos",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -509,8 +509,8 @@
         },
         {
             "ID": "03-10552",
-            "Osoite": "Hauhontie 1626, Etel\u00c3\u00a4inen",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Osoite": "Hauhontie 1626, Etel\u00e4inen",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -529,7 +529,7 @@
         {
             "ID": "03-10559",
             "Osoite": "Alvettulantie 177, Alvettula",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -642,7 +642,7 @@
         },
         {
             "ID": "03-10747",
-            "Osoite": "S\u00c3\u00a4\u00c3\u00a4j\u00c3\u00a4rventie 47, Harviala",
+            "Osoite": "S\u00e4\u00e4j\u00e4rventie 47, Harviala",
             "Kunta": "Janakkala",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
@@ -661,7 +661,7 @@
         },
         {
             "ID": "03-10751",
-            "Osoite": "Haukankalliontie 6, Lepp\u00c3\u00a4koski",
+            "Osoite": "Haukankalliontie 6, Lepp\u00e4koski",
             "Kunta": "Janakkala",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
@@ -718,8 +718,8 @@
         },
         {
             "ID": "03-13372",
-            "Osoite": "Voimalankatu 2, Riihim\u00c3\u00a4ki",
-            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Osoite": "Voimalankatu 2, Riihim\u00e4ki",
+            "Kunta": "Riihim\u00e4ki",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -737,8 +737,8 @@
         },
         {
             "ID": "03-13375",
-            "Osoite": "Lopentie 22, Riihim\u00c3\u00a4ki",
-            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Osoite": "Lopentie 22, Riihim\u00e4ki",
+            "Kunta": "Riihim\u00e4ki",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -756,8 +756,8 @@
         },
         {
             "ID": "03-13379",
-            "Osoite": "Kontiontie 34, Riihim\u00c3\u00a4ki",
-            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Osoite": "Kontiontie 34, Riihim\u00e4ki",
+            "Kunta": "Riihim\u00e4ki",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -775,8 +775,8 @@
         },
         {
             "ID": "03-13381",
-            "Osoite": "Oravankatu 2, Riihim\u00c3\u00a4ki",
-            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Osoite": "Oravankatu 2, Riihim\u00e4ki",
+            "Kunta": "Riihim\u00e4ki",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -794,8 +794,8 @@
         },
         {
             "ID": "03-13383",
-            "Osoite": "Erkyl\u00c3\u00a4ntie 76, Riihim\u00c3\u00a4ki",
-            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Osoite": "Erkyl\u00e4ntie 76, Riihim\u00e4ki",
+            "Kunta": "Riihim\u00e4ki",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -813,8 +813,8 @@
         },
         {
             "ID": "03-13387",
-            "Osoite": "Merkoksenkatu 7, Riihim\u00c3\u00a4ki",
-            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Osoite": "Merkoksenkatu 7, Riihim\u00e4ki",
+            "Kunta": "Riihim\u00e4ki",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -832,8 +832,8 @@
         },
         {
             "ID": "03-13394",
-            "Osoite": "Metsurinkatu, Riihim\u00c3\u00a4ki",
-            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Osoite": "Metsurinkatu, Riihim\u00e4ki",
+            "Kunta": "Riihim\u00e4ki",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -871,7 +871,7 @@
         {
             "ID": "03-20169",
             "Osoite": "Tuulosentie 14, Tuulos",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -909,7 +909,7 @@
         {
             "ID": "03-21221",
             "Osoite": "Hauhontie 16, Hauho",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -927,8 +927,8 @@
         },
         {
             "ID": "03-21260",
-            "Osoite": "Peltosaarenkatu 1, Riihim\u00c3\u00a4ki",
-            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Osoite": "Peltosaarenkatu 1, Riihim\u00e4ki",
+            "Kunta": "Riihim\u00e4ki",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -965,7 +965,7 @@
         },
         {
             "ID": "03-22064",
-            "Osoite": "L\u00c3\u00a4yli\u00c3\u00a4istenraitti 120, L\u00c3\u00a4yli\u00c3\u00a4inen",
+            "Osoite": "L\u00e4yli\u00e4istenraitti 120, L\u00e4yli\u00e4inen",
             "Kunta": "Loppi",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
@@ -984,8 +984,8 @@
         },
         {
             "ID": "03-22916",
-            "Osoite": "Lasitehtaantie 63, Riihim\u00c3\u00a4ki",
-            "Kunta": "Riihim\u00c3\u00a4ki",
+            "Osoite": "Lasitehtaantie 63, Riihim\u00e4ki",
+            "Kunta": "Riihim\u00e4ki",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -1003,8 +1003,8 @@
         },
         {
             "ID": "03-30053",
-            "Osoite": "Visam\u00c3\u00a4entie 16, H\u00c3\u00a4meenlinna",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Osoite": "Visam\u00e4entie 16, H\u00e4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -1022,8 +1022,8 @@
         },
         {
             "ID": "03-30098",
-            "Osoite": "Sammonojantie 11, H\u00c3\u00a4meenlinna",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Osoite": "Sammonojantie 11, H\u00e4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -1042,7 +1042,7 @@
         {
             "ID": "03-30111",
             "Osoite": "Rengonraitti 10 B, Renko",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -1060,8 +1060,8 @@
         },
         {
             "ID": "03-30128",
-            "Osoite": "Harvialantie 4, H\u00c3\u00a4meenlinna",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Osoite": "Harvialantie 4, H\u00e4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -1079,8 +1079,8 @@
         },
         {
             "ID": "03-30129",
-            "Osoite": "Urheilukent\u00c3\u00a4ntie 14, Ryttyl\u00c3\u00a4",
-            "Kunta": "Hausj\u00c3\u00a4rvi",
+            "Osoite": "Urheilukent\u00e4ntie 14, Ryttyl\u00e4",
+            "Kunta": "Hausj\u00e4rvi",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -1098,7 +1098,7 @@
         },
         {
             "ID": "03-30139",
-            "Osoite": "Jylh\u00c3\u00a4ntie 8, Launonen",
+            "Osoite": "Jylh\u00e4ntie 8, Launonen",
             "Kunta": "Loppi",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
@@ -1117,8 +1117,8 @@
         },
         {
             "ID": "03-30142",
-            "Osoite": "Ahvenistontie 13, H\u00c3\u00a4meenlinna",
-            "Kunta": "H\u00c3\u00a4meenlinna",
+            "Osoite": "Ahvenistontie 13, H\u00e4meenlinna",
+            "Kunta": "H\u00e4meenlinna",
             "Kartonkipakkaukset": 1,
             "Lasipakkaukset": 1,
             "Metalli": 1,
@@ -1146,8 +1146,8 @@
             "location_index": 58
         },
         {
-            "name": "H\u00c3\u00a4meenlinna",
-            "Osoite": "Karanojantie 178, 13430 H\u00c3\u201eMEENLINNA",
+            "name": "H\u00e4meenlinna",
+            "Osoite": "Karanojantie 178, 13430 H\u00c4MEENLINNA",
             "lonlats": [
                 24.47973,
                 60.94042

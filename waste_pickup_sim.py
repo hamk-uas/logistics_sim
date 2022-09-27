@@ -184,7 +184,8 @@ class Vehicle(IndexedSimEntity):
 
 		# Location and movement
 		self.moving = False
-		self.location_index = sim.depots[self.home_depot_index].location_index		
+		self.location_index = sim.depots[self.home_depot_index].location_index
+		self.vehicle_odometer = 0	
 
 		self.log(f"At {type(sim.locations[self.location_index]).__name__} #{sim.locations[self.location_index].index}")
 
@@ -219,11 +220,13 @@ class Vehicle(IndexedSimEntity):
 			moving_start_time = self.sim.env.now
 			self.route = route
 			self.route_step_departure_time = self.sim.env.now
+
 			for self.route_step in range(len(route) - 1):
 				depart_location = self.sim.locations[self.route[self.route_step]]
 				arrive_location = self.sim.locations[self.route[self.route_step + 1]]
 				self.log(f"Depart from {type(depart_location).__name__} #{depart_location.index}")
 				yield self.sim.env.timeout(self.sim.duration_matrix[self.route[self.route_step]][self.route[self.route_step + 1]])
+				self.record_distance_travelled(self.sim.distance_matrix[self.route[self.route_step]][self.route[self.route_step + 1]])
 				self.log(f"Arrive at {type(arrive_location).__name__} #{arrive_location.index}")
 
 				if isinstance(arrive_location, PickupSite):
@@ -257,6 +260,14 @@ class Vehicle(IndexedSimEntity):
 			moving_end_time = self.sim.env.now
 			self.total_run_time += moving_end_time - moving_start_time
 			self.location_index = route[-1]
+
+
+
+	def record_distance_travelled(self, distance_driven):
+		"""
+		Remove later?
+		"""
+		self.vehicle_odometer =+ distance_driven
 
 
 # Depot where the vehicles start from in the beginning of the day and go to at the end of the day
@@ -378,10 +389,10 @@ class WastePickupSimulation():
 					json.dump(routing_input, outfile, indent=4)
 
 				# Comment/uncomment: heuristic router
-				self.routing_output = heuristic_router(routing_input)
+				#self.routing_output = heuristic_router(routing_input)
 
 				# Comment/uncomment: genetic algorithm router
-				system('routing_optimizer>routing_optimizer_log.txt')
+				#system('routing_optimizer>routing_optimizer_log.txt')
 				with open('routing_output_1_1.json') as infile:
 					self.routing_output = json.load(infile)
 
@@ -421,7 +432,8 @@ class WastePickupSimulation():
 		"""
 		# Create a dict (record_[time.now.to_string]that records
 		self.sim_records['computational_time'] = self.total_time # comptutational time
-		self.sim_records['vehicles_runtimes'] = [[v.index, v.total_run_time] for v in self.vehicles] # time of vehicles driving
+		self.sim_records['vehicles_driving_stats'] = [{'index':v.index, 'runtime':v.total_run_time, 'distance':v.vehicle_odometer} for v in self.vehicles] # time of vehicles driving
+		#self.sim_records['vehicles_distance'] = [[v.index, v.vehicle_odometer] for v in self.vehicles] # time of vehicles driving
 		# vechicle driving distance
 		# level listeners alerts # are added in warnings level
 		file_name = f"sim_record_{self.run_start}.json"
@@ -429,6 +441,8 @@ class WastePickupSimulation():
 
 		with open(f'run_statistics/{file_name}', 'w') as f:
 			json.dump(self.sim_records, f, indent=4)
+
+		print(f"Simulaton record saved to run_statistics/{file_name}")
 
 
 def preprocess_sim_config(sim_config, sim_config_filename):

@@ -1,0 +1,16 @@
+{
+    "warnings": [],
+    "computational_time": 0.015804052352905273,
+    "vehicles_driving_stats": [
+        {
+            "index": 0,
+            "runtime": 104.50883333333333,
+            "distance": 5541.73
+        },
+        {
+            "index": 1,
+            "runtime": 1082.7083333333344,
+            "distance": 26377.27
+        }
+    ]
+}

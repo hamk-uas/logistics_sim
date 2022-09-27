@@ -368,11 +368,6 @@
     "vehicles": [
         {
             "load_capacity": 18,
-            "home_depot_index": 0,
-            "max_route_duration": 495
-        },
-        {
-            "load_capacity": 18,
             "home_depot_index": 1,
             "max_route_duration": 495
         }
