@@ -19,7 +19,7 @@ You need an API key to https://openrouteservice.org/. The key should be stored i
 ## Compilation
 
 ### To compile the routing optimizer:
-'windows and linux'
+'windows and linux' <br>
 `g++ routing_optimizer.cpp simcpp/simcpp.cpp -std=c++17 -march=native -I. -O3 -ffast-math -fopenmp -o routing_optimizer`
 
 To run the simulation:
