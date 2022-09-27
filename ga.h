@@ -19,7 +19,7 @@ const int simdIntParallelCount = alignof(std::max_align_t) / sizeof(int); // How
 // A cost function must be provided in an object of a user class that inherits HasCostFunction
 class HasCostFunction {
 public:
-  virtual double costFunction(const int *genome) = 0;
+  virtual double costFunction(const int *genome, double earlyOutThreshold = std::numeric_limits<double>::max()) = 0;
 };
 
 // An optimizer class with will store the population and its costs, and has everything needed for the optimization.
@@ -134,7 +134,7 @@ public:
           int p0 = shot[j + k];
           int p1 = j + k;
           crossover(population[p0], population[p1], nextGen[j + k], omp_get_thread_num());
-          nextGenCosts[j + k] = haveCostFunction[omp_get_thread_num()]->costFunction(nextGen[j + k]);
+          nextGenCosts[j + k] = haveCostFunction[omp_get_thread_num()]->costFunction(nextGen[j + k], costs[j + k]);
           if (nextGenCosts[j + k] > costs[j + k])
           {
             std::swap(population[j + k], nextGen[j + k]);

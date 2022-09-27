@@ -161,7 +161,7 @@ public:
   int totalNumPickupSiteOverloadDays;
 
   // Member functions
-  double costFunction(const int *genome);
+  double costFunction(const int *genome, double earlyOutThreshold = std::numeric_limits<double>::max());
   bool pickup(int vehicleIndex, int pickupSiteIndex);
 
   // Constructor
@@ -342,7 +342,7 @@ public:
 };
 
 // Logistics simulation class member function: cost function
-double LogisticsSimulation::costFunction(const int *genome) {
+double LogisticsSimulation::costFunction(const int *genome, double earlyOutThreshold) {
   // Interpret genome
   this->genome = genome;
   if (debug >= 2) printf("Genome size: %d\n", routingInput.num_genes);
@@ -417,7 +417,7 @@ int main() {
   */
 
   Optimizer optimizer(routingInput.num_genes, logisticsSims);
-  int numGenerations = 50000; // 50000
+  int numGenerations = 200000; // 50000
   int numGenerationsPerStep = 100;
   optimizer.initPopulation();
   /*
