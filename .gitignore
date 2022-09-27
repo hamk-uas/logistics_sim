@@ -1,5 +1,5 @@
 *.exe
-.vscode/settings.json
+.vscode
 secrets.py
 routing_optimizer
 routing_optimizer.exe
