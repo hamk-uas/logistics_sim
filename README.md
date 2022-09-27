@@ -13,6 +13,9 @@ The Python version used is Python 3.10.4.
 The Python modules listed in requirements.txt are needed. You can install them by:
 `pip install -r requirements.txt`
 
+You need an API key to https://openrouteservice.org/. The key should be stored in `/waste_pickup_sim_secrets.py` in the following format (replace # with your key):
+`API_key = '########################################################'`
+
 ## Compilation
 
 To compile the routing optimizer:
