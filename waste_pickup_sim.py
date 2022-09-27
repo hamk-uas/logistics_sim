@@ -11,7 +11,7 @@ from os.path import exists
 from datetime import datetime
 from os import system
 
-from get_distance_matrix import get_distance_and_duration_matrix
+from routing_api import get_distance_and_duration_matrix
 
 
 def time_to_string(minutes):
@@ -392,15 +392,15 @@ class WastePickupSimulation():
 					'duration_matrix': self.config['duration_matrix']
 				}
 
-				with open('routing_input.json', 'w') as outfile:
+				with open('temp/routing_input.json', 'w') as outfile:
 					json.dump(routing_input, outfile, indent=4)
 
 				# Comment/uncomment: heuristic router
 				#self.routing_output = heuristic_router(routing_input)
 
 				# Comment/uncomment: genetic algorithm router
-				#system('routing_optimizer>routing_optimizer_log.txt')
-				with open('routing_output_1_1.json') as infile:
+				#system('routing_optimizer>log/routing_optimizer_log.txt')
+				with open('temp/routing_output.json') as infile:
 					self.routing_output = json.load(infile)				
 
 			# Assign routes
@@ -420,7 +420,8 @@ class WastePickupSimulation():
 		end_time = time.time()
 		self.total_time = end_time-start_time # Excuding config preprocessing
 		self.log(f"Simulation finished with {self.total_time}s of computing")
-		with open(f'routes_log.csv', 'w') as f:
+		file_name = f"log/routes_log_{self.run_start}.json"
+		with open(file_name, 'w') as f:
 			print("x,y,t", file=f)
 			for vehicle_log in self.route_logs:
 				for stop in vehicle_log:
@@ -435,7 +436,7 @@ class WastePickupSimulation():
 		json_log = json.dumps(self.action_log)
 		file_name = f"sim_log_{self.run_start}.json"
 		# TODO! select folder structure for saving data
-		with open(f'run_statistics/{file_name}', 'w') as f:
+		with open(f'log/{file_name}', 'w') as f:
 			json.dump(json_log, f, indent=4)
 
 
@@ -451,10 +452,10 @@ class WastePickupSimulation():
 		file_name = f"sim_record_{self.run_start}.json"
 
 
-		with open(f'run_statistics/{file_name}', 'w') as f:
+		with open(f'log/{file_name}', 'w') as f:
 			json.dump(self.sim_records, f, indent=4)
 
-		print(f"Simulaton record saved to run_statistics/{file_name}")
+		print(f"Simulaton record saved to logs/{file_name}")
 
 
 def preprocess_sim_config(sim_config, sim_config_filename):

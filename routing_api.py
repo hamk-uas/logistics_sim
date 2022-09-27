@@ -1,8 +1,8 @@
 from secrets import API_key
+# secrets.py contents should be in format (replace # with your API key):
+# API_key = '########################################################'
 
-import json
 import requests
-import openrouteservice
 import numpy as np
 
 def get_distance_and_duration_matrix(coords):

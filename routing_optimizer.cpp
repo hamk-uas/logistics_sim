@@ -1,3 +1,8 @@
+// Copyright 2022 Häme University of Applied Sciences
+// Authors: Olli Niemitalo, Genrikh Ekkerman
+//
+// This work is licensed under the MIT license and is distributed without any warranty.
+
 // g++ routing_optimizer.cpp simcpp/simcpp.cpp -std=c++17 -march=native -I. -O3 -ffast-math -fopenmp -o routing_optimizer
 #include <stdio.h>
 #include "ga.h"
@@ -402,7 +407,7 @@ LogisticsSimulation::LogisticsSimulation(RoutingInput &routingInput):
 }
 
 int main() {
-  std::ifstream f("routing_input.json");
+  std::ifstream f("temp/routing_input.json");
   RoutingInput routingInput(json::parse(f).get<RoutingInput>());
   std::vector<HasCostFunction*> logisticsSims;
   for (int i = 0; i < omp_get_max_threads(); i++) {
@@ -484,7 +489,7 @@ int main() {
     routingOutput.days.push_back(dayOutput);    
   }
   json j = routingOutput;  
-  std::ofstream o("routing_output_1_1.json");
+  std::ofstream o("temp/routing_output.json");
   o << std::setw(4) << j << std::endl;
 
   return 0;
