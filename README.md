@@ -1,6 +1,6 @@
 # Logistics simulation and optimization
 
-https://user-images.githubusercontent.com/60920087/192505697-90068524-3c6b-4b08-8659-9126d52cef62.mov
+<video src='https://user-images.githubusercontent.com/60920087/192505697-90068524-3c6b-4b08-8659-9126d52cef62.mov' width=664></video>
 
 A demo of simulation and optimization of glass waste pickup from Rinki sites in the area of the following municipalities: Hämeenlinna, Hattula, Janakkala, Hausjärvi, Riihimäki, Loppi, Tammela, Forssa, Jokioinen.
 
