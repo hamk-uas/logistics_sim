@@ -10,10 +10,10 @@ https://rinkiin.fi/kotitalouksille/rinki-ekopisteet/
 
 The Python version used is Python 3.10.4.
 
-The Python modules listed in requirements.txt are needed. You can install them by:
+The Python modules listed in requirements.txt are needed. You can install them by:<br>
 `pip install -r requirements.txt`
 
-You need an API key to https://openrouteservice.org/. The key should be stored in `/waste_pickup_sim_secrets.py` in the following format (replace # with your key):
+You need an API key to https://openrouteservice.org/. The key should be stored in `/waste_pickup_sim_secrets.py` in the following format (replace # with your key):<br>
 `API_key = '########################################################'`
 
 ## Compilation
@@ -22,8 +22,7 @@ You need an API key to https://openrouteservice.org/. The key should be stored i
 'windows and linux' <br>
 `g++ routing_optimizer.cpp simcpp/simcpp.cpp -std=c++17 -march=native -I. -O3 -ffast-math -fopenmp -o routing_optimizer`
 
-To run the simulation:
-
+To run the simulation:<br>
 `python routing_optimizer_test.py`
 
 ## Copyright and license
