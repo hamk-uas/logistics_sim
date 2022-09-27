@@ -32,6 +32,7 @@ To run the simulation:<br>
 ## Copyright and license
 
 Copyright 2022 Häme University of Applied Sciences
+
 Authors: Olli Niemitalo, Genrikh Ekkerman
 
 This work is licensed under the MIT license and is distributed without any warranty.
