@@ -1,0 +1,224 @@
+Population size: 520
+0,6012.099230
+100,3512.179500
+200,3071.232332
+300,2980.073539
+400,2625.608648
+500,2314.733895
+600,2170.371875
+700,2166.019315
+800,2011.487250
+900,1951.299000
+1000,1812.741375
+1100,1758.419375
+1200,1604.848067
+1300,1574.085375
+1400,1477.561339
+1500,1353.762375
+1600,1350.912561
+1700,1306.543625
+1800,1217.160001
+1900,1141.386625
+2000,1141.386625
+Genome size: 130
+First non-pickup-site gene: 116
+Vehicle #0 will start day 0 route at locus 0
+Vehicle #0 start day 1 route at locus 8
+Vehicle #0 start day 2 route at locus 16
+Vehicle #0 start day 3 route at locus 22
+Vehicle #0 start day 4 route at locus 33
+Vehicle #0 start day 5 route at locus 36
+Vehicle #0 start day 6 route at locus 43
+Vehicle #0 start day 7 route at locus 46
+Vehicle #0 start day 8 route at locus 54
+Vehicle #0 start day 9 route at locus 56
+Vehicle #0 start day 10 route at locus 57
+Vehicle #0 start day 11 route at locus 58
+Vehicle #0 start day 12 route at locus 59
+Vehicle #0 start day 13 route at locus 60
+0 Vehicle #0: depart from depot #1
+1.08189 Vehicle #0: arrive at pickup site #0
+Vehicle #0: empties all 1.756786 of pickup site #0
+1.08189 Vehicle #0: depart from pickup site #0
+1.34774 Vehicle #0: arrive at pickup site #8
+Vehicle #0: empties all 1.036668 of pickup site #8
+1.34774 Vehicle #0: depart from pickup site #8
+1.65707 Vehicle #0: arrive at pickup site #1
+Vehicle #0: empties all 0.478927 of pickup site #1
+1.65707 Vehicle #0: depart from pickup site #1
+1.99828 Vehicle #0: arrive at pickup site #3
+Vehicle #0: empties all 2.078823 of pickup site #3
+1.99828 Vehicle #0: depart from pickup site #3
+2.35052 Vehicle #0: arrive at pickup site #5
+Vehicle #0: empties all 0.775928 of pickup site #5
+2.35052 Vehicle #0: depart from pickup site #5
+3.27737 Vehicle #0: arrive at pickup site #34
+Vehicle #0: empties all 1.234033 of pickup site #34
+3.27737 Vehicle #0: depart from pickup site #34
+4.21768 Vehicle #0: arrive at pickup site #31
+Vehicle #0: empties all 0.789510 of pickup site #31
+4.21768 Vehicle #0: depart from pickup site #31
+4.88459 Vehicle #0: arrive at pickup site #57
+Vehicle #0: empties all 0.683372 of pickup site #57
+4.88459 Vehicle #0: depart from pickup site #57
+5.07575 Vehicle #0: arrive at depot #1 and dump all 8.83405
+6%, 6%, 10%, 6%, 8%, 6%, 20%, 21%, 6%, 28%, 29%, 35%, 23%, 47%, 54%, 19%, 60%, 41%, 8%, 78%, 31%, 47%, 83%, 68%, 13%, 21%, 37%, 27%, 28%, 50%, 12%, 5%, 6%, 71%, 6%, 12%, 74%, 55%, 30%, 32%, 77%, 44%, 67%, 50%, 48%, 41%, 31%, 46%, 38%, 66%, 80%, 70%, 71%, 21%, 70%, 78%, 24%, 6%, 
+24 Vehicle #0: depart from depot #1
+25.0078 Vehicle #0: arrive at pickup site #16
+Vehicle #0: empties all 0.601198 of pickup site #16
+25.0078 Vehicle #0: depart from pickup site #16
+25.8338 Vehicle #0: arrive at pickup site #28
+Vehicle #0: empties all 0.837954 of pickup site #28
+25.8338 Vehicle #0: depart from pickup site #28
+26.7053 Vehicle #0: arrive at pickup site #34
+Vehicle #0: empties all 0.126697 of pickup site #34
+26.7053 Vehicle #0: depart from pickup site #34
+27.2004 Vehicle #0: arrive at pickup site #49
+Vehicle #0: empties all 1.327323 of pickup site #49
+27.2004 Vehicle #0: depart from pickup site #49
+27.9493 Vehicle #0: arrive at pickup site #38
+Vehicle #0: empties all 0.606510 of pickup site #38
+27.9493 Vehicle #0: depart from pickup site #38
+28.2892 Vehicle #0: arrive at pickup site #50
+Vehicle #0: empties all 2.389389 of pickup site #50
+28.2892 Vehicle #0: depart from pickup site #50
+28.7118 Vehicle #0: arrive at pickup site #42
+Vehicle #0: empties all 0.667875 of pickup site #42
+28.7118 Vehicle #0: depart from pickup site #42
+29.2431 Vehicle #0: arrive at depot #1 and dump all 6.55695
+12%, 11%, 16%, 11%, 15%, 12%, 25%, 27%, 12%, 33%, 34%, 41%, 29%, 52%, 59%, 25%, 5%, 46%, 14%, 83%, 37%, 52%, 88%, 74%, 19%, 27%, 42%, 33%, 5%, 56%, 18%, 11%, 11%, 77%, 6%, 18%, 80%, 61%, 5%, 37%, 83%, 51%, 6%, 56%, 53%, 48%, 37%, 52%, 44%, 6%, 5%, 76%, 77%, 27%, 76%, 84%, 29%, 11%, 
+48 Vehicle #0: depart from depot #1
+48.4546 Vehicle #0: arrive at pickup site #17
+Vehicle #0: empties all 0.463122 of pickup site #17
+48.4546 Vehicle #0: depart from pickup site #17
+48.9695 Vehicle #0: arrive at pickup site #48
+Vehicle #0: empties all 0.880218 of pickup site #48
+48.9695 Vehicle #0: depart from pickup site #48
+49.4704 Vehicle #0: arrive at pickup site #57
+Vehicle #0: empties all 0.221203 of pickup site #57
+49.4704 Vehicle #0: depart from pickup site #57
+50.1657 Vehicle #0: arrive at pickup site #41
+Vehicle #0: empties all 0.508658 of pickup site #41
+50.1657 Vehicle #0: depart from pickup site #41
+50.5568 Vehicle #0: arrive at pickup site #47
+Vehicle #0: empties all 0.517776 of pickup site #47
+50.5568 Vehicle #0: depart from pickup site #47
+51.0603 Vehicle #0: arrive at depot #1 and dump all 2.59098
+18%, 17%, 21%, 17%, 22%, 19%, 31%, 33%, 18%, 37%, 39%, 47%, 36%, 58%, 65%, 31%, 11%, 6%, 20%, 88%, 44%, 57%, 93%, 79%, 26%, 33%, 48%, 38%, 11%, 62%, 24%, 16%, 16%, 83%, 13%, 25%, 85%, 66%, 11%, 43%, 90%, 7%, 12%, 61%, 59%, 54%, 42%, 6%, 6%, 12%, 11%, 81%, 83%, 33%, 82%, 91%, 34%, 6%, 
+72 Vehicle #0: depart from depot #1
+72.6679 Vehicle #0: arrive at pickup site #22
+Vehicle #0: empties all 2.777324 of pickup site #22
+72.6679 Vehicle #0: depart from pickup site #22
+73.1975 Vehicle #0: arrive at pickup site #19
+Vehicle #0: empties all 0.881679 of pickup site #19
+73.1975 Vehicle #0: depart from pickup site #19
+73.8689 Vehicle #0: arrive at pickup site #31
+Vehicle #0: empties all 0.164953 of pickup site #31
+73.8689 Vehicle #0: depart from pickup site #31
+74.5244 Vehicle #0: arrive at pickup site #55
+Vehicle #0: empties all 2.717213 of pickup site #55
+74.5244 Vehicle #0: depart from pickup site #55
+75.044 Vehicle #0: arrive at pickup site #36
+Vehicle #0: empties all 0.848112 of pickup site #36
+75.044 Vehicle #0: depart from pickup site #36
+75.5346 Vehicle #0: arrive at pickup site #13
+Vehicle #0: empties all 0.578989 of pickup site #13
+75.5346 Vehicle #0: depart from pickup site #13
+75.9783 Vehicle #0: arrive at pickup site #40
+Vehicle #0: empties all 1.791419 of pickup site #40
+75.9783 Vehicle #0: depart from pickup site #40
+76.6099 Vehicle #0: arrive at pickup site #33
+Vehicle #0: empties all 2.503833 of pickup site #33
+76.6099 Vehicle #0: depart from pickup site #33
+77.093 Vehicle #0: arrive at pickup site #29
+Vehicle #0: empties all 1.874100 of pickup site #29
+77.093 Vehicle #0: depart from pickup site #29
+77.7956 Vehicle #0: arrive at pickup site #23
+Vehicle #0: empties all 0.794943 of pickup site #23
+77.7956 Vehicle #0: depart from pickup site #23
+78.0529 Vehicle #0: arrive at depot #1 and dump all 14.9326
+24%, 23%, 27%, 22%, 28%, 25%, 36%, 39%, 23%, 42%, 44%, 53%, 42%, 6%, 70%, 37%, 16%, 11%, 26%, 5%, 50%, 62%, 5%, 6%, 32%, 39%, 54%, 44%, 16%, 6%, 30%, 5%, 22%, 6%, 19%, 31%, 5%, 72%, 16%, 48%, 6%, 13%, 18%, 66%, 65%, 61%, 48%, 11%, 11%, 18%, 16%, 86%, 89%, 39%, 88%, 6%, 40%, 11%, 
+96 Vehicle #0: depart from depot #1
+96.4645 Vehicle #0: arrive at pickup site #18
+Vehicle #0: empties all 0.255774 of pickup site #18
+96.4645 Vehicle #0: depart from pickup site #18
+97.0218 Vehicle #0: arrive at pickup site #27
+Vehicle #0: empties all 1.316613 of pickup site #27
+97.0218 Vehicle #0: depart from pickup site #27
+97.2635 Vehicle #0: arrive at depot #1 and dump all 1.57239
+30%, 28%, 33%, 28%, 35%, 31%, 42%, 45%, 29%, 47%, 49%, 59%, 49%, 11%, 76%, 43%, 22%, 17%, 6%, 10%, 56%, 67%, 10%, 12%, 38%, 45%, 59%, 6%, 22%, 13%, 35%, 11%, 27%, 12%, 25%, 37%, 11%, 78%, 22%, 54%, 12%, 20%, 24%, 72%, 70%, 68%, 54%, 17%, 17%, 24%, 21%, 92%, 96%, 44%, 93%, 13%, 45%, 17%, 
+120 Vehicle #0: depart from depot #1
+120.503 Vehicle #0: arrive at pickup site #52
+Vehicle #0: empties all 0.956041 of pickup site #52
+120.503 Vehicle #0: depart from pickup site #52
+121.026 Vehicle #0: arrive at pickup site #54
+Vehicle #0: empties all 1.868907 of pickup site #54
+121.026 Vehicle #0: depart from pickup site #54
+121.5 Vehicle #0: arrive at pickup site #45
+Vehicle #0: empties all 0.676138 of pickup site #45
+121.5 Vehicle #0: depart from pickup site #45
+121.967 Vehicle #0: arrive at pickup site #51
+Vehicle #0: empties all 1.836457 of pickup site #51
+121.967 Vehicle #0: depart from pickup site #51
+122.585 Vehicle #0: arrive at pickup site #39
+Vehicle #0: empties all 1.081211 of pickup site #39
+122.585 Vehicle #0: depart from pickup site #39
+123.032 Vehicle #0: arrive at pickup site #14
+Vehicle #0: empties all 2.269836 of pickup site #14
+123.032 Vehicle #0: depart from pickup site #14
+123.406 Vehicle #0: arrive at depot #1 and dump all 8.68859
+36%, 34%, 38%, 33%, 42%, 37%, 47%, 51%, 35%, 52%, 54%, 65%, 56%, 17%, 5%, 48%, 27%, 22%, 11%, 15%, 62%, 72%, 15%, 17%, 44%, 51%, 65%, 11%, 27%, 19%, 41%, 16%, 32%, 18%, 32%, 44%, 16%, 83%, 27%, 6%, 19%, 26%, 30%, 77%, 76%, 7%, 60%, 22%, 22%, 30%, 26%, 5%, 6%, 50%, 6%, 19%, 50%, 22%, 
+144 Vehicle #0: depart from depot #1
+144.868 Vehicle #0: arrive at pickup site #44
+Vehicle #0: empties all 0.759817 of pickup site #44
+144.868 Vehicle #0: depart from pickup site #44
+145.578 Vehicle #0: arrive at pickup site #21
+Vehicle #0: empties all 2.158525 of pickup site #21
+145.578 Vehicle #0: depart from pickup site #21
+145.845 Vehicle #0: arrive at depot #1 and dump all 2.91834
+42%, 39%, 44%, 39%, 48%, 43%, 53%, 57%, 41%, 56%, 60%, 71%, 62%, 22%, 11%, 54%, 32%, 28%, 17%, 21%, 68%, 5%, 20%, 23%, 50%, 56%, 71%, 17%, 33%, 25%, 47%, 22%, 38%, 24%, 38%, 50%, 21%, 89%, 33%, 11%, 25%, 33%, 36%, 82%, 6%, 13%, 65%, 28%, 28%, 36%, 32%, 11%, 13%, 56%, 12%, 25%, 56%, 28%, 
+168 Vehicle #0: depart from depot #1
+168.592 Vehicle #0: arrive at pickup site #43
+Vehicle #0: empties all 1.648063 of pickup site #43
+168.592 Vehicle #0: depart from pickup site #43
+169.308 Vehicle #0: arrive at pickup site #12
+Vehicle #0: empties all 1.868637 of pickup site #12
+169.308 Vehicle #0: depart from pickup site #12
+169.919 Vehicle #0: arrive at pickup site #37
+Vehicle #0: empties all 2.659378 of pickup site #37
+169.919 Vehicle #0: depart from pickup site #37
+170.639 Vehicle #0: arrive at pickup site #20
+Vehicle #0: empties all 0.683662 of pickup site #20
+170.639 Vehicle #0: depart from pickup site #20
+171.055 Vehicle #0: arrive at pickup site #54
+Vehicle #0: empties all 0.230801 of pickup site #54
+171.055 Vehicle #0: depart from pickup site #54
+171.877 Vehicle #0: arrive at pickup site #46
+Vehicle #0: empties all 1.309964 of pickup site #46
+171.877 Vehicle #0: depart from pickup site #46
+172.313 Vehicle #0: arrive at pickup site #26
+Vehicle #0: empties all 2.119028 of pickup site #26
+172.313 Vehicle #0: depart from pickup site #26
+172.865 Vehicle #0: arrive at depot #1 and dump all 10.5195
+48%, 45%, 49%, 45%, 55%, 49%, 58%, 63%, 47%, 61%, 65%, 76%, 7%, 28%, 16%, 60%, 38%, 33%, 23%, 26%, 6%, 10%, 25%, 29%, 56%, 62%, 6%, 22%, 38%, 32%, 53%, 27%, 43%, 30%, 44%, 56%, 26%, 6%, 38%, 17%, 31%, 39%, 41%, 5%, 11%, 20%, 6%, 33%, 34%, 41%, 37%, 16%, 19%, 62%, 6%, 31%, 61%, 33%, 
+192 Vehicle #0: depart from depot #1
+192.641 Vehicle #0: arrive at pickup site #11
+Vehicle #0: empties all 2.294478 of pickup site #11
+192.641 Vehicle #0: depart from pickup site #11
+193.036 Vehicle #0: arrive at depot #1 and dump all 2.29448
+54%, 51%, 55%, 50%, 62%, 56%, 64%, 69%, 53%, 66%, 70%, 6%, 13%, 34%, 22%, 66%, 43%, 39%, 29%, 31%, 12%, 15%, 30%, 35%, 62%, 68%, 11%, 28%, 44%, 38%, 59%, 33%, 49%, 36%, 51%, 62%, 32%, 11%, 44%, 22%, 37%, 46%, 47%, 11%, 17%, 27%, 12%, 39%, 39%, 47%, 42%, 22%, 25%, 68%, 12%, 38%, 66%, 39%, 
+216 Vehicle #0: no route for day 9
+60%, 56%, 60%, 56%, 69%, 62%, 69%, 75%, 59%, 70%, 75%, 12%, 20%, 39%, 27%, 71%, 48%, 44%, 34%, 36%, 19%, 20%, 35%, 41%, 69%, 74%, 17%, 33%, 49%, 44%, 65%, 38%, 54%, 43%, 57%, 69%, 37%, 17%, 49%, 28%, 43%, 52%, 53%, 16%, 23%, 33%, 17%, 44%, 45%, 53%, 47%, 27%, 31%, 74%, 17%, 44%, 72%, 44%, 
+240 Vehicle #0: no route for day 10
+66%, 62%, 66%, 61%, 75%, 68%, 75%, 81%, 64%, 75%, 80%, 18%, 26%, 45%, 32%, 77%, 54%, 50%, 40%, 41%, 25%, 25%, 40%, 47%, 75%, 80%, 23%, 39%, 55%, 51%, 71%, 44%, 59%, 49%, 63%, 75%, 42%, 22%, 54%, 34%, 50%, 59%, 59%, 21%, 28%, 40%, 23%, 50%, 50%, 59%, 53%, 33%, 38%, 80%, 23%, 50%, 77%, 50%, 
+264 Vehicle #0: no route for day 11
+72%, 68%, 72%, 67%, 82%, 74%, 80%, 87%, 70%, 80%, 85%, 24%, 33%, 50%, 38%, 83%, 59%, 56%, 46%, 46%, 31%, 30%, 45%, 52%, 81%, 85%, 28%, 44%, 60%, 57%, 77%, 49%, 65%, 55%, 70%, 81%, 47%, 28%, 60%, 39%, 56%, 65%, 65%, 27%, 34%, 47%, 29%, 55%, 56%, 65%, 58%, 38%, 44%, 86%, 29%, 57%, 82%, 55%, 
+288 Vehicle #0: no route for day 12
+78%, 73%, 77%, 73%, 89%, 80%, 85%, 93%, 76%, 85%, 91%, 29%, 40%, 56%, 43%, 89%, 65%, 61%, 51%, 51%, 37%, 35%, 50%, 58%, 87%, 91%, 34%, 50%, 65%, 64%, 83%, 55%, 70%, 61%, 76%, 87%, 53%, 33%, 65%, 45%, 62%, 72%, 71%, 32%, 40%, 53%, 35%, 61%, 61%, 71%, 63%, 43%, 50%, 92%, 35%, 63%, 87%, 61%, 
+312 Vehicle #0: no route for day 13
+84%, 79%, 83%, 78%, 95%, 86%, 91%, 99%, 82%, 89%, 96%, 35%, 46%, 61%, 49%, 95%, 70%, 67%, 57%, 57%, 43%, 40%, 55%, 64%, 93%, 97%, 40%, 55%, 71%, 70%, 89%, 60%, 75%, 67%, 82%, 94%, 58%, 39%, 71%, 50%, 68%, 79%, 77%, 38%, 46%, 60%, 40%, 67%, 67%, 77%, 69%, 49%, 56%, 98%, 40%, 69%, 93%, 66%, 
+Vehicle #0 overtime: 0 h
+Vehicle #0 odometer reading: 1141.39 km
+Total overtime: 0 h
+Total odometer: 1141.39 km
+Total pickup site overload days: 0

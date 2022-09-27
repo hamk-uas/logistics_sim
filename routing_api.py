@@ -1,5 +1,5 @@
-from secrets import API_key
-# secrets.py contents should be in format (replace # with your API key):
+from waste_pickup_sim_secrets import API_key
+# waste_pickup_sim_secrets.py contents should be in format (replace # with your API key):
 # API_key = '########################################################'
 
 import requests

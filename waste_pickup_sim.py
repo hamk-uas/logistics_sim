@@ -9,7 +9,7 @@ import functools
 from geopy.distance import geodesic
 from os.path import exists
 from datetime import datetime
-from os import system
+import os
 
 from routing_api import get_distance_and_duration_matrix
 
@@ -392,16 +392,20 @@ class WastePickupSimulation():
 					'duration_matrix': self.config['duration_matrix']
 				}
 
-				with open('temp/routing_input.json', 'w') as outfile:
+				filename = 'temp/routing_input.json'
+				os.makedirs(os.path.dirname(filename), exist_ok=True)
+				with open(filename, 'w') as outfile:
 					json.dump(routing_input, outfile, indent=4)
 
 				# Comment/uncomment: heuristic router
 				#self.routing_output = heuristic_router(routing_input)
 
 				# Comment/uncomment: genetic algorithm router
-				#system('routing_optimizer>log/routing_optimizer_log.txt')
+				filename = 'log/routing_optimizer_log.txt'
+				os.makedirs(os.path.dirname(filename), exist_ok=True)
+				os.system(f"routing_optimizer>{filename}")
 				with open('temp/routing_output.json') as infile:
-					self.routing_output = json.load(infile)				
+					self.routing_output = json.load(infile)
 
 			# Assign routes
 			for vehicle_index, vehicle_routing_output in enumerate(self.routing_output['days'][0]['vehicles']):
@@ -420,8 +424,9 @@ class WastePickupSimulation():
 		end_time = time.time()
 		self.total_time = end_time-start_time # Excuding config preprocessing
 		self.log(f"Simulation finished with {self.total_time}s of computing")
-		file_name = f"log/routes_log_{self.run_start}.json"
-		with open(file_name, 'w') as f:
+		filename = f"log/routes_log_{self.run_start}.json"
+		os.makedirs(os.path.dirname(filename), exist_ok=True)
+		with open(filename, 'w') as f:
 			print("x,y,t", file=f)
 			for vehicle_log in self.route_logs:
 				for stop in vehicle_log:
@@ -434,9 +439,10 @@ class WastePickupSimulation():
 		"""
 		# Get log from saved Save log as csv file
 		json_log = json.dumps(self.action_log)
-		file_name = f"sim_log_{self.run_start}.json"
+		filename = f"log/sim_log_{self.run_start}.json"
 		# TODO! select folder structure for saving data
-		with open(f'log/{file_name}', 'w') as f:
+		os.makedirs(os.path.dirname(filename), exist_ok=True)
+		with open(f'{filename}', 'w') as f:
 			json.dump(json_log, f, indent=4)
 
 
@@ -449,13 +455,13 @@ class WastePickupSimulation():
 		#self.sim_records['vehicles_distance'] = [[v.index, v.vehicle_odometer] for v in self.vehicles] # time of vehicles driving
 		# vechicle driving distance
 		# level listeners alerts # are added in warnings level
-		file_name = f"sim_record_{self.run_start}.json"
+		filename = f"log/sim_record_{self.run_start}.json"
 
-
-		with open(f'log/{file_name}', 'w') as f:
+		os.makedirs(os.path.dirname(filename), exist_ok=True)
+		with open(f'{filename}', 'w') as f:
 			json.dump(self.sim_records, f, indent=4)
 
-		print(f"Simulaton record saved to logs/{file_name}")
+		print(f"Simulaton record saved to {filename}")
 
 
 def preprocess_sim_config(sim_config, sim_config_filename):
@@ -504,11 +510,14 @@ def preprocess_sim_config(sim_config, sim_config_filename):
 	sim_config['location_lonlats'] = list(map(lambda x: set_location_index_and_get_lonlats(x[1], x[0]), enumerate([*sim_config['pickup_sites'], *sim_config['terminals'], *sim_config['depots']])))
 
 	# Load previous sim config
-	with open(sim_config_filename) as cached_sim_config_file:
-		cached_sim_config = json.load(cached_sim_config_file)
+	try:
+		with open(sim_config_filename) as cached_sim_config_file:
+			cached_sim_config = json.load(cached_sim_config_file)
+	except:
+		cached_sim_config = None
 
 	# Use previous distance and duration matrixes if the locations match within 0.001 deg of absolute error
-	if np.sum(np.absolute(np.array(cached_sim_config['location_lonlats']) - np.array(sim_config['location_lonlats']))) < 0.001:
+	if cached_sim_config != None and np.sum(np.absolute(np.array(cached_sim_config['location_lonlats']) - np.array(sim_config['location_lonlats']))) < 0.001:
 		sim_config['distance_matrix'] = cached_sim_config['distance_matrix']
 		sim_config['duration_matrix'] = cached_sim_config['duration_matrix']
 	else:
@@ -527,5 +536,6 @@ def preprocess_sim_config(sim_config, sim_config_filename):
 		sim_config['distance_matrix'] = distance_and_duration_matrixes["distance_matrix"].tolist()
 		sim_config['duration_matrix'] = distance_and_duration_matrixes["duration_matrix"].tolist()
 
+	os.makedirs(os.path.dirname(sim_config_filename), exist_ok=True)
 	with open(sim_config_filename, 'w') as outfile:
 		json.dump(sim_config, outfile, indent=4)
