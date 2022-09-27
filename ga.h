@@ -1,5 +1,6 @@
 // Copyright 2022 Häme University of Applied Sciences
-// Authors: Olli Niemitalo
+// Authors: Olli Niemitalo, Genrikh Ekkerman
+// Based on https://github.com/hamk-uas/assembly-line-sequencing-ga
 //
 // This work is licensed under the MIT license and is distributed without any warranty.
 

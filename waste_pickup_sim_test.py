@@ -43,7 +43,7 @@ def test_record():
 
 random.seed(42)
 np.random.seed(42)
-waste_pickup_sim.preprocess_sim_config(sim_config, 'sim_config.json')
+waste_pickup_sim.preprocess_sim_config(sim_config, 'temp/sim_preprocessed_config.json')
 sim = waste_pickup_sim.WastePickupSimulation(sim_config)
 sim.sim_run()
 sim.save_log()
