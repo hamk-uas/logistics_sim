@@ -10,7 +10,7 @@ For more information about Rinki see:
 https://rinkiin.fi/tietoa-ringista/suomen-kerayslasiyhdistys/lasipakkausten-terminaalit/
 https://rinkiin.fi/kotitalouksille/rinki-ekopisteet/
 
-## prerequisites
+## Prerequisites
 
 The Python version used is Python 3.10.4.
 
