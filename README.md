@@ -6,6 +6,8 @@ A demo of simulation and optimization of glass waste pickup from Rinki sites in 
 
 Topographic map licensed under CC BY 4.0 by National Land Survey of Finland, retrieved 2022-09.
 
+![image](https://user-images.githubusercontent.com/60920087/192996547-d9436861-049c-41b9-b1e8-404f44c1c626.png)
+
 For more information about Rinki see:
 https://rinkiin.fi/tietoa-ringista/suomen-kerayslasiyhdistys/lasipakkausten-terminaalit/
 https://rinkiin.fi/kotitalouksille/rinki-ekopisteet/
