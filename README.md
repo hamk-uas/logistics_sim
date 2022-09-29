@@ -22,6 +22,8 @@ The simulation model consists of the following types of components:
     * if moving: current route step, start time of current route step
   * Properties: capacity (tons), work shift length (9 hours), routes
 
+To obtain tables of travel times and distances between locations the simulation utilizes a routing API ([openrouteservice](https://openrouteservice.org/)).
+
 ![image](https://user-images.githubusercontent.com/60920087/192998041-495b250e-d262-4e15-ae31-f1093a18a166.png)
 
 ## Prerequisites
@@ -32,7 +34,7 @@ The Python modules listed in [`/requirements.txt`](requirements.txt) are needed.
 
 `pip install -r requirements.txt`
 
-You need an API key to https://openrouteservice.org/. The key should be stored in `/waste_pickup_sim_secrets.py` in the following format (replace # characters with your key):
+You need an API key to [openrouteservice](https://openrouteservice.org/). The key should be stored in `/waste_pickup_sim_secrets.py` in the following format (replace # characters with your key):
 
 `API_key = '########################################################'`
 
