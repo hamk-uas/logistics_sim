@@ -45,5 +45,5 @@ Authors: Olli Niemitalo, Genrikh Ekkerman
 This work is licensed under the MIT license and is distributed without any warranty.
 
 The source code in the following folders have a separate copyright. 
-* `[/nlohmann](nlohmann/)` MIT license, see: https://github.com/nlohmann/json
-* `[/simcpp](simcpp/)` MIT license, see: https://github.com/luteberget/simcpp
+* [/nlohmann](nlohmann) MIT license, see: https://github.com/nlohmann/json
+* [/simcpp](simcpp) MIT license, see: https://github.com/luteberget/simcpp
