@@ -18,7 +18,7 @@ The Python modules listed in [`/requirements.txt`](requirements.txt) are needed.
 
 `pip install -r requirements.txt`
 
-You need an API key to https://openrouteservice.org/. The key should be stored in `/waste_pickup_sim_secrets.py` in the following format (replace # with your key):
+You need an API key to https://openrouteservice.org/. The key should be stored in `/waste_pickup_sim_secrets.py` in the following format (replace # characters with your key):
 
 `API_key = '########################################################'`
 
