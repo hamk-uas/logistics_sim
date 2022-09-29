@@ -169,6 +169,9 @@ public:
   double costFunction(const int *genome, double earlyOutThreshold = std::numeric_limits<double>::max());
   bool pickup(int vehicleIndex, int pickupSiteIndex);
 
+  // Static member functions
+  static double costFunctionFromComponents(double totalOdometer, double totalNumPickupSiteOverloadDays, double totalOvertime);
+
   // Constructor
   LogisticsSimulation(RoutingInput &routingInput);
 };
@@ -346,6 +349,12 @@ public:
   Process(sim), logisticsSim(logisticsSim) { }
 };
 
+static double LogisticsSimulation::costFunctionFromComponents(double totalOdometer, double totalNumPickupSiteOverloadDays, double totalOvertime) {
+  return totalOdometer*(50.0/100000.0*2) // Fuel price: 2 eur / L, fuel consumption: 50 L / (100 km)
+  + totalNumPickupSiteOverloadDays*50.0 // Penalty of 50 eur / overload day / pickup site
+  + totalOvertime*(50.0/60); // Cost of 50 eur / h for overtime work  
+}
+
 // Logistics simulation class member function: cost function
 double LogisticsSimulation::costFunction(const int *genome, double earlyOutThreshold) {
   // Interpret genome
@@ -396,9 +405,7 @@ double LogisticsSimulation::costFunction(const int *genome, double earlyOutThres
   if (debug >= 2) printf("Total overtime: %g h\n", totalOvertime/60);
   if (debug >= 2) printf("Total odometer: %g km\n", totalOdometer/1000);
   if (debug >= 2) printf("Total pickup site overload days: %d\n", totalNumPickupSiteOverloadDays);
-  return totalOdometer*(50.0/100000.0*2) // Fuel price: 2 eur / L, fuel consumption: 50 L / (100 km)
-  + totalNumPickupSiteOverloadDays*50.0 // Penalty of 50 eur / overload day / pickup site
-  + totalOvertime*(50.0/60); // Cost of 50 eur / h for overtime work
+  return costFunctionFromComponents(totalOdometer, totalNumPickupSiteOverloadDays, totalOvertime);
 }
 
 // Simulation class constructor
