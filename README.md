@@ -61,7 +61,7 @@ Authors: Olli Niemitalo, Genrikh Ekkerman
 This work is licensed under both the MIT license and Apache 2.0 license, and is distributed without any warranty.
 
 The source code in the following folders is 3rd-party and has separate copyright and licenses:
-* [`/nlohmann`](nlohmann) MIT license, see: https://github.com/nlohmann/json
-* [`/simcpp`](simcpp) MIT license, see: https://github.com/luteberget/simcpp
+* [`/nlohmann`](nlohmann) [JSON for Modern C++](https://github.com/nlohmann/json), MIT license
+* [`/simcpp`](simcpp) [Discrete event simulation in C++ using Protothreads](https://github.com/luteberget/simcpp), MIT license
 
 The topographic map shown in this readme file is licensed under CC BY 4.0 by National Land Survey of Finland, retrieved 2022-09.
