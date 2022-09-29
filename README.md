@@ -14,7 +14,7 @@ https://rinkiin.fi/kotitalouksille/rinki-ekopisteet/
 
 The Python version used is Python 3.10.4.
 
-The Python modules listed in [/requirements.txt](requirements.txt) are needed. You can install them by:
+The Python modules listed in [`/requirements.txt`](requirements.txt) are needed. You can install them by:
 
 `pip install -r requirements.txt`
 
@@ -46,4 +46,4 @@ This work is licensed under the MIT license and is distributed without any warra
 
 The source code in the following folders have a separate copyright. 
 * [`/nlohmann`](nlohmann) MIT license, see: https://github.com/nlohmann/json
-* [/simcpp](simcpp) MIT license, see: https://github.com/luteberget/simcpp
+* [`/simcpp`](simcpp) MIT license, see: https://github.com/luteberget/simcpp
