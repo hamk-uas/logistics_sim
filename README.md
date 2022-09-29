@@ -8,15 +8,15 @@ Recyclable glass waste from consumers is constantly accumulating in a number of 
 
 Two weeks of waste transportation traffic is simulated, with the routes (as daily lists of pickup sites for each vehicle) optimized by a genetic algorithm utilizing a simulator to calculate and minimize a cost function that depends on the routing. A monetary cost is calculated based on fuel consumption, overtime work, and daily penalties for overfull pickup sites.
 
-The simulation type is process-based discrete event simulation.
+The simulation type is **process-based discrete event simulation**.
 
 The simulation model consists of the following types of components:
-* Pickup site (location)
+* **Pickup site** (location)
   * State: level (tons)
   * Properties: capacity (tons), growth rate (tons / day), geographical coordinates
-* Terminal/depot (location)
+* **Terminal/depot** (location)
   * Properties: number of vehicles, geographical coordinates
-* Vehicle
+* **Vehicle**
   * State: level (tons), moving (boolean),
     * if not moving: location
     * if moving: current route step, start time of current route step
