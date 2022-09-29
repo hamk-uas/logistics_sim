@@ -56,7 +56,7 @@ To run the simulation:
 
 `python routing_optimizer_test.py`
 
-## Copyright and license
+## Copyright, license, and credits
 
 Copyright 2022 Häme University of Applied Sciences
 
