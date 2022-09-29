@@ -14,7 +14,7 @@ https://rinkiin.fi/kotitalouksille/rinki-ekopisteet/
 
 The Python version used is Python 3.10.4.
 
-The Python modules listed in `[/requirements.txt](requirements.txt)` are needed. You can install them by:
+The Python modules listed in [/requirements.txt](requirements.txt) are needed. You can install them by:
 
 `pip install -r requirements.txt`
 
