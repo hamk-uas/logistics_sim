@@ -25,6 +25,7 @@ The simulation model consists of the following types of components:
 To obtain tables of travel times and distances between locations the simulation utilizes a routing API ([openrouteservice](https://openrouteservice.org/)).
 
 ![image](https://user-images.githubusercontent.com/60920087/192998041-495b250e-d262-4e15-ae31-f1093a18a166.png)
+System diagram.
 
 ## Prerequisites
 
