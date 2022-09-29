@@ -64,6 +64,4 @@ The source code in the following folders is 3rd-party and have separate copyrigh
 * [`/nlohmann`](nlohmann) MIT license, see: https://github.com/nlohmann/json
 * [`/simcpp`](simcpp) MIT license, see: https://github.com/luteberget/simcpp
 
-## Credits
-
 The topographic map shown in this readme file is licensed under CC BY 4.0 by National Land Survey of Finland, retrieved 2022-09.
