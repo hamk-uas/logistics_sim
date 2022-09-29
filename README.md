@@ -46,6 +46,6 @@ Authors: Olli Niemitalo, Genrikh Ekkerman
 
 This work is licensed under both the MIT license and Apache 2.0 license, and is distributed without any warranty.
 
-The source code in the following folders have a separate copyright. 
+The source code in the following folders is 3rd-party and have separate copyrights and licenses:
 * [`/nlohmann`](nlohmann) MIT license, see: https://github.com/nlohmann/json
 * [`/simcpp`](simcpp) MIT license, see: https://github.com/luteberget/simcpp
