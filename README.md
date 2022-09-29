@@ -42,7 +42,7 @@ Copyright 2022 Häme University of Applied Sciences
 
 Authors: Olli Niemitalo, Genrikh Ekkerman
 
-This work is licensed under the MIT license and is distributed without any warranty.
+This work is licensed under both the MIT license and Apache 2.0 license, and is distributed without any warranty.
 
 The source code in the following folders have a separate copyright. 
 * [`/nlohmann`](nlohmann) MIT license, see: https://github.com/nlohmann/json
