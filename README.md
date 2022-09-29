@@ -11,13 +11,11 @@ Two weeks of waste transportation traffic is simulated, with the routes (as dail
 The simulation type is process-based discrete event simulation.
 
 The simulation model consists of the following types of components:
-* Location:
-  * Properties: geographical coordinates
 * Pickup site (location)
   * State: level (tons)
-  * Properties: capacity (tons), growth rate (tons / day), location properties
+  * Properties: capacity (tons), growth rate (tons / day), geographical coordinates
 * Terminal/depot (location)
-  * Properties: number of vehicles, location properties
+  * Properties: number of vehicles, geographical coordinates
 * Vehicle
   * State: level (tons), moving (boolean),
     * if not moving: location
