@@ -6,7 +6,7 @@ A demo of simulation and optimization of glass waste pickup from Rinki sites in 
 
 Recyclable glass waste from consumers is constantly accumulating in a number of collection sites ("pickup sites", blue dots on the map), each with a given capacity in tons. Waste is collected and transported to each terminal (red stars) by a truck ("vehicle") starting and finishing their daily 9-hour shift at that terminal. A vehicle can only pick up waste equal to its capacity before it must return to the terminal. Picking up waste at a pickup site takes 15 minutes.
 
-Two weeks of waste transportation traffic is simulated, with the routes (as daily lists of locations for each vehicle) optimized by a genetic algorithm utilizing a simulator to calculate and minimize a cost function that depends on the routing. A monetary cost is calculated based on fuel consumption, overtime work, and daily penalties for overfull pickup sites.
+Two weeks of waste transportation traffic is simulated, with the routes (a list of locations for each vehicle, for each day) optimized by a genetic algorithm utilizing a simulator to calculate and minimize a cost function that depends on the routing. A monetary cost is calculated based on fuel consumption, overtime work, and daily penalties for overfull pickup sites.
 
 The simulation type is **process-based discrete event simulation**.
 
