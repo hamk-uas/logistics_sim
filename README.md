@@ -13,7 +13,9 @@ The model simulated consists of the following types of components:
 * Terminal/depot (location)
   * Properties: number of vehicles, location properties
 * Vehicle
-  * State variables: level (tons)
+  * State: level (tons), moving (boolean),
+    * if not moving: location
+    * if moving: current route step, start time of current route step
   * Properties: capacity (tons), work shift length (9 hours), routes
 
 Recyclable glass waste from consumers is constantly accumulating in a number of collection sites ("pickup sites", blue dots on the map), each with a given capacity in tons. Waste is collected and transported to each terminal (red stars) by a truck ("vehicle") starting and finishing their daily 9-hour shift at that terminal. A vehicle can only pick up waste equal to its capacity before it must return to the terminal. Picking up waste at a pickup site takes 15 minutes. Two weeks of waste transportation traffic is simulated, with the routes (as daily lists of pickup sites for each vehicle) optimized by a genetic algorithm utilizing a simulator to calculate and minimize a cost function that depends on the routing. A monetary cost is calculated based on fuel consumption, overtime work, and daily penalties for overfull pickup sites.
