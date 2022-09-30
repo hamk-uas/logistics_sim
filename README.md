@@ -1,14 +1,32 @@
 # Logistics simulation and optimization
 
-A demo of simulation and optimization of glass waste pickup from Rinki sites in the area of the following municipalities in Finland: Hämeenlinna, Hattula, Janakkala, Hausjärvi, Riihimäki, Loppi, Tammela, Forssa, Jokioinen.
+A demo of simulation and optimization of glass waste pickup from Rinki sites in the area of the following municipalities in Finland: Hämeenlinna, Hattula, Janakkala, Hausjärvi, Riihimäki, Loppi, Tammela, Forssa, Jokioinen. For more information about Rinki see: https://rinkiin.fi/kotitalouksille/rinki-ekopisteet/ and https://rinkiin.fi/tietoa-ringista/suomen-kerayslasiyhdistys/lasipakkausten-terminaalit/.
 
 <video src='https://user-images.githubusercontent.com/60920087/192505697-90068524-3c6b-4b08-8659-9126d52cef62.mov' width=664></video>
+_Animated outcome of optimization and simulation._
 
-Topographic map licensed under CC BY 4.0 by National Land Survey of Finland, retrieved 2022-09.
+Recyclable glass waste from consumers is constantly accumulating in a number of collection sites ("pickup sites", blue dots on the map), each with a given capacity in tons. Waste is collected and transported to each terminal (red stars) by a truck ("vehicle") starting and finishing their daily 9-hour shift at that terminal. A vehicle can only pick up waste equal to its capacity before it must return to the terminal. Picking up waste at a pickup site takes 15 minutes.
 
-For more information about Rinki see:
-https://rinkiin.fi/tietoa-ringista/suomen-kerayslasiyhdistys/lasipakkausten-terminaalit/
-https://rinkiin.fi/kotitalouksille/rinki-ekopisteet/
+Two weeks of waste transportation traffic is simulated, with the routes (a list of locations for each vehicle, for each day) optimized by a genetic algorithm utilizing a simulator to calculate and minimize a cost function that depends on the routing. A monetary cost is calculated based on fuel consumption, overtime work, and daily penalties for overfull pickup sites.
+
+The simulation type is **process-based discrete event simulation**. The main simulation is implemented in Python using [SimPy](https://simpy.readthedocs.io/en/latest/), and the optimizer uses a faster C++ implementation using [SimCpp](https://github.com/luteberget/simcpp).
+
+The simulation model consists of the following types of components:
+* **Pickup site** (location)
+  * State: level (tons)
+  * Properties: capacity (tons), growth rate (tons / day), geographical coordinates
+* **Terminal/depot** (location)
+  * Properties: number of vehicles, geographical coordinates
+* **Vehicle**
+  * State: level (tons), moving (boolean),
+    * if not moving: location
+    * if moving: current route step, start time of current route step
+  * Properties: capacity (tons), work shift length (9 hours), routes
+
+To obtain tables of travel times and distances between locations the simulation utilizes a routing API, currently [openrouteservice](https://openrouteservice.org/) but could be changed to [Open Source Routing Machine (OSRM)](https://github.com/Project-OSRM/osrm-backend)
+
+![image](https://user-images.githubusercontent.com/60920087/192998041-495b250e-d262-4e15-ae31-f1093a18a166.png)
+_System diagram._
 
 ## Prerequisites
 
@@ -18,7 +36,7 @@ The Python modules listed in [`/requirements.txt`](requirements.txt) are needed.
 
 `pip install -r requirements.txt`
 
-You need an API key to https://openrouteservice.org/. The key should be stored in `/waste_pickup_sim_secrets.py` in the following format (replace # characters with your key):
+You need an API key to [openrouteservice](https://openrouteservice.org/). The key should be stored in `/waste_pickup_sim_secrets.py` in the following format (replace # characters with your key):
 
 `API_key = '########################################################'`
 
@@ -36,14 +54,16 @@ To run the simulation:
 
 `python routing_optimizer_test.py`
 
-## Copyright and license
+## Copyright, license, and credits
 
 Copyright 2022 Häme University of Applied Sciences
 
 Authors: Olli Niemitalo, Genrikh Ekkerman
 
-This work is licensed under the MIT license and is distributed without any warranty.
+This work is licensed under both the MIT license and Apache 2.0 license, and is distributed without any warranty.
 
-The source code in the following folders have a separate copyright. 
-* [`/nlohmann`](nlohmann) MIT license, see: https://github.com/nlohmann/json
-* [`/simcpp`](simcpp) MIT license, see: https://github.com/luteberget/simcpp
+The source code in the following folders is 3rd-party and has separate copyright and licenses:
+* [`/nlohmann`](nlohmann) [JSON for Modern C++](https://github.com/nlohmann/json), MIT license
+* [`/simcpp`](simcpp) [Discrete event simulation in C++ using Protothreads](https://github.com/luteberget/simcpp), MIT license
+
+The topographic map shown in this readme file is licensed under CC BY 4.0 by National Land Survey of Finland, retrieved 2022-09.
