@@ -9,7 +9,7 @@ Recyclable glass waste from consumers is constantly accumulating in a number of 
 
 Two weeks of waste transportation traffic is simulated, with the routes (a list of locations for each vehicle, for each day) optimized by a genetic algorithm utilizing a simulator to calculate and minimize a cost function that depends on the routing. A monetary cost is calculated based on fuel consumption, overtime work, and daily penalties for overfull pickup sites.
 
-The simulation type is **process-based discrete event simulation**. The main simulation is implemented in Python using [SimPy](https://simpy.readthedocs.io/en/latest/), and the optimizer uses a faster C++ implementation using [SimCpp](https://github.com/luteberget/simcpp).
+The simulation type is **process-based discrete event simulation**. The main simulation is implemented in Python using [SimPy](https://simpy.readthedocs.io/en/latest/), and the optimizer uses a faster C++ implementation of the same simulation model using [SimCpp](https://github.com/luteberget/simcpp).
 
 The simulation model consists of the following types of components:
 * **Pickup site** (location)
