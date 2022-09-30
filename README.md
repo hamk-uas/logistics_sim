@@ -23,7 +23,7 @@ The simulation model consists of the following types of components:
     * if moving: current route step, start time of current route step
   * Properties: capacity (tons), work shift length (9 hours), routes
 
-To obtain tables of travel times and distances between locations the simulation utilizes a routing API ([openrouteservice](https://openrouteservice.org/)).
+To obtain tables of travel times and distances between locations the simulation utilizes a routing API, currently [openrouteservice](https://openrouteservice.org/) but could be changed to [Open Source Routing Machine (OSRM)](https://github.com/Project-OSRM/osrm-backend)
 
 ![image](https://user-images.githubusercontent.com/60920087/192998041-495b250e-d262-4e15-ae31-f1093a18a166.png)
 _System diagram._
