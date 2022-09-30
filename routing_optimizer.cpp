@@ -44,14 +44,6 @@ void to_json(json& j, const RoutingOutput& x) {
   j = json{{"days", x.days}};
 }
 
-/*
-	routing_output = {
-		'vehicles': [{
-			'route': route
-		} for route in vehicle_routes]
-	}
-	*/
-
 struct PickupSiteInput
 {
   float capacity;
@@ -153,6 +145,7 @@ void from_json(const json &j, RoutingInput &x)
 class Vehicle;
 class PickupSite;
 
+
 // Logistics simulation class definition and member function declarations
 class LogisticsSimulation: public HasCostFunction {  
 public:
@@ -168,9 +161,6 @@ public:
   // Member functions
   double costFunction(const int *genome, double earlyOutThreshold = std::numeric_limits<double>::max());
   bool pickup(int vehicleIndex, int pickupSiteIndex);
-
-  // Static member functions
-  static double costFunctionFromComponents(double totalOdometer, double totalNumPickupSiteOverloadDays, double totalOvertime);
 
   // Constructor
   LogisticsSimulation(RoutingInput &routingInput);
@@ -349,7 +339,7 @@ public:
   Process(sim), logisticsSim(logisticsSim) { }
 };
 
-static double LogisticsSimulation::costFunctionFromComponents(double totalOdometer, double totalNumPickupSiteOverloadDays, double totalOvertime) {
+costFunctionFromComponents(double totalOdometer, double totalNumPickupSiteOverloadDays, double totalOvertime) {
   return totalOdometer*(50.0/100000.0*2) // Fuel price: 2 eur / L, fuel consumption: 50 L / (100 km)
   + totalNumPickupSiteOverloadDays*50.0 // Penalty of 50 eur / overload day / pickup site
   + totalOvertime*(50.0/60); // Cost of 50 eur / h for overtime work  
@@ -429,7 +419,7 @@ int main() {
   */
 
   Optimizer optimizer(routingInput.num_genes, logisticsSims);
-  int numGenerations = 2000; // 200000
+  int numGenerations = 200000; // 200000
   int numGenerationsPerStep = 100;
   optimizer.initPopulation();
   /*
