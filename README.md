@@ -4,7 +4,7 @@ A demo of simulation and optimization of glass waste pickup from Rinki sites in 
 
 <video src='https://user-images.githubusercontent.com/60920087/194047546-58bdf96e-0576-477f-b2c4-2b9f55a3a183.mov' width=640></video>
 
-_Animated outcome of optimization and simulation._
+_Animated simulation using optimized routes._
 
 Recyclable glass waste from consumers is constantly accumulating in a number of collection sites ("pickup sites", blue/yellow/red dots on the map, depending on fullness <50%/50-75%/>75%), each with a given capacity in tons. Waste is collected and transported to each terminal (red stars) by a truck ("vehicle") starting and finishing their daily 9-hour shift at that terminal. A vehicle can only pick up waste up to its capacity before it must return to the terminal. Picking up waste at a pickup site takes 15 minutes.
 
