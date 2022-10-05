@@ -2,15 +2,11 @@
 
 A demo of simulation and optimization of glass waste pickup from Rinki sites in the area of the following municipalities in Finland: Hämeenlinna, Hattula, Janakkala, Hausjärvi, Riihimäki, Loppi, Tammela, Forssa, Jokioinen. For more information about Rinki see: https://rinkiin.fi/kotitalouksille/rinki-ekopisteet/ and https://rinkiin.fi/tietoa-ringista/suomen-kerayslasiyhdistys/lasipakkausten-terminaalit/.
 
-<!--video src='https://user-images.githubusercontent.com/60920087/192505697-90068524-3c6b-4b08-8659-9126d52cef62.mov' width=664></video-->
-
-
 <video src='https://user-images.githubusercontent.com/60920087/194047546-58bdf96e-0576-477f-b2c4-2b9f55a3a183.mov' width=640></video>
-
 
 _Animated outcome of optimization and simulation._
 
-Recyclable glass waste from consumers is constantly accumulating in a number of collection sites ("pickup sites", blue dots on the map), each with a given capacity in tons. Waste is collected and transported to each terminal (red stars) by a truck ("vehicle") starting and finishing their daily 9-hour shift at that terminal. A vehicle can only pick up waste equal to its capacity before it must return to the terminal. Picking up waste at a pickup site takes 15 minutes.
+Recyclable glass waste from consumers is constantly accumulating in a number of collection sites ("pickup sites", blue/yellow/red dots on the map, depending on fullness <50%/50-75%/>75%), each with a given capacity in tons. Waste is collected and transported to each terminal (red stars) by a truck ("vehicle") starting and finishing their daily 9-hour shift at that terminal. A vehicle can only pick up waste up to its capacity before it must return to the terminal. Picking up waste at a pickup site takes 15 minutes.
 
 Two weeks of waste transportation traffic is simulated, with the routes (a list of locations for each vehicle, for each day) optimized by a genetic algorithm utilizing a simulator to calculate and minimize a cost function that depends on the routing. A monetary cost is calculated based on fuel consumption, overtime work, and daily penalties for overfull pickup sites.
 
