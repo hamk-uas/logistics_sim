@@ -90,7 +90,7 @@ public:
       {
         population[j][i] = i;
       }
-      std::shuffle(population[j] + 1, population[j] + numGenes, randomNumberGenerator);      
+      std::shuffle(population[j], population[j] + numGenes, randomNumberGenerator);
       costs[j].value = haveCostFunction[0]->costFunction(population[j]);
       nextGen[j][0] = 0;
     }
