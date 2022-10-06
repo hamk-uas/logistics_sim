@@ -34,7 +34,7 @@ private:
   struct alignas(alignof(std::max_align_t)) aligned_ThreadState
   {
     std::mt19937 randomNumberGenerator;
-    std::uniform_int_distribution<int> uniform1ToNumGenes;
+    std::uniform_int_distribution<int> uniform0ToNumGenes;
     bool *childHasGene{nullptr};
   };
   int numGenes;
@@ -101,22 +101,27 @@ public:
   inline void crossover(const int *p0, const int *p1, int *child, int thread)
   { // Leaves first gene untouched
     std::fill(threadStates[thread].childHasGene, threadStates[thread].childHasGene + numGenes, false);
-    int fStart = threadStates[thread].uniform1ToNumGenes(threadStates[thread].randomNumberGenerator);
-    int fEnd = threadStates[thread].uniform1ToNumGenes(threadStates[thread].randomNumberGenerator);
+    int fStart = threadStates[thread].uniform0ToNumGenes(threadStates[thread].randomNumberGenerator);
+    int fEnd = threadStates[thread].uniform0ToNumGenes(threadStates[thread].randomNumberGenerator);
     if (fStart > fEnd)
       std::swap(fStart, fEnd);
     int fLength = fEnd - fStart;
-    int ci = 0;
-    for (int fi = 0; fi < fLength; ci++, fi++)
-    {
+    int ci0 = threadStates[thread].uniform0ToNumGenes(threadStates[thread].randomNumberGenerator);
+    int ci = ci0;
+    int fi = 0;
+    for (; fi < fLength && ci < numGenes; ci++, fi++) {
       int gene = p0[fStart + fi];
       child[ci] = gene;
       threadStates[thread].childHasGene[gene] = true;
     }
-    for (int p1i = 0; ci < numGenes; ci++, p1i++)
-    {
-      for (; threadStates[thread].childHasGene[p1[p1i]]; p1i++) 
-        ;
+    int ci1 = ci;
+    int p1i = 0;
+    for (ci = 0; ci < ci0; ci++, p1i++) {
+      for (; threadStates[thread].childHasGene[p1[p1i]]; p1i++);
+      child[ci] = p1[p1i];
+    }
+    for (ci = ci1; ci < numGenes; ci++, p1i++) {
+      for (; threadStates[thread].childHasGene[p1[p1i]]; p1i++);
       child[ci] = p1[p1i];
     }
   }
@@ -165,7 +170,7 @@ public:
     threadStates = new aligned_ThreadState[maxNumThreads];
     for (int thread = 0; thread < maxNumThreads; thread++)
     {
-      threadStates[thread].uniform1ToNumGenes = std::uniform_int_distribution<int>(1, numGenes);
+      threadStates[thread].uniform0ToNumGenes = std::uniform_int_distribution<int>(0, numGenes);
       threadStates[thread].randomNumberGenerator = std::mt19937(seed + 1 + thread); // Use a different seed for each thread
       threadStates[thread].childHasGene = new bool[numGenes];
     }
