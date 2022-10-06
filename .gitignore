@@ -3,5 +3,5 @@
 secrets.py
 routing_optimizer
 routing_optimizer.exe
-logs
+log
 __pycache__

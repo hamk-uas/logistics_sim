@@ -18,7 +18,7 @@ sim_config = {
 	},
 	'depots': [
 		{
-			'num_vehicles': 0
+			'num_vehicles': 1
 		},
 		{
 			'num_vehicles': 1

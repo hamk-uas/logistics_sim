@@ -23,6 +23,10 @@ public:
   virtual double costFunction(const int *genome, double earlyOutThreshold = std::numeric_limits<double>::max()) = 0;
 };
 
+struct alignas(alignof(std::max_align_t)) Cost {
+  double value;
+};
+
 // An optimizer class with will store the population and its costs, and has everything needed for the optimization.
 class Optimizer
 {
@@ -37,7 +41,7 @@ private:
   int *shot;
   int **nextGen;
   std::vector<HasCostFunction*> &haveCostFunction;
-  double *nextGenCosts;
+  Cost *nextGenCosts;
   std::mt19937 randomNumberGenerator; // For main thread
   aligned_ThreadState *threadStates;  // For parallel threads
   int maxNumThreads;
@@ -62,9 +66,9 @@ private:
     bestCost = std::numeric_limits<double>::max();
     for (int j = 0; j < populationSize; j++)
     {
-      if (costs[j] < bestCost)
+      if (costs[j].value < bestCost)
       {
-        bestCost = costs[j];
+        bestCost = costs[j].value;
         best = population[j];
       }
     }
@@ -75,7 +79,7 @@ public:
   int **population;
   double bestCost; // Current best cost
   int *best;    // Current best
-  double *costs;   // Current costs in population
+  Cost *costs;   // Current costs in population
 
   // Initialize population and calculate statistics. Called automatically in constructor
   void initPopulation()
@@ -87,7 +91,7 @@ public:
         population[j][i] = i;
       }
       std::shuffle(population[j] + 1, population[j] + numGenes, randomNumberGenerator);      
-      costs[j] = haveCostFunction[0]->costFunction(population[j]);
+      costs[j].value = haveCostFunction[0]->costFunction(population[j]);
       nextGen[j][0] = 0;
     }
     calcStats();
@@ -102,16 +106,16 @@ public:
     if (fStart > fEnd)
       std::swap(fStart, fEnd);
     int fLength = fEnd - fStart;
-    int ci = 1;
+    int ci = 0;
     for (int fi = 0; fi < fLength; ci++, fi++)
     {
       int gene = p0[fStart + fi];
       child[ci] = gene;
       threadStates[thread].childHasGene[gene] = true;
     }
-    for (int p1i = 1; ci < numGenes; ci++, p1i++)
+    for (int p1i = 0; ci < numGenes; ci++, p1i++)
     {
-      for (; threadStates[thread].childHasGene[p1[p1i]]; p1i++)
+      for (; threadStates[thread].childHasGene[p1[p1i]]; p1i++) 
         ;
       child[ci] = p1[p1i];
     }
@@ -135,11 +139,11 @@ public:
           int p0 = shot[j + k];
           int p1 = j + k;
           crossover(population[p0], population[p1], nextGen[j + k], omp_get_thread_num());
-          nextGenCosts[j + k] = haveCostFunction[omp_get_thread_num()]->costFunction(nextGen[j + k], costs[j + k]);
-          if (nextGenCosts[j + k] > costs[j + k])
+          nextGenCosts[j + k].value = haveCostFunction[omp_get_thread_num()]->costFunction(nextGen[j + k], costs[j + k].value);
+          if (nextGenCosts[j + k].value > costs[j + k].value)
           {
             std::swap(population[j + k], nextGen[j + k]);
-            nextGenCosts[j + k] = costs[j + k];
+            nextGenCosts[j + k].value = costs[j + k].value;
           }
         }
       }
@@ -157,6 +161,7 @@ public:
   Optimizer(int numGenes, std::vector<HasCostFunction*> &haveCostFunction, int populationSize = -1, unsigned seed = std::chrono::system_clock::now().time_since_epoch().count()) : numGenes(numGenes), haveCostFunction(haveCostFunction), populationSize(populationSize = calcPopulationSize(numGenes, populationSize)), randomNumberGenerator(seed), maxNumThreads(omp_get_max_threads())
   {
     printf("Population size: %d\n", populationSize);
+    printf("Numgenes: %d\n", numGenes);
     threadStates = new aligned_ThreadState[maxNumThreads];
     for (int thread = 0; thread < maxNumThreads; thread++)
     {
@@ -167,8 +172,8 @@ public:
     shot = new int[populationSize];
     population = new int *[populationSize];
     nextGen = new int *[populationSize];
-    costs = new double[populationSize];
-    nextGenCosts = new double[populationSize];
+    costs = new Cost[populationSize];
+    nextGenCosts = new Cost[populationSize];
     for (int j = 0; j < populationSize; j++)
     {
       population[j] = new int[numGenes];

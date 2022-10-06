@@ -327,7 +327,7 @@ public:
         }
       }
       for (pickupSiteIndex = 0; pickupSiteIndex < logisticsSim->pickupSites.size(); pickupSiteIndex++) {
-        if (debug >= 2) printf("%d\%, ", (int)floor(logisticsSim->pickupSites[pickupSiteIndex].level / logisticsSim->routingInput.pickup_sites[pickupSiteIndex].capacity * 100 + 0.5));
+        if (debug >= 2) printf("%d%%, ", (int)floor(logisticsSim->pickupSites[pickupSiteIndex].level / logisticsSim->routingInput.pickup_sites[pickupSiteIndex].capacity * 100 + 0.5));
       }
       if (debug >= 2) printf("\n");
     }
@@ -339,7 +339,7 @@ public:
   Process(sim), logisticsSim(logisticsSim) { }
 };
 
-costFunctionFromComponents(double totalOdometer, double totalNumPickupSiteOverloadDays, double totalOvertime) {
+double costFunctionFromComponents(double totalOdometer, double totalNumPickupSiteOverloadDays, double totalOvertime) {
   return totalOdometer*(50.0/100000.0*2) // Fuel price: 2 eur / L, fuel consumption: 50 L / (100 km)
   + totalNumPickupSiteOverloadDays*50.0 // Penalty of 50 eur / overload day / pickup site
   + totalOvertime*(50.0/60); // Cost of 50 eur / h for overtime work  
@@ -419,7 +419,7 @@ int main() {
   */
 
   Optimizer optimizer(routingInput.num_genes, logisticsSims);
-  int numGenerations = 200000; // 200000
+  int numGenerations = 400000; // 400000
   int numGenerationsPerStep = 100;
   optimizer.initPopulation();
   /*

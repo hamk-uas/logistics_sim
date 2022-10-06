@@ -106,6 +106,9 @@ class IndexedSimEntity():
 # Any entity in the simulation that is indexed and also has a location index
 class IndexedLocation(IndexedSimEntity):
 
+	def get_lonlat(self):
+		return self.lonlat
+
 	def __init__(self, sim, index, location_index):
 		super().__init__(sim, index)
 		self.location_index = location_index
@@ -343,22 +346,43 @@ class WastePickupSimulation():
 		self.routing_output = None # No routes planned yet. The value None will cause them to be planned
 		self.daily_routing_activity = self.env.process(self.daily_routing())	
 
-		# Hourly vehicle tracking (Could be at higher rate)
-		self.vehicle_tracking_activity = self.env.process(self.vehicle_tracking())
+		# Vehicle and pickup site tracking for animation on map
+		self.vehicle_tracking_activity = self.env.process(self.vehicle_animation_tracking())
+		self.pickup_site_tracking_activity = self.env.process(self.pickup_site_animation_tracking())
 
 		# Route logs
 		self.route_logs = [[] for _ in self.vehicles]
 
+		# Pickup site logs
+		self.pickup_site_logs = [[] for _ in self.pickup_sites]
+
 	def site_full(self, site):
 		self.warn(f"Site #{site.index} is full.")
 
-	def vehicle_tracking(self):
+	def vehicle_animation_tracking(self):
 		while True:
 			#self.log(f"Vehicle locations: {', '.join(map(lambda x: lonlat_to_string(x.get_lonlat()), self.vehicles))}")
 			for vehicle in self.vehicles:
 				if vehicle.moving:
-					self.route_logs[vehicle.index].append((self.env.now, vehicle.get_lonlat()))
-			yield self.env.timeout(0.25)
+					self.route_logs[vehicle.index].append({
+						"time": self.env.now,
+						"lonlat": vehicle.get_lonlat(),
+						"load_level": vehicle.load_level,
+						"load_capacity": vehicle.load_capacity
+					})
+			yield self.env.timeout(1)
+
+	def pickup_site_animation_tracking(self):
+		while True:
+			#self.log(f"Vehicle locations: {', '.join(map(lambda x: lonlat_to_string(x.get_lonlat()), self.vehicles))}")
+			for pickup_site in self.pickup_sites:
+				self.pickup_site_logs[pickup_site.index].append({
+					"time": self.env.now,
+					"lonlat": pickup_site.get_lonlat(),
+					"level": pickup_site.level,
+					"capacity": pickup_site.capacity
+				})
+			yield self.env.timeout(15)
 
 	def daily_monitoring(self):
 		while True:
@@ -403,7 +427,7 @@ class WastePickupSimulation():
 				# Comment/uncomment: genetic algorithm router
 				filename = 'log/routing_optimizer_log.txt'
 				os.makedirs(os.path.dirname(filename), exist_ok=True)
-				os.system(f"routing_optimizer>{filename}")
+				os.system(f"routing_optimizer>{filename}") # ***
 				with open('temp/routing_output.json') as infile:
 					self.routing_output = json.load(infile)
 
@@ -424,13 +448,22 @@ class WastePickupSimulation():
 		end_time = time.time()
 		self.total_time = end_time-start_time # Excuding config preprocessing
 		self.log(f"Simulation finished with {self.total_time}s of computing")
-		filename = f"log/routes_log_{self.run_start}.json"
+
+		filename = f"log/routes_log_{self.run_start}.csv"
 		os.makedirs(os.path.dirname(filename), exist_ok=True)
 		with open(filename, 'w') as f:
-			print("x,y,t", file=f)
-			for vehicle_log in self.route_logs:
-				for stop in vehicle_log:
-					print(f"{stop[1][0]},{stop[1][1]},{stop[0]}", file=f)
+			print("x,y,t,v,l,c", file=f)
+			for vehicle_index, vehicle_log in enumerate(self.route_logs):
+				for sample in vehicle_log:
+					print(f"{sample['lonlat'][0]},{sample['lonlat'][1]},{sample['time']},{vehicle_index},{sample['load_level']},{sample['load_capacity']}", file=f)
+
+		filename = f"log/pickup_sites_log_{self.run_start}.csv"
+		os.makedirs(os.path.dirname(filename), exist_ok=True)
+		with open(filename, 'w') as f:
+			print("x,y,t,l,c", file=f)
+			for pickup_site_log in self.pickup_site_logs:
+				for sample in pickup_site_log:
+					print(f"{sample['lonlat'][0]},{sample['lonlat'][1]},{sample['time']},{sample['level']},{sample['capacity']}", file=f)
 
 
 	def save_log(self):

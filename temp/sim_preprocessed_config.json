@@ -13,7 +13,7 @@
         {
             "name": "Forssa",
             "Osoite": "Kiimassuontie 127, 30420 FORSSA",
-            "num_vehicles": 0,
+            "num_vehicles": 1,
             "lonlats": [
                 23.58573,
                 60.79055
