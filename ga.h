@@ -145,7 +145,7 @@ public:
           int p1 = j + k;
           crossover(population[p0], population[p1], nextGen[j + k], omp_get_thread_num());
           nextGenCosts[j + k].value = haveCostFunction[omp_get_thread_num()]->costFunction(nextGen[j + k], costs[j + k].value);
-          if (nextGenCosts[j + k].value > costs[j + k].value)
+          if (nextGenCosts[j + k].value >= costs[j + k].value)
           {
             std::swap(population[j + k], nextGen[j + k]);
             nextGenCosts[j + k].value = costs[j + k].value;
