@@ -435,14 +435,11 @@ int main() {
   int generationIndex = 0;
   for (; generationIndex < numGenerations; generationIndex += numGenerationsPerStep) {
     if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.bestCost);
-    optimizer.optimize(numGenerationsPerStep, false);
+    optimizer.optimize(numGenerationsPerStep, 0);
   }
   for (; generationIndex < numGenerations + numFinetuneGenerations; generationIndex += numGenerationsPerStep) {
     if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.bestCost);
-    for (int i = 0; i < numGenerationsPerStep/2; i++) {
-      optimizer.optimize(1, true);
-      optimizer.optimize(1, false);
-    }
+    optimizer.optimize(numGenerationsPerStep, 2);
   }
   if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.bestCost);
 
