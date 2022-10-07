@@ -134,7 +134,7 @@ public:
   }
 
   // Optimize or continue optimization, over some number of generations
-  void optimize(int generations = 10000)
+  void optimize(int generations = 10000, bool finetune = false)
   {
     for (int j = 0; j < populationSize; j++)
     {
@@ -150,7 +150,11 @@ public:
         {
           int p0 = shot[j + k];
           int p1 = j + k;
-          crossover(population[p0], population[p1], nextGen[j + k], omp_get_thread_num());
+          if (finetune) {
+            crossover(population[p0], best, nextGen[j + k], omp_get_thread_num());
+          } else {
+            crossover(population[p0], population[p1], nextGen[j + k], omp_get_thread_num());
+          }
           nextGenCosts[j + k].value = haveCostFunction[omp_get_thread_num()]->costFunction(nextGen[j + k], costs[j + k].value);
           if (nextGenCosts[j + k].value >= costs[j + k].value)
           {
@@ -161,8 +165,8 @@ public:
       }
       std::swap(population, nextGen);
       std::swap(costs, nextGenCosts);
+      calcStats();
     }
-    calcStats();
   }
 
   // Constructor.

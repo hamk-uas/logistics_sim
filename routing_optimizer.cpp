@@ -419,7 +419,8 @@ int main() {
   */
 
   Optimizer optimizer(routingInput.num_genes, logisticsSims);
-  int numGenerations = 400000; // 400000
+  int numGenerations = 30000; // 400000
+  int numFinetuneGenerations = 10000;
   int numGenerationsPerStep = 100;
   optimizer.initPopulation();
   /*
@@ -434,7 +435,14 @@ int main() {
   int generationIndex = 0;
   for (; generationIndex < numGenerations; generationIndex += numGenerationsPerStep) {
     if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.bestCost);
-    optimizer.optimize(numGenerationsPerStep);
+    optimizer.optimize(numGenerationsPerStep, false);
+  }
+  for (; generationIndex < numGenerations + numFinetuneGenerations; generationIndex += numGenerationsPerStep) {
+    if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.bestCost);
+    for (int i = 0; i < numGenerationsPerStep/2; i++) {
+      optimizer.optimize(1, true);
+      optimizer.optimize(1, false);
+    }
   }
   if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.bestCost);
 
