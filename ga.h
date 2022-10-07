@@ -103,16 +103,23 @@ public:
     std::fill(threadStates[thread].childHasGene, threadStates[thread].childHasGene + numGenes, false);
     int fStart = threadStates[thread].uniform0ToNumGenes(threadStates[thread].randomNumberGenerator);
     int fEnd = threadStates[thread].uniform0ToNumGenes(threadStates[thread].randomNumberGenerator);
-    if (fStart > fEnd)
-      std::swap(fStart, fEnd);
-    int fLength = fEnd - fStart;
+    int fLength = fEnd - fStart;    
+    if (fLength < 0) fLength = -fLength;
     int ci0 = threadStates[thread].uniform0ToNumGenes(threadStates[thread].randomNumberGenerator);
     int ci = ci0;
     int fi = 0;
-    for (; fi < fLength && ci < numGenes; ci++, fi++) {
-      int gene = p0[fStart + fi];
-      child[ci] = gene;
-      threadStates[thread].childHasGene[gene] = true;
+    if (fStart > fEnd) {
+      for (; fi < fLength && ci < numGenes; ci++, fi++) {
+        int gene = p0[fStart - 1 - fi];
+        child[ci] = gene;
+        threadStates[thread].childHasGene[gene] = true;
+      }
+    } else {
+      for (; fi < fLength && ci < numGenes; ci++, fi++) {
+        int gene = p0[fStart + fi];
+        child[ci] = gene;
+        threadStates[thread].childHasGene[gene] = true;
+      }
     }
     int ci1 = ci;
     int p1i = 0;
