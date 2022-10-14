@@ -26,6 +26,11 @@ The simulation model consists of the following types of components:
 
 To obtain tables of travel times and distances between locations the simulation utilizes a routing API, currently [openrouteservice](https://openrouteservice.org/) but could be changed to [Open Source Routing Machine (OSRM)](https://github.com/Project-OSRM/osrm-backend)
 
+The optimizer uses a genetic algorithm to come up with routing proposals. The cost of each proposal is evaluated using the cost function.
+
+![image](https://user-images.githubusercontent.com/60920087/195798821-4082ddd5-6454-4f1b-b7ef-dfe013f1030c.png)
+_Optimization trajectory: Best cost in the population of route proposals as function of the number of cost function evaluations. That number increases by the population size for every generation of the genetic algorithm._
+
 ![image](https://user-images.githubusercontent.com/60920087/192998041-495b250e-d262-4e15-ae31-f1093a18a166.png)
 _System diagram._
 
