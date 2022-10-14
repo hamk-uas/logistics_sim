@@ -30,7 +30,7 @@ The optimizer uses a genetic algorithm to come up with routing proposals. The co
 
 ![image](https://user-images.githubusercontent.com/60920087/195798821-4082ddd5-6454-4f1b-b7ef-dfe013f1030c.png)
 
-_Optimization trajectory: Best cost in the population of route proposals as function of the number of cost function evaluations. That number increases by the population size for every generation of the genetic algorithm._
+_Optimization trajectory: Lowest cost in the population of route proposals as function of the number of cost function evaluations. That number increases by the population size for every generation of the genetic algorithm. Optimization is done for a predefined number of generations. At a predefined generation, there is a change to a greedy optimization algorithm that always uses the lowest-cost member in the population as one of the parents to generate offspring route proposals._
 
 ![image](https://user-images.githubusercontent.com/60920087/192998041-495b250e-d262-4e15-ae31-f1093a18a166.png)
 
