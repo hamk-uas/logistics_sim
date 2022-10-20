@@ -1,9 +1,9 @@
 // Copyright 2022 Häme University of Applied Sciences
 // Authors: Olli Niemitalo, Genrikh Ekkerman
 //
-// This work is licensed under the MIT license and is distributed without any warranty.
+// This work is dual-licensed under the MIT and Apache 2.0 licenses and is distributed without any warranty.
 
-// g++ routing_optimizer.cpp simcpp/simcpp.cpp -std=c++17 -march=native -I. -O3 -ffast-math -fopenmp -o routing_optimizer
+// g++ routing_optimizer.cpp simcpp/simcpp.cpp -std=c++20 -march=native -I. -O3 -fcoroutines -ffast-math -fopenmp -o routing_optimizer
 #include <stdio.h>
 #include "ga.h"
 #include <iostream>
@@ -12,9 +12,10 @@
 #include <chrono>
 #include <algorithm>
 #include <omp.h>
-
+#include <coroutine>
+#include "fschuetz04/simcpp20.hpp"
 #include "nlohmann/json.hpp"
-#include "simcpp/simcpp.h"
+//#include "simcpp/simcpp.h"
 using json = nlohmann::json;
 
 int debug = 1; // 0: no printf, 1: printf for genetic algo, 2: all printf
@@ -103,6 +104,8 @@ struct RoutingInput
   std::vector<VehicleInput> vehicles;
   std::vector<std::vector<float>> distance_matrix;
   std::vector<std::vector<float>> duration_matrix;
+
+  // Will be calculated from the above:
   int output_num_days;
   int sim_duration_days;
   int sim_duration;
@@ -120,7 +123,9 @@ void from_json(const json &j, RoutingInput &x)
   j.at("vehicles").get_to(x.vehicles);
   j.at("distance_matrix").get_to(x.distance_matrix);
   j.at("duration_matrix").get_to(x.duration_matrix);
+}
 
+void preprocess_routing_input(RoutingInput &x) {
   // Do some preprocessing calculations
   // Simulation length
   x.output_num_days = 14; // Get routes for 14 days
@@ -145,11 +150,11 @@ void from_json(const json &j, RoutingInput &x)
 class Vehicle;
 class PickupSite;
 
-
 // Logistics simulation class definition and member function declarations
-class LogisticsSimulation: public HasCostFunction {  
+class LogisticsSimulation: public HasCostFunction {
 public:
   // Config
+  simcpp20::simulation<> *sim;
   RoutingInput &routingInput;
   const int *genome;
 
@@ -161,32 +166,127 @@ public:
   // Member functions
   double costFunction(const int *genome, double earlyOutThreshold = std::numeric_limits<double>::max());
   bool pickup(int vehicleIndex, int pickupSiteIndex);
-
+  
   // Constructor
   LogisticsSimulation(RoutingInput &routingInput);
+private:
+
+  simcpp20::event<> runVehicleShiftProcess(simcpp20::simulation<> &sim, int vehicleIndex, int day);
+  simcpp20::event<> runDailyProcess(simcpp20::simulation<> &sim);
 };
 
-// Pickup site class definition and member function definitions
-class alignas(alignof(std::max_align_t)) PickupSite {
-public:
-  LogisticsSimulation *logisticsSim;
+// Pickup site class definition
+struct alignas(alignof(std::max_align_t)) PickupSite {
   float level;
-  PickupSite(LogisticsSimulation *logisticsSim):
-  logisticsSim(logisticsSim) {}
 };
 
 // Vehicle class definition and member function definitions
-class alignas(alignof(std::max_align_t)) Vehicle {
-private:
-public:
-  LogisticsSimulation *logisticsSim;
+struct alignas(alignof(std::max_align_t)) Vehicle {
   float loadLevel;
   float odometer; // Total distance traveled
   float overtime; // Total overtime accumulated
   std::vector<int> routeStartLoci;
-  Vehicle(LogisticsSimulation *logisticsSim):
-  logisticsSim(logisticsSim), routeStartLoci(logisticsSim->routingInput.sim_duration_days) { }
+  Vehicle(LogisticsSimulation *logisticsSim): routeStartLoci(logisticsSim->routingInput.sim_duration_days) { }
 };
+
+simcpp20::event<> LogisticsSimulation::runVehicleShiftProcess(simcpp20::simulation<> &sim, int vehicleIndex, int day) {
+  // Necessary variables
+  Vehicle* vehicle = &vehicles[vehicleIndex];
+
+  // State variables
+  int locus;
+
+  // Quick access variables to make code easier to read
+  int homeDepotIndex;
+  double shiftStartTime;
+
+  // temporary variables to make code easier to read
+  int pickupSiteIndex;
+  int sourceLocationIndex;
+  int destinationLocationIndex;
+  float shiftDuration;
+
+  locus = vehicle->routeStartLoci[day];
+  homeDepotIndex = routingInput.vehicles[vehicleIndex].home_depot_index;
+  shiftStartTime = sim.now();
+
+  //if (debug >= 2) printf("%g Vehicle #%d: day %d route starts at locus %d with gene %d\n", sim->get_now()/60, vehicleIndex, day, locus, logisticsSim->genome[locus]);
+  if (this->genome[locus] >= routingInput.num_pickup_site_visits_in_genome) {
+    // Empty route
+    if (debug >= 2) printf("%gh Vehicle #%d: no route for day %d\n", sim.now()/60, vehicleIndex, day);
+  } else {
+    // At least one pickup site to visit. First do the step from depot to first place
+    if (debug >= 2) printf("%gh Vehicle #%d: depart from depot #%d\n", sim.now()/60, vehicleIndex, homeDepotIndex);
+    sourceLocationIndex = routingInput.depots[homeDepotIndex].location_index;
+    pickupSiteIndex = routingInput.gene_to_pickup_site_index[genome[locus]];
+    destinationLocationIndex = routingInput.pickup_sites[pickupSiteIndex].location_index;
+    co_await sim.timeout(routingInput.duration_matrix[sourceLocationIndex][destinationLocationIndex] + pickup_duration);
+    vehicle->odometer += routingInput.distance_matrix[sourceLocationIndex][destinationLocationIndex];
+    if (debug >= 2) printf("%gh Vehicle #%d: arrive at pickup site #%d\n", sim.now()/60, vehicleIndex, routingInput.gene_to_pickup_site_index[this->genome[locus]]);
+    this->pickup(vehicleIndex, pickupSiteIndex);
+    // From a pickup site to another
+    for (; locus + 1 < routingInput.num_genes; locus++) {
+      //if (debug >= 2) printf("%g Vehicle #%d: gene = %d\n", sim->get_now()/60, vehicleIndex, logisticsSim->genome[locus + 1]);
+      if (this->genome[locus + 1] < routingInput.num_pickup_site_visits_in_genome) {
+        if (debug >= 2) printf("%gh Vehicle #%d: depart from pickup site #%d\n", sim.now()/60, vehicleIndex, routingInput.gene_to_pickup_site_index[this->genome[locus]]);
+        sourceLocationIndex = routingInput.pickup_sites[routingInput.gene_to_pickup_site_index[this->genome[locus]]].location_index;
+        pickupSiteIndex = routingInput.gene_to_pickup_site_index[this->genome[locus + 1]];
+        destinationLocationIndex = routingInput.pickup_sites[pickupSiteIndex].location_index;
+        co_await sim.timeout(routingInput.duration_matrix[sourceLocationIndex][destinationLocationIndex] + pickup_duration);
+        vehicle->odometer += routingInput.distance_matrix[sourceLocationIndex][destinationLocationIndex];
+        if (debug >= 2) printf("%gh Vehicle #%d: arrive at pickup site #%d\n", sim.now()/60, vehicleIndex, routingInput.gene_to_pickup_site_index[this->genome[locus + 1]]);
+        this->pickup(vehicleIndex, pickupSiteIndex);
+      } else {
+        break;
+      }
+    }
+    // And finally from the last pickup site back to depot
+    if (debug >= 2) printf("%gh Vehicle #%d: depart from pickup site #%d\n", sim.now()/60, vehicleIndex, routingInput.gene_to_pickup_site_index[this->genome[locus]]);
+    sourceLocationIndex = routingInput.pickup_sites[routingInput.gene_to_pickup_site_index[this->genome[locus]]].location_index;
+    destinationLocationIndex = routingInput.depots[homeDepotIndex].location_index;
+    co_await sim.timeout(routingInput.duration_matrix[sourceLocationIndex][destinationLocationIndex]);
+    vehicle->odometer += routingInput.distance_matrix[sourceLocationIndex][destinationLocationIndex];
+    if (debug >= 2) printf("%gh Vehicle #%d: arrive at depot #%d and dump all %g\n", sim.now()/60, vehicleIndex, homeDepotIndex, vehicle->loadLevel);
+    vehicle->loadLevel = 0;
+  }
+
+  shiftDuration = sim.now() - shiftStartTime;
+  if (shiftDuration > routingInput.vehicles[vehicleIndex].max_route_duration) {
+    vehicle->overtime += shiftDuration - routingInput.vehicles[vehicleIndex].max_route_duration;
+  }
+  co_return;
+}
+
+simcpp20::event<> LogisticsSimulation::runDailyProcess(simcpp20::simulation<> &sim) {
+  
+  int day;
+  int vehicleIndex;
+  int pickupSiteIndex;
+
+  totalNumPickupSiteOverloadDays = 0;
+
+  for (day = 0; day < routingInput.sim_duration_days; day++) {
+    for (vehicleIndex = 0; vehicleIndex < vehicles.size(); vehicleIndex++) {
+      // Start vehicle shift for current day
+      runVehicleShiftProcess(sim, vehicleIndex, day);
+    }
+    co_await sim.timeout(24*60);
+    // Increase pickup site levels
+    for (pickupSiteIndex = 0; pickupSiteIndex < pickupSites.size(); pickupSiteIndex++) {          
+      pickupSites[pickupSiteIndex].level += routingInput.pickup_sites[pickupSiteIndex].growth_rate*24*60;
+      if (pickupSites[pickupSiteIndex].level > routingInput.pickup_sites[pickupSiteIndex].capacity) {
+        totalNumPickupSiteOverloadDays++;
+        if (debug >= 2) printf("%gh WARNING Site %d overload\n", sim.now()/60, pickupSiteIndex);
+      }
+    }
+    for (pickupSiteIndex = 0; pickupSiteIndex < pickupSites.size(); pickupSiteIndex++) {
+      if (debug >= 2) printf("%d%%, ", (int)floor(pickupSites[pickupSiteIndex].level / routingInput.pickup_sites[pickupSiteIndex].capacity * 100 + 0.5));
+    }
+    if (debug >= 2) printf("\n");
+  }
+
+  co_return;
+}
 
 bool LogisticsSimulation::pickup(int vehicleIndex, int pickupSiteIndex) {
   if (pickupSites[pickupSiteIndex].level == 0) {
@@ -211,133 +311,6 @@ bool LogisticsSimulation::pickup(int vehicleIndex, int pickupSiteIndex) {
     return true; // Some work done
   }
 }
-
-class VehicleShiftProcess: public simcpp::Process {  
-public:
-  // Necessary variables
-  Vehicle *vehicle;
-  int vehicleIndex;
-  int day;
-
-  // State variables
-  int locus;
-
-  // Quick access variables to make code easier to read
-  LogisticsSimulation *logisticsSim;
-  RoutingInput &routingInput;
-  int homeDepotIndex;
-  double shiftStartTime;
-
-  // temporary variables to make code easier to read
-  int pickupSiteIndex;
-  int sourceLocationIndex;
-  int destinationLocationIndex;
-  float shiftDuration;
-
-  bool Run() override {
-    auto sim = this->sim.lock();
-
-    PT_BEGIN();
-
-    logisticsSim = vehicle->logisticsSim;
-    vehicleIndex = vehicle - &logisticsSim->vehicles[0];
-    locus = vehicle->routeStartLoci[day];
-    routingInput = logisticsSim->routingInput;
-    homeDepotIndex = routingInput.vehicles[vehicleIndex].home_depot_index;
-    shiftStartTime = sim->get_now();
-
-    //if (debug >= 2) printf("%g Vehicle #%d: day %d route starts at locus %d with gene %d\n", sim->get_now()/60, vehicleIndex, day, locus, logisticsSim->genome[locus]);
-    if (logisticsSim->genome[locus] >= routingInput.num_pickup_site_visits_in_genome) {
-      // Empty route
-      if (debug >= 2) printf("%g Vehicle #%d: no route for day %d\n", sim->get_now()/60, vehicleIndex, day);
-    } else {
-      // At least one pickup site to visit. First do the step from depot to first place
-      if (debug >= 2) printf("%g Vehicle #%d: depart from depot #%d\n", sim->get_now()/60, vehicleIndex, homeDepotIndex);
-      sourceLocationIndex = routingInput.depots[homeDepotIndex].location_index;
-      pickupSiteIndex = routingInput.gene_to_pickup_site_index[logisticsSim->genome[locus]];
-      destinationLocationIndex = routingInput.pickup_sites[pickupSiteIndex].location_index;
-      PROC_WAIT_FOR(sim->timeout(routingInput.duration_matrix[sourceLocationIndex][destinationLocationIndex] + pickup_duration));
-      vehicle->odometer += routingInput.distance_matrix[sourceLocationIndex][destinationLocationIndex];
-      if (debug >= 2) printf("%g Vehicle #%d: arrive at pickup site #%d\n", sim->get_now()/60, vehicleIndex, routingInput.gene_to_pickup_site_index[logisticsSim->genome[locus]]);
-      logisticsSim->pickup(vehicleIndex, pickupSiteIndex);
-      // From a pickup site to another
-      for (; locus + 1 < routingInput.num_genes; locus++) {
-        //if (debug >= 2) printf("%g Vehicle #%d: gene = %d\n", sim->get_now()/60, vehicleIndex, logisticsSim->genome[locus + 1]);
-        if (logisticsSim->genome[locus + 1] < routingInput.num_pickup_site_visits_in_genome) {
-          if (debug >= 2) printf("%g Vehicle #%d: depart from pickup site #%d\n", sim->get_now()/60, vehicleIndex, routingInput.gene_to_pickup_site_index[logisticsSim->genome[locus]]);
-          sourceLocationIndex = routingInput.pickup_sites[routingInput.gene_to_pickup_site_index[logisticsSim->genome[locus]]].location_index;
-          pickupSiteIndex = routingInput.gene_to_pickup_site_index[logisticsSim->genome[locus + 1]];
-          destinationLocationIndex = routingInput.pickup_sites[pickupSiteIndex].location_index;
-          PROC_WAIT_FOR(sim->timeout(routingInput.duration_matrix[sourceLocationIndex][destinationLocationIndex] + pickup_duration));
-          vehicle->odometer += routingInput.distance_matrix[sourceLocationIndex][destinationLocationIndex];
-          if (debug >= 2) printf("%g Vehicle #%d: arrive at pickup site #%d\n", sim->get_now()/60, vehicleIndex, routingInput.gene_to_pickup_site_index[logisticsSim->genome[locus + 1]]);
-          logisticsSim->pickup(vehicleIndex, pickupSiteIndex);
-        } else {
-          break;
-        }
-      }
-      // And finally from the last pickup site back to depot
-      if (debug >= 2) printf("%g Vehicle #%d: depart from pickup site #%d\n", sim->get_now()/60, vehicleIndex, routingInput.gene_to_pickup_site_index[logisticsSim->genome[locus]]);
-      sourceLocationIndex = routingInput.pickup_sites[routingInput.gene_to_pickup_site_index[logisticsSim->genome[locus]]].location_index;
-      destinationLocationIndex = routingInput.depots[homeDepotIndex].location_index;
-      PROC_WAIT_FOR(sim->timeout(routingInput.duration_matrix[sourceLocationIndex][destinationLocationIndex]));
-      vehicle->odometer += routingInput.distance_matrix[sourceLocationIndex][destinationLocationIndex];
-      if (debug >= 2) printf("%g Vehicle #%d: arrive at depot #%d and dump all %g\n", sim->get_now()/60, vehicleIndex, homeDepotIndex, vehicle->loadLevel);
-      vehicle->loadLevel = 0;
-    }
-
-    shiftDuration = sim->get_now() - shiftStartTime;
-    if (shiftDuration > routingInput.vehicles[vehicleIndex].max_route_duration) {
-      vehicle->overtime += shiftDuration - routingInput.vehicles[vehicleIndex].max_route_duration;
-    }
-
-    PT_END();    
-  }
-
-  explicit VehicleShiftProcess(simcpp::SimulationPtr sim, Vehicle *vehicle, int day): 
-  Process(sim), vehicle(vehicle), day(day), routingInput(vehicle->logisticsSim->routingInput) { }
-};
-
-class DailyProcess: public simcpp::Process {
-public:  
-  int day;
-  int vehicleIndex;
-  int pickupSiteIndex;
-  LogisticsSimulation *logisticsSim;
-
-  bool Run() override {
-    auto sim = this->sim.lock();    
-
-    PT_BEGIN();
-
-    logisticsSim->totalNumPickupSiteOverloadDays = 0;
-
-    for (day = 0; day < logisticsSim->routingInput.sim_duration_days; day++) {
-      for (vehicleIndex = 0; vehicleIndex < logisticsSim->vehicles.size(); vehicleIndex++) {
-        // Start vehicle shift for current day
-        sim->start_process<VehicleShiftProcess>(&logisticsSim->vehicles[vehicleIndex], day);
-      }
-      PROC_WAIT_FOR(sim->timeout(24*60));
-      // Increase pickup site levels
-      for (pickupSiteIndex = 0; pickupSiteIndex < logisticsSim->pickupSites.size(); pickupSiteIndex++) {          
-        logisticsSim->pickupSites[pickupSiteIndex].level += logisticsSim->routingInput.pickup_sites[pickupSiteIndex].growth_rate*24*60;
-        if (logisticsSim->pickupSites[pickupSiteIndex].level > logisticsSim->routingInput.pickup_sites[pickupSiteIndex].capacity) {
-          logisticsSim->totalNumPickupSiteOverloadDays++;
-          if (debug >= 2) printf("%g WARNING Site %d overload\n", sim->get_now(), pickupSiteIndex);
-        }
-      }
-      for (pickupSiteIndex = 0; pickupSiteIndex < logisticsSim->pickupSites.size(); pickupSiteIndex++) {
-        if (debug >= 2) printf("%d%%, ", (int)floor(logisticsSim->pickupSites[pickupSiteIndex].level / logisticsSim->routingInput.pickup_sites[pickupSiteIndex].capacity * 100 + 0.5));
-      }
-      if (debug >= 2) printf("\n");
-    }
-
-    PT_END();    
-  }
-
-  explicit DailyProcess(simcpp::SimulationPtr sim, LogisticsSimulation *logisticsSim): 
-  Process(sim), logisticsSim(logisticsSim) { }
-};
 
 double costFunctionFromComponents(double totalOdometer, double totalNumPickupSiteOverloadDays, double totalOvertime) {
   return totalOdometer*(50.0/100000.0*2) // Fuel price: 2 eur / L, fuel consumption: 50 L / (100 km)
@@ -381,9 +354,10 @@ double LogisticsSimulation::costFunction(const int *genome, double earlyOutThres
     }
   }
   // Simulate
-  auto sim = simcpp::Simulation::create();
-  sim->start_process<DailyProcess>(this);
-  sim->run();
+  simcpp20::simulation<> sim;
+  this->sim = &sim;
+  runDailyProcess(sim);
+  sim.run();
   double totalOvertime = 0;
   double totalOdometer = 0;
   for (int vehicleIndex = 0; vehicleIndex < vehicles.size(); vehicleIndex++) {
@@ -400,38 +374,38 @@ double LogisticsSimulation::costFunction(const int *genome, double earlyOutThres
 
 // Simulation class constructor
 LogisticsSimulation::LogisticsSimulation(RoutingInput &routingInput):
-  routingInput(routingInput), vehicles(routingInput.vehicles.size(), this), pickupSites(routingInput.pickup_sites.size(), this) {
+  routingInput(routingInput), vehicles(routingInput.vehicles.size(), this), pickupSites(routingInput.pickup_sites.size()) {
 }
 
 int main() {
+  // Read routing optimization input
   std::ifstream f("temp/routing_input.json");
   RoutingInput routingInput(json::parse(f).get<RoutingInput>());
+  // Preprocess routing optimization input
+  preprocess_routing_input(routingInput);
   std::vector<HasCostFunction*> logisticsSims;
   for (int i = 0; i < omp_get_max_threads(); i++) {
     logisticsSims.push_back(new LogisticsSimulation(routingInput));
   }
-  /*
+/*
   int *testGenome = new int[routingInput.num_genes];
   for (int i = 0; i < routingInput.num_genes; i++) {
     testGenome[i] = i;
   }
+  logisticsSims[0]->costFunction(testGenome); */
+
+/*
+  int testGenome[] = {130,86,59,68,99,101,82,75,79,76,72,84,80,94,28,25,111,30,120,12,6,18,0,2,126,114,104,36,138,117,48,63,67,34,89,93,53,23,90,96,46,41,40,108,43,103,134,132,136,122,137,139,142,143,128,133,129,118,125,131,123,135,116,140,119,121,141,127,124,92,5,100,71,74,85,39,22,81,61,51,113,95,73,106,70,88,11,91,112,109,31,54,16,19,97,98,29,21,57,8,47,58,10,27,7,45,52,32,9,24,55,3,13,87,1,17,115,83,65,37,26,56,60,4,102,105,77,44,49,110,50,20,33,107,69,62,14,35,15,64,38,42,78,66};
+  debug++;
   logisticsSims[0]->costFunction(testGenome);
-  */
+  debug--;*/
 
   Optimizer optimizer(routingInput.num_genes, logisticsSims);
-  int numGenerations = 30000; // 400000
-  int numFinetuneGenerations = 10000;
+  int numGenerations = 30000; // 30000
+  int numFinetuneGenerations = 10000; // 10000
   int numGenerationsPerStep = 100;
   optimizer.initPopulation();
-  /*
-  debug = 2;
-  for (int i = 0; i < routingInput.num_genes; i++) {
-    printf("%d,%d\n", i, optimizer.population[0][i]);
-  }
-  printf("\n");
-  logisticsSims[0]->costFunction(optimizer.population[0]);
-  debug = 1;
-  */
+
   int generationIndex = 0;
   for (; generationIndex < numGenerations; generationIndex += numGenerationsPerStep) {
     if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.bestCost);
@@ -443,11 +417,7 @@ int main() {
   }
   if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.bestCost);
 
-  debug++;/*
-  for (int i = 0; i < routingInput.num_genes; i++) {
-    printf("%d,%d\n", i, optimizer.best[i]);
-  }
-  printf("\n");*/
+  debug++;
   logisticsSims[0]->costFunction(optimizer.best);
   debug--;
 
@@ -457,6 +427,11 @@ int main() {
 
   // Get routes
   int *genome = optimizer.best;
+  printf("\nBest genome:\n");
+  for (int i = 0; i < routingInput.num_genes; i++) {
+    printf("%d,", genome[i]);
+  }
+  printf("\n\n");
   RoutingOutput routingOutput;
   LogisticsSimulation logisticsSim(routingInput);
   logisticsSim.costFunction(optimizer.best); // Get routeStartLoci

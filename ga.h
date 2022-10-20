@@ -2,7 +2,7 @@
 // Authors: Olli Niemitalo, Genrikh Ekkerman
 // Based on https://github.com/hamk-uas/assembly-line-sequencing-ga
 //
-// This work is licensed under the MIT license and is distributed without any warranty.
+// This work is dual-licensed under the MIT and Apache 2.0 licenses and is distributed without any warranty.
 
 // -*- compile-command: "g++ genetic_algorithm_own_test.cpp -std=c++17 -march=native -I. -O3 -ffast-math -fopenmp -o test" -*-
 

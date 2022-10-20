@@ -47,7 +47,7 @@ You need an API key to [openrouteservice](https://openrouteservice.org/). The ke
 
 To compile the routing optimizer in Windows or Linux:
 
-`g++ routing_optimizer.cpp simcpp/simcpp.cpp -std=c++17 -march=native -I. -O3 -ffast-math -fopenmp -o routing_optimizer`
+`g++ routing_optimizer.cpp simcpp/simcpp.cpp -std=c++20 -march=native -I. -O3 -fcoroutines -ffast-math -fopenmp -o routing_optimizer`
 
 ### Simulation
 
@@ -65,6 +65,6 @@ This work is licensed under both the MIT license and Apache 2.0 license, and is 
 
 The source code in the following folders is 3rd-party and has separate copyright and licenses:
 * [`/nlohmann`](nlohmann) [JSON for Modern C++](https://github.com/nlohmann/json), MIT license
-* [`/simcpp`](simcpp) [Discrete event simulation in C++ using Protothreads](https://github.com/luteberget/simcpp), MIT license
+* [`/fschuetz04`](fschuetz04) [SimCpp20, discrete event simulation in C++ using coroutines](https://github.com/fschuetz04/simcpp20), MIT license
 
 The topographic map shown in this readme file is licensed under CC BY 4.0 by National Land Survey of Finland, retrieved 2022-09.
