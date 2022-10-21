@@ -39,6 +39,7 @@ private:
   };
   int numGenes;
   int *shot;
+  int **tempGen;
   int **nextGen;
   std::vector<HasCostFunction*> &haveCostFunction;
   Cost *nextGenCosts;
@@ -134,7 +135,7 @@ public:
   }
 
   // Optimize or continue optimization, over some number of generations
-  void optimize(int generations = 10000, int finetune = 0)
+  void optimize(int generations = 10000, bool finetune = false)
   {
     for (int j = 0; j < populationSize; j++)
     {
@@ -150,13 +151,14 @@ public:
         {
           int p0 = shot[j + k];
           int p1 = j + k;
-          if (finetune == 0) {
-            crossover(population[p0], population[p1], nextGen[j + k], omp_get_thread_num());
-          } else {
+          if (finetune) {
             crossover(population[p0], best, nextGen[j + k], omp_get_thread_num());
+          } else {
+            crossover(best, population[p0], tempGen[j + k], omp_get_thread_num());
+            crossover(tempGen[j + k], population[p1], nextGen[j + k], omp_get_thread_num());
           }
           nextGenCosts[j + k].value = haveCostFunction[omp_get_thread_num()]->costFunction(nextGen[j + k], costs[j + k].value);
-          if ((finetune == 0 || finetune == 2) && nextGenCosts[j + k].value >= costs[j + k].value || (finetune == 1 && nextGenCosts[j + k].value >= bestCost))
+          if (!(nextGenCosts[j + k].value < costs[j + k].value))
           {
             std::swap(population[j + k], nextGen[j + k]);
             nextGenCosts[j + k].value = costs[j + k].value;
@@ -187,12 +189,14 @@ public:
     }
     shot = new int[populationSize];
     population = new int *[populationSize];
+    tempGen = new int *[populationSize];
     nextGen = new int *[populationSize];
     costs = new Cost[populationSize];
     nextGenCosts = new Cost[populationSize];
     for (int j = 0; j < populationSize; j++)
     {
       population[j] = new int[numGenes];
+      tempGen[j] = new int[numGenes];
       nextGen[j] = new int[numGenes];
     }
     initPopulation();
@@ -209,10 +213,12 @@ public:
     for (int j = 0; j < populationSize; j++)
     {
       delete[] population[j];
+      delete[] tempGen[j];
       delete[] nextGen[j];
     }
     delete[] shot;
     delete[] population;
+    delete[] tempGen;
     delete[] nextGen;
     delete[] costs;
     delete[] nextGenCosts;
