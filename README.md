@@ -1,6 +1,6 @@
 # Logistics simulation and optimization
 
-A demo of simulation and optimization of glass waste pickup from Rinki sites in the area of the following municipalities in Finland: Hämeenlinna, Hattula, Janakkala, Hausjärvi, Riihimäki, Loppi, Tammela, Forssa, Jokioinen. For more information about Rinki see: https://rinkiin.fi/kotitalouksille/rinki-ekopisteet/ and https://rinkiin.fi/tietoa-ringista/suomen-kerayslasiyhdistys/lasipakkausten-terminaalit/.
+A demo of simulation and optimization of glass waste pickup from Rinki sites in the area of the following municipalities in Finland: Hämeenlinna, Hattula, Janakkala, Hausjärvi, Riihimäki, Loppi, Tammela, Forssa, Jokioinen, chosen arbitrarily. For more information about Rinki see: https://rinkiin.fi/kotitalouksille/rinki-ekopisteet/ and https://rinkiin.fi/tietoa-ringista/suomen-kerayslasiyhdistys/lasipakkausten-terminaalit/.
 
 <video src='https://user-images.githubusercontent.com/60920087/194047546-58bdf96e-0576-477f-b2c4-2b9f55a3a183.mov' width=640></video>
 
@@ -10,7 +10,7 @@ Recyclable glass waste from consumers is constantly accumulating in a number of 
 
 Two weeks of waste transportation traffic is simulated, with the routes (a list of locations for each vehicle, for each day) optimized by a genetic algorithm utilizing a simulator to calculate and minimize a cost function that depends on the routing. A monetary cost is calculated based on fuel consumption, overtime work, and daily penalties for overfull pickup sites. As can be seen in the above animation, the optimization does not care what happens after the two-week period, and many of the pickup sites are almost full at the end.
 
-The simulation type is **process-based discrete event simulation**. The main simulation is implemented in Python using [SimPy](https://simpy.readthedocs.io/en/latest/), and the optimizer uses a faster C++ implementation of the same simulation model using [SimCpp](https://github.com/luteberget/simcpp).
+The simulation type is **process-based discrete event simulation**. The main simulation is implemented in Python using [SimPy](https://simpy.readthedocs.io/en/latest/), and the optimizer uses a faster C++ implementation of the same simulation model using [SimCpp20](https://github.com/fschuetz04/simcpp20).
 
 The simulation model consists of the following types of components:
 * **Pickup site** (location)
@@ -32,7 +32,7 @@ The optimizer uses a genetic algorithm to come up with routing proposals. The co
 
 _System diagram._
 
-![image](https://user-images.githubusercontent.com/60920087/195798821-4082ddd5-6454-4f1b-b7ef-dfe013f1030c.png)
+![image](https://user-images.githubusercontent.com/60920087/196900595-75e237a8-362d-48bc-8d74-89732601cc8a.png)
 
 _Optimization trajectory: Lowest cost in the population of route proposals as function of the number of cost function evaluations. That number increases by the population size for every generation of the genetic algorithm. Optimization is done for a predefined number of generations. At a predefined generation, there is a change to a greedy optimization algorithm that always uses the lowest-cost member in the population as one of the parents to generate an offspring route proposal._
 
