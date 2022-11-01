@@ -1,6 +1,7 @@
 *.exe
 .vscode
 secrets.py
+waste_pickup_sim_secrets.py
 routing_optimizer
 routing_optimizer.exe
 log
