@@ -34,7 +34,7 @@ private:
   struct alignas(alignof(std::max_align_t)) aligned_ThreadState
   {
     std::mt19937 randomNumberGenerator;
-    std::uniform_int_distribution<int> uniform0ToNumGenes;
+    std::uniform_int_distribution<int> uniform0ToNumGenesMinus1;
     bool *childHasGene{nullptr};
   };
   int numGenes;
@@ -100,37 +100,48 @@ public:
 
   // Cross over two parents and a child. thread = index of the thread that does the work.
   inline void crossover(const int *p0, const int *p1, int *child, int thread)
-  { // Leaves first gene untouched
+  { 
     std::fill(threadStates[thread].childHasGene, threadStates[thread].childHasGene + numGenes, false);
-    int fStart = threadStates[thread].uniform0ToNumGenes(threadStates[thread].randomNumberGenerator);
-    int fEnd = threadStates[thread].uniform0ToNumGenes(threadStates[thread].randomNumberGenerator);
-    int fLength = fEnd - fStart;    
-    if (fLength < 0) fLength = -fLength;
-    int ci0 = threadStates[thread].uniform0ToNumGenes(threadStates[thread].randomNumberGenerator);
-    int ci = ci0;
+    int fStart = threadStates[thread].uniform0ToNumGenesMinus1(threadStates[thread].randomNumberGenerator);
+    int fEnd = threadStates[thread].uniform0ToNumGenesMinus1(threadStates[thread].randomNumberGenerator);
+    int ci0;
+    int ci;
     int fi = 0;
-    if (fStart > fEnd) {
-      for (; fi < fLength && ci < numGenes; ci++, fi++) {
-        int gene = p0[fStart - 1 - fi];
+    int p1i = fStart;
+    if (fStart <= fEnd) {
+      // Read fragment from p1 in forward order
+      int fLen = fEnd - fStart + 1;
+      ci0 = std::uniform_int_distribution<int>(0, numGenes - fLen)(threadStates[thread].randomNumberGenerator);
+      ci = ci0;
+      for (; p1i <= fEnd && ci < numGenes; ci++, p1i++) {
+        int gene = p1[p1i];
         child[ci] = gene;
         threadStates[thread].childHasGene[gene] = true;
       }
     } else {
-      for (; fi < fLength && ci < numGenes; ci++, fi++) {
-        int gene = p0[fStart + fi];
+      // Read fragment from p1 in reverse order
+      int fLen = fStart - fEnd + 1;
+      ci0 = std::uniform_int_distribution<int>(0, numGenes - fLen)(threadStates[thread].randomNumberGenerator);
+      ci = ci0;
+      for (; p1i >= fEnd && ci < numGenes; ci++, p1i--) {
+        int gene = p1[p1i];
         child[ci] = gene;
         threadStates[thread].childHasGene[gene] = true;
       }
     }
     int ci1 = ci;
-    int p1i = 0;
-    for (ci = 0; ci < ci0; ci++, p1i++) {
-      for (; threadStates[thread].childHasGene[p1[p1i]]; p1i++);
-      child[ci] = p1[p1i];
+    int p0i = 0;
+    for (ci = 0; ci < ci0; ci++, p0i++) {
+      while (threadStates[thread].childHasGene[p0[p0i]]) {
+        p0i++;
+      }
+      child[ci] = p0[p0i];
     }
-    for (ci = ci1; ci < numGenes; ci++, p1i++) {
-      for (; threadStates[thread].childHasGene[p1[p1i]]; p1i++);
-      child[ci] = p1[p1i];
+    for (ci = ci1; ci < numGenes; ci++, p0i++) {
+      while (threadStates[thread].childHasGene[p0[p0i]]) {
+        p0i++;
+      }
+      child[ci] = p0[p0i];
     }
   }
 
@@ -149,19 +160,18 @@ public:
       {
         for (int k = 0; k < simdIntParallelCount; k++)
         {
-          int p0 = shot[j + k];
-          int p1 = j + k;
-          if (finetune) {
-            crossover(population[p0], best, nextGen[j + k], omp_get_thread_num());
+          int p0 = j + k;
+          int p1 = shot[j + k];
+          if (!finetune) {
+            crossover(population[p0], population[p1], nextGen[p0], omp_get_thread_num());
           } else {
-            crossover(best, population[p0], tempGen[j + k], omp_get_thread_num());
-            crossover(tempGen[j + k], population[p1], nextGen[j + k], omp_get_thread_num());
+            crossover(population[p0], best, nextGen[p0], omp_get_thread_num());
           }
-          nextGenCosts[j + k].value = haveCostFunction[omp_get_thread_num()]->costFunction(nextGen[j + k], costs[j + k].value);
-          if (!(nextGenCosts[j + k].value < costs[j + k].value))
+          nextGenCosts[p0].value = haveCostFunction[omp_get_thread_num()]->costFunction(nextGen[p0], costs[p0].value);
+          if (!(nextGenCosts[p0].value < costs[p0].value))
           {
-            std::swap(population[j + k], nextGen[j + k]);
-            nextGenCosts[j + k].value = costs[j + k].value;
+            std::swap(population[p0], nextGen[p0]);
+            nextGenCosts[p0].value = costs[p0].value;
           }
         }
       }
@@ -183,7 +193,7 @@ public:
     threadStates = new aligned_ThreadState[maxNumThreads];
     for (int thread = 0; thread < maxNumThreads; thread++)
     {
-      threadStates[thread].uniform0ToNumGenes = std::uniform_int_distribution<int>(0, numGenes);
+      threadStates[thread].uniform0ToNumGenesMinus1 = std::uniform_int_distribution<int>(0, numGenes - 1);
       threadStates[thread].randomNumberGenerator = std::mt19937(seed + 1 + thread); // Use a different seed for each thread
       threadStates[thread].childHasGene = new bool[numGenes];
     }
