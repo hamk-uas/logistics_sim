@@ -4,7 +4,9 @@
 //
 // This work is dual-licensed under the MIT and Apache 2.0 licenses and is distributed without any warranty.
 
-// -*- compile-command: "g++ genetic_algorithm_own_test.cpp -std=c++17 -march=native -I. -O3 -ffast-math -fopenmp -o test" -*-
+// Compile with one of:
+// g++ routing_optimizer.cpp simcpp/simcpp.cpp -std=c++20 -march=native -I. -O3 -fcoroutines -ffast-math -fopenmp -o routing_optimizer
+// g++-10 routing_optimizer.cpp simcpp/simcpp.cpp -std=c++20 -march=native -I. -O3 -fcoroutines -ffast-math -fopenmp -o routing_optimizer
 
 #pragma once
 
@@ -15,73 +17,95 @@
 #include <omp.h>
 #include <cstddef>
 
-const int simdIntParallelCount = alignof(std::max_align_t) / sizeof(int); // How many ints fit to the maximum alignment interval
-
 // A cost function must be provided in an object of a user class that inherits HasCostFunction
+template <class T>
 class HasCostFunction {
 public:
-  virtual double costFunction(const int *genome, double earlyOutThreshold = std::numeric_limits<double>::max()) = 0;
+  virtual double costFunction(const T *genome, double earlyOutThreshold = std::numeric_limits<double>::max()) = 0;
 };
 
-struct alignas(alignof(std::max_align_t)) Cost {
-  double value;
+template <class T>
+struct alignas(alignof(std::max_align_t)) Proposal {
+  int numGenes;
+  T *genome;
+  double cost;
+
+  Proposal(const Proposal &other) {
+    numGenes = other.numGenes;
+    genome = new T[numGenes];
+  }
+
+  Proposal(int numGenes) {
+    this->numGenes = numGenes;
+    genome = new T[numGenes];
+  }
+
+  ~Proposal() {
+    delete[] genome;
+  }
+};
+
+template <class T>
+void swap(Proposal<T>& lhs, Proposal<T>& rhs) {
+  std::swap(lhs.genome, rhs.genome);
+  std::swap(lhs.cost, rhs.cost);
+}
+
+struct alignas(alignof(std::max_align_t)) aligned_ThreadState
+{
+  std::mt19937 randomNumberGenerator;
+  std::uniform_int_distribution<int> uniform0ToNumGenesMinus1;
+  bool *childHasGene{nullptr};
 };
 
 // An optimizer class with will store the population and its costs, and has everything needed for the optimization.
+template <class T>
 class Optimizer
 {
+public:
+  int populationSize;
 private:
-  struct alignas(alignof(std::max_align_t)) aligned_ThreadState
-  {
-    std::mt19937 randomNumberGenerator;
-    std::uniform_int_distribution<int> uniform0ToNumGenesMinus1;
-    bool *childHasGene{nullptr};
-  };
+  int maxNumThreads;
   int numGenes;
-  int *shot;
-  int **tempGen;
-  int **nextGen;
-  std::vector<HasCostFunction*> &haveCostFunction;
-  Cost *nextGenCosts;
+  int *proposalIndexPermutation;
+  std::vector<Proposal<T>> children;
+  std::vector<HasCostFunction<T>*> &haveCostFunction;
   std::mt19937 randomNumberGenerator; // For main thread
   aligned_ThreadState *threadStates;  // For parallel threads
-  int maxNumThreads;
 
+public:
+  std::vector<Proposal<T>> population;
+  int best; // Current best index
+
+private:
   // Choose the population size based on numGenes and constructor parameter populationSize
-  static int calcPopulationSize(int numGenes, int populationSize)
+  static int calcPopulationSize(int numGenes, int requestedPopulationSize)
   {
-    if (populationSize == -1)
+    if (requestedPopulationSize == -1)
     {
-      populationSize = numGenes * 4;
-      if (populationSize < 100)
+      requestedPopulationSize = numGenes * 4;
+      if (requestedPopulationSize < 100)
       {
-        populationSize = 100;
+        requestedPopulationSize = 100;
       }
     }
-    return populationSize & -simdIntParallelCount;
+    return requestedPopulationSize / omp_get_max_threads() * omp_get_max_threads();
   }
 
   // Calculate statistics of the population (find the best chromosome)
   void calcStats()
   {
-    bestCost = std::numeric_limits<double>::max();
+    best = 0;
     for (int j = 0; j < populationSize; j++)
     {
-      if (costs[j].value < bestCost)
+      if (population[j].cost < population[best].cost)
       {
-        bestCost = costs[j].value;
-        best = population[j];
+        best = j;
       }
     }
   }
 
 public:
-  int populationSize;
-  int **population;
-  double bestCost; // Current best cost
-  int *best;    // Current best
-  Cost *costs;   // Current costs in population
-
   // Initialize population and calculate statistics. Called automatically in constructor
   void initPopulation()
   {
@@ -89,17 +113,16 @@ public:
     {
       for (int i = 0; i < numGenes; i++)
       {
-        population[j][i] = i;
+        population[j].genome[i] = (T)i;
       }
-      std::shuffle(population[j], population[j] + numGenes, randomNumberGenerator);
-      costs[j].value = haveCostFunction[0]->costFunction(population[j]);
-      nextGen[j][0] = 0;
+      std::shuffle(population[j].genome, population[j].genome + numGenes, randomNumberGenerator);
+      population[j].cost = haveCostFunction[0]->costFunction(population[j].genome);
     }
     calcStats();
   }
 
   // Cross over two parents and a child. thread = index of the thread that does the work.
-  inline void crossover(const int *p0, const int *p1, int *child, int thread)
+  inline void crossover(const T *p0, const T *p1, T *child, int thread)
   { 
     std::fill(threadStates[thread].childHasGene, threadStates[thread].childHasGene + numGenes, false);
     int fStart = threadStates[thread].uniform0ToNumGenesMinus1(threadStates[thread].randomNumberGenerator);
@@ -114,7 +137,7 @@ public:
       ci0 = std::uniform_int_distribution<int>(0, numGenes - fLen)(threadStates[thread].randomNumberGenerator);
       ci = ci0;
       for (; p1i <= fEnd && ci < numGenes; ci++, p1i++) {
-        int gene = p1[p1i];
+        T gene = p1[p1i];
         child[ci] = gene;
         threadStates[thread].childHasGene[gene] = true;
       }
@@ -124,7 +147,7 @@ public:
       ci0 = std::uniform_int_distribution<int>(0, numGenes - fLen)(threadStates[thread].randomNumberGenerator);
       ci = ci0;
       for (; p1i >= fEnd && ci < numGenes; ci++, p1i--) {
-        int gene = p1[p1i];
+        T gene = p1[p1i];
         child[ci] = gene;
         threadStates[thread].childHasGene[gene] = true;
       }
@@ -148,35 +171,30 @@ public:
   // Optimize or continue optimization, over some number of generations
   void optimize(int generations = 10000, bool finetune = false)
   {
-    for (int j = 0; j < populationSize; j++)
-    {
-      shot[j] = j;
-    }
-    for (int generation = 0; generation < generations; generation++)
-    {
-      std::shuffle(shot, shot + populationSize, randomNumberGenerator);
+    for (int generation = 0; generation < generations; generation++) {
+      // Create a random permutation of proposal indexes
+      if (!finetune) {
+        std::shuffle(proposalIndexPermutation, proposalIndexPermutation + populationSize, randomNumberGenerator);
+      }
+      // Make children
 #pragma omp parallel for
-      for (int j = 0; j < populationSize; j += simdIntParallelCount)
-      {
-        for (int k = 0; k < simdIntParallelCount; k++)
-        {
-          int p0 = j + k;
-          int p1 = shot[j + k];
-          if (!finetune) {
-            crossover(population[p0], population[p1], nextGen[p0], omp_get_thread_num());
-          } else {
-            crossover(population[p0], best, nextGen[p0], omp_get_thread_num());
-          }
-          nextGenCosts[p0].value = haveCostFunction[omp_get_thread_num()]->costFunction(nextGen[p0], costs[p0].value);
-          if (!(nextGenCosts[p0].value < costs[p0].value))
-          {
-            std::swap(population[p0], nextGen[p0]);
-            nextGenCosts[p0].value = costs[p0].value;
-          }
+      for (int j = 0; j < populationSize; j++) {        
+        int p0 = j; // Each proposal gets to be a parent 0
+        if (!finetune) {
+          int p1 = proposalIndexPermutation[j]; // Each proposal is used once per generation as parent 1
+          crossover(population[p0].genome, population[p1].genome, children[p0].genome, omp_get_thread_num());
+        } else {
+          crossover(population[p0].genome, population[best].genome, children[p0].genome, omp_get_thread_num());
+        }
+        children[p0].cost = haveCostFunction[omp_get_thread_num()]->costFunction(children[p0].genome, population[p0].cost);
+      }
+      // 
+      for (int j = 0; j < populationSize; j++) {
+        if (children[j].cost < population[j].cost) {
+          using std::swap;
+          swap(population[j], children[j]);
         }
       }
-      std::swap(population, nextGen);
-      std::swap(costs, nextGenCosts);
       calcStats();
     }
   }
@@ -186,7 +204,15 @@ public:
   // distanceMatrix = concatenated rows of the distance matrix
   // populationSize = population size, must be a multiple of simdIntParallelCount (typically 4), -1 = auto based on numGenes.
   // seed = random number generator seed. Worker threads use seed + 1, seed + 2, ...
-  Optimizer(int numGenes, std::vector<HasCostFunction*> &haveCostFunction, int populationSize = -1, unsigned seed = std::chrono::system_clock::now().time_since_epoch().count()) : numGenes(numGenes), haveCostFunction(haveCostFunction), populationSize(populationSize = calcPopulationSize(numGenes, populationSize)), randomNumberGenerator(seed), maxNumThreads(omp_get_max_threads())
+  Optimizer(int numGenes, std::vector<HasCostFunction<T>*> &haveCostFunction, int requestedPopulationSize = -1, unsigned seed = std::chrono::system_clock::now().time_since_epoch().count()):
+  maxNumThreads(omp_get_max_threads()),
+  numGenes(numGenes),
+  populationSize(calcPopulationSize(numGenes, requestedPopulationSize)),
+  haveCostFunction(haveCostFunction),
+  randomNumberGenerator(seed),
+  best(0),
+  population(populationSize, numGenes),
+  children(populationSize, numGenes)
   {
     printf("Population size: %d\n", populationSize);
     printf("Numgenes: %d\n", numGenes);
@@ -197,19 +223,12 @@ public:
       threadStates[thread].randomNumberGenerator = std::mt19937(seed + 1 + thread); // Use a different seed for each thread
       threadStates[thread].childHasGene = new bool[numGenes];
     }
-    shot = new int[populationSize];
-    population = new int *[populationSize];
-    tempGen = new int *[populationSize];
-    nextGen = new int *[populationSize];
-    costs = new Cost[populationSize];
-    nextGenCosts = new Cost[populationSize];
+    proposalIndexPermutation = new int[populationSize];
+    initPopulation();
     for (int j = 0; j < populationSize; j++)
     {
-      population[j] = new int[numGenes];
-      tempGen[j] = new int[numGenes];
-      nextGen[j] = new int[numGenes];
+      proposalIndexPermutation[j] = j;
     }
-    initPopulation();
   }
 
   // Destructor
@@ -220,17 +239,6 @@ public:
       delete[] threadStates[thread].childHasGene;
     }
     delete[] threadStates;
-    for (int j = 0; j < populationSize; j++)
-    {
-      delete[] population[j];
-      delete[] tempGen[j];
-      delete[] nextGen[j];
-    }
-    delete[] shot;
-    delete[] population;
-    delete[] tempGen;
-    delete[] nextGen;
-    delete[] costs;
-    delete[] nextGenCosts;
+    delete[] proposalIndexPermutation;
   }
 };

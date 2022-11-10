@@ -183,7 +183,7 @@ class VehicleState;
 class PickupSiteState;
 
 // Logistics simulation class definition and member function declarations
-class LogisticsSimulation: public HasCostFunction {
+class LogisticsSimulation: public HasCostFunction<int16_t> {
 public:
   // Config
   simcpp20::simulation<> *sim;
@@ -198,7 +198,7 @@ public:
   int totalNumPickupSiteOverloadDays;
 
   // Member functions
-  double costFunction(const int *genome, double earlyOutThreshold = std::numeric_limits<double>::max());
+  double costFunction(const int16_t *genome, double earlyOutThreshold = std::numeric_limits<double>::max());
   void pickup(int vehicleIndex, int pickupSiteIndex);
   std::string locationString(int locationIndex);
 
@@ -380,7 +380,7 @@ double costFunctionFromComponents(double totalOdometer, double totalNumPickupSit
 }
 
 // Logistics simulation class member function: cost function
-double LogisticsSimulation::costFunction(const int *genome, double earlyOutThreshold) {
+double LogisticsSimulation::costFunction(const int16_t *genome, double earlyOutThreshold) {
   // Interpret genome into routes  
   if (debug >= 2) printf("Genome size: %d\n", routingInput.num_genes);
   if (debug >= 2) printf("First non-pickup-site gene: %d\n", routingInput.num_pickup_site_visits_in_genome);
@@ -407,7 +407,7 @@ double LogisticsSimulation::costFunction(const int *genome, double earlyOutThres
       }
     }
     double costLowerBound = costFunctionFromComponents(totalOdometerLowerBound, 0, 0);
-    if (costLowerBound > earlyOutThreshold) return std::numeric_limits<double>::max();
+    if (costLowerBound >= earlyOutThreshold) return std::numeric_limits<double>::max();
   }
 
   // Initialization for simulation
@@ -454,10 +454,11 @@ routingInput(routingInput), routingOutput(routingInput), vehicles(routingInput.v
 int main() {
   // Read routing optimization input
   std::ifstream f("temp/routing_input.json");
-  RoutingInput routingInput(json::parse(f).get<RoutingInput>());
+  auto routingInputJson = json::parse(f);
+  auto routingInput = routingInputJson.get<RoutingInput>();
   // Preprocess routing optimization input
   preprocess_routing_input(routingInput);
-  std::vector<HasCostFunction*> logisticsSims;
+  std::vector<HasCostFunction<int16_t>*> logisticsSims;
   for (int i = 0; i < omp_get_max_threads(); i++) {
     logisticsSims.push_back(new LogisticsSimulation(routingInput));
   }
@@ -476,7 +477,7 @@ int main() {
 
 */
 
-  Optimizer optimizer(routingInput.num_genes, logisticsSims);
+  Optimizer<int16_t> optimizer(routingInput.num_genes, logisticsSims);
   int numGenerations = 40000; // 40000
   int numFinetuneGenerations = 20000; // 20000
   int numGenerationsPerStep = 100;
@@ -484,17 +485,17 @@ int main() {
 
   int generationIndex = 0;
   for (; generationIndex < numGenerations; generationIndex += numGenerationsPerStep) {
-    if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.bestCost);
+    if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.population[optimizer.best].cost);
     optimizer.optimize(numGenerationsPerStep, false);
   }
   for (; generationIndex < numGenerations + numFinetuneGenerations; generationIndex += numGenerationsPerStep) {
-    if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.bestCost);
+    if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.population[optimizer.best].cost);
     optimizer.optimize(numGenerationsPerStep, true);
   }
-  if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.bestCost);
+  if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.population[optimizer.best].cost);
 
   debug++;
-  logisticsSims[0]->costFunction(optimizer.best);
+  logisticsSims[0]->costFunction(optimizer.population[optimizer.best].genome);
   debug--;
 
   for (int i = 0; i < omp_get_max_threads(); i++) {
@@ -502,14 +503,14 @@ int main() {
   }
 
   // Get routes
-  int *genome = optimizer.best;
+  int16_t *genome = optimizer.population[optimizer.best].genome;
   printf("\nBest genome:\n");
   for (int i = 0; i < routingInput.num_genes; i++) {
     printf("%d,", genome[i]);
   }
   printf("\n\n");
   LogisticsSimulation logisticsSim(routingInput);
-  logisticsSim.costFunction(optimizer.best); // Get routeStartLoci
+  logisticsSim.costFunction(optimizer.population[optimizer.best].genome); // Get routeStartLoci
   json j = logisticsSim.routingOutput;
   std::ofstream o("temp/routing_output.json");
   o << std::setw(4) << j << std::endl;
