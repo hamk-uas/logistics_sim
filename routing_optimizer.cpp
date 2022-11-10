@@ -198,7 +198,7 @@ public:
   int totalNumPickupSiteOverloadDays;
 
   // Member functions
-  double costFunction(const int16_t *genome, double earlyOutThreshold = std::numeric_limits<double>::max());
+  double costFunction(const std::vector<int16_t> &genome, double earlyOutThreshold = std::numeric_limits<double>::max());
   void pickup(int vehicleIndex, int pickupSiteIndex);
   std::string locationString(int locationIndex);
 
@@ -380,7 +380,7 @@ double costFunctionFromComponents(double totalOdometer, double totalNumPickupSit
 }
 
 // Logistics simulation class member function: cost function
-double LogisticsSimulation::costFunction(const int16_t *genome, double earlyOutThreshold) {
+double LogisticsSimulation::costFunction(const std::vector<int16_t> &genome, double earlyOutThreshold) {
   // Interpret genome into routes  
   if (debug >= 2) printf("Genome size: %d\n", routingInput.num_genes);
   if (debug >= 2) printf("First non-pickup-site gene: %d\n", routingInput.num_pickup_site_visits_in_genome);
@@ -503,7 +503,7 @@ int main() {
   }
 
   // Get routes
-  int16_t *genome = optimizer.population[optimizer.best].genome;
+  int16_t *genome = &optimizer.population[optimizer.best].genome[0];
   printf("\nBest genome:\n");
   for (int i = 0; i < routingInput.num_genes; i++) {
     printf("%d,", genome[i]);
