@@ -63,17 +63,17 @@ class Optimizer
 public:
   int populationSize;
 private:
-  int maxNumThreads;
+  int maxNumThreads{omp_get_max_threads()};
   int numGenes;
-  std::vector<int> proposalIndexPermutation;
-  std::vector<Proposal<T>> children;
+  std::vector<int> proposalIndexPermutation = std::vector<int>(populationSize);
+  std::vector<Proposal<T>> children = std::vector<Proposal<T>>(populationSize, numGenes);
   std::vector<HasCostFunction<T>*> &haveCostFunction;
   std::mt19937 randomNumberGenerator; // For main thread
-  std::vector<ThreadState> threadStates;  // For parallel threads
+  std::vector<ThreadState> threadStates = std::vector<ThreadState>(maxNumThreads, numGenes);  // For parallel threads
 
 public:
-  std::vector<Proposal<T>> population;
-  int best; // Current best index
+  std::vector<Proposal<T>> population = std::vector<Proposal<T>>(populationSize, numGenes);
+  int best{0}; // Current best index
 
 private:
   // Choose the population size based on numGenes and constructor parameter populationSize
@@ -203,16 +203,10 @@ public:
   // populationSize = population size, must be a multiple of simdIntParallelCount (typically 4), -1 = auto based on numGenes.
   // seed = random number generator seed. Worker threads use seed + 1, seed + 2, ...
   Optimizer(int numGenes, std::vector<HasCostFunction<T>*> &haveCostFunction, int requestedPopulationSize = -1, unsigned seed = std::chrono::system_clock::now().time_since_epoch().count()):
-  maxNumThreads(omp_get_max_threads()),
   numGenes(numGenes),
   populationSize(calcPopulationSize(numGenes, requestedPopulationSize)),
   haveCostFunction(haveCostFunction),
-  randomNumberGenerator(seed),
-  best(0),
-  population(populationSize, numGenes),
-  children(populationSize, numGenes),
-  threadStates(maxNumThreads, numGenes),
-  proposalIndexPermutation(populationSize)
+  randomNumberGenerator(seed)
   {
     printf("Population size: %d\n", populationSize);
     printf("Numgenes: %d\n", numGenes);
