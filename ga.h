@@ -29,6 +29,10 @@ struct Proposal {
   std::vector<T> genome;
   double cost;
 
+  friend bool operator < (const Proposal &l, const Proposal &r) noexcept {   
+    return l.cost < r.cost;
+  }
+
   Proposal(int numGenes): genome(numGenes) {
   }
 };
@@ -94,7 +98,7 @@ private:
   void calcStats()
   {
     best = population[0];
-    for (int j = 0; j < populationSize; j++)
+    for (int j = 1; j < populationSize; j++)
     {
       if (population[j].cost < best.cost)
       {
@@ -186,7 +190,7 @@ public:
         }
         children[p0].cost = haveCostFunction[omp_get_thread_num()]->costFunction(children[p0].genome, population[p0].cost);
       }
-      // 
+      // Child replaces worse parent 0
       for (int j = 0; j < populationSize; j++) {
         if (children[j].cost < population[j].cost) {
           using std::swap;

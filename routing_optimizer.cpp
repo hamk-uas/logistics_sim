@@ -503,14 +503,14 @@ int main() {
   }
 
   // Get routes
-  int16_t *genome = &optimizer.best.genome[0];
+  std::vector<int16_t> &genome = optimizer.best.genome;
   printf("\nBest genome:\n");
   for (int i = 0; i < routingInput.num_genes; i++) {
     printf("%d,", genome[i]);
   }
   printf("\n\n");
   LogisticsSimulation logisticsSim(routingInput);
-  logisticsSim.costFunction(optimizer.best.genome); // Get routeStartLoci
+  logisticsSim.costFunction(genome); // Get routeStartLoci
   json j = logisticsSim.routingOutput;
   std::ofstream o("temp/routing_output.json");
   o << std::setw(4) << j << std::endl;
