@@ -485,17 +485,17 @@ int main() {
 
   int generationIndex = 0;
   for (; generationIndex < numGenerations; generationIndex += numGenerationsPerStep) {
-    if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.population[optimizer.best].cost);
+    if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.best.cost);
     optimizer.optimize(numGenerationsPerStep, false);
   }
   for (; generationIndex < numGenerations + numFinetuneGenerations; generationIndex += numGenerationsPerStep) {
-    if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.population[optimizer.best].cost);
+    if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.best.cost);
     optimizer.optimize(numGenerationsPerStep, true);
   }
-  if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.population[optimizer.best].cost);
+  if (debug >= 1) printf("%d,%f\n", generationIndex, optimizer.best.cost);
 
   debug++;
-  logisticsSims[0]->costFunction(optimizer.population[optimizer.best].genome);
+  logisticsSims[0]->costFunction(optimizer.best.genome);
   debug--;
 
   for (int i = 0; i < omp_get_max_threads(); i++) {
@@ -503,14 +503,14 @@ int main() {
   }
 
   // Get routes
-  int16_t *genome = &optimizer.population[optimizer.best].genome[0];
+  int16_t *genome = &optimizer.best.genome[0];
   printf("\nBest genome:\n");
   for (int i = 0; i < routingInput.num_genes; i++) {
     printf("%d,", genome[i]);
   }
   printf("\n\n");
   LogisticsSimulation logisticsSim(routingInput);
-  logisticsSim.costFunction(optimizer.population[optimizer.best].genome); // Get routeStartLoci
+  logisticsSim.costFunction(optimizer.best.genome); // Get routeStartLoci
   json j = logisticsSim.routingOutput;
   std::ofstream o("temp/routing_output.json");
   o << std::setw(4) << j << std::endl;

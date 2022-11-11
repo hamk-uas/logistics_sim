@@ -56,7 +56,7 @@ struct ThreadState
   {}
 };
 
-// An optimizer class with will store the population and its costs, and has everything needed for the optimization.
+// An optimizer class that stores the proposal population and its costs, and has everything needed for the optimization.
 template <class T>
 class Optimizer
 {
@@ -73,7 +73,7 @@ private:
 
 public:
   std::vector<Proposal<T>> population = std::vector<Proposal<T>>(populationSize, numGenes);
-  int best{0}; // Current best index
+  Proposal<T> &best{population[0]}; // Current best proposal
 
 private:
   // Choose the population size based on numGenes and constructor parameter populationSize
@@ -93,12 +93,12 @@ private:
   // Calculate statistics of the population (find the best chromosome)
   void calcStats()
   {
-    best = 0;
+    best = population[0];
     for (int j = 0; j < populationSize; j++)
     {
-      if (population[j].cost < population[best].cost)
+      if (population[j].cost < best.cost)
       {
-        best = j;
+        best = population[j];
       }
     }
   }
@@ -182,7 +182,7 @@ public:
           int p1 = proposalIndexPermutation[j]; // Each proposal is used once per generation as parent 1
           crossover(population[p0].genome, population[p1].genome, children[p0].genome, omp_get_thread_num());
         } else {
-          crossover(population[p0].genome, population[best].genome, children[p0].genome, omp_get_thread_num());
+          crossover(population[p0].genome, best.genome, children[p0].genome, omp_get_thread_num());
         }
         children[p0].cost = haveCostFunction[omp_get_thread_num()]->costFunction(children[p0].genome, population[p0].cost);
       }
