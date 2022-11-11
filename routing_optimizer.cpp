@@ -504,6 +504,7 @@ int main() {
 
   // Get routes
   std::vector<int16_t> &genome = optimizer.best.genome;
+
   printf("\nBest genome:\n");
   for (int i = 0; i < routingInput.num_genes; i++) {
     printf("%d,", genome[i]);

@@ -16,6 +16,7 @@
 #include <limits>
 #include <omp.h>
 #include <cstddef>
+#include <set>
 
 // A cost function must be provided in an object of a user class that inherits HasCostFunction
 template <class T>
@@ -39,8 +40,9 @@ struct Proposal {
 
 template <class T>
 void swap(Proposal<T>& lhs, Proposal<T>& rhs) {
-  std::swap(lhs.genome, rhs.genome);
-  std::swap(lhs.cost, rhs.cost);
+  using std::swap;
+  swap(lhs.genome, rhs.genome);
+  swap(lhs.cost, rhs.cost);
 }
 
 struct ThreadState
@@ -188,13 +190,17 @@ public:
         } else {
           crossover(population[p0].genome, best.genome, children[p0].genome, omp_get_thread_num());
         }
-        children[p0].cost = haveCostFunction[omp_get_thread_num()]->costFunction(children[p0].genome, population[p0].cost);
+        if (population[p0].genome == children[p0].genome) {
+          children[p0].cost = std::numeric_limits<double>::max();
+        } else {
+          children[p0].cost = haveCostFunction[omp_get_thread_num()]->costFunction(children[p0].genome, population[p0].cost);
+        }
       }
       // Child replaces worse parent 0
       for (int j = 0; j < populationSize; j++) {
         if (children[j].cost < population[j].cost) {
           using std::swap;
-          swap(population[j], children[j]);
+          swap(population[j], children[j]);            
         }
       }
       calcStats();
