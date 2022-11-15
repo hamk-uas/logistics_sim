@@ -54,7 +54,7 @@ You need an API key to [openrouteservice](https://openrouteservice.org/). The ke
 
 To compile the routing optimizer in Windows or Linux:
 
-`g++ routing_optimizer.cpp simcpp/simcpp.cpp -std=c++20 -march=native -I. -O3 -fcoroutines -ffast-math -fopenmp -o routing_optimizer`
+`g++ routing_optimizer.cpp -std=c++20 -march=native -I. -O3 -fcoroutines -ffast-math -fopenmp -o routing_optimizer`
 
 ### Simulation
 
