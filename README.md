@@ -60,7 +60,7 @@ To compile the routing optimizer in Windows or Linux:
 
 To run the simulation:
 
-`python routing_optimizer_test.py`
+`python waste_pickup_sim_test.py`
 
 ## Copyright, license, and credits
 
