@@ -4,10 +4,6 @@
 //
 // This work is dual-licensed under the MIT and Apache 2.0 licenses and is distributed without any warranty.
 
-// Compile with one of:
-// g++ routing_optimizer.cpp simcpp/simcpp.cpp -std=c++20 -march=native -I. -O3 -fcoroutines -ffast-math -fopenmp -o routing_optimizer
-// g++-10 routing_optimizer.cpp simcpp/simcpp.cpp -std=c++20 -march=native -I. -O3 -fcoroutines -ffast-math -fopenmp -o routing_optimizer
-
 #pragma once
 
 #include <random>
@@ -17,6 +13,7 @@
 #include <omp.h>
 #include <cstddef>
 #include <set>
+#include <optional>
 
 // A cost function must be provided in an object of a user class that inherits HasCostFunction
 template <class T>
@@ -111,15 +108,19 @@ private:
 
 public:
   // Initialize population and calculate statistics. Called automatically in constructor
-  void initPopulation()
+  void initPopulation(std::optional<std::vector<T>> startingPoint = {})
   {
     for (int j = 0; j < populationSize; j++)
     {
-      for (int i = 0; i < numGenes; i++)
-      {
-        population[j].genome[i] = (T)i;
+      if (startingPoint && j == 0) {
+        population[j].genome = *startingPoint;
+      } else {
+        for (int i = 0; i < numGenes; i++)
+        {
+          population[j].genome[i] = (T)i;
+        }
+        std::shuffle(population[j].genome.begin(), population[j].genome.end(), randomNumberGenerator);
       }
-      std::shuffle(population[j].genome.begin(), population[j].genome.end(), randomNumberGenerator);
       population[j].cost = haveCostFunction[0]->costFunction(population[j].genome);
     }
     calcStats();
@@ -211,8 +212,9 @@ public:
   // numGenes = number of genes per chromosome
   // distanceMatrix = concatenated rows of the distance matrix
   // populationSize = population size, must be a multiple of simdIntParallelCount (typically 4), -1 = auto based on numGenes.
+  // startingPoint = an optional "starting point" genome to be included in the otherwise random population, set to std::nullopt or {} to disable
   // seed = random number generator seed. Worker threads use seed + 1, seed + 2, ...
-  Optimizer(int numGenes, std::vector<HasCostFunction<T>*> &haveCostFunction, int requestedPopulationSize = -1, unsigned seed = std::chrono::system_clock::now().time_since_epoch().count()):
+  Optimizer(int numGenes, std::vector<HasCostFunction<T>*> &haveCostFunction, int requestedPopulationSize = -1, std::optional<std::vector<T>> startingPoint = {}, unsigned seed = std::chrono::system_clock::now().time_since_epoch().count()):
   numGenes(numGenes),
   populationSize(calcPopulationSize(numGenes, requestedPopulationSize)),
   haveCostFunction(haveCostFunction),
@@ -224,7 +226,7 @@ public:
     {      
       threadStates[thread].randomNumberGenerator = std::mt19937(seed + 1 + thread); // Use a different seed for each thread      
     }
-    initPopulation();
+    initPopulation(startingPoint);
     for (int j = 0; j < populationSize; j++)
     {
       proposalIndexPermutation[j] = j;

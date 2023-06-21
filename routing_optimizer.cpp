@@ -3,7 +3,10 @@
 //
 // This work is dual-licensed under the MIT and Apache 2.0 licenses and is distributed without any warranty.
 
-// g++ routing_optimizer.cpp simcpp/simcpp.cpp -std=c++20 -march=native -I. -O3 -fcoroutines -ffast-math -fopenmp -o routing_optimizer
+// Compile with one of:
+// g++ routing_optimizer.cpp -std=c++20 -march=native -I. -O3 -fcoroutines -ffast-math -fopenmp -o routing_optimizer
+// g++-10 routing_optimizer.cpp -std=c++20 -march=native -I. -O3 -fcoroutines -ffast-math -fopenmp -o routing_optimizer
+
 #include <stdio.h>
 #include "ga.h"
 #include <iostream>
@@ -462,26 +465,15 @@ int main() {
   for (int i = 0; i < omp_get_max_threads(); i++) {
     logisticsSims.push_back(new LogisticsSimulation(routingInput));
   }
-/*
-  int *testGenome = new int[routingInput.num_genes];
-  for (int i = 0; i < routingInput.num_genes; i++) {
-    testGenome[i] = i;
-  }
-  logisticsSims[0]->costFunction(testGenome); */
 
-/*
-  int testGenome[] = {130,86,59,68,99,101,82,75,79,76,72,84,80,94,28,25,111,30,120,12,6,18,0,2,126,114,104,36,138,117,48,63,67,34,89,93,53,23,90,96,46,41,40,108,43,103,134,132,136,122,137,139,142,143,128,133,129,118,125,131,123,135,116,140,119,121,141,127,124,92,5,100,71,74,85,39,22,81,61,51,113,95,73,106,70,88,11,91,112,109,31,54,16,19,97,98,29,21,57,8,47,58,10,27,7,45,52,32,9,24,55,3,13,87,1,17,115,83,65,37,26,56,60,4,102,105,77,44,49,110,50,20,33,107,69,62,14,35,15,64,38,42,78,66};
-  debug++;
-  printf("Cost: %f\n", logisticsSims[0]->costFunction(testGenome));
-  debug--;
-
-*/
+  //std::vector<int16_t> startingPoint = {130,86,59,68,99,101,82,75,79,76,72,84,80,94,28,25,111,30,120,12,6,18,0,2,126,114,104,36,138,117,48,63,67,34,89,93,53,23,90,96,46,41,40,108,43,103,134,132,136,122,137,139,142,143,128,133,129,118,125,131,123,135,116,140,119,121,141,127,124,92,5,100,71,74,85,39,22,81,61,51,113,95,73,106,70,88,11,91,112,109,31,54,16,19,97,98,29,21,57,8,47,58,10,27,7,45,52,32,9,24,55,3,13,87,1,17,115,83,65,37,26,56,60,4,102,105,77,44,49,110,50,20,33,107,69,62,14,35,15,64,38,42,78,66};
+  //Optimizer<int16_t> optimizer(routingInput.num_genes, logisticsSims, -1, startingPoint);
 
   Optimizer<int16_t> optimizer(routingInput.num_genes, logisticsSims);
+
   int numGenerations = 40000; // 40000
   int numFinetuneGenerations = 20000; // 20000
   int numGenerationsPerStep = 100;
-  optimizer.initPopulation();
 
   int generationIndex = 0;
   for (; generationIndex < numGenerations; generationIndex += numGenerationsPerStep) {
