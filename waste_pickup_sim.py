@@ -271,7 +271,7 @@ class Vehicle(IndexedSimEntity):
 		"""
 		Remove later?
 		"""
-		self.vehicle_odometer =+ distance_driven
+		self.vehicle_odometer += distance_driven
 
 
 # Depot where the vehicles start from in the beginning of the day and go to at the end of the day
